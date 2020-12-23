@@ -94,12 +94,10 @@
   </div>
 </div>
 <div class="table" style="max-width: 1000px; margin: 0 auto;">
+<div class="table-title">사람들이 지금 많이 읽고 있는 책</div>
 <div class="grid-container">
   <div class="book1">
-  	
-  </div>
-  <div class="book2">
-	  <div class="row">
+  	<div class="row">
 	      <div class="col-md-2">
 	      	<img class="table-book-img" src="${path}/resources/main/book.jpg">
 	      </div>
@@ -114,16 +112,166 @@
 	      </div>
 	  </div>
   </div>
-  <div class="book3">3</div>
-  <div class="book4">4</div>
-  <div class="book5">5</div>
-  <div class="book6">6</div>
-  <div class="book7">7</div>
-  <div class="book8">8</div>
-  <div class="book9">9</div>
+  <div class="book2">
+	  <div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">2</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<span class="table-book-author">김진명</span>
+	  		</div>
+	      </div>
+	  </div>
+  </div>
+  <div class="book3">
+<div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">3</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<span class="table-book-author">김진명</span>
+	  		</div>
+	      </div>
+	  </div>
+  </div>
+  <div class="book4"><div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">4</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<span class="table-book-author">김진명</span>
+	  		</div>
+	      </div>
+	  </div></div>
+  <div class="book5"><div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">5</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<span class="table-book-author">김진명</span>
+	  		</div>
+	      </div>
+	  </div></div>
+  <div class="book6"><div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">6</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<span class="table-book-author">김진명</span>
+	  		</div>
+	      </div>
+	  </div></div>
+  <div class="book7"><div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">7</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<span class="table-book-author">김진명</span>
+	  		</div>
+	      </div>
+	  </div></div>
+  <div class="book8"><div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">8</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<span class="table-book-author">김진명</span>
+	  		</div>
+	      </div>
+	  </div></div>
+  <div class="book9"><div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <span>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">9</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<span class="table-book-author">김진명</span>
+	  		</div>
+	      </div>
+	      </span>
+	  </div></div>
 </div>
 </div>
-
+<div class="table-title">오늘, 리디의 발견</div>
+<div class="container-fluid white-slide" style="max-width: 1000px; margin: 0 auto;">
+  <div class="responsive white-responsive">
+  	<div class="slide-box2">
+  	<img src="${path}/resources/main/book.jpg">
+  	<div class="book-title">책이름</div>
+  	<span class="book-author">저자명</span>
+  	</div>
+  	<div class="slide-box2">
+  	<img src="${path}/resources/main/book.jpg">
+  	<div class="book-title">책이름</div>
+  	<span class="book-author">저자명</span>
+  	</div>
+  	<div class="slide-box2">
+  	<img src="${path}/resources/main/book.jpg">
+  	<div class="book-title">책이름</div>
+  	<span class="book-author">저자명</span>
+  	</div>
+  	<div class="slide-box2">
+  	<img src="${path}/resources/main/book.jpg">
+  	<div class="book-title">책이름</div>
+  	<span class="book-author">저자명</span>
+  	</div>
+  	<div class="slide-box2">
+  	<img src="${path}/resources/main/book.jpg">
+  	<div class="book-title">책이름</div>
+  	<span class="book-author">저자명</span>
+  	</div>
+  	<div class="slide-box2">
+  	<img src="${path}/resources/main/book.jpg">
+  	<div class="book-title">책이름</div>
+  	<span class="book-author">저자명</span>
+  	</div>
+  	<div class="slide-box2">
+  	<img src="${path}/resources/main/book.jpg">
+  	<div class="book-title">책이름</div>
+  	<span class="book-author">저자명</span>
+  	</div>
+  </div>
+  </div>
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="${path}/resources/main/slick.min.js"></script>
