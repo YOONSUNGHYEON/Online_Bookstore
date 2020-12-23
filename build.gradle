@@ -4,9 +4,9 @@ plugins {
 	id 'java'
 }
 
-group = 'com.example'
+group = 'com.freeBoard'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+sourceCompatibility = '1.8'
 
 configurations {
 	compileOnly {
@@ -28,6 +28,8 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test'
+	compile('javax.servlet:jstl') 
+	compile("org.apache.tomcat.embed:tomcat-embed-jasper")
 }
 
 test {
