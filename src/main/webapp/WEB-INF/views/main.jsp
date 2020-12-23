@@ -50,7 +50,16 @@
     <div class="slide-box"><img src="${path}/resources/main/slide5.jpg"></div>
   </div>
 </div>
-<div class="iconlist"></div>
+<div class="iconlist">
+<ul class="icon-ul">
+<li class="icon-li">1</li>
+<li class="icon-li">1</li>
+<li class="icon-li">1</li>
+<li class="icon-li">1</li>
+<li class="icon-li">1</li>
+<li class="icon-li">1</li>
+</ul>
+</div>
 <div class="newbook">
 <div class="container-fluid" style="max-width: 1000px; margin: 0 auto;">
 	<h2 class="newbook-title">집 앞 서점에 방금 나온 신간!</h2>
@@ -272,6 +281,155 @@
   	</div>
   </div>
   </div>
+<div class="table" style="max-width: 1000px; margin: 0 auto;">
+<div class="table-title">베스트셀러</div>
+<div class="grid-container big-grid">
+  <div class="book1 big-book">
+  	<div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img-big" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">1</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<div class="table-book-author">김진명</div>
+	  			<span class="table-book-star">★★★★★</span>
+	  		</div>
+	      </div>
+	  </div>
+  </div>
+  <div class="book2 big-book">
+	  <div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img-big" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">2</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<div class="table-book-author">김진명</div>
+	  			<span class="table-book-star">★★★★★</span>
+	  		</div>
+	      </div>
+	  </div>
+  </div>
+  <div class="book3 big-book">
+<div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img-big" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">3</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<div class="table-book-author">김진명</div>
+	  			<span class="table-book-star">★★★★★</span>
+	  		</div>
+	      </div>
+	  </div>
+  </div>
+  <div class="book4 big-book"><div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img-big" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">4</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<div class="table-book-author">김진명</div>
+	  			<span class="table-book-star">★★★★★</span>
+	  		</div>
+	      </div>
+	  </div></div>
+  <div class="book5 big-book"><div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img-big" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">5</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<div class="table-book-author">김진명</div>
+	  			<span class="table-book-star">★★★★★</span>
+	  		</div>
+	      </div>
+	  </div></div>
+  <div class="book6 big-book"><div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img-big" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">6</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<div class="table-book-author">김진명</div>
+	  			<span class="table-book-star">★★★★★</span>
+	  		</div>
+	      </div>
+	  </div></div>
+  <div class="book7 big-book"><div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img-big" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">7</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<div class="table-book-author">김진명</div>
+	  			<span class="table-book-star">★★★★★</span>
+	  		</div>
+	      </div>
+	  </div></div>
+  <div class="book8 big-book"><div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img-big" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">8</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<div class="table-book-author">김진명</div>
+	  			<span class="table-book-star">★★★★★</span>
+	  		</div>
+	      </div>
+	  </div></div>
+  <div class="book9 big-book"><div class="row">
+	      <div class="col-md-2">
+	      	<img class="table-book-img-big" src="${path}/resources/main/book.jpg">
+	      </div>
+	      <span>
+	      <div class="col-md-2">
+			<h3 class="table-book-rank">9</h3>
+	      </div>
+	      <div class="col-md-2">
+		    <div style="width: 203px;" class="table-book-info">
+	  			<div class="table-book-title">바이러스 X</div>
+	  			<div class="table-book-author">김진명</div>
+	  			<span class="table-book-star">★★★★★</span>
+	  		</div>
+	      </div>
+	      </span>
+	  </div></div>
+</div>
+</div>
+<jsp:include page="footer.jsp" />
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="${path}/resources/main/slick.min.js"></script>
@@ -285,7 +443,7 @@
     		arrows: true,
     	});
     	$('.responsive').slick({
-    		  dots: true,
+    		  dots: false,
     		  infinite: false,
     		  speed: 300,
     		  slidesToShow: 6,
