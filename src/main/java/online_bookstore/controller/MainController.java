@@ -10,4 +10,8 @@ public class MainController {
 		return "main";
 	}
 
+	@RequestMapping("/detail")
+	public String detail() {
+		return "detail";
+	}
 }

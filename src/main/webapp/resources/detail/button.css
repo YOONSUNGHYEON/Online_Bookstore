@@ -1,0 +1,128 @@
+ .info_buttons_wrap {
+    overflow: auto;
+    margin-top: 15px;
+}
+
+#page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_buttons_wrap .info_buttons .btn_all_buy, #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_buttons_wrap .info_buttons .btn_all_rent, #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_buttons_wrap .info_buttons .btn_buy {
+    padding: 0 16px;
+    min-width: 112px;
+    font-size: 15px;
+}
+
+#page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_buttons_wrap .info_buttons a, #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_buttons_wrap .info_buttons button {
+    float: left;
+    height: 48px;
+    line-height: 46px;
+    padding: 0;
+    cursor: pointer;
+}
+.rui_button_blue_50:focus, .rui_button_blue_50:hover, .rui_button_blue_50:link, .rui_button_blue_50:visited {
+    color: #fff;
+}
+a:link, a:visited {
+    -webkit-text-decoration: none;
+    text-decoration: none;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+a:link, a:visited {
+    color: #666;
+    text-decoration: none;
+}
+
+.btn_wish {
+    width: 48px;
+    font-size: 21px;
+    text-align: center;
+}
+.rui_button_white_50 {
+    font-family: ridi-roboto,Helvetica Neue,Apple SD Gothic Neo,"나눔고딕",Nanum Gothic,"돋움",arial,Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+    outline: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1em;
+    vertical-align: baseline;
+    -webkit-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+    color: #808991;
+    background: #fff;
+    border: 1px solid #d1d5d9;
+    box-shadow: 0 1px 1px 0 rgba(209,213,217,.3);
+    font-size: 16px;
+    padding: 16px 34px;
+}
+
+.rui_button_blue_50 {
+    font-family: ridi-roboto,Helvetica Neue,Apple SD Gothic Neo,"나눔고딕",Nanum Gothic,"돋움",arial,Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+    outline: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1em;
+    vertical-align: baseline;
+    -webkit-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+    color: #fff;
+    background: #1f8ce6;
+    border: 1px solid #0077d9;
+    box-shadow: 0 1px 1px 0 rgba(31,140,230,.3);
+    font-size: 16px;
+    padding: 16px 34px;
+}
+
+.info_buttons{
+	float: right;
+    display: inline-table;
+    white-space: nowrap;
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+
+.rui_button_group_6>.rui_button_item:first-child {
+    padding-left: 0;
+}
+.rui_button_group_6>.rui_button_item {
+    padding: 0 2px 0 3px;
+}
+.rui_button_item {
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+}
+li {
+    line-height: initial;
+}

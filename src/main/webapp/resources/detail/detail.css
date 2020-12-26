@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+
+
+.main_book_image{
+    width: 200px;
+    height: 300px;
+}
+
+.main_book_image_wrapper{
+    width: 220px;
+    float: left;
+}
+
+.aside_banner {
+    margin-bottom: 30px;
+    
+}
+.aside_banner a{
+	display: block;
+    width: 207px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.aside_banner a img{
+	width: 207px;
+    display: block;
+    box-sizing: border-box!important;
+}
+
+.page-detail{
+	width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    min-height: 500px;
+}
+
+.page_detail_wrapper{
+	width: 1016px;
+    margin: 0 auto 60px auto;
+    border-top: none;
+}
+
+.book_title{
+	font-size: 30px;
+    line-height: 1.3em;
+    color: #333;
+    font-weight: 700;
+    word-break: keep-all;
+    word-wrap: break-word;
+    margin-top: 12px;
+}
+.detail_body_wrap {
+    width: 793px;
+    background: #fff;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.detail_header {
+	padding: 40px 29px;
+}
+
+.detail_aside_wrap {
+    display: table-cell;
+    width: 207px;
+    background: 0 0;
+    vertical-align: top;
+    border-left: 1px solid #E6E8EB;
+}
+.info_metadata_wrap {
+    margin: 20px;
+}
+.StarRate_Score {
+    display: inline-block;
+    font-size: 14px;
+    color: #fa722e;
+}
+
+.StarRate_ParticipantCount {
+    margin-left: 2px;
+    font-size: 12px;
+}
