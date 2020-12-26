@@ -52,12 +52,42 @@
 </div>
 <div class="iconlist">
 <ul class="icon-ul">
-<li class="icon-li">1</li>
-<li class="icon-li">1</li>
-<li class="icon-li">1</li>
-<li class="icon-li">1</li>
-<li class="icon-li">1</li>
-<li class="icon-li">1</li>
+<li class="icon-li">
+<img style="background-color:#E8CB99;" src="${path}/resources/main/new.png">
+<div>신간</div>
+</li>
+<li class="icon-li">
+<img style="background-color:#99D1CB;" src="${path}/resources/main/gift.png">
+<div>이벤트</div>
+</li>
+<li class="icon-li">
+<img style="background-color:#B9BEF1;" src="${path}/resources/main/best.png">
+<div>베스트셀러</div>
+</li>
+<li class="icon-li">
+<img style="background-color:#99D1CB;" src="${path}/resources/main/rent.png">
+<div>빌려서가</div>
+</li>
+<li class="icon-li">
+<img style="background-color:#F1C0A7;" src="${path}/resources/main/set.png">
+<div>지금 인기세트</div>
+</li>
+<li class="icon-li">
+<img style="background-color:#ABDCBA;" src="${path}/resources/main/calendar.png">
+<div>신간 캘린더</div>
+</li>
+<li class="icon-li">
+<img style="background-color:#D5ADEB;" src="${path}/resources/main/map.png">
+<div>일반 혜택지도</div>
+</li>
+<li class="icon-li">
+<img style="background-color:#F0B9B9;" src="${path}/resources/main/coupon.png">
+<div>위클리 쿠폰</div>
+</li>
+<li class="icon-li">
+<img style="background-color:#BADBA1;" src="${path}/resources/main/paperpro	.png">
+<div>리디페이퍼</div>
+</li>
 </ul>
 </div>
 <div class="newbook">

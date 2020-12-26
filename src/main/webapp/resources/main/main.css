@@ -76,9 +76,9 @@
     padding-left: 4px;
 }
 .iconlist{
-	height:115px;
-	max-width: 1000px; 
-	margin: 0 auto;
+	height: fit-content;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 .newbook{
 	height:380px;
@@ -250,13 +250,28 @@
 	width: fit-content;
 }
 .icon-ul {
-	text-align:center;
+	text-align: center;
+    height: fit-content;
+    padding: 24px 13px;
+    margin: 0px;
 }
 
 .icon-li {
-    display:inline-block;
+    display: inline-block;
     width: 76px;
     height: 67px;
-    background-color:black;
-    margin: 30px;
+    margin: 0 14px;
+}
+.icon-li img{
+	width:44px; 
+	height:44px;
+	border-radius: 35%;
+}
+.icon-li div{
+	width:76px;
+	font-size: 10pt;
+    word-break: keep-all;
+    letter-spacing: -0.06em;
+    padding-top: 8px;
+    color: #525a61;
 }
