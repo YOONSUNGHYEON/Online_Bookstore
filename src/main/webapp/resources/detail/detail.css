@@ -1,10 +1,24 @@
 @charset "UTF-8";
 
 
-
+ .info_metadata_wrap a{
+    font-size: 13px;
+    color: #666;
+    line-height: 1em;
+    font-weight: 700;
+    cursor: pointer;
+}
 .main_book_image{
     width: 200px;
     height: 300px;
+}
+
+.title_text{
+	display: inline-block;
+    font-size: 20px;
+    color: #59667a;
+    font-weight: 700;
+    letter-spacing: -.03em;
 }
 
 .main_book_image_wrapper{
@@ -81,4 +95,302 @@
 .StarRate_ParticipantCount {
     margin-left: 2px;
     font-size: 12px;
+}
+
+.BookDetailNotice_List_Header-events {
+    background: #e3e0ee;
+    color: #605baf;
+}
+.BookDetailNotice_List_Header {
+    top: 9px;
+    left: 0;
+}
+.BookDetailNotice_List_Group {
+    padding-right: 0;
+    padding-left: 48px;
+}
+.BookDetailNotice_List_Group {
+    padding: 0 15px 0 63px;
+}
+
+.BookDetailNotice_List_Header {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 40px;
+    height: 18px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 18px;
+    text-align: center;
+}
+
+.page-detail .detail_box_module {
+    padding: 0 29px 70px 29px;
+}
+.page-detail hr
+{
+	margin-top: 0px;
+    margin-bottom: 15px;
+    border: 1;
+    border-top: 2px solid #59667a;
+}
+.review_info_section {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.review_info_section .review_input_left {
+    display: table-cell;
+    width: 120px;
+    padding: 32px 0 20px 0;
+    text-align: center;
+    cursor: default;
+}
+.review_info_section .review_input_right {
+    display: table-cell;
+    vertical-align: top;
+}
+.review_info_section .review_input_left .buyer_score .score {
+    display: block;
+    margin-top: 10px;
+    font-size: 35px;
+    color: #212529;
+    font-weight: 700;
+}
+
+.review_info_section .review_input_left .score_people_num {
+    width: 94px;
+    margin: 0 auto;
+    padding-top: 8px;
+    border-top: 1px solid #e5e5e5;
+    font-size: 12px;
+    color: #94a2b8;
+    letter-spacing: -.03em;
+}
+ .review_textarea_wrapper .review_input_textarea {
+    border: 2px solid #d1d5d9;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 112px;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: -.03em;
+    padding: 12px 15px;
+    line-height: 1.5em;
+    color: #a7b1bb;
+    -webkit-appearance: none;
+    resize: vertical;
+}
+.star_rate_touch_area{
+	text-align: center;
+}
+.star_rate_touch_area label{
+    display: inline-block;
+    width: 64px;
+    height: 48px;
+    text-align: center;
+    margin-left: -10px;
+    background: url(../images/icon_star@2x.png) 50% top no-repeat;
+    background-size: 45px 90px;
+    -webkit-transition: transform .2s;
+    transition: transform .2s;
+    -webkit-transition: -webkit-transform .25s;
+}
+.star_rate_touch_area img{
+    width: 45px;
+    height: 45px;
+    text-align: center;
+}
+
+.star_tip_wrapper {
+    height: 42px;
+    text-align: center;
+    cursor: default;
+}
+.star_rate_wrapper {
+    position: relative;
+    padding-bottom: 18px;
+}
+.tip_title {
+    /*display: none;*/
+    font-size: 18px;
+    color: #999;
+    font-weight: 700;
+    padding-top: 10px;
+    letter-spacing: -.03em;
+}
+.my_star_rate .rate_title {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #636c73;
+}
+.my_star_rate .rate_title .rate_num {
+    font-weight: 700;
+    font-size: 30px;
+    vertical-align: -30%;
+    color: #fa722e;
+    padding: 0 0 0 8px;
+}
+ .star_tip_wrapper .my_star_rate .rate_cancel_button {
+    -webkit-appearance: none;
+    background: 0 0;
+    border: none;
+    display: inline-block;
+    padding: 8px;
+    vertical-align: 6%;
+    font-size: 12px;
+    color: #b8bfc4;
+    font-weight: 700;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+}
+
+.buttons_wrapper {
+    padding: 10px 0;
+    height: 30px;
+}
+#review_list_section {
+    margin-top: 25px;
+}
+.rui_tab_and_order {
+    position: relative;
+    cursor: default;
+}
+.rui_tab_2 {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-bottom: 2px solid #d1d5d9;
+    cursor: default;
+}
+.rui_tab_and_order .rui_order {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.rui_order {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding: 12px 0;
+    cursor: default;
+}
+.rui_tab_2 .tab_list {
+    font-family: ridi-roboto,Helvetica Neue,Apple SD Gothic Neo,"나눔고딕",Nanum Gothic,"돋움",arial,Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin-right: 13px;
+}
+.rui_order .order_list {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    border-left: 1px solid #e6e8eb;
+    height: 10px;
+}
+#review_list_section .review_list_empty {
+    padding: 40px 0;
+    border-bottom: 1px solid #ced2d6;
+}
+.review_list_wrapper.active {
+    height: auto;
+    opacity: 1;
+}
+.rui_tab_2 .tab_list a.active, .rui_tab_2 .tab_list button.active {
+    color: #40474d;
+}
+.rui_tab_2 .tab_list a, .rui_tab_2 .tab_list button {
+    font-family: ridi-roboto,Helvetica Neue,Apple SD Gothic Neo,"나눔고딕",Nanum Gothic,"돋움",arial,Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+    outline: 0;
+    text-decoration: none;
+    line-height: 1em;
+    display: block;
+    position: relative;
+    min-width: 25px;
+    padding: 10px 0;
+    color: #808991;
+    font-size: 15px;
+    font-weight: 700;
+    border: none;
+    text-align: center;
+    background: 0 0;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+}
+#review_list_section .review_list_empty p {
+    text-align: center;
+    font-size: 15px;
+    color: #808991;
+    letter-spacing: -.03em;
+    font-weight: 700;
+    line-height: 1.8em;
+}
+.rui_order .order_list a {
+    font-family: ridi-roboto,Helvetica Neue,Apple SD Gothic Neo,"나눔고딕",Nanum Gothic,"돋움",arial,Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    line-height: 1em;
+    display: block;
+    padding: 8px;
+    margin-top: -8px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #808991;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+}
+.detail_aside_wrap .aside_contents {
+    padding: 0 18px;
+    margin-bottom: 45px;
+}
+.aside_contents .aside_contents_title {
+    line-height: 1.5em;
+    color: #333;
+    font-weight: 700;
+    font-size: 13px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 3px;
+}
+.aside_contents.aside_best ul li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    list-style:none;
+     padding-left:0px;
+}
+.aside_best ul li a .best_rank {
+    width: 33px;
+    color: #e64938;
+    font-weight: 700;
+}
+ul
+{
+	 padding-left:0px;
+}
+.aside_contents.aside_best ul li a .best_rank, .aside_contents.aside_best ul li a .best_title {
+    font-size: 12px;
+    line-height: 1.5em;
+    display: table-cell;
 }
