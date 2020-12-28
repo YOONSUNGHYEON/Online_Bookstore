@@ -1,0 +1,100 @@
+#wrapper {width: 100%; background-color: #87ceeb; background-image: url(../img/111111.jpg); background-repeat: no-repeat; background-size: contain;}
+.wrapper_in {width: 1100px; margin: 0 auto; padding-top: 104px;}
+.logo {text-align: center; margin-bottom: 88px;}
+
+.id {width: 562px; margin: 0 auto;}
+.id:after {clear: both; content: ""; display: block;}
+.id h3 {font-size: 15px; color: #626262; font-family: 'NEXON Lv1 Gothic OTF'; font-weight: normal; margin-bottom: 12px; margin-left: 12px;}
+.id > div {float: left;}
+.id_box {margin-right: 36px;}
+.id_box input {width: 402px; height: 50px; border: 3px solid #d7d7d7; border-radius: 8px; outline: none; padding: 0 20px;}
+.id_check_btn {width: 106px; height: 50px; border-radius: 8px; background-color: #ffffff;}
+.id_check_btn a {width: 100%; height: 100%; display: block; font-family: 'NEXON Lv1 Gothic OTF'; font-size: 15px; color: #1F8CE6;; line-height: 50px; text-align: center;}
+.id_box input:focus {border: 3px solid #d7d7d7;}
+
+.password {width: 562px; margin: 30px auto 0;}
+.password h3 {font-size: 15px; color: #626262; font-family: 'NEXON Lv1 Gothic OTF'; font-weight: normal; margin-bottom: 12px; margin-left: 12px;}
+.password_box {margin-right: 36px;}
+.password_box input {width: 562px; height: 50px; border: 3px solid #d7d7d7; border-radius: 8px; outline: none; padding: 0 20px;}
+.password_box input:focus {border: 3px solid #1F8CE6;}
+
+.password_re {width: 562px; margin: 30px auto 0;}
+.password_re h3 {font-size: 15px; color: #626262; font-family: 'NEXON Lv1 Gothic OTF'; font-weight: normal; margin-bottom: 12px; margin-left: 12px;}
+.password_re_box {margin-right: 36px;}
+.password_re_box input {width: 562px; height: 50px; border: 3px solid #d7d7d7; border-radius: 8px; outline: none; padding: 0 20px;}
+.password_re_box input:focus {border: 3px solid #1F8CE6;}
+
+.name {width: 562px; margin: 30px auto 0;}
+.name h3 {font-size: 15px; color: #626262; font-family: 'NEXON Lv1 Gothic OTF'; font-weight: normal; margin-bottom: 12px; margin-left: 12px;}
+.name_box {margin-right: 36px;}
+.name_box input {width: 562px; height: 50px; border: 3px solid #d7d7d7; border-radius: 8px; outline: none; padding: 0 20px;}
+.name_box input:focus {border: 3px solid #1F8CE6;}
+
+.birth {width: 562px; margin: 30px auto 0;}
+.birth h3 {font-size: 15px; color: #626262; font-family: 'NEXON Lv1 Gothic OTF'; font-weight: normal; margin-bottom: 12px; margin-left: 12px;}
+.birth:after {clear: both; content: ""; display: block;}
+.birth > div {float: left;}
+.year_box {margin-right: 17px;}
+.year_box input {width: 176px; height: 50px; border: 3px solid #d7d7d7; border-radius: 8px; outline: none; padding: 0 20px;}
+.year_box input:focus {border: 3px solid #1F8CE6;}
+.month_box {margin-right: 17px;}
+.month_box select {width: 176px; height: 50px; border: 3px solid #d7d7d7; border-radius: 8px; outline: none; padding: 0 20px;}
+.month_box select:focus {border: 3px solid #1F8CE6;}
+.date_box input {width: 176px; height: 50px; border: 3px solid #d7d7d7; border-radius: 8px; outline: none; padding: 0 20px;}
+.date_box input:focus {border: 3px solid #1F8CE6;}
+
+.gender {width: 562px; margin: 30px auto 0;}
+.gender h3 {font-size: 15px; color: #626262; font-family: 'NEXON Lv1 Gothic OTF'; font-weight: normal; margin-bottom: 12px; margin-left: 12px;}
+.gender_box select {width: 562px; height: 50px; border: 3px solid #d7d7d7; border-radius: 8px; outline: none; padding: 0 20px;}
+.gender_box select:focus {border: 3px solid #1F8CE6;}
+
+.phone {width: 562px; margin: 30px auto 0;}
+.phone:after {clear: both; content: ""; display: block;}
+.phone h3 {font-size: 15px; color: #626262; font-family: 'NEXON Lv1 Gothic OTF'; font-weight: normal; margin-bottom: 12px; margin-left: 12px;}
+.phone > div {float: left;}
+.phone_box {margin-right: 36px;}
+.phone_box input {width: 402px; height: 50px; border: 3px solid #d7d7d7; border-radius: 8px; outline: none; padding: 0 20px;}
+.phone_check_btn {width: 106px; height: 50px; border-radius: 8px; background-color: #1F8CE6;}
+.phone_check_btn a {width: 100%; height: 100%; display: block; font-family: 'NEXON Lv1 Gothic OTF'; font-size: 15px; color: #ffffff; line-height: 50px; text-align: center;}
+.phone_box input:focus {border: 3px solid #1F8CE6;}
+.number_check_box input {width: 562px; height: 50px; border: 3px solid #d7d7d7; border-radius: 8px; outline: none; padding: 0 20px; margin-top: 10px;}
+.number_check_box input:focus {border: 3px solid #1F8CE6;}
+
+.join_btn {width: 187px; height: 60px; background-color: #ffffff; border-radius: 12px; margin: 45px auto 123px;}
+.join_btn a {width: 100%; height: 100%; display: block; font-size: 22px; color: #1F8CE6; font-family: 'BMJUA'; text-align: center; line-height: 60px;}
+
+
+
+#footer {width: 100%; height: 180px; background-color: #ededed; border-top: 1px solid #b7b7b7;}
+.footer_in {width: 1100px; height: 100%; margin: 0 auto; padding: 41px 0 0 75px;}
+.footer_gnb {margin-bottom: 30px;}
+.footer_gnb ul:after {clear: both; content: ""; display: block;}
+.footer_gnb li {float: left; margin: 0 10px;}
+.footer_gnb a {color: #555555; font-size: 14px; font-family: 'NEXON Lv1 Gothic OTF';}
+.footer_gnb span {color: #555555; font-size: 14px; font-family: 'NEXON Lv1 Gothic OTF';}
+.footer_text {margin-bottom: 8px;}
+.footer_text ul:after {clear: both; content: ""; display: block;}
+.footer_text li {float: left; margin: 0 10px; color: #555555; font-size: 14px; font-family: 'NEXON Lv1 Gothic OTF';}
+.footer_text span {color: #555555; font-size: 14px; font-family: 'NEXON Lv1 Gothic OTF';}
+.footer_copy {color: #555555; font-size: 14px; font-family: 'NEXON Lv1 Gothic OTF'; margin-left: 10px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
