@@ -9,12 +9,11 @@
 </head>
 <jsp:include page="../mainBase.jsp" />
 <body>
-
 <div class="container" style="max-width:1200px;">
 	<div class="iconlist">
 		<ul class="icon-ul">
 			<li class="icon-li">
-				<div>소설</div>
+				<a href="${path }/category/book"><div>소설</div></a>
 				<ul class="cate-ul">
 				<li>한국소설</li>
 				<li>영미소설</li>
@@ -25,13 +24,11 @@
 				<li>고전문학</li>
 				<li></li>
 				</ul>
-				<div>경영/경제</div>
+				<div>에세이/시</div>
 				<ul class="cate-ul">
-				<li>경영일반</li>
-				<li>경제일반</li>
-				<li>마케팅/세일즈</li>
-				<li>재테크/금융/부동산</li>
-				<li>CEO/리더십</li>
+				<li>에세이</li>
+				<li>시</li>
+				<li></li>
 				</ul>
 			</li>
 			<li class="icon-li">
@@ -53,19 +50,20 @@
 				</ul>
 			</li>
 			<li class="icon-li">
-				<div>에세이/시</div>
+				<div>경영/경제</div>
 				<ul class="cate-ul">
-				<li>에세이</li>
-				<li>시</li>
+				<li>경영일반</li>
+				<li>경제일반</li>
+				<li>마케팅/세일즈</li>
+				<li>재테크/금융/부동산</li>
+				<li>CEO/리더십</li>
 				<li></li>
 				</ul>
-				<div>컴퓨터/IT</div>
+				<div>가정/생활</div>
 				<ul class="cate-ul">
-				<li>IT 비지니스</li>
-				<li>개발/프로그래밍</li>
-				<li>컴퓨터/앱 활용</li>
-				<li>IT자격증</li>
-				<li>IT해외원서</li>
+				<li>결혼/임신/출산</li>
+				<li>육아/자녀교육</li>
+				<li>취미/요리/기타</li>
 				</ul>
 			</li>
 			<li class="icon-li">
@@ -77,9 +75,16 @@
 				</ul>
 				<div>건강/다이어트</div>
 				<ul class="cate-ul">
-				<li>다이어트/운동/스포츠</li>
+				<li>다이어트/운동</li>
 				<li>스타일/뷰티</li>
 				<li>건강</li>
+				<li></li>
+				</ul>
+				<div>어린이/청소년</div>
+				<ul class="cate-ul">
+				<li>유아</li>
+				<li>어린이</li>
+				<li>청소년</li>
 				</ul>
 			</li>
 			<li class="icon-li">
@@ -108,12 +113,15 @@
 				<li>응용과학</li>
 				<li></li>
 				</ul>
-				<div>가정/생활</div>
+				<div>컴퓨터/IT</div>
 				<ul class="cate-ul">
-				<li>결혼/임신/출산</li>
-				<li>육아/자녀교육</li>
-				<li>취미/요리/기타</li>
+				<li>IT 비지니스</li>
+				<li>개발/프로그래밍</li>
+				<li>컴퓨터/앱 활용</li>
+				<li>IT자격증</li>
+				<li>IT해외원서</li>
 				</ul>
+				
 			</li>
 			<li class="icon-li">
 				<div>진로/교육/교재</div>
@@ -127,12 +135,6 @@
 				<li>유학/MBA</li>
 				<li>교재/수험서</li>
 				<li></li>
-				</ul>
-				<div>어린이/청소년</div>
-				<ul class="cate-ul">
-				<li>유아</li>
-				<li>어린이</li>
-				<li>청소년</li>
 				</ul>
 			</li>
 		</ul>

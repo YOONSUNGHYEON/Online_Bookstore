@@ -47,3 +47,6 @@ li:last-child{
     letter-spacing: -0.06em;
     color: white;
 }
+a, a:hover{    
+	text-decoration: none;
+}
