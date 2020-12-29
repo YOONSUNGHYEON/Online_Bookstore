@@ -58,6 +58,7 @@ header>.nav-tabs>li>a:hover {
     background-color: #1F8CE6;
     border-bottom: 4px solid rgb(153, 209, 255) !important;
     color: rgb(153, 209, 255);
+    border-color: transparent;
 }
 header>.nav-tabs>li>.active {
 	border-bottom: 4px solid rgb(153, 209, 255);

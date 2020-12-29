@@ -21,7 +21,7 @@
 <div style="max-width: 1000px; margin: 0 auto;">
 <ul class="catenav nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link" href="/"><i class="fas fa-bars"></i></a>
+    <a class="nav-link" href="/category/list"><i class="fas fa-bars"></i></a>
   </li>
   <li class="nav-item">
     <a class="nav-link active" href="/">일반</a>
