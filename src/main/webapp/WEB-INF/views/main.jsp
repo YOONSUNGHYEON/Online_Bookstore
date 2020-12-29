@@ -5,9 +5,9 @@
 <head>
 <meta charset="UTF-8">
 <title>main page</title>
-<link href="${path}/resources/main/main.css" rel="stylesheet" type="text/css">
-<link href="${path}/resources/main/slick.css" rel="stylesheet" type="text/css">
-<link href="${path}/resources/main/slick-theme.css" rel="stylesheet" type="text/css">
+	<link href="${path}/resources/main/main.css" rel="stylesheet" type="text/css">
+	<link href="${path}/resources/main/slick.css" rel="stylesheet" type="text/css">
+	<link href="${path}/resources/main/slick-theme.css" rel="stylesheet" type="text/css">
 <!-- include libraries(jQuery, bootstrap) -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.c om/jquery-3.5.1.min.js"></script>
@@ -464,47 +464,47 @@
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="${path}/resources/main/slick.min.js"></script>
 <script type="text/javascript">
-    $(document).ready(function(){
-    	$('.center').slick({
-    		slidesToShow: 3,
-    		slidesToScroll: 1,
-    		centerMode: true,
-    		variableWidth: true,
-    		arrows: true,
-    	});
-    	$('.responsive').slick({
-    		  dots: false,
-    		  infinite: false,
-    		  speed: 300,
-    		  slidesToShow: 6,
-    		  slidesToScroll: 6,
-    		  responsive: [
-    		    {
-    		      breakpoint: 1024,
-    		      settings: {
-    		        slidesToShow: 3,
-    		        slidesToScroll: 3,
-    		        infinite: true,
-    		        dots: true
-    		      }
-    		    },
-    		    {
-    		      breakpoint: 600,
-    		      settings: {
-    		        slidesToShow: 2,
-    		        slidesToScroll: 2
-    		      }
-    		    },
-    		    {
-    		      breakpoint: 480,
-    		      settings: {
-    		        slidesToShow: 1,
-    		        slidesToScroll: 1
-    		      }
-    		    }
-    		  ]
-    		});
-    });
+	$(document).ready(function(){
+		$('.center').slick({
+			slidesToShow: 3,
+			slidesToScroll: 1,
+			centerMode: true,
+			variableWidth: true,
+			arrows: true,
+		});
+		$('.responsive').slick({
+			dots: false,
+			infinite: false,
+			speed: 300,
+			slidesToShow: 6,
+			slidesToScroll: 6,
+			responsive: [
+				{
+					breakpoint: 1024,
+					settings: {
+						slidesToShow: 3,
+						slidesToScroll: 3,
+						infinite: true,
+						dots: true
+					}
+				},
+				{
+					breakpoint: 600,
+					settings: {
+						slidesToShow: 2,
+						slidesToScroll: 2
+					}
+				},
+				{
+					breakpoint: 480,
+					settings: {
+						slidesToShow: 1,
+						slidesToScroll: 1
+					}
+				}
+			]
+		});
+	});
 </script>
 </body>
 </html>

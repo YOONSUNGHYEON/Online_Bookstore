@@ -14,4 +14,8 @@ public class MemberController {
 	public String Longin() {
 		return "Member/Login";
 	}
+
+	@RequestMapping("/cart")
+	public String Cart() {return "Member/Cart";}
+
 }
