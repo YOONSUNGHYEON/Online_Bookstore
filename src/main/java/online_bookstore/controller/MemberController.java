@@ -48,6 +48,8 @@ public class MemberController {
 	}
 
 	@RequestMapping("/cart")
-	public String Cart() {return "Member/Cart";}
+	public String Cart() {
+		return "Member/Cart";
+	}
 
 }
