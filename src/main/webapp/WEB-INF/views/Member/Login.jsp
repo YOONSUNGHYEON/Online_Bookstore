@@ -14,13 +14,13 @@
     <script src='<c:url value="/resources/Member/js/Member.js"/>'></script>
 </head>
 <body>
-<form action='<c:url value="/Member/login"/>' method="post">
+<form action='<c:url value="/Login"/>' method="post">
     <div id="wrapper">
         <div class=wrapper_in>
             <h3>LOGIN</h3>
             <div class="login_box">
-                <input type="text" class="id_box" placeholder="아이디" name="Member_id">
-                <input type="password" class="password_box" placeholder="비밀번호" name="Member_pass">
+                <input type="text" class="id_box" placeholder="아이디" name="Member_Id">
+                <input type="password" class="password_box" placeholder="비밀번호" name="Member_Pass">
                 <div class="id_remember">
                     <input type="checkbox" id="id_remember_check">
                     <label for="id_remember_check">아이디 기억하기</label>
