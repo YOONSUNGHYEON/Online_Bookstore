@@ -30,15 +30,15 @@
 	</header>
 	<section class="page-body">
 		<section id="login" class="account-container account-login">
-			<form action='<c:url value="/Member/login"/>' method="post"
+			<form action='<c:url value="Login"/>' method="post"
 				class="account-form">
 				<div id="wrapper" class="account-login">
 					<div class=wrapper_in>
 						<div class="login_box">
 							<label class="account-label"> <input type="text"
-								class="id_box" placeholder="아이디" name="Member_id">
+								class="id_box" placeholder="아이디" name="Member_Id">
 							</label> <label class="account-label"> <input type="password"
-								class="password_box" placeholder="비밀번호" name="Member_pass">
+								class="password_box" placeholder="비밀번호" name="Member_Pass">
 							</label>
 							<div class="id_remember">
 								<input type="checkbox" id="id_remember_check"> <label
@@ -66,6 +66,5 @@
 			</form>
 		</section>
 	</section>
-
 </body>
 </html>

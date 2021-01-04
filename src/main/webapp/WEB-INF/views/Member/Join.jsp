@@ -23,6 +23,7 @@
 	src='<c:url value="/resources/Member/js/jquery.bxslider.min.js"/>'></script>
 <script src='<c:url value="/resources/Member/js/Member.js?ver=1"/>'></script>
 </head>
+
 <body id="body-id">
 	<header class="page-header">
 		<h1 class="page-title">
@@ -33,7 +34,7 @@
 		</h1>
 	</header>
 	<div>
-		<form action='<c:url value="/Member/insert"/>' method="post"
+		<form action='<c:url value="/Join"/>' method="post"
 			name="join">
 			<div id="wrapper">
 				<div class="wrapper_in">
@@ -41,7 +42,7 @@
 					<div class="id">
 						<h3>아이디</h3>
 						<div class="id_box">
-							<input type="text" name="Member_id" id="Member_id"
+							<input type="text" name="Member_Id" id="Member_id"
 								onkeyup="checkID(this)" required="required"
 								placeholder="4~12자리 영문,숫자 조합">
 						</div>
@@ -56,7 +57,7 @@
 					<div class="password">
 						<h3>비밀번호</h3>
 						<div class="password_box">
-							<input type="password" name="Member_pass" id="Member_pass"
+							<input type="password" name="Member_Pass" id="Member_pass"
 								required="required" onkeyup="password(this)"
 								placeholder="8~16자리 영문,숫자,특수문자 조합">
 						</div>
@@ -77,17 +78,17 @@
 					<div class="name">
 						<h3>이름</h3>
 						<div class="name_box">
-							<input type="text" name="Member_name" id=Member_name>
+							<input type="text" name="Member_Name" id=Member_name>
 						</div>
 					</div>
 					<div class="birth">
 						<h3>생년월일</h3>
 						<div class="year_box">
-							<input type="text" placeholder="년(4자)" name="Member_age"
+							<input type="text" placeholder="년(4자)" name="Member_Bir_Y"
 								id=Member_age>
 						</div>
 						<div class="month_box">
-							<select name="Member_birth_m" id=Member_birth>
+							<select name="Member_Bir_M" id=Member_birth>
 								<option value="">월</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
@@ -104,7 +105,7 @@
 							</select>
 						</div>
 						<div class="date_box">
-							<input type="text" placeholder="일" name="Member_birth_d"
+							<input type="text" placeholder="일" name="Member_Bir_D"
 								id=Member_birth1>
 						</div>
 					</div>
@@ -125,5 +126,6 @@
 			</div>
 		</form>
 	</div>
+
 </body>
 </html>
