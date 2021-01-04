@@ -1,0 +1,422 @@
+@charset "UTF-8";
+
+#page_modify .password_check .check_description {
+	font-size: 13px;
+	font-weight: 1000;
+	color: #333;
+	line-height: 1.5em;
+	padding: 25px 0 10px 0
+}
+
+#page_modify .password_check .input_wrap .password_input {
+	width: 220px;
+	padding: 7px
+}
+
+#page_modify .password_check .input_wrap .password_input, #page_modify .password_check .input_wrap .password_submit
+	{
+	vertical-align: top
+}
+
+#page_modify .edit_info {
+	margin-top: 20px
+}
+#page_modify h2 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#page_modify .edit_info .edit_table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-bottom: 1px solid #e6e8eb;
+	width: 100%
+}
+
+#page_modify .edit_info .edit_table caption {
+	text-align: left;
+	border-bottom: 2px solid #333;
+	font-size: 16px;
+	font-weight: 1000;
+	color: #333
+}
+
+#page_modify .edit_info .edit_table tbody tr {
+	border-top: 1px solid #e6e8eb
+}
+
+#page_modify .edit_info .edit_table tbody tr th {
+	text-align: right
+}
+
+#page_modify .edit_info .edit_table tbody tr td {
+	font-weight: 700;
+	text-align: left;
+	color: #808991
+}
+
+#page_modify .edit_info .edit_table th {
+	font-size: 12px;
+	line-height: 1.5em
+}
+
+#page_modify .edit_info .edit_table a, #page_modify .edit_info .edit_table li,
+	#page_modify .edit_info .edit_table td {
+	font-size: 13px
+}
+
+#page_modify .edit_info .edit_table td, #page_modify .edit_info .edit_table th
+	{
+	padding: 9px 10px
+}
+
+#page_modify .edit_info .edit_table tbody th, #page_modify .edit_info .edit_table tfoot td,
+	#page_modify .edit_info .edit_table thead th {
+	background: #f2f4f5;
+	font-weight: 1000;
+	color: #808991
+}
+
+#page_modify .edit_info .edit_table tr.has_sub td, #page_modify .edit_info .edit_table tr.has_sub th
+	{
+	padding-bottom: 4px
+}
+
+#page_modify .edit_info .edit_table tr.sub {
+	border-top: 0
+}
+
+#page_modify .edit_info .edit_table tr.sub td, #page_modify .edit_info .edit_table tr.sub th
+	{
+	padding-top: 0;
+	padding-bottom: 4px;
+	font-weight: 700;
+}
+
+#page_modify .edit_info .edit_table th {
+	width: 130px;
+	padding: 10px 14px;
+	line-height: 28px;
+	font-size: 13px;
+	text-align: right;
+	vertical-align: top
+}
+
+#page_modify .edit_info .edit_table td {
+	position: relative;
+	padding: 10px 14px;
+	text-align: left;
+	line-height: 1.5em
+}
+
+#page_modify .edit_info .edit_table td .user_name {
+	font-size: 13px;
+	font-weight: 1000;
+	color: #333
+}
+
+#page_modify .edit_info .edit_table td .btn_delete {
+	display: block;
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	margin-top: -16px
+}
+
+#page_modify .edit_info .edit_table td .user_id {
+	font-size: 15px;
+	font-weight: 1000;
+	color: #333
+}
+
+#page_modify .edit_info .edit_table td .marketing_agreement_info_list {
+	margin-top: 10px
+}
+
+#page_modify .edit_info .edit_table td .marketing_agreement_info_list:first-child
+	{
+	margin-top: 6px
+}
+
+#page_modify .edit_info .edit_table td .marketing_agreement_info_list:last-child
+	{
+	margin-top: 17px
+}
+
+#page_modify .edit_info .edit_table td .marketing_agreement_info_list .rui_checkbox_label
+	{
+	margin-right: 5px;
+	vertical-align: top
+}
+
+#page_modify .edit_info .edit_table td .marketing_agreement_info_list .modify_date
+	{
+	vertical-align: top;
+	color: #b8bfc4;
+	font-size: 13px;
+	line-height: 18px
+}
+
+#page_modify .edit_info .edit_table td .marketing_agreement_info_list .marketing_email_input
+	{
+	width: 220px;
+	vertical-align: top;
+	margin-right: 7px;
+	margin-top: -8px
+}
+
+#page_modify .edit_info .edit_table td .caution {
+	padding-left: 2px;
+	margin-top: 10px;
+	line-height: 1.5em;
+	font-size: 13px;
+	margin-bottom: 10px
+}
+
+#page_modify .edit_info .edit_table .user_email .email_address {
+	margin-top: 7px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #333
+}
+
+#page_modify .edit_info .edit_table .user_email .alert {
+	position: relative;
+	margin-top: 10px;
+	box-sizing: border-box;
+	border-radius: 3px;
+	padding: 6px 10px 7px 20px;
+	width: 230px;
+	background: #e8f3fc;
+	font-size: 12px;
+	color: #41474b
+}
+
+#page_modify .edit_info .edit_table .user_email .alert:before {
+	display: inline-block;
+	text-indent: -444px;
+	font-size: 0;
+	overflow: hidden;
+	background:
+		url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2048%2048%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22%231f8ee6%22%3E%3Cpath%20d%3D%22M47.4%206.7c.4-.6.6-1.4.6-2.2C48%202%2045.8%200%2043.1%200c-1.6%200-2.9.7-3.8%201.8-.2.3-.5.6-.6%201L18.1%2035.1%208.9%2024.9c-.9-1.2-2.6-2.6-4.7-2.6-3%200-4.2%202.7-4.2%205.1%200%201.3.7%202.3%201.5%203.2l12.6%2015.6c.8.9%202.2%201.8%204%201.8%202%200%203.2-.7%204-1.8l25-38.9.3-.6z%22/%3E%3C/svg%3E)
+		center center no-repeat;
+	background-size: 100% 100%;
+	display: block;
+	content: '';
+	position: absolute;
+	left: 6px;
+	top: 7px;
+	width: 10px;
+	height: 10px
+}
+
+#page_modify .edit_info .edit_table .user_email .alert.success {
+	background: #effae6
+}
+
+#page_modify .edit_info .edit_table .user_email .alert.success:before {
+	display: inline-block;
+	text-indent: -444px;
+	font-size: 0;
+	overflow: hidden;
+	background:
+		url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2048%2048%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22%235fce0c%22%3E%3Cpath%20d%3D%22M47.4%206.7c.4-.6.6-1.4.6-2.2C48%202%2045.8%200%2043.1%200c-1.6%200-2.9.7-3.8%201.8-.2.3-.5.6-.6%201L18.1%2035.1%208.9%2024.9c-.9-1.2-2.6-2.6-4.7-2.6-3%200-4.2%202.7-4.2%205.1%200%201.3.7%202.3%201.5%203.2l12.6%2015.6c.8.9%202.2%201.8%204%201.8%202%200%203.2-.7%204-1.8l25-38.9.3-.6z%22/%3E%3C/svg%3E)
+		center center no-repeat;
+	background-size: 100% 100%
+}
+
+#page_modify .edit_info .edit_table .user_email .alert.fail {
+	background: #fdedeb;
+	color: #e74c3c
+}
+
+#page_modify .edit_info .edit_table .user_email .alert.fail:before {
+	display: inline-block;
+	text-indent: -444px;
+	font-size: 0;
+	overflow: hidden;
+	background:
+		url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2049%2049%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22%23e74c3c%22%3E%3Cpath%20d%3D%22M24.1.9C10.9.9.1%2011.7.1%2024.9s10.8%2024%2024%2024%2024-10.8%2024-24-10.8-24-24-24zm0%2040.5c-2.1%200-3.8-1.7-3.8-3.8%200-2.1%201.7-3.8%203.8-3.8%202.1%200%203.8%201.7%203.8%203.8%200%202-1.7%203.8-3.8%203.8zm3.8-16.5c0%202.1-1.7%203.8-3.8%203.8-2.1%200-3.8-1.7-3.8-3.8V12.3c0-2.1%201.7-3.8%203.8-3.8%202.1%200%203.8%201.7%203.8%203.8v12.6z%22/%3E%3C/svg%3E)
+		center center no-repeat;
+	background-size: 100% 100%
+}
+
+#page_modify .edit_info .edit_table .user_email .modify_description {
+	margin-top: 10px;
+	font-size: 13px;
+	color: #626d75;
+	line-height: 1.5em
+}
+
+#page_modify .edit_info .edit_table .user_email .modify_description .left_time .time
+	{
+	color: #0282da
+}
+
+#page_modify .edit_info .edit_table .user_email .modify_button_wrapper {
+	margin-top: 10px
+}
+
+#page_modify .edit_info .edit_table .user_email .modify_button_wrapper .email_button
+	{
+	padding: 8px;
+	vertical-align: top
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row {
+	margin-top: 10px
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row:first-child
+	{
+	margin-top: 2px
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row .input_wrapper
+	{
+	position: relative;
+	display: inline-block;
+	width: 220px;
+	border-radius: 3px;
+	padding-right: 20px;
+	box-sizing: border-box
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row .input_wrapper.warning
+	{
+	border-color: #fabab3
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row .input_wrapper.focus
+	{
+	border-color: #1f8ce6
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row .input_wrapper.empty .placeholder
+	{
+	display: block
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row .input_wrapper.success:after
+	{
+	content: '';
+	position: absolute;
+	top: 11px;
+	right: 10px;
+	display: inline-block;
+	text-indent: -444px;
+	font-size: 0;
+	overflow: hidden;
+	background:
+		url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2048%2048%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22%235abf0d%22%3E%3Cpath%20d%3D%22M47.4%206.7c.4-.6.6-1.4.6-2.2C48%202%2045.8%200%2043.1%200c-1.6%200-2.9.7-3.8%201.8-.2.3-.5.6-.6%201L18.1%2035.1%208.9%2024.9c-.9-1.2-2.6-2.6-4.7-2.6-3%200-4.2%202.7-4.2%205.1%200%201.3.7%202.3%201.5%203.2l12.6%2015.6c.8.9%202.2%201.8%204%201.8%202%200%203.2-.7%204-1.8l25-38.9.3-.6z%22/%3E%3C/svg%3E)
+		center center no-repeat;
+	background-size: 100% 100%;
+	width: 10px;
+	height: 10px
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row .input_wrapper .password_input
+	{
+	width: 100%;
+	border: none;
+	appearance: none
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row .input_wrapper .placeholder
+	{
+	position: absolute;
+	display: none;
+	top: 50%;
+	left: 8px;
+	font-size: 12px;
+	line-height: 15px;
+	height: 15px;
+	margin-top: -7.5px;
+	font-weight: 1000;
+	cursor: text;
+	color: #9ea7ad
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row .warning_text_wrapper
+	{
+	display: inline-block;
+	padding-left: 10px
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row .warning_text_wrapper.align_top
+	{
+	vertical-align: top
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row .warning_text_wrapper.align_top .warning_text:first-child
+	{
+	padding-top: 0
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row .warning_text_wrapper.align_top .warning_text:first-child:before
+	{
+	top: 1px
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row .warning_text_wrapper .warning_text
+	{
+	position: relative;
+	display: block;
+	padding: 3px 0 0 18px;
+	font-size: 12px;
+	line-height: 15px;
+	color: #e64938
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_row .warning_text_wrapper .warning_text:first-child:before
+	{
+	content: '';
+	position: absolute;
+	top: 4px;
+	left: 0;
+	display: inline-block;
+	text-indent: -444px;
+	font-size: 0;
+	overflow: hidden;
+	background:
+		url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2049%2049%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22%23e64938%22%3E%3Cpath%20d%3D%22M24.1.9C10.9.9.1%2011.7.1%2024.9s10.8%2024%2024%2024%2024-10.8%2024-24-10.8-24-24-24zm0%2040.5c-2.1%200-3.8-1.7-3.8-3.8%200-2.1%201.7-3.8%203.8-3.8%202.1%200%203.8%201.7%203.8%203.8%200%202-1.7%203.8-3.8%203.8zm3.8-16.5c0%202.1-1.7%203.8-3.8%203.8-2.1%200-3.8-1.7-3.8-3.8V12.3c0-2.1%201.7-3.8%203.8-3.8%202.1%200%203.8%201.7%203.8%203.8v12.6z%22/%3E%3C/svg%3E)
+		center center no-repeat;
+	background-size: 100% 100%;
+	width: 12px;
+	height: 12px
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_change_guide
+	{
+	padding: 18px 0 3px 0
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_change_guide .guide_title
+	{
+	font-size: 13px;
+	font-weight: 1000;
+	color: #636c73
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_change_guide .guide_list_wrapper .guide_list
+	{
+	position: relative;
+	font-size: 13px;
+	padding: 8px 0 0 10px;
+	color: #666
+}
+
+#page_modify .edit_info .edit_table .user_new_password .password_change_guide .guide_list_wrapper .guide_list:before
+	{
+	position: absolute;
+	content: '';
+	top: 12px;
+	left: 0;
+	width: 4px;
+	height: 4px;
+	background: #9ea7ad
+}
+
+#page_modify .edit_info .buttons_wrap {
+	padding: 20px 0 40px 0;
+	text-align: center
+}

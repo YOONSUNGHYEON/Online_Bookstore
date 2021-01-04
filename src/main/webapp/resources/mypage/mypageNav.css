@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+#ridi_left_menu {
+    display: table-cell;
+    vertical-align: top;
+    padding-bottom: 320px;
+    width: 235px;
+    flex-shrink: 0;
+}
+#ridi_left_menu, #ridi_left_menu a, #ridi_left_menu b, #ridi_left_menu h1, #ridi_left_menu h3, #ridi_left_menu h4 {
+    color: #666;
+    font-size: 12px;
+    line-height: 1em;
+    font-family: ridi-roboto,Helvetica Neue,Apple SD Gothic Neo,arial,'나눔고딕',Nanum Gothic,'돋움',Dotum,Tahoma,Geneva,sans-serif;
+    font-weight: 400;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#ridi_left_menu .menu_title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #212529;
+}
+#ridi_left_menu.myridi_left_menu .menu_wrapper .menu_section {
+    padding: 17px 0 19px 0;
+    border-bottom: 2px solid #f2f2f2;
+}
+#ridi_left_menu.myridi_left_menu .menu_wrapper .menu_section .section_title {
+    font-size: 15px;
+    color: #40474d;
+    font-weight: 700;
+}
+#ridi_left_menu.myridi_left_menu .menu_wrapper {
+    margin-top: 9px;
+}
+#ridi_left_menu .menu_wrapper {
+    width: 130px;
+    margin-top: 16px;
+}
+#ridi_left_menu.myridi_left_menu .menu_wrapper {
+    margin-top: 9px;
+}
+
+#ridi_left_menu.myridi_left_menu .menu_wrapper .menu_section .section_list {
+    border-top: none;
+    padding: 1px 0 0 22px;
+}
+
+#ridi_left_menu.myridi_left_menu .menu_wrapper .menu_section .section_list .section_list_element .section_link {
+    padding: 14px 0 0 0;
+    font-weight: 700;
+    font-size: 15px;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+}
+
+#ridi_left_menu ul{
+    list-style:none;
+}
+
+#ridi_left_menu .menu_wrapper ul li a {
+    display: block;
+    padding: 7px 0;
+    color: #808991;
+    font-size: 13px;
+    list-style:none;
+}
+#ridi_left_menu a, #ridi_left_menu a:link, #ridi_left_menu a:visited {
+    color: #666;
+    line-height: 1em;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}

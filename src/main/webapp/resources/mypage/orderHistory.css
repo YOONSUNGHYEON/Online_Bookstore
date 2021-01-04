@@ -1,0 +1,166 @@
+@charset "UTF-8";
+
+#page_buy_history {
+    padding-bottom: 20px;
+}
+.module_pagetitle {
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: -.03em;
+    width: 100%;
+    text-align: left;
+    line-height: 1em;
+}
+.module_pagetitle .pagetitle_text {
+    font-size: 21px;
+    color: #333;
+    font-weight: 1000;
+}
+.rui_table, .rui_table a, .rui_table li, .rui_table td, .rui_table th {
+    margin: 0;
+    padding: 0;
+    font-family: ridi-roboto,Helvetica Neue,Apple SD Gothic Neo,"나눔고딕",Nanum Gothic,"돋움",arial,Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    word-break: keep-all;
+    color: #808991;
+}
+.rui_table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+#page_buy_history .buy_history_table {
+    margin-top: 30px;
+    border-top: 1px solid #dfdfdf;
+}
+#page_buy_history .buy_history_table colgroup .date {
+    width: 131px;
+}
+#page_buy_history .buy_history_table colgroup .title {
+    width: auto;
+}
+.rui_table .main_value, .rui_table .sub_value {
+    text-align: right;
+}
+#page_buy_history .buy_history_table .payment_type {
+    padding-left: 0;
+    padding-right: 0;
+}
+.rui_table .detail_icon {
+    width: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.rui_table thead {
+    border-top: solid 1px #e6e8eb;
+    background: #f2f4f5;
+}
+.rui_table thead th {
+    font-size: 12px;
+}
+.rui_table th {
+    padding: 12px 15px;
+    font-size: 12px;
+}
+.rui_table .detail_icon {
+    width: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.rui_table tbody .title {
+    color: #40474d;
+    font-weight: 700;
+}
+.rui_table .title {
+    text-align: left;
+}
+.rui_table tr {
+    border-bottom: solid 1px #e6e8eb;
+}
+.rui_table td {
+    padding: 13px 15px 12px 15px;
+    font-size: 13px;
+    line-height: 1.5em;
+}
+.rui_table tbody .main_value {
+    color: #1f8ce6;
+}
+.rui_table tbody .main_value, .rui_table tbody .sub_value {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+}
+#page_buy_history .buy_history_table .payment_type {
+    padding-left: 0;
+    padding-right: 0;
+}
+#contents_page {
+    display: table-cell;
+    vertical-align: top;
+    width: 769px;
+}
+.module_paging {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+}
+.module_paging ul.paging_wrap {
+    display: inline-block;
+    text-align: center;
+}
+.module_paging ul.paging_wrap li.page_this {
+    z-index: 3;
+}
+
+.module_paging ul.paging_wrap li {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    margin-left: -1px;
+    vertical-align: top;
+}
+.module_paging ul.paging_wrap li.page_this a {
+    cursor: default;
+    color: #fff;
+    background: #1a90df;
+    border-color: #0e7bc3;
+}
+.module_paging ul.paging_wrap li.page_list_first a {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.module_paging ul.paging_wrap li a {
+    display: inline-block;
+    border: 1px solid #d1d5d9;
+    font-size: 13px;
+    font-weight: 700;
+    color: #808991;
+    height: 30px;
+    line-height: 30px;
+    padding: 0 10px;
+    text-align: center;
+    min-width: 20px;
+    box-shadow: 0 1px 1px 0 rgba(210,210,210,.3);
+}
+.module_paging ul.paging_wrap li.btn_next, .module_paging ul.paging_wrap li.btn_prev {
+    padding: 0 6px;
+}
+.module_paging ul.paging_wrap li {
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+    margin-left: -1px;
+    vertical-align: top;
+}
+.module_paging ul.paging_wrap li.btn_next a, .module_paging ul.paging_wrap li.btn_prev a {
+    border-radius: 3px;
+}
+.module_paging ul.paging_wrap li.page_list_last a {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}

@@ -1,0 +1,259 @@
+@charset "UTF-8";
+
+.module_pagetitle {
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+    letter-spacing: -.03em;
+    width: 100%;
+    text-align: left;
+    line-height: 1em;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    font-size: 12px;
+}
+.rui_button_blue_50 {
+    font-family: Helvetica Neue,Apple SD Gothic Neo,arial,'나눔고딕',Nanum Gothic,'돋움',Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+    outline: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1em;
+    vertical-align: baseline;
+    -webkit-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+    color: #fff;
+    background: #1f8ce6;
+    border: 1px solid #0077d9;
+    box-shadow: 0 1px 1px 0 rgba(31,140,230,.3);
+    font-size: 16px;
+    padding: 16px 34px;
+}
+.module_pagetitle .pagetitle_text {
+    font-size: 21px;
+    color: #333;
+    font-weight: 1000;
+}
+
+blockquote, body, button, code, dd, div, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, html, iframe, input, legend, li, ol, p, pre, strong, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+a, address, button, div, h1, h2, h3, h4, h5, h6, input, label, li, p, select, td, textarea, th {
+    color: #666;
+    font-size: 12px;
+    line-height: 1em;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+#ridi_books h3 {
+    letter-spacing: -.03em;
+        margin-top: 0px;
+    margin-bottom: 0px;
+}
+.rui_button_blue_30 {
+    font-family: ridi-roboto,Helvetica Neue,Apple SD Gothic Neo,"나눔고딕",Nanum Gothic,"돋움",arial,Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+    outline: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1em;
+    vertical-align: baseline;
+    -webkit-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+    color: #fff;
+    background: #1f8ce6;
+    border: 1px solid #0077d9;
+    box-shadow: 0 1px 1px 0 rgba(31,140,230,.3);
+    font-size: 12px;
+    padding: 8px 18px;
+}
+.rui_button_white_30 {
+    font-family: ridi-roboto,Helvetica Neue,Apple SD Gothic Neo,"나눔고딕",Nanum Gothic,"돋움",arial,Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+    outline: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1em;
+    vertical-align: baseline;
+    -webkit-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+    color: #808991;
+    background: #fff;
+    border: 1px solid #d1d5d9;
+    box-shadow: 0 1px 1px 0 rgba(209,213,217,.3);
+    font-size: 12px;
+    padding: 8px 18px;
+}
+button, img, input, select, textarea {
+    vertical-align: middle;
+    outline: 0;
+}
+.indent_hidden {
+    position: absolute;
+    display: inline-block;
+    height: 0;
+    width: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+button, label {
+    cursor: pointer;
+}
+
+#ridi_books div#books_contents div#contents_wrap {
+    display: flex;
+    width: 900px;
+    margin: 0 auto;
+    position: relative;
+    clear: both;
+    margin-top: 33px;
+    width: 953px;
+    padding: 0 24px;
+}
+#ridi_books div#books_contents div#contents_wrap #contents_page {
+    display: table-cell;
+    vertical-align: top;
+    width: 769px;
+}
+#page_review .review_list_wrapper .title h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#ridi_books div#books_contents {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    min-height: 500px;
+}
+
+article, aside, canvas, details, figcaption, figure, footer, header, nav, section, summary {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.rui_text_input {
+    font-family: ridi-roboto,Helvetica Neue,Apple SD Gothic Neo,"나눔고딕",Nanum Gothic,"돋움",arial,Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+    outline: 0;
+    box-sizing: border-box;
+    border-radius: 3px;
+    -webkit-transition: border-color .2s,box-shadow .2s;
+    transition: border-color .2s,box-shadow .2s;
+    display: inline-block;
+    border: 1px solid #d1d5d9;
+    background: #fff;
+    padding: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.2em;
+    color: #303538;
+}
+
+#form_confirm_password p {
+    margin: 0 0 0px;
+}
+
+
+
+
+a, button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.rui_button_white_50 {
+    font-family: Helvetica Neue,Apple SD Gothic Neo,arial,'나눔고딕',Nanum Gothic,'돋움',Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+    outline: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1em;
+    vertical-align: baseline;
+    -webkit-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+    color: #808991;
+    background: #fff;
+    border: 1px solid #d1d5d9;
+    box-shadow: 0 1px 1px 0 rgba(209,213,217,.3);
+    font-size: 16px;
+    padding: 16px 34px;
+}
