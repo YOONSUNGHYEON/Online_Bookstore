@@ -21,9 +21,27 @@ public class MemberController {
 	public String Join() { return "Member/Join"; }
 
 	//로그인 화면 이동
+
 	@RequestMapping("/Login")
 	public String Longin() {
 		return "Member/Login";
+	}
+
+	@RequestMapping("/my")
+	public String my() {
+		return "Member/myPage/myPageHome";
+	}
+	@RequestMapping("/my/order")
+	public String OrderHistory() {
+		return "Member/myPage/orderHistory";
+	}
+	@RequestMapping("/my/review")
+	public String Review() {
+		return "Member/myPage/review";
+	}
+	@RequestMapping("/my/modify")
+	public String Modify() {
+		return "Member/myPage/accountModify";
 	}
 
 	//회원가입 등록
@@ -47,6 +65,7 @@ public class MemberController {
 		}
 	}
 
+ master
 	@RequestMapping("/cart")
 	public String Cart() {
 		return "Member/Cart";
