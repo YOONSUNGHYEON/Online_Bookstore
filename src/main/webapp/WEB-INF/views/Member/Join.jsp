@@ -112,7 +112,7 @@
 					<div class="gender">
 						<h3>성별</h3>
 						<div class="gender_box">
-							<select name="Member_gender" id=Member_gender>
+							<select name="Member_Gender" id=Member_gender>
 								<option value="">성별</option>
 								<option value="남">남</option>
 								<option value="여">여</option>
