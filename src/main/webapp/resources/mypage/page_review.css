@@ -1,0 +1,115 @@
+@charset "UTF-8";
+#page_review {
+    padding-bottom: 20px;
+}
+#page_review .review_num_noti {
+    padding: 15px 10px 10px 10px;
+    font-size: 13px;
+    color: #333;
+    text-align: right;
+}
+
+#page_review .review_num_noti .review_num {
+    color: #1f8ce6;
+}
+
+#page_review .review_num_noti {
+    padding: 15px 10px 10px 10px;
+    font-size: 13px;
+    color: #333;
+    text-align: right;
+}
+
+#page_review .review_list_wrapper {
+    padding: 0 10px;
+}
+#page_review .review_list {
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ccc;
+    margin-bottom: 7px;
+    box-shadow: 0 0 3px rgba(0,0,0,.1);
+    border-radius: 3px;
+}
+
+#page_review .review_list .review {
+    padding: 16px 10px 5px 10px;
+}
+#page_review .review_list .review .title a {
+    font-size: 14px;
+    font-weight: 1000;
+    color: #333;
+    line-height: 1.5em;
+}
+#page_review .review_list .review .metadata {
+    margin: 4px 0 0 -2px;
+}
+#page_review .review_list .review .metadata .meta_rate {
+    display: inline-block;
+}
+#page_review .review_list .review .metadata .meta_rate .RSGBookMetadata_StarRate {
+    color: #999;
+    font-size: 14px;
+    line-height: 1em;
+}
+#page_review .review_list .review .metadata .meta_rate .RSGBookMetadata_StarRate .StarRate_IconBox {
+    position: relative;
+    margin-top: -1px;
+    margin-right: 1px;
+    width: 65px;
+    height: 13px;
+    vertical-align: -11%;
+    display: inline-block;
+    text-indent: -444px;
+    font-size: 0;
+    overflow: hidden;
+    background: url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2050%2010%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22%23d1d5d9%22%3E%3Cpath%20d%3D%22M8.089,9.755L5,8.308L1.91,9.755l0.423-3.387L0,3.876l3.352-0.645L5,0.245l1.647,2.987L10,3.876L7.666,6.368L8.089,9.755z%20M28.09,9.755L25,8.308l-3.09,1.447l0.423-3.387L20,3.876l3.352-0.645L25,0.245l1.647,2.987L30,3.876l-2.334,2.492L28.09,9.755z%20M18.09,9.755L15,8.308l-3.09,1.447l0.423-3.387L10,3.876l3.352-0.645L15,0.245l1.647,2.987L20,3.876l-2.334,2.492L18.09,9.755z%20M38.09,9.755L35,8.308l-3.09,1.447l0.422-3.387L30,3.876l3.352-0.645L35,0.245l1.647,2.987L40,3.876l-2.334,2.492L38.09,9.755z%20M48.09,9.755L45,8.308l-3.09,1.447l0.422-3.387L40,3.876l3.352-0.645L45,0.245l1.647,2.987L50,3.876l-2.334,2.492L48.09,9.755z%22/%3E%3C/svg%3E) center center no-repeat;
+    background-size: 100% 100%;
+}
+#page_review .review_list .review .metadata .meta_rate .RSGBookMetadata_StarRate .StarRate_IconFill {
+    display: block;
+    position: relative;
+    overflow-x: hidden;
+    height: 13px;
+}
+#page_review .review_list .review.view .metadata .edit_rate_text {
+    display: none;
+}
+#page_review .review_list .review .metadata .edit_rate_text {
+    padding-right: 6px;
+    border-right: 1px solid #ccc;
+}
+
+#page_review .review_list .review .metadata .edit_rate_text, #page_review .review_list .review .metadata .meta_date {
+    display: inline-block;
+    padding: 0 0 0 4px;
+    vertical-align: -12%;
+}
+#page_review .review_list .review .review_content {
+    line-height: 1.7em;
+    padding: 10px 0;
+    font-size: 13px;
+}
+#page_review .review_list .review .modify_buttons, #page_review .review_list .review .modify_complete_buttons {
+    text-align: right;
+}
+#page_review .review_list .review.view .modify_complete_buttons, #page_review .review_list .review.view .review_input_form {
+    display: none;
+}
+#page_review .review_list .review .review_input_form .review_textarea {
+    width: 100%;
+    height: 120px;
+    margin: 10px 0;
+    padding: 10px;
+    line-height: 1.5em;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+#page_review .review_list .review .modify_complete_buttons {
+    position: relative;
+}
+#page_review .review_list .review .modify_complete_buttons .spoiler_input_wrapper {
+    position: absolute;
+    left: 0;
+    top: 5px;
+}

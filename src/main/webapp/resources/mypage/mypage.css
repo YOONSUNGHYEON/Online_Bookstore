@@ -1,0 +1,369 @@
+@charset "UTF-8";
+
+
+#books_contents {
+    width: 100%;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    min-height: 500px;
+}
+
+#contents_wrap {
+    display: flex;
+    width: 900px;
+    margin: 0 auto;
+    position: relative;
+    clear: both;
+    margin-top: 33px;
+    width: 953px;
+    padding: 0 24px;
+}
+
+#page_myridi .myridi_header {
+    max-width: 717px;
+    border: 2px solid #636c73;
+    width: 100%;
+    cursor: default;
+    table-layout: fixed;
+    display: flex;
+}
+#page_myridi .myridi_header .account_info_wrapper {
+    margin: 1px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px 20px 20px 20px;
+    background: #ebf6ff;
+    vertical-align: top;
+}
+#page_myridi .myridi_header .account_info_wrapper .info_id_email {
+    min-height: 85px;
+    padding-bottom: 20px;
+}
+#page_myridi .myridi_header .account_info_wrapper .info_id_email .info_id {
+    font-size: 18px;
+    font-weight: 1000;
+    color: #000;
+    line-height: 1.2em;
+    word-break: break-all;
+}
+#page_myridi .myridi_option_info_box {
+    margin-top: 27px;
+}
+#ridi_books h3 {
+    letter-spacing: -.03em;
+}
+
+#page_myridi .myridi_header .account_info_wrapper .info_id_email .info_email {
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #808991;
+    line-height: 1.5em;
+    word-break: break-all;
+    letter-spacing: -.01em;
+}
+
+#page_myridi .myridi_header .account_info_wrapper .btn_logout {
+    display: block;
+    width: 64px;
+    text-align: center;
+    padding: 7px 0;
+    border: 2px solid #d6deeb;
+    border-radius: 3px;
+    line-height: 1.2em;
+    font-size: 13px;
+    font-weight: 700;
+    color: #636c73;
+    background: #ebf6ff;
+    -webkit-transition: background .2s,border-color .2s;
+    transition: background .2s,border-color .2s;
+}
+
+#page_myridi .myridi_header .asset_info_wrapper {
+    vertical-align: middle;
+    padding: 28px 0;
+}
+
+#page_myridi .myridi_header .asset_info_wrapper .table_wrapper {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#page_myridi .myridi_header .asset_info_wrapper .table_wrapper .table_cell:first-child {
+    border-left: none;
+}
+#page_myridi .myridi_header .asset_info_wrapper .table_wrapper .table_cell {
+    display: table-cell;
+    text-align: center;
+    border-left: 1px solid #e6e8eb;
+    vertical-align: top;
+}
+#page_myridi .myridi_header .asset_info_wrapper .table_wrapper .table_cell .info_wrapper {
+    text-align: center;
+    position: relative;
+}
+
+#page_myridi .myridi_header .asset_info_wrapper .table_wrapper .table_cell .info_wrapper .info_title .text {
+    display: block;
+    color: #000;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 7px;
+}
+#page_myridi .myridi_purchased, #page_myridi .myridi_recents {
+    margin-top: 40px;
+}
+
+.rui_title_1 {
+    position: relative;
+    cursor: default;
+}
+
+.rui_title_1 .title_text {
+    font-family: ridi-roboto,Helvetica Neue,Apple SD Gothic Neo,"나눔고딕",Nanum Gothic,"돋움",arial,Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding: 0;
+    float: left;
+    background: #fff;
+    position: relative;
+    z-index: 2;
+    font-size: 18px;
+    color: #000;
+    font-weight: 700;
+    padding: 5px 14px 6px 0;
+    margin: 0;
+}
+
+.rui_title_1 .more_button_wrapper {
+    margin: 0;
+    padding: 0;
+    float: right;
+    background: #fff;
+    padding-left: 14px;
+    position: relative;
+    z-index: 2;
+}
+.rui_title_1 .more_button_wrapper .more_button {
+    font-family: ridi-roboto,Helvetica Neue,Apple SD Gothic Neo,"나눔고딕",Nanum Gothic,"돋움",arial,Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+    outline: 0;
+    text-decoration: none;
+    display: inline-block;
+    width: 70px;
+    text-align: center;
+    padding: 7px 14px 7px 0;
+    background: #303538;
+    border-radius: 2px;
+    position: relative;
+    border: 1px solid #303538;
+    font-size: 13px;
+    color: #fff;
+    font-weight: 700;
+    -webkit-transition: background .2s;
+    transition: background .2s;
+}
+.rui_title_1 .more_button_wrapper .more_button .right_arrow_icon {
+    display: inline-block;
+    text-indent: -444px;
+    font-size: 0;
+    overflow: hidden;
+    background: url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2022%2024%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22white%22%3E%3Cpath%20d%3D%22M.2%2022l3.1%202%208-12-8-12L.2%202l6.6%2010L.2%2022zm10.5%200l3.1%202%208-12-8-12-3.1%202%206.6%2010-6.6%2010z%22/%3E%3C/svg%3E) center center no-repeat;
+    background-size: 100% 100%;
+    position: absolute;
+    right: 9px;
+    top: 50%;
+    margin-top: -4px;
+    width: 5px;
+    height: 6px;
+    -webkit-transition: right .2s;
+    transition: right .2s;
+}
+.book_macro_column_5 {
+    width: 20%;
+    float: left;
+    margin-top: 20px;
+}
+.book_macro_portrait {
+    text-align: center;
+}
+.book_macro_110.book_macro_portrait .book_thumbnail_wrapper {
+    height: 167px;
+}
+.book_macro_portrait .book_thumbnail_wrapper {
+    position: relative;
+    text-align: left;
+    display: block;
+    margin: 0 auto;
+}
+.book_macro_110 .book_thumbnail_wrapper {
+    width: 110px;
+}
+.book_macro_portrait .book_thumbnail_wrapper .book_thumbnail {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.book_thumbnail_wrapper .book_thumbnail {
+    display: inline-block;
+    position: relative;
+    height: auto;
+}
+.book_thumbnail_wrapper .book_thumbnail .thumbnail_image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: #d9d9d9;
+}
+.book_macro_110 .book_thumbnail_wrapper .book_thumbnail .thumbnail_image .thumbnail {
+    width: 110px;
+    max-height: 167px;
+}
+.book_thumbnail_wrapper .book_thumbnail .thumbnail_btn {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    cursor: pointer;
+    background: url(../images/bg_dummy_forIE.png) repeat left top;
+    box-sizing: border-box;
+}
+.book_macro_110.book_macro_portrait .book_metadata_wrapper {
+    width: 110px;
+}
+.book_macro_portrait .book_metadata_wrapper {
+    text-align: left;
+    display: block;
+    margin: 8px auto 0 auto;
+}
+.book_metadata_wrapper {
+    cursor: default;
+}
+.book_metadata_wrapper .meta_title .title_link .title_text {
+    font-size: 13px;
+    line-height: 1.4em;
+    font-weight: 700;
+    color: #333;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+    max-height: 2.7em;
+    overflow: hidden;
+}
+.book_macro_portrait .book_metadata_wrapper .author {
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    display: block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    word-break: break-all;
+    white-space: normal;
+    max-height: 3.1em;
+    overflow: hidden;
+}
+.book_macro_portrait .book_metadata_wrapper .book_button, .book_macro_portrait .book_metadata_wrapper .book_metadata {
+    margin-top: 3px;
+}
+.book_metadata_wrapper .author {
+    font-size: 12px;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.2em;
+    word-break: break-all;
+    line-height: 1.5em;
+}
+hr {
+    margin: 0;
+    padding: 0;
+}
+.clear_both {
+    display: block;
+    clear: both;
+    width: 0;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+.book_metadata_wrapper .author a, .book_metadata_wrapper .author span {
+    font-size: 12px;
+    color: #666;
+    font-weight: 400;
+    line-height: 1.2em;
+    word-break: break-all;
+}
+#page_myridi .myridi_header .asset_info_wrapper .table_wrapper .table_cell .info_wrapper .info_amount {
+    margin-top: 18px;
+    color: #1f8ce6;
+    font-size: 16px;
+    padding: 0 10px;
+}
+#page_myridi .myridi_header .asset_info_wrapper .table_wrapper .table_cell .info_wrapper .info_link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7) left top repeat;
+}
+
+#page_myridi .myridi_header .asset_info_wrapper .table_wrapper .table_cell .more_info {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    left: 5px;
+    margin-top: 23px;
+    font-size: 13px;
+    line-height: 1.3em;
+    color: #636c73;
+    padding: 0 10px;
+}
+#page_myridi .myridi_header .asset_info_wrapper .table_wrapper .table_cell .more_info .checkout_link {
+    display: flex;
+    align-items: center;
+    padding-right: 14px;
+    font-size: 13px;
+    line-height: 1.3em;
+    color: #636c73;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+}

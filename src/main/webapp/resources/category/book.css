@@ -1,0 +1,85 @@
+@charset "UTF-8";
+
+ul{
+	list-style: none;
+	padding-left: 15px;
+}
+
+.col-xs-3 .active{
+	width: 120px;
+    background-color: #1F8CE6;
+    color: white;
+    padding: 3px 7px;
+    border-radius: 3px;
+    font-weight: 700;
+    margin: 10px 0px;
+}
+.col-xs-3 li{
+	margin: 5px 0px;
+	font-size: 13px;
+}
+.col-xs-3 div{
+	width: 120px;
+    background-color: transperant;
+    color: black;
+    padding: 3px 5px;
+    font-weight: 700;
+    margin: 10px 0px;
+}
+.cate-name{
+	width: 100%;
+    font-size: 20px;
+    font-weight: 800;
+    border-bottom: 3px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.cate-name i{
+	color: #1F8CE6;
+}
+.cate-sort a, .cate-sort a:hover {
+	color: #777;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    margin: 10px 10px;
+}
+.books .card{
+	padding: 0px 5px;
+}
+.books .col-xs-2{
+	width: 20%;
+	margin: 10px 0px;
+}
+.books{
+	margin: 15px -15px;
+}
+.books .card-image{
+	margin-bottom: 5px;
+}
+.book-title{
+	font-weight: 800;
+    letter-spacing: -0.5px;
+}
+.book-author{
+	letter-spacing: -0.5px;
+    font-size: 12.5px;
+}
+.book-price, .book-star{
+	font-size: 12.5px;
+    letter-spacing: -1px;
+}
+.book-star{
+	color: orange;
+}
+.book-price .price{
+	font-weight: 900;
+    color: #1F8CE6;
+}
+.book-star .price{
+	font-size: 11px;
+    color: #888;
+}
+.card-body div{
+	padding: 1px 0px;
+}
