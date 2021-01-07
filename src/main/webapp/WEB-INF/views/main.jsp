@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,41 +95,13 @@
 <div class="container-fluid" style="max-width: 1000px; margin: 0 auto;">
 	<h2 class="newbook-title">집 앞 서점에 방금 나온 신간!</h2>
   <div class="responsive">
-  	<div class="slide-box2">
-  	<img src="${path}/resources/main/book.jpg">
-  	<div class="book-title">책이름</div>
-  	<span class="book-author">저자명</span>
-  	</div>
-  	<div class="slide-box2">
-  	<img src="${path}/resources/main/book.jpg">
-  	<div class="book-title">책이름</div>
-  	<span class="book-author">저자명</span>
-  	</div>
-  	<div class="slide-box2">
-  	<img src="${path}/resources/main/book.jpg">
-  	<div class="book-title">책이름</div>
-  	<span class="book-author">저자명</span>
-  	</div>
-  	<div class="slide-box2">
-  	<img src="${path}/resources/main/book.jpg">
-  	<div class="book-title">책이름</div>
-  	<span class="book-author">저자명</span>
-  	</div>
-  	<div class="slide-box2">
-  	<img src="${path}/resources/main/book.jpg">
-  	<div class="book-title">책이름</div>
-  	<span class="book-author">저자명</span>
-  	</div>
-  	<div class="slide-box2">
-  	<img src="${path}/resources/main/book.jpg">
-  	<div class="book-title">책이름</div>
-  	<span class="book-author">저자명</span>
-  	</div>
-  	<div class="slide-box2">
-  	<img src="${path}/resources/main/book.jpg">
-  	<div class="book-title">책이름</div>
-  	<span class="book-author">저자명</span>
-  	</div>
+  	<c:forEach var="row" items="${books}">
+	  	<div class="slide-box2">
+	  	<div class="book-image"><img src="${row.book_Cover}"></div>
+	  	<div class="book-title">${row.book_Title}</div>
+	  	<span class="book-author">${row.book_Author}</span>
+	  	</div>
+  	</c:forEach>
   </div>
   </div>
 </div>

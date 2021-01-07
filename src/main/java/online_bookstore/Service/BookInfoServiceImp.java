@@ -61,10 +61,6 @@ public class BookInfoServiceImp implements BookInfoService{
         return arrayList;
     }
 
-
-
-
-
     public JSONArray JSONParsing(String strurl){
         JSONArray JsonArray=null;
         StringBuffer stringBuffer =new StringBuffer();
