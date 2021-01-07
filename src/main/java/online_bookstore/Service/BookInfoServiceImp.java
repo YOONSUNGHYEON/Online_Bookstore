@@ -26,7 +26,7 @@ public class BookInfoServiceImp implements BookInfoService{
         for (int i = 0; i <jsonArray.size() ; i++) {
             JSONObject date=(JSONObject) jsonArray.get(i);
             BookDTO bookDTO=new BookDTO(
-                    date.get("isbn13").toString(),
+                    Long.parseLong(date.get("isbn13").toString()),
                     date.get("title").toString(),
                     date.get("author").toString(),
                     date.get("description").toString(),
@@ -48,7 +48,7 @@ public class BookInfoServiceImp implements BookInfoService{
         for (int i = 0; i <jsonArray.size() ; i++) {
             JSONObject date=(JSONObject) jsonArray.get(i);
             BookDTO bookDTO=new BookDTO(
-                    date.get("isbn13").toString(),
+                    Long.parseLong(date.get("isbn13").toString()),
                     date.get("title").toString(),
                     date.get("author").toString(),
                     date.get("description").toString(),
