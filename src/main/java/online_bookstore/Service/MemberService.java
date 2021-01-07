@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface MemberService {
 
-    void Join(MemberDTO memberDTO);
+    void join(MemberDTO memberDTO);
 
-    List<MemberDTO> Login(MemberDTO memberDTO);
+    List<MemberDTO> login(MemberDTO memberDTO);
 }

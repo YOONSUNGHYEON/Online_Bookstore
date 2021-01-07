@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface MemberDAO  {
 
-    public void Join(MemberDTO memberDTO);
+    public void join(MemberDTO memberDTO);
 
-    List<MemberDTO> Login(MemberDTO memberDTO);
+    List<MemberDTO> login(MemberDTO memberDTO);
 }

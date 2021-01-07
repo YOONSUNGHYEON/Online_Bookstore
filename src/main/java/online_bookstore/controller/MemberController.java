@@ -17,57 +17,57 @@ public class MemberController {
 	MemberService memberService;
 
 	//회원가입 화면 이동
-	@RequestMapping("/Join")
-	public String Join() { return "Member/Join"; }
+	@RequestMapping("/join")
+	public String join() { return "member/join"; }
 
 	//로그인 화면 이동
 
-	@RequestMapping("/Login")
-	public String Longin() {
-		return "Member/Login";
+	@RequestMapping("/login")
+	public String login() {
+		return "member/login";
 	}
 
 	@RequestMapping("/my")
 	public String my() {
-		return "Member/myPage/myPageHome";
+		return "member/myPage/myPageHome";
 	}
 	@RequestMapping("/my/order")
 	public String OrderHistory() {
-		return "Member/myPage/orderHistory";
+		return "member/myPage/orderHistory";
 	}
 	@RequestMapping("/my/review")
 	public String Review() {
-		return "Member/myPage/review";
+		return "member/myPage/review";
 	}
 	@RequestMapping("/my/modify")
 	public String Modify() {
-		return "Member/myPage/accountModify";
+		return "member/myPage/accountModify";
 	}
 
 	//회원가입 등록
-	@PostMapping("/Join")
+	@PostMapping("/join")
 	public String Joinpost(MemberDTO memberDTO) {
-		memberService.Join(memberDTO);
+		memberService.join(memberDTO);
 		System.out.println("Joinpost");
-		return "redirect:/Login";
+		return "redirect:/login";
 	}
 
 	//로그인 처리
-	@PostMapping("/Login")
+	@PostMapping("/login")
 	public String Loginpost(MemberDTO memberDTO, Model model) {
-		List<MemberDTO> result = memberService.Login(memberDTO);
+		List<MemberDTO> result = memberService.login(memberDTO);
 
 		if(result.size()>0){
 			return "redirect:/";
 		}else{
 			model.addAttribute("msg","입력하신 내용틀립니다");
-			return "Member/msg";
+			return "member/msg";
 		}
 	}
 
 	@RequestMapping("/cart")
 	public String Cart() {
-		return "Member/Cart";
+		return "member/cart";
 	}
 
 }
