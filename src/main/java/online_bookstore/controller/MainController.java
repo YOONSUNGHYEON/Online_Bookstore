@@ -18,7 +18,9 @@ public class MainController {
 	
 	@GetMapping("/")
 	public String main(Model model) {
-		model.addAttribute("books", bookInfoService.booklist());
+		model.addAttribute("newbooks", bookInfoService.newbooklist());
+		model.addAttribute("bestbooks", bookInfoService.bestbooklist());
+		model.addAttribute("choicebooks", bookInfoService.choicebooklist());
 		return "main";
 	}
 	
