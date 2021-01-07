@@ -1,9 +1,8 @@
-package online_bookstore.DAO;
+package online_bookstore.Repository;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import online_bookstore.DTO.MemberDTO;
-import org.hibernate.annotations.Columns;
 
 import javax.persistence.*;
 import java.sql.Date;
