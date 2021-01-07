@@ -18,12 +18,12 @@ public class MemberDAOImp implements MemberDAO{
     }
 
     @Override
-    public void Join(MemberDTO memberDTO) {
+    public void join(MemberDTO memberDTO) {
         em.persist(memberDTO);
     }
 
     @Override
-    public List<MemberDTO> Login(MemberDTO memberDTO) {
+    public List<MemberDTO> login(MemberDTO memberDTO) {
         List<MemberDTO> result = em.createQuery("select m from MemberDTO m where m.Member_Id = :Id and m.Member_Pass = :Pass", MemberDTO.class)
                 .setParameter("Id",memberDTO.getMember_Id())
                 .setParameter("Pass",memberDTO.getMember_Pass())

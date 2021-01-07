@@ -16,9 +16,10 @@ public class CartController {
     private final CartRepository cartRepository;
 
     @RequestMapping("/cart/?type=buy")
-    public String CartBuy() {return "CartMember/CartBuyPossible";}
+    public String CartBuy() {return "cartMember/cartBuyPossible";}
 
     @RequestMapping("/cart/?type=rent")
+
     public String CartRent() {return "CartMember/CartRentPossible";}
 
     @PostMapping("/api/cart")
