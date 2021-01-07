@@ -9,4 +9,5 @@ public interface MemberDAO  {
     public void join(MemberDTO memberDTO);
 
     List<MemberDTO> login(MemberDTO memberDTO);
+
 }

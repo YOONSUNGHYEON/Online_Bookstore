@@ -4,9 +4,11 @@ import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Data
 @Entity
+
 public class BookDTO {
     @Id
     private Long book_Id;
