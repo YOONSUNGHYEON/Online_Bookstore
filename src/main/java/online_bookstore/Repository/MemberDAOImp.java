@@ -1,4 +1,4 @@
-package online_bookstore.DAO;
+package online_bookstore.Repository;
 
 import online_bookstore.DTO.MemberDTO;
 import org.springframework.stereotype.Repository;
@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public class MemberDAOImp implements MemberDAO{

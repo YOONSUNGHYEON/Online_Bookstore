@@ -2,10 +2,8 @@ package online_bookstore.controller;
 
 
 import lombok.RequiredArgsConstructor;
-import online_bookstore.DAO.Cart;
-import online_bookstore.DAO.CartRepository;
-import online_bookstore.DAO.Orders;
-import online_bookstore.DAO.OrdersRepository;
+import online_bookstore.Repository.Orders;
+import online_bookstore.Repository.OrdersRepository;
 import online_bookstore.DTO.BookDTO;
 import online_bookstore.DTO.MemberDTO;
 import org.springframework.web.bind.annotation.*;

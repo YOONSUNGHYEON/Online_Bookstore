@@ -1,4 +1,4 @@
-package online_bookstore.DAO;
+package online_bookstore.Repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
