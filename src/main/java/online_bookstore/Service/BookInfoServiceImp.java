@@ -16,7 +16,6 @@ import java.util.ArrayList;
 public class BookInfoServiceImp implements BookInfoService{
 
     String strurl;
-
     @Override
     public ArrayList<BookDTO> newbooklist() {
         ArrayList<BookDTO> arrayList=new ArrayList<BookDTO>();
@@ -101,7 +100,32 @@ public class BookInfoServiceImp implements BookInfoService{
         }
         return arrayList;
     }
+    
+    @Override
+    public ArrayList<BookDTO> categoryBookList(int id) {
+        ArrayList<BookDTO> arrayList=new ArrayList<BookDTO>();
+        strurl="http://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=ttbinpo33350927001"
+        		+ "&QueryType=ItemNewAll&MaxResults=10&start=1&Cover=Big"
+        		+ "&SearchTarget=Book&output=js&Version=20131101"
+        		+ "&CategoryId=" + id;
+        JSONArray jsonArray=JSONParsing(strurl);
 
+        for (int i = 0; i <jsonArray.size() ; i++) {
+            JSONObject date=(JSONObject) jsonArray.get(i);
+            BookDTO bookDTO=new BookDTO(
+                    date.get("isbn13").toString(),
+                    date.get("title").toString(),
+                    date.get("author").toString(),
+                    date.get("description").toString(),
+                    Integer.parseInt(date.get("priceSales").toString()),
+                    date.get("cover").toString(),
+                    date.get("publisher").toString()
+            );
+            arrayList.add(bookDTO);
+        }
+        return arrayList;
+    }
+    
     public JSONArray JSONParsing(String strurl){
         JSONArray JsonArray=null;
         StringBuffer stringBuffer =new StringBuffer();

@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,60 +47,17 @@
 				<a>리뷰 많은순</a>
 			</div>
 			<div class="row books">
+				<c:forEach var="row" items="${books}">
 				<div class="col-xs-2"><div class="card">
-					<div class="card-image"><img style="width:110px; height:auto;"src="${path}/resources/main/book.jpg"/></div>
+					<div class="card-image"><img style="width:110px; height:auto;"src="${row.book_Cover}"/></div>
 					<div class="card-body">
-					<div class="book-title">책 이름</div>
-					<div class="book-author">작가 이름</div>
+					<div class="book-title">${row.book_Title}</div>
+					<div class="book-author">${row.book_Author}</div>
 					<div class="book-star"><span>★★★★★ </span><span class="price"> 100명</span></div>
-					<div class="book-price"><span>구매 </span><span class="price"> 10,000원</span></div>
+					<div class="book-price"><span>구매 </span><span class="price"><fmt:formatNumber value="${row.book_Price}" pattern="#,###" />원</span></div>
 					</div>
 				</div></div>
-				<div class="col-xs-2"><div class="card">
-					<div class="card-image"><img style="width:110px; height:auto;"src="${path}/resources/main/book.jpg"/></div>
-					<div class="card-body">
-					<div class="book-title">책 이름</div>
-					<div class="book-author">작가 이름</div>
-					<div class="book-star"><span>★★★★★ </span><span class="price"> 100명</span></div>
-					<div class="book-price"><span>구매 </span><span class="price"> 10,000원</span></div>
-					</div>
-				</div></div>
-				<div class="col-xs-2"><div class="card">
-					<div class="card-image"><img style="width:110px; height:auto;"src="${path}/resources/main/book.jpg"/></div>
-					<div class="card-body">
-					<div class="book-title">책 이름</div>
-					<div class="book-author">작가 이름</div>
-					<div class="book-star"><span>★★★★★ </span><span class="price"> 100명</span></div>
-					<div class="book-price"><span>구매 </span><span class="price"> 10,000원</span></div>
-					</div>
-				</div></div>
-				<div class="col-xs-2"><div class="card">
-					<div class="card-image"><img style="width:110px; height:auto;"src="${path}/resources/main/book.jpg"/></div>
-					<div class="card-body">
-					<div class="book-title">책 이름</div>
-					<div class="book-author">작가 이름</div>
-					<div class="book-star"><span>★★★★★ </span><span class="price"> 100명</span></div>
-					<div class="book-price"><span>구매 </span><span class="price"> 10,000원</span></div>
-					</div>
-				</div></div>
-				<div class="col-xs-2"><div class="card">
-					<div class="card-image"><img style="width:110px; height:auto;"src="${path}/resources/main/book.jpg"/></div>
-					<div class="card-body">
-					<div class="book-title">책 이름</div>
-					<div class="book-author">작가 이름</div>
-					<div class="book-star"><span>★★★★★ </span><span class="price"> 100명</span></div>
-					<div class="book-price"><span>구매 </span><span class="price"> 10,000원</span></div>
-					</div>
-				</div></div>
-				<div class="col-xs-2"><div class="card">
-					<div class="card-image"><img style="width:110px; height:auto;"src="${path}/resources/main/book.jpg"/></div>
-					<div class="card-body">
-					<div class="book-title">책 이름</div>
-					<div class="book-author">작가 이름</div>
-					<div class="book-star"><span>★★★★★ </span><span class="price"> 100명</span></div>
-					<div class="book-price"><span>구매 </span><span class="price"> 10,000원</span></div>
-					</div>
-				</div></div>
+				</c:forEach>
 			</div>
 		</div>
 	</div>
