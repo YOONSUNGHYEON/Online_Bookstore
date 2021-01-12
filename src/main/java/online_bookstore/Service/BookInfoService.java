@@ -5,6 +5,8 @@ import online_bookstore.DTO.BookDTO;
 import java.util.ArrayList;
 
 public interface BookInfoService {
-    ArrayList<BookDTO> booklist();
+    ArrayList<BookDTO> newbooklist();
+    ArrayList<BookDTO> bestbooklist();
+    ArrayList<BookDTO> choicebooklist();
     ArrayList<BookDTO> booksearch(String title);
 }

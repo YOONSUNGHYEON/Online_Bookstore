@@ -1,20 +1,28 @@
 package online_bookstore.Repository;
 
+import java.io.Serializable;
+import java.sql.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import online_bookstore.DTO.MemberDTO;
 
-import javax.persistence.*;
-import java.sql.Date;
-
 @NoArgsConstructor
 @Getter
 @Entity
-public class Payment {
-    @Column(nullable = false)
+public class Payment{
+	
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long id; @Id
-
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name= "member_id", nullable=false) //외래키
