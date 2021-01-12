@@ -6,17 +6,17 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "Member")
+
 public class MemberDTO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int Member_Num;
-    private String Member_Id;
-    private String Member_Name;
-    private String Member_Pass;
-    private String Member_Bir_Y;
-    private String Member_Bir_M;
-    private String Member_Bir_D;
-    private String Member_Gender;
+    private int member_Num;
+    private String member_Id;
+    private String member_Name;
+    private String member_Pass;
+    private String member_Bir_Y;
+    private String member_Bir_M;
+    private String member_Bir_D;
+    private String member_Gender;
 
 }

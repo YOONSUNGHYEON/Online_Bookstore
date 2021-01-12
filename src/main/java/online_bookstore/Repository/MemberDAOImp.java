@@ -1,4 +1,4 @@
-package online_bookstore.DAO;
+package online_bookstore.Repository;
 
 import online_bookstore.DTO.MemberDTO;
 import org.springframework.stereotype.Repository;
@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.List;
-import java.util.Optional;
 
 @Repository
 public class MemberDAOImp implements MemberDAO{
@@ -18,20 +17,16 @@ public class MemberDAOImp implements MemberDAO{
     }
 
     @Override
-    public void Join(MemberDTO memberDTO) {
+    public void join(MemberDTO memberDTO) {
         em.persist(memberDTO);
     }
 
     @Override
-    public List<MemberDTO> Login(MemberDTO memberDTO) {
+    public List<MemberDTO> login(MemberDTO memberDTO) {
         List<MemberDTO> result = em.createQuery("select m from MemberDTO m where m.Member_Id = :Id and m.Member_Pass = :Pass", MemberDTO.class)
                 .setParameter("Id",memberDTO.getMember_Id())
                 .setParameter("Pass",memberDTO.getMember_Pass())
                 .getResultList();
         return result;
-
-
-
-
     }
 }

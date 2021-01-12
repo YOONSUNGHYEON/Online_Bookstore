@@ -8,6 +8,5 @@ public interface BookInfoService {
     ArrayList<BookDTO> newbooklist();
     ArrayList<BookDTO> bestbooklist();
     ArrayList<BookDTO> choicebooklist();
-
     ArrayList<BookDTO> booksearch(String title);
 }
