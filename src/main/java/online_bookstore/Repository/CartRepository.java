@@ -1,8 +1,12 @@
 package online_bookstore.Repository;
 
+import online_bookstore.DTO.BookDTO;
+import online_bookstore.DTO.MemberDTO;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CartRepository extends JpaRepository<Cart,Long> {
+import java.util.List;
 
+public interface CartRepository extends JpaRepository<Cart,Long> {
+    List<Cart> findCartByMemberMember_NumIsOrderByIdAsc(MemberDTO member_Num);
 
 }

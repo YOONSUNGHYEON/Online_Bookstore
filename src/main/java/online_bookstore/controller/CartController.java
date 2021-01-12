@@ -5,6 +5,7 @@ import online_bookstore.Repository.Cart;
 import online_bookstore.Repository.CartRepository;
 import online_bookstore.DTO.BookDTO;
 import online_bookstore.DTO.MemberDTO;
+import online_bookstore.Repository.MemberDAOImp;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,6 +15,7 @@ import java.util.List;
 public class CartController {
 
     private final CartRepository cartRepository;
+    private final MemberDAOImp memberRepository;
 
     @RequestMapping("/cart/?type=buy")
     public String CartBuy() {return "cartMember/cartBuyPossible";}
@@ -28,9 +30,17 @@ public class CartController {
         return cartRepository.save(cart);
     }
 
-    @GetMapping("/api/cart")
-    public List<Cart> getCart(){
-        return cartRepository.findAll();
+    @GetMapping("/api/cart/{member_Num}")
+    public List<BookDTO> getCart(@PathVariable int member_Num){
+        MemberDTO member = memberRepository.getMemberDTObyMemberNum(member_Num);
+
+        List<Cart> cartList = cartRepository.findCartByMemberMember_NumIsOrderByIdAsc(member);
+        List<BookDTO> cartBookList = null;
+        for(int i=0; i<cartList.size();i++ ){
+            BookDTO bookDTO = cartList.get(i).getBook();
+            cartBookList.set(i,bookDTO);
+        }
+        return cartBookList;
     }
 
      @DeleteMapping("/api/cart/{id}")

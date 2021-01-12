@@ -13,15 +13,16 @@ import java.sql.Date;
 public class Payment {
     @Column(nullable = false)
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long id; @Id
+    @Id
+    long id;
 
 
     @ManyToOne
-    @JoinColumn(name= "member_id", nullable=false) //외래키
+    @JoinColumn(name= "member_num", nullable=false) //외래키
     private MemberDTO member;
 
     @ManyToOne
-    @JoinColumn(name= "orders_id", nullable=false) //외래키
+    @JoinColumn(name= "order_id") //외래키
     private Orders orders;
 
     @Column
