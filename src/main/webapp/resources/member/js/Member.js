@@ -88,63 +88,23 @@ $(document).ready(function(){
     });
     
     $('.id_check_btn').click(function() {
-  		if($('#Member_id').val()!=""){
+    var duplicatecheck = document.getElementById('checkIDResult');
+        var id=$('#member_Id').val();
+  		 if(id!=""){
   			var regex = /^[A-Za-z][A-Za-z0-9]{3,11}$/;
-  			
-			if(regex.exec($('#Member_id').val())){
-			
-			$.ajax("../Member/idcheck",{
-				data:{Member_id:$('#Member_id').val()},
-				success:function(rdata){
-					if(rdata=="idok"){
-						rdata="아이디 사용가능";
-					}else{
-						rdata="아이디 중복";
-					}
-					$('#checkIDResult').html(rdata);
-				}
-			});
+
+			if(regex.exec(id)){
+			     $.getJSON('/api/duplicatecheck/'+id,function(rdata){
+			        duplicatecheck.innerHTML = rdata.message;
+			     });
 			}else{
 			alert('아이디 형식에 맞지않습니다');
 			}
-			}else{
+		 }else{
 			alert('아이디을 입력해주세요');
 			}
 		});
-		
-		
-		
-    $('#phone_check_btn').click(function() {
-  		if($('#Member_tel').val()!=""){
-  			var element = document.getElementById('checkPhoneResult');
-  			var regex = /^[0-9]{11}$/;
-  			var check =	/^[0-9]{4}$/;
-			if(regex.exec($('#Member_tel').val())){
-			alert('인증번호가 발송되었습니다.');
-			$.ajax("../Member/sendSMS",{
-				data:{Member_tel:$('#Member_tel').val()},
-				success:function(rdata){
-				$('#Member_tel1').focus();
-					$('#phone_check_btn1').click(function(){
-					if(rdata==$('#Member_tel1').val()){
-						element.innerHTML ="인증완료";	
-						$('#Member_tel1').focus();
-					}else{
-						element.innerHTML = "인증번호가 틀립니다";
-						$('#Member_tel1').focus();	
-					}	
-					
-					});			 
-				}
-			});
-			}else{
-			alert('휴대폰번호 형식에 맞지않습니다');
-			}
-			}else{
-			alert('휴대폰번호를 입력해주세요');
-			}
-		});
-		
+
 
 		
 	if($('#Member_id').val()==""){
@@ -159,7 +119,7 @@ function checkPasswd(passwd) {
 		if(passwd.value==""){
 			element.innerHTML = "";
 		}else{
-			if(passwd.value!= document.getElementById('Member_pass').value){
+			if(passwd.value!= document.getElementById('member_Pass').value){
 				element.innerHTML = "패스워드 일치하지 않습니다";				
 			} else {
 				element.innerHTML = "패스워드 일치합니다";
@@ -187,10 +147,10 @@ function password(pass){
 	
 	if(pass.value!=""){
 		if(lengthRegex.exec(pass.value)){
-			security+=(upperCaseRegex.exec($('#Member_pass').val()))? 1:0;
-			security+=(lowerCaseRegex.exec($('#Member_pass').val()))? 1:0;
-			security+=(digitRegex.exec($('#Member_pass').val()))? 1:0;
-			security+=(specCharRegex.exec($('#Member_pass').val()))? 1:0;
+			security+=(upperCaseRegex.exec($('#member_Pass').val()))? 1:0;
+			security+=(lowerCaseRegex.exec($('#member_Pass').val()))? 1:0;
+			security+=(digitRegex.exec($('#member_Pass').val()))? 1:0;
+			security+=(specCharRegex.exec($('#member_Pass').val()))? 1:0;
 		
 			switch(security){
 				case 2: element.innerHTML = "보안낮음"; $('#PasswdResult').css("color","orange"); break;
