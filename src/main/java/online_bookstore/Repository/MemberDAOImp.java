@@ -28,9 +28,5 @@ public class MemberDAOImp implements MemberDAO{
                 .setParameter("Pass",memberDTO.getMember_Pass())
                 .getResultList();
         return result;
-
-
-
-
     }
 }

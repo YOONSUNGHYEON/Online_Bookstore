@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>category list</title>
-<link href="${path}/resources/Member/css/cart.css" rel="stylesheet" type="text/css">
+<link href="${path}/resources/member/css/cart.css" rel="stylesheet" type="text/css">
 </head>
 <jsp:include page="../mainBase.jsp" />
 <body>
