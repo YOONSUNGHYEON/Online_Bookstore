@@ -1,6 +1,5 @@
 package online_bookstore.controller;
 
-import online_bookstore.DTO.MemberDTO;
 import online_bookstore.Service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
