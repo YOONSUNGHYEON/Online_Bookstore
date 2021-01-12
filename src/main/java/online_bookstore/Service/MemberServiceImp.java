@@ -1,27 +1,39 @@
 package online_bookstore.Service;
 
-import online_bookstore.Repository.MemberDAO;
 import online_bookstore.DTO.MemberDTO;
+import online_bookstore.Repository.MemberRepository;
+import online_bookstore.Repository.Orders;
+import online_bookstore.Repository.OrdersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.List;
 
 @Service
 @Transactional
 public class MemberServiceImp implements MemberService{
 
     @Autowired
-    MemberDAO memberDAO;
+    MemberRepository memberRepository;
+    OrdersRepository ordersRepository;
 
     @Override
     public void join(MemberDTO memberDTO) {
-        memberDAO.join(memberDTO);
+        memberRepository.save(memberDTO);
     }
 
     @Override
-    public List<MemberDTO> login(MemberDTO memberDTO) {
-        return  memberDAO.login(memberDTO);
+    public MemberDTO login(MemberDTO memberDTO) {
+        return  memberRepository.findById(memberDTO);
+    }
+
+    @Override
+    public MemberDTO login(String id) {
+        return memberRepository.findById(id);
+    }
+
+    @Override
+    public Orders myOrders(int num) {
+        return null;
     }
 }

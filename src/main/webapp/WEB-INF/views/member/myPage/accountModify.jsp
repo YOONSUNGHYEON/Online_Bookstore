@@ -25,13 +25,13 @@
 					</h2>
 					<article class="password_check">
 						<h3 class="indent_hidden">비밀번호 입력</h3>
-						<form id="form_confirm_password" method="post" autocomplete="off">
+						<form id="form_confirm_password" method="Post" autocomplete="off" action="${path}/accountmodify">
 							<input type="hidden" name="cmd" value="check_password"> <input
 								type="hidden" name="_token" value="">
 							<p class="check_description">보안을 위해 비밀번호를 한번 더 입력해 주세요.</p>
 							<div class="input_wrap">
 								<input type="password" id="modify_pw"
-									class="rui_text_input password_input" name="password" value=""
+									class="rui_text_input password_input" name="member_Pass" value=""
 									title="비밀번호 입력" autofocus=""> <label for="modify_pw"
 									class="indent_hidden">비밀번호 입력</label>
 								<button type="submit" form="form_confirm_password"
