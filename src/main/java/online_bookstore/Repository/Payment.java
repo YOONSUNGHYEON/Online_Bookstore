@@ -1,6 +1,5 @@
 package online_bookstore.Repository;
 
-import java.io.Serializable;
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -19,7 +18,7 @@ import online_bookstore.DTO.MemberDTO;
 @Getter
 @Entity
 public class Payment{
-	
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -29,7 +28,7 @@ public class Payment{
     private MemberDTO member;
 
     @ManyToOne
-    @JoinColumn(name= "orders_id", nullable=false) //외래키
+    @JoinColumn(name= "order_id", nullable=false) //외래키
     private Orders orders;
 
     @Column

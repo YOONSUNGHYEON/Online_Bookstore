@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +24,12 @@
 <script src="https://kit.fontawesome.com/81816a43c2.js"
 	crossorigin="anonymous"></script>
 <script>
-
+function show() { // <img>에 이미지 달기
+		document.getElementById("starimg").src = "${path}/resources/detail/yellow_star.png";
+	}
+	function hide() { // <img>에 이미지 제거
+		 document.getElementById("starimg").src = "${path}/resources/detail/gray_star.png";
+	}
 document.getElementById('starimg').onmouseover = function(){ 
     document.getElementById("starimg").src = "${path}/resources/detail/yellow_star.png";
 } 
@@ -49,227 +55,260 @@ document.getElementById('starimg').onmouseout = function(){
 			</ul>
 		</div>
 	</div>
-	<div class="page-detail">
-		<div class="page_detail_wrapper">
+	<div id="page_detail">
+		<div class="detail_wrap">
 			<div class="detail_body_wrap">
-				<article class="detail_header">
-					<div class="main_book_image_wrapper">
-						<img class="main_book_image"
-							src="${path}/resources/detail/xxlarge.jpg">
-					</div>
-					<div class="book_info_wrapper">
-						<p>소설 > 영미소설 , 소설 > 해외판타지소설</p>
-						<h3 class="book_title">개정 번역판 | 해리 포터와 마법사의 돌</h3>
-						<div class="info_metadata_wrap">
-							<p class="metadata_rate">
-								<span class="StarRate_Score">4.8점</span> <span
-									class="StarRate_ParticipantCount">(185 <span
-									class="StarRate_ParticipantCount_Unit">명)</span>
-								</span>
+				<section class="detail_body">
+					<h2 class="indent_hidden">돈의 심리학 상세페이지</h2>
+					<article class="detail_header trackable">
+						<div class="header_info_wrap">
+							<p class="info_category_wrap">
+								<a href="/category/200">${bookInfo.book_CategoryName}</a> <span
+									aria-hidden="true" class="icon-arrow_2_right"></span> <a
+									href="/category/220"></a>
 							</p>
 
-						</div>
-						<div class="info_metadata_wrap">
-							<p>
-								<span><a href="">조앤.K.롤링</a> 저</span> <span><a href="">강동혁</a>
-									역</span>
-							</p>
-							<p>
-								<a href=" ">Pottermore</a> 출판
-							</p>
+							<div class="info_title_wrap">
 
-						</div>
-						<div id="notice_component">
-							<ul class="NoticeWrapper">
-								<li class="BookDetailNotice"><div
-										class="BookDetailNotice_List">
-										<h4
-											class="BookDetailNotice_List_Header BookDetailNotice_List_Header-events">이벤트</h4>
-										<ul class="BookDetailNotice_List_Group">
-											<li
-												class="BookDetailNotice_List_Item BookDetailNotice_List_Item-event BookDetailNotice_List_Item-hasPeriod"><a
-												href=""><h5 class="BookDetailNotice_List_Item_Title">[EVENT]
-														겨울 맞이 해리 포터 특별 세트 공개!</h5></a></li>
-										</ul>
-									</div></li>
-							</ul>
-						</div>
+								<h3 class="info_title_wrap">${bookInfo.book_Title}</h3>
+								<h4 class="info_title_sub_wrap">${bookInfo.book_Subtitle}</h4>
 
-						<div class="info_price_wrap">
-							<div class="info_price_table">
-								<div>
+							</div>
+							<div class="info_metadata_wrap">
+								<p class="metadata_rate">
+									<span class="RSGBookMetadata_StarRate"><span
+										class="StarRate_IconBox"><span
+											class="StarRate_IconFill" style="width: 100%"></span></span><span
+										class="StarRate_Score">5점</span><span
+										class="StarRate_ParticipantCount">1<span
+											class="StarRate_ParticipantCount_Unit">명</span></span><span
+										class="StarRate_HiddenElement">참여</span></span>
+								</p>
 
-									<table class="price_table normal_price_table">
-										<tbody>
-											<tr>
-												<th class="price_title" rowspan="2">구매</th>
-												<td class="price_type">전자책 정가</td>
-												<td class="book_price"><span class="museo_sans">10,050</span>원
-												</td>
-												<td class="discount_rate"></td>
-											</tr>
-											<tr class="selling_price_row">
-												<td class="price_type">판매가</td>
-												<td class="book_price"><span class="museo_sans">9,050</span>원
-												</td>
-												<td class="discount_rate"><span class="museo_sans">(10%<span
-														class="arrow_down_icon"></span>)
-												</span></td>
-											</tr>
-										</tbody>
-									</table>
+							</div>
+							<div class="info_metadata_wrap">
+								<p class="metadata metadata_writer">
+									<span class="metadata_item author_item_wrapper"><a
+										class="js_author_detail_link author_detail_link"
+										href="/author/113027">${bookInfo.book_Author}</a> 저</span>
+									<c:if test="${bookInfo.book_Translator!=null}">
+										<span><a href="">${bookInfo.book_Translator}</a>역</span>
+									</c:if>
+								</p>
+
+								<p class="metadata file_info publisher_info">
+									<a class="publisher_detail_link"
+										href="  /search?q=%EC%B6%9C%ED%8C%90%EC%82%AC%3A%EC%9D%B8%ED%94%8C%EB%A3%A8%EC%97%94%EC%85%9C
+">${bookInfo.book_Publisher}</a>
+									출판
+								</p>
+
+
+							</div>
+							<div id="select_info_component"></div>
+							<div id="notice_component">
+								<ul class="NoticeWrapper"></ul>
+							</div>
+							<div class="info_price_wrap">
+								<div class="info_price_table">
+									<div>
+
+										<table class="price_table normal_price_table">
+											<tbody>
+												<tr>
+													<th class="price_title" rowspan="3">구매</th>
+													<td class="price_type">종이책 정가</td>
+													<td class="book_price"><span class="museo_sans">${bookInfo.book_Price}</span>원
+													</td>
+													<td class="discount_rate"></td>
+												</tr>
+												<tr class="selling_price_row">
+													<td class="price_type">판매가</td>
+													<td class="book_price"><span class="museo_sans">${bookInfo.book_PriceSales}</span>원
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+
 								</div>
+
+
+
 
 							</div>
 
-
-							<p class="info_discount_period_wrap">
-								<span class="period_head">혜택 기간:&nbsp;</span><span
-									class="period_date">12.01.(화)~01.03.(일) <strong
-									class="period_countdown"><span
-										class="js_event_due_timer"
-										data-end-date="2021-01-03 23:59:59+09:00"></span></strong></span>
-							</p>
-
-						</div>
-
-						<div class="info_buttons_wrap">
-							<ul class="info_buttons rui_button_group_6">
-								<li class="rui_button_item">
-									<button type="button" class="rui_button_white_50 btn_wish">
-										<img class="main_book_image"
-											src="${path}/resources/detail/heart.png"> <span
-											class="indent_hidden">위키리스트에 추가</span>
-									</button>
-								</li>
-								<li class="rui_button_item">
-									<button type="button" class="rui_button_white_50 btn_wish">
-										<img class="main_book_image"
-											src="${path}/resources/detail/cart.png"> <span
-											class="indent_hidden">카트에 담기</span>
-									</button>
-								</li>
-								<li class="rui_button_item"><a
-									class="rui_button_white_50 btn_wish" href=""><img
-										class="main_book_image" src="${path}/resources/detail/box.png"><span
-										class="indent_hidden">선물하기</span> </a></li>
-								<li class="rui_button_item"><a
-									class="rui_button_blue_50 btn_buy" href=""> 구매하기 </a></li>
-							</ul>
-						</div>
-					</div>
-				</article>
-				<article class="detail_series detail_box_module">
-					<div class="rsg_title01">
-						<h3 class="title_text">이 책이 포함된 세트 도서</h3>
-					</div>
-					<hr>
-				</article>
-				<article class="detail_review detail_box_module">
-					<div class="rsg_title01">
-						<h3 class="title_text">리뷰</h3>
-						<hr>
-					</div>
-					<div class="review_info_section">
-						<div class="review_input_left">
-							<h4 class="buyer_score_title">구매자 별점</h4>
-							<p class="buyer_score">
-								<span class="score">4.5</span> <span class="indent_hidden">점</span>
-							</p>
-							<p class="score_people_num">
-								<strong>2</strong>명이 평가함
-							</p>
-						</div>
-						<div class="review_input_right">
-							<h4 class="indent_hidden">리뷰 작성 영역</h4>
-							<div class="star_rate_wrapper">
-								<div class="star_tip_wrapper">
-									<p class="tip_title">이 책을 평가해주세요!</p>
-
-								</div>
-								<div class="star_rate_touch_area">
-									<span class="separate_bar active"></span> <label for="star1"
-										class="js_star" data-rating="1"> <img id="starimg"
-										src="${path}/resources/detail/gray_star.png"><span
-										class="indent_hidden">별 1개</span>
-									</label> <span class="separate_bar active"></span> <label for="star2"
-										class="js_star" data-rating="2"><img
-										src="${path}/resources/detail/gray_star.png"
-										onmouseenter="zoomIn(event)"> <span
-										class="indent_hidden">별 2개</span> </label> <span
-										class="separate_bar active"></span> <label for="star3"
-										class="js_star" data-rating="3"> <img
-										src="${path}/resources/detail/gray_star.png"><span
-										class="indent_hidden">별 3개</span>
-									</label> <span class="separate_bar active"></span> <label for="star4"
-										class="js_star" data-rating="4"> <img
-										src="${path}/resources/detail/gray_star.png"><span
-										class="indent_hidden">별 4개</span>
-									</label> <span class="separate_bar active"></span> <label for="star5"
-										class="js_star" data-rating="5"> <img
-										src="${path}/resources/detail/gray_star.png"><span
-										class="indent_hidden">별 5개</span>
-									</label>
-								</div>
+							<div class="info_buttons_wrap">
+								<ul class="info_buttons rui_button_group_6">
+									<li class="rui_button_item">
+										<button type="button" class="rui_button_white_50 btn_wish">
+											<img class="main_book_image"
+												src="${path}/resources/detail/heart.png"> <span
+												class="indent_hidden">위키리스트에 추가</span>
+										</button>
+									</li>
+									<li class="rui_button_item">
+										<button type="button" class="rui_button_white_50 btn_wish">
+											<img class="main_book_image"
+												src="${path}/resources/detail/cart.png"> <span
+												class="indent_hidden">카트에 담기</span>
+										</button>
+									</li>
+									<li class="rui_button_item"><a
+										class="rui_button_white_50 btn_wish" href=""><img
+											class="main_book_image"
+											src="${path}/resources/detail/box.png"><span
+											class="indent_hidden">선물하기</span> </a></li>
+									<li class="rui_button_item"><a
+										class="rui_button_blue_50 btn_buy" href=""> 구매하기 </a></li>
+								</ul>
 							</div>
-							<form>
-								<div class="review_textarea_wrapper">
-									<textarea class="review_input_textarea" name="content"
-										title="리뷰 입력"
-										placeholder="리뷰 작성 시 광고 및 욕설, 비속어나 타인을 비방하는 문구를 사용하시면 비공개될 수 있습니다."
-										style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 112px;"></textarea>
-								</div>
-								<div class="buttons_wrapper">
-									<div class="write_review_bottom">
-										<div class="spoiler_input_wrapper">
-											<input id="spoiler_radio_input_write" type="checkbox"
-												class="rui_checkbox_input js_new_review_spoiler_checkbox">
-											<label for="spoiler_radio_input_write"
-												class="rui_checkbox_label spoiler_input_label">스포일러가
-												있습니다.</label>
+						</div>
+						<div class="header_thumbnail_wrap">
+							<div
+								class="header_thumbnail book_macro_200 detail_scalable_thumbnail">
+
+
+
+
+								<div class="book_thumbnail_wrapper"
+									data-book_id_for_tracking="1691000080">
+									<div class="book_thumbnail">
+										<div class="main_book_image_wrapper">
+											<img class="main_book_image " src="${bookInfo.book_Cover}">
+											<span class="border"></span>
 										</div>
-										<div class="write_button_wrapper">
-											<button type="submit" class="rui_button_blue_30">리뷰
-												남기기</button>
-										</div>
+
+
+
+
+
+
 									</div>
 								</div>
-							</form>
+
+							</div>
+
 						</div>
-					</div>
-					<div id="review_list_section">
-						<div class="rui_tab_and_order">
-							<ul class="rui_tab_2 js_review_list_filter_wrapper">
-								<li class="tab_list"><a href="#"
-									class="js_select_tab_option active" data-filter="buyer_only">
-										구매자 </a></li>
-								<li class="tab_list"><a href="#"
-									class="js_select_tab_option" data-filter="all"> 전체 </a></li>
-							</ul>
-							<ul class="rui_order js_review_list_order_wrapper">
-								<li class="order_list"><a href="#"
-									class="js_select_tab_option active" data-order="latest">최신순</a></li>
-								<li class="order_list"><a href="#"
-									class="js_select_tab_option" data-order="like">공감순</a></li>
-								<li class="order_list"><a href="#"
-									class="js_select_tab_option" data-order="high_rating">별점
-										높은순</a></li>
-								<li class="order_list"><a href="#"
-									class="js_select_tab_option" data-order="low_rating">별점 낮은순</a></li>
-							</ul>
+
+					</article>
+
+					<article class="detail_series detail_box_module">
+						<div class="rsg_title01">
+							<h3 class="title_text">책 소개</h3>
 						</div>
-						<div class="review_list_wrapper">
-							<div class="review_list_empty">
-								<p id="test">
-									아직 등록된 리뷰가 없습니다. <br>첫 번째 리뷰를 남겨주세요!
+						<div id="introduce_book"
+							class="introduce_section js_introduce_section">
+							<p class="introduce_paragraph folded">${bookInfo.book_Description}</p>
+
+						</div>
+					</article>
+					<article class="detail_review detail_box_module">
+						<div class="rsg_title01">
+							<h3 class="title_text">리뷰</h3>
+							
+						</div>
+						<div class="review_info_section">
+							<div class="review_input_left">
+								<h4 class="buyer_score_title">구매자 별점</h4>
+								<p class="buyer_score">
+									<span class="score">4.5</span> <span class="indent_hidden">점</span>
+								</p>
+								<p class="score_people_num">
+									<strong>2</strong>명이 평가함
 								</p>
 							</div>
-							<div class="spinner_wrapper"></div>
-							<div class="spin"></div>
-						</div>
-					</div>
-				</article>
+							<div class="review_input_right">
+								<h4 class="indent_hidden">리뷰 작성 영역</h4>
+								<div class="star_rate_wrapper">
+									<div class="star_tip_wrapper">
+										<p class="tip_title">이 책을 평가해주세요!</p>
 
+									</div>
+									<div class="star_rate_touch_area">
+										<span class="separate_bar active"></span> <label for="star1"
+											class="js_star" data-rating="1"> <img id="starimg"
+											src="${path}/resources/detail/gray_star.png" onmouseover="show()" onmouseout="hide()"><span
+											class="indent_hidden">별 1개</span>
+										</label> <span class="separate_bar active"></span> <label for="star2"
+											class="js_star" data-rating="2"><img
+											src="${path}/resources/detail/gray_star.png"
+											onmouseenter="zoomIn(event)"> <span
+											class="indent_hidden">별 2개</span> </label> <span
+											class="separate_bar active"></span> <label for="star3"
+											class="js_star" data-rating="3"> <img
+											src="${path}/resources/detail/gray_star.png"><span
+											class="indent_hidden">별 3개</span>
+										</label> <span class="separate_bar active"></span> <label for="star4"
+											class="js_star" data-rating="4"> <img
+											src="${path}/resources/detail/gray_star.png"><span
+											class="indent_hidden">별 4개</span>
+										</label> <span class="separate_bar active"></span> <label for="star5"
+											class="js_star" data-rating="5"> <img
+											src="${path}/resources/detail/gray_star.png"><span
+											class="indent_hidden">별 5개</span>
+										</label>
+									</div>
+								</div>
+								<form>
+									<div class="review_textarea_wrapper">
+										<textarea class="review_input_textarea" name="content"
+											title="리뷰 입력"
+											placeholder="리뷰 작성 시 광고 및 욕설, 비속어나 타인을 비방하는 문구를 사용하시면 비공개될 수 있습니다."
+											style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 112px;"></textarea>
+									</div>
+									<div class="buttons_wrapper">
+										<div class="write_review_bottom">
+											<div class="spoiler_input_wrapper">
+												<input id="spoiler_radio_input_write" type="checkbox"
+													class="rui_checkbox_input js_new_review_spoiler_checkbox">
+												<label for="spoiler_radio_input_write"
+													class="rui_checkbox_label spoiler_input_label">스포일러가
+													있습니다.</label>
+											</div>
+											<div class="write_button_wrapper">
+												<button type="submit" class="rui_button_blue_30">리뷰
+													남기기</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div id="review_list_section">
+							<div class="rui_tab_and_order">
+								<ul class="rui_tab_2 js_review_list_filter_wrapper">
+									<li class="tab_list"><a href="#"
+										class="js_select_tab_option active" data-filter="buyer_only">
+											구매자 </a></li>
+									<li class="tab_list"><a href="#"
+										class="js_select_tab_option" data-filter="all"> 전체 </a></li>
+								</ul>
+								<ul class="rui_order js_review_list_order_wrapper">
+									<li class="order_list"><a href="#"
+										class="js_select_tab_option active" data-order="latest">최신순</a></li>
+									<li class="order_list"><a href="#"
+										class="js_select_tab_option" data-order="like">공감순</a></li>
+									<li class="order_list"><a href="#"
+										class="js_select_tab_option" data-order="high_rating">별점
+											높은순</a></li>
+									<li class="order_list"><a href="#"
+										class="js_select_tab_option" data-order="low_rating">별점
+											낮은순</a></li>
+								</ul>
+							</div>
+							<div class="review_list_wrapper">
+								<div class="review_list_empty">
+									<p id="test">
+										아직 등록된 리뷰가 없습니다. <br>첫 번째 리뷰를 남겨주세요!
+									</p>
+								</div>
+								<div class="spinner_wrapper"></div>
+								<div class="spin"></div>
+							</div>
+						</div>
+					</article>
+				</section>
 			</div>
 			<div class="detail_aside_wrap">
 				<div class="aside_banner">
@@ -377,7 +416,7 @@ document.getElementById('starimg').onmouseout = function(){
 			</div>
 		</div>
 	</div>
-	<div id="paragraph" onmouseover=changestar()>Place your mouse on here.</div>
+
 	<jsp:include page="footer.jsp" />
 
 

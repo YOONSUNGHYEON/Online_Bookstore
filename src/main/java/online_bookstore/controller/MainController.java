@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import lombok.RequiredArgsConstructor;
 import online_bookstore.Service.BookInfoService;
@@ -12,10 +12,10 @@ import online_bookstore.Service.BookInfoService;
 @RequiredArgsConstructor
 @Controller
 public class MainController {
-	
+
 	@Autowired
     BookInfoService bookInfoService;
-	
+
 	@GetMapping("/")
 	public String main(Model model) {
 		model.addAttribute("newbooks", bookInfoService.newbooklist());
@@ -23,9 +23,10 @@ public class MainController {
 		model.addAttribute("choicebooks", bookInfoService.choicebooklist());
 		return "main";
 	}
-	
-	@RequestMapping("/detail")
-	public String detail() {
+
+	@GetMapping("detail/{id}")
+	public String detail(Model model, @PathVariable("id") String id) {
+		model.addAttribute("bookInfo", bookInfoService.booksearchById(id));
 		return "detail";
 	}
 }
