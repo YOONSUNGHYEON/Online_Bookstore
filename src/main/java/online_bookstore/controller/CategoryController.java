@@ -1,38 +1,43 @@
 package online_bookstore.controller;
 
-import java.util.ArrayList;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import online_bookstore.DTO.BookDTO;
+import lombok.RequiredArgsConstructor;
 import online_bookstore.Service.BookInfoService;
+import online_bookstore.Service.CategoryService;
 
+@RequiredArgsConstructor
 @Controller
 @RequestMapping("/category")
 public class CategoryController {
-	
-	@Autowired
-    BookInfoService bookInfoService;
-	
-	@RequestMapping("/book")
-	public String books() {
-		return "/category/book";
-	}
+
+	private final BookInfoService bookInfoService;
+	private final CategoryService categoryService;
 	
 	@RequestMapping("/list")
-	public String list() {
+	public String list(Model model) {
+		model.addAttribute("novel", categoryService.findSubCategoryByid(Long.valueOf(1)));
+		model.addAttribute("economy", categoryService.findSubCategoryByid(Long.valueOf(170)));
+		model.addAttribute("computer", categoryService.findSubCategoryByid(Long.valueOf(351)));
+		model.addAttribute("science", categoryService.findSubCategoryByid(Long.valueOf(987)));
+		model.addAttribute("domestic", categoryService.findSubCategoryByid(Long.valueOf(1230)));
+		model.addAttribute("religion", categoryService.findSubCategoryByid(Long.valueOf(1237)));
+		model.addAttribute("cartoon", categoryService.findSubCategoryByid(Long.valueOf(2551)));
+		model.addAttribute("law", categoryService.findSubCategoryByid(Long.valueOf(51046)));
+		model.addAttribute("health", categoryService.findSubCategoryByid(Long.valueOf(55890)));
 		return "/category/list";
 	}
 	
 	@GetMapping("/{id}")
 	public String bookList(@PathVariable int id, Model model) {
 		model.addAttribute("books", bookInfoService.categoryBookList(id));
+		model.addAttribute("category", categoryService.findNameById(Long.valueOf(id)));
+		model.addAttribute("categoryList", categoryService.findBigCategory());
+		model.addAttribute("subCategory", categoryService.findSubCategoryByid(Long.valueOf(id)));
 		return "/category/book";
 	}
-	
 }

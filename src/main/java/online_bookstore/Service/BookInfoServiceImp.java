@@ -105,7 +105,7 @@ public class BookInfoServiceImp implements BookInfoService{
     public ArrayList<BookDTO> categoryBookList(int id) {
         ArrayList<BookDTO> arrayList=new ArrayList<BookDTO>();
         strurl="http://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=ttbinpo33350927001"
-        		+ "&QueryType=ItemNewAll&MaxResults=10&start=1&Cover=Big"
+        		+ "&QueryType=ItemNewAll&MaxResults=30&start=1&Cover=Big"
         		+ "&SearchTarget=Book&output=js&Version=20131101"
         		+ "&CategoryId=" + id;
         JSONArray jsonArray=JSONParsing(strurl);
