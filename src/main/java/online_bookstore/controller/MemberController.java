@@ -1,6 +1,7 @@
 package online_bookstore.controller;
 
 import online_bookstore.DTO.MemberDTO;
+import online_bookstore.Repository.Payment;
 import online_bookstore.Service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,12 @@ public class MemberController {
 	@RequestMapping("/login")
 	public String login() {
 		return "member/login";
+	}
+	//로그아웃
+	@RequestMapping("logout")
+	public String logout(HttpSession session){
+		session.invalidate();
+		return "redirect:/";
 	}
 	//마이페이지(메인)
 	@RequestMapping("/my")
@@ -61,7 +68,7 @@ public class MemberController {
 		if(result!=null){
 			System.out.println(result.toString());
 			System.out.println("not null");
-			session.setAttribute("member",memberDTO);
+			session.setAttribute("member",result);
 			return "redirect:/";
 		}else{
 			model.addAttribute("msg","입력하신 내용틀립니다");
@@ -80,5 +87,6 @@ public class MemberController {
 	public String Cart() {
 		return "member/cart";
 	}
+
 
 }
