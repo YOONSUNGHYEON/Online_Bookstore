@@ -1,13 +1,13 @@
 package online_bookstore.Service;
 
 import online_bookstore.DTO.MemberDTO;
-import online_bookstore.Repository.*;
+import online_bookstore.Repository.MemberRepository;
+import online_bookstore.Repository.Orders;
+import online_bookstore.Repository.OrdersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.Optional;
 
 @Service
 @Transactional
@@ -15,8 +15,7 @@ public class MemberServiceImp implements MemberService{
 
     @Autowired
     MemberRepository memberRepository;
-    @Autowired
-    PaymentRepository paymentRepository;
+    OrdersRepository ordersRepository;
 
     @Override
     public void join(MemberDTO memberDTO) {
@@ -34,15 +33,7 @@ public class MemberServiceImp implements MemberService{
     }
 
     @Override
-    public ArrayList<Payment> myPayment(int num,int page) {
-        page=(page-1)*5;
-        return paymentRepository.myPayment(num,page);
+    public Orders myOrders(int num) {
+        return null;
     }
-
-    @Override
-    public Long paymentcount(int num) {
-
-        return paymentRepository.paymentcount(num);
-    }
-
 }
