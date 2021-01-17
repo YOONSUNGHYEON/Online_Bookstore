@@ -129,7 +129,7 @@
 </body>
 
 <script type="text/javascript">
-var session=${member.member_num};
+var session=${member.member_Num};
 var count=0;
 $.getJSON('/api/paymentcount/'+session,function(rdata){
 			        if(rdata%5==0){
