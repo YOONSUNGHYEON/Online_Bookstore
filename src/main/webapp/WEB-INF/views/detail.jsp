@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,20 +25,21 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/81816a43c2.js"
 	crossorigin="anonymous"></script>
-<script>
-function show() { // <img>에 이미지 달기
-		document.getElementById("starimg").src = "${path}/resources/detail/yellow_star.png";
-	}
-	function hide() { // <img>에 이미지 제거
-		 document.getElementById("starimg").src = "${path}/resources/detail/gray_star.png";
-	}
-document.getElementById('starimg').onmouseover = function(){ 
-    document.getElementById("starimg").src = "${path}/resources/detail/yellow_star.png";
-} 
+<script type="text/javascript">
+function show(num) { // <img>에 이미지 달기
 
-document.getElementById('starimg').onmouseout = function(){ 
-    document.getElementById("starimg").src = "${path}/resources/detail/gray_star.png";
-} 
+	
+	}
+function hide(num) { // <img>에 이미지 제거
+		
+	}
+function fun1(num){
+	for( var x=0; x <=num; x++ ) {
+ 			document.getElementById("starimg"+x).src="${path}/resources/detail/yellow_star.png";
+ 		
+	}
+}
+
 </script>
 </head>
 <jsp:include page="mainBase.jsp" />
@@ -206,7 +209,7 @@ document.getElementById('starimg').onmouseout = function(){
 					<article class="detail_review detail_box_module">
 						<div class="rsg_title01">
 							<h3 class="title_text">리뷰</h3>
-							
+
 						</div>
 						<div class="review_info_section">
 							<div class="review_input_left">
@@ -227,52 +230,50 @@ document.getElementById('starimg').onmouseout = function(){
 									</div>
 									<div class="star_rate_touch_area">
 										<span class="separate_bar active"></span> <label for="star1"
-											class="js_star" data-rating="1"> <img id="starimg"
-											src="${path}/resources/detail/gray_star.png" onmouseover="show()" onmouseout="hide()"><span
-											class="indent_hidden">별 1개</span>
-										</label> <span class="separate_bar active"></span> <label for="star2"
-											class="js_star" data-rating="2"><img
+											class="js_star" data-rating="1"> <img id="starimg1"
 											src="${path}/resources/detail/gray_star.png"
-											onmouseenter="zoomIn(event)"> <span
-											class="indent_hidden">별 2개</span> </label> <span
+											onclick="fun1(1);"><span class="indent_hidden">별
+												1개</span>
+										</label> <span class="separate_bar active"></span> <label for="star2"
+											class="js_star" data-rating="2"><img id="starimg2"
+											onclick="fun1(2);"
+											src="${path}/resources/detail/gray_star.png">
+											<span class="indent_hidden">별 2개</span> </label> <span
 											class="separate_bar active"></span> <label for="star3"
-											class="js_star" data-rating="3"> <img
+											class="js_star" data-rating="3"> <img id="starimg3"
+											onclick="fun1(3);"
 											src="${path}/resources/detail/gray_star.png"><span
 											class="indent_hidden">별 3개</span>
 										</label> <span class="separate_bar active"></span> <label for="star4"
-											class="js_star" data-rating="4"> <img
+											src="${path}/resources/detail/gray_star.png"><img
+											id="starimg4" onclick="fun1(4);"
 											src="${path}/resources/detail/gray_star.png"><span
-											class="indent_hidden">별 4개</span>
-										</label> <span class="separate_bar active"></span> <label for="star5"
-											class="js_star" data-rating="5"> <img
+											class="indent_hidden">별 4개</span> </label> <span
+											class="separate_bar active"></span> <label for="star5"
+											class="js_star" data-rating="5"> <img id="starimg5"
+											onclick="fun1(5);"
 											src="${path}/resources/detail/gray_star.png"><span
 											class="indent_hidden">별 5개</span>
 										</label>
 									</div>
 								</div>
-								<form>
+								<form:form method="post" modelAttribute="reviewModel" >
 									<div class="review_textarea_wrapper">
-										<textarea class="review_input_textarea" name="content"
+										<textarea class="review_input_textarea" name="review_content"
 											title="리뷰 입력"
 											placeholder="리뷰 작성 시 광고 및 욕설, 비속어나 타인을 비방하는 문구를 사용하시면 비공개될 수 있습니다."
 											style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 112px;"></textarea>
 									</div>
 									<div class="buttons_wrapper">
 										<div class="write_review_bottom">
-											<div class="spoiler_input_wrapper">
-												<input id="spoiler_radio_input_write" type="checkbox"
-													class="rui_checkbox_input js_new_review_spoiler_checkbox">
-												<label for="spoiler_radio_input_write"
-													class="rui_checkbox_label spoiler_input_label">스포일러가
-													있습니다.</label>
-											</div>
+
 											<div class="write_button_wrapper">
 												<button type="submit" class="rui_button_blue_30">리뷰
 													남기기</button>
 											</div>
 										</div>
 									</div>
-								</form>
+								</form:form>
 							</div>
 						</div>
 						<div id="review_list_section">
