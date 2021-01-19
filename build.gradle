@@ -31,6 +31,7 @@ dependencies {
 	implementation 'javax.servlet:jstl'
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 	compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
+	compile group: 'org.modelmapper', name: 'modelmapper', version: '2.1.1'
 }
 
 test {

@@ -2,6 +2,7 @@ package online_bookstore.Service;
 
 import online_bookstore.DTO.MemberDTO;
 import online_bookstore.Repository.*;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +18,11 @@ public class MemberServiceImp implements MemberService{
     MemberRepository memberRepository;
     @Autowired
     PaymentRepository paymentRepository;
-
+    @Autowired
+    ModelMapper modelMapper;
     @Override
     public void join(MemberDTO memberDTO) {
+
         memberRepository.save(memberDTO);
     }
 
