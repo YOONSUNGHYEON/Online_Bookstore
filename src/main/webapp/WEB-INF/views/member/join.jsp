@@ -34,7 +34,7 @@
 		</h1>
 	</header>
 	<div>
-		<form action='<c:url value="/Join"/>' method="post"
+		<form action='<c:url value="/join"/>' method="post"
 			name="join">
 			<div id="wrapper">
 				<div class="wrapper_in">
@@ -42,7 +42,7 @@
 					<div class="id">
 						<h3>아이디</h3>
 						<div class="id_box">
-							<input type="text" name="Member_Id" id="Member_id"
+							<input type="text" name="member_Id" id="member_Id"
 								onkeyup="checkID(this)" required="required"
 								placeholder="4~12자리 영문,숫자 조합">
 						</div>
@@ -57,7 +57,7 @@
 					<div class="password">
 						<h3>비밀번호</h3>
 						<div class="password_box">
-							<input type="password" name="Member_Pass" id="Member_pass"
+							<input type="password" name="member_Pass" id="member_Pass"
 								required="required" onkeyup="password(this)"
 								placeholder="8~16자리 영문,숫자,특수문자 조합">
 						</div>
@@ -69,7 +69,7 @@
 						<h3>비밀번호 재확인</h3>
 						<div class="password_re_box">
 							<input type="password" onkeyup="checkPasswd(this)"
-								id="Member_pass1">
+								id="member_Pass1">
 						</div>
 						<h3 id="checkPasswdResult">
 							<!-- 자바스크립스에 의해 메세지 출력할 공간 -->
@@ -78,17 +78,17 @@
 					<div class="name">
 						<h3>이름</h3>
 						<div class="name_box">
-							<input type="text" name="Member_Name" id=Member_name>
+							<input type="text" name="member_Name" id="member_Name">
 						</div>
 					</div>
 					<div class="birth">
 						<h3>생년월일</h3>
 						<div class="year_box">
-							<input type="text" placeholder="년(4자)" name="Member_Bir_Y"
-								id=Member_age>
+							<input type="text" placeholder="년(4자)" name="member_Bir_Y"
+								id="member_Bir_Y">
 						</div>
 						<div class="month_box">
-							<select name="Member_Bir_M" id=Member_birth>
+							<select name="member_Bir_M" id="member_Bir_M">
 								<option value="">월</option>
 								<option value="1">1</option>
 								<option value="2">2</option>
@@ -105,14 +105,14 @@
 							</select>
 						</div>
 						<div class="date_box">
-							<input type="text" placeholder="일" name="Member_Bir_D"
-								id=Member_birth1>
+							<input type="text" placeholder="일" name="member_Bir_D"
+								id="member_Bir_D">
 						</div>
 					</div>
 					<div class="gender">
 						<h3>성별</h3>
 						<div class="gender_box">
-							<select name="Member_Gender" id=Member_gender>
+							<select name="member_Gender" id="member_Gender">
 								<option value="">성별</option>
 								<option value="남">남</option>
 								<option value="여">여</option>

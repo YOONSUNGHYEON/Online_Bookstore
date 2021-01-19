@@ -15,10 +15,12 @@
 <link href="${path}/resources/mypage/orderHistory.css" rel="stylesheet"
 	type="text/css">
 
-<script src="https://code.jquery.c om/jquery-3.5.1.min.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://kit.fontawesome.com/81816a43c2.js"
 	crossorigin="anonymous"></script>
+	<script type="text/javascript" src="${path}/resources/member/js/jquery.twbsPagination.js"></script>
+
 </head>
 <body>
 <jsp:include page="../../mainBase.jsp" />
@@ -116,21 +118,8 @@
 
 				<div class="paging_wrapper">
 					<div class="module_paging">
-						<ul class="paging_wrap">
-							<li class="page_list page_list_first page_this"><a
-								class="museo_sans" href="#">1</a></li>
-							<li class="page_list"><a class="museo_sans"
-								href="/order/history?page=2">2</a></li>
-							<li class="page_list"><a class="museo_sans"
-								href="/order/history?page=3">3</a></li>
-							<li class="page_list"><a class="museo_sans"
-								href="/order/history?page=4">4</a></li>
-							<li class="page_list page_list_last"><a class="museo_sans"
-								href="/order/history?page=5">5</a></li>
-							<li class="btn_next"><a href="/order/history?page=2"
-								title="2 페이지"><span class="indent_hidden">다음으로</span><span
-									class="icon-arrow_8_right"></span></a></li>
-						</ul>
+
+                            <div id="pagination-div" ></div>
 					</div>
 				</div>
 			</section>
@@ -138,4 +127,44 @@
 	</div>
 </div>
 </body>
+
+<script type="text/javascript">
+var session=${member.member_Num};
+var count=0;
+$.getJSON('/api/paymentcount/'+session,function(rdata){
+			        if(rdata%5==0){
+			        count=rdata/5;
+			        }else{
+			        count=rdata/5+1;
+			        }
+$('#pagination-div').twbsPagination({
+
+		    totalPages: count,	// 총 페이지 번호 수
+		    visiblePages: 5,	// 하단에서 한번에 보여지는 페이지 번호 수
+		    startPage : 1, // 시작시 표시되는 현재 페이지
+		    initiateStartPageClick: false,	// 플러그인이 시작시 페이지 버튼 클릭 여부 (default : true)
+		    first : "첫 페이지",	// 페이지네이션 버튼중 처음으로 돌아가는 버튼에 쓰여 있는 텍스트
+		    prev : "이전 페이지",	// 이전 페이지 버튼에 쓰여있는 텍스트
+		    next : "다음 페이지",	// 다음 페이지 버튼에 쓰여있는 텍스트
+		    last : "마지막 페이지",	// 페이지네이션 버튼중 마지막으로 가는 버튼에 쓰여있는 텍스트
+		    nextClass : "page-item next",	// 이전 페이지 CSS class
+		    prevClass : "page-item prev",	// 다음 페이지 CSS class
+		    lastClass : "page-item last",	// 마지막 페이지 CSS calss
+		    firstClass : "page-item first",	// 첫 페이지 CSS class
+		    pageClass : "page-item",	// 페이지 버튼의 CSS class
+		    activeClass : "active",	// 클릭된 페이지 버튼의 CSS class
+		    disabledClass : "disabled",	// 클릭 안된 페이지 버튼의 CSS class
+		    anchorClass : "page-link",	//버튼 안의 앵커에 대한 CSS class
+
+		    onPageClick: function (event, page) {
+		    	//클릭 이벤트
+		    	$.getJSON('/api/myorders/'+session+'/'+page,function(rdata){
+		    	alert(rdata)
+		    	})
+
+		    }
+		});
+		});
+
+</script>
 </html>
