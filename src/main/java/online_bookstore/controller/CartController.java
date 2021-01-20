@@ -1,10 +1,10 @@
 package online_bookstore.controller;
 
 import lombok.RequiredArgsConstructor;
-import online_bookstore.Repository.Cart;
+import online_bookstore.Entity.Cart;
 import online_bookstore.Repository.CartRepository;
 import online_bookstore.DTO.BookDTO;
-import online_bookstore.DTO.MemberDTO;
+import online_bookstore.Entity.Member;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,8 +23,8 @@ public class CartController {
     public String CartRent() {return "CartMember/CartRentPossible";}
 
     @PostMapping("/api/cart")
-    public Cart createCart(@RequestBody MemberDTO memberdto, @RequestBody BookDTO bookdto){
-        Cart cart = new Cart( bookdto , memberdto);
+    public Cart createCart(@RequestBody Member memberdto, @RequestBody BookDTO bookdto){
+        Cart cart = new Cart( bookdto.getBook_Id() , memberdto);
         return cartRepository.save(cart);
     }
 

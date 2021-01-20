@@ -8,8 +8,6 @@ import lombok.Data;
 import lombok.Getter;
 
 @Data
-@Entity
-@Getter
 public class BookDTO {
 	
     @Id

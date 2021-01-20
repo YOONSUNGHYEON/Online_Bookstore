@@ -1,5 +1,6 @@
 package online_bookstore.Repository;
 
+import online_bookstore.Entity.Payment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

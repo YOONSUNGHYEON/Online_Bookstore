@@ -2,6 +2,7 @@ package online_bookstore.Repository.category;
 
 import java.util.List;
 
+import online_bookstore.Repository.category.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
