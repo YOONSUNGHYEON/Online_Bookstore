@@ -1,16 +1,15 @@
 package online_bookstore.controller;
 
-import online_bookstore.DTO.MemberDTO;
-import online_bookstore.Repository.Payment;
-import online_bookstore.Service.MemberService;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpSession;
-import java.util.List;
+import online_bookstore.DTO.MemberDTO;
+import online_bookstore.Service.MemberService;
 
 @Controller
 public class MemberController {
@@ -20,7 +19,9 @@ public class MemberController {
 
 	//회원가입 화면 이동
 	@RequestMapping("/join")
-	public String join() { return "member/join"; }
+	public String join() {
+		return "member/join"; 
+	}
 
 	//로그인 화면 이동
 	@RequestMapping("/login")
