@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <title>category list</title>
 <link href="${path}/resources/Member/css/cart.css" rel="stylesheet" type="text/css">
+	<script src="${path}/resources/cart/js/cart.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <jsp:include page="../mainBase.jsp" />
 <body>
@@ -22,40 +24,12 @@
 					<input type="button" class="cartbtn1" value="선택 삭제">
 				</span>
 			</div>
+			<div id = "booklist-container" >
 			<div class="cartbooklist">
-				<div class="row">
-					<div class="col-xs-1"><input type="checkbox"></div>
-					<div class="col-xs-2"><img style="width:60px; height:auto;" src="${path}/resources/main/book.jpg"/></div>
-					<div class="col-xs-9">
-						<div class="book-title">바이러스X</div>
-						<div class="book-info">
-							<span class="book-author">작가이름</span>
-							<span class="book-price">7,000원</span>
-						</div>
-						<div class="book-button">
-							<input type="button" class="cartbtn2" value="위시리스트로 이동">
-							<input type="button" class="cartbtn2" value="삭제">
-						</div>
-					</div>
-				</div>
+
+
 			</div>
-			<div class="cartbooklist">
-				<div class="row">
-					<div class="col-xs-1"><input type="checkbox"></div>
-					<div class="col-xs-2"><img style="width:60px; height:auto;" src="${path}/resources/main/book.jpg"/></div>
-					<div class="col-xs-9">
-						<div class="book-title">바이러스X</div>
-						<div class="book-info">
-							<span class="book-author">작가이름</span>
-							<span class="book-price">7,000원</span>
-						</div>
-						<div class="book-button">
-							<input type="button" class="cartbtn2" value="위시리스트로 이동">
-							<input type="button" class="cartbtn2" value="삭제">
-						</div>
-					</div>
-				</div>
-			</div>
+		</div>
 		</div>
 		<div class="col-xs-3">
 			<div class="cartallpirce">

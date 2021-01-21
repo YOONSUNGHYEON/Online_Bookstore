@@ -1,9 +1,39 @@
+$(document).ready(function () {
+
+    showCart();
+    $('cartbtn2').on('click', function(){
+        deleteFromcart()
+    })
+
+})
+
+
+function showCart(){
+    let targetId = 1;
+    $.ajax({
+        type: 'GET',
+        url: `/api/cart/${targetId}`,
+
+
+        success: function (response){
+            for(let i=0; i<response.length; i++){
+                let bookdto = response[i];
+                let tempHtml = addcartItem( bookdto );
+                $('#booklist-container').append(tempHtml);
+            }
+        }
+    })
+    console.log("cart.js done");
+}
 
 function addHTML(){
 
 }
 
-function deleteFromcart(){
+function deleteFromcart(cartlistId){
+
+
+    $('#booklist-container').deleteCell(cartlistId);
 
 }
 
@@ -11,7 +41,7 @@ function addcartItem(bookDTO){
 
     return `<div class="row">
             <div class="col-xs-1"><input type="checkbox"></div>
-            <div class="col-xs-2"><img style="width:60px; height:auto;" src="${path}/resources/main/book.jpg"/>
+            <div class="col-xs-2"><img style="width:60px; height:auto;" src=${bookDTO.book_Cover}>
             </div>
             <div class="col-xs-9">
                 <div class="book-title">${bookDTO.book_Title}</div>
@@ -27,18 +57,3 @@ function addcartItem(bookDTO){
         </div>`;
 }
 
-function showCart(){
-    let member_Num = 1;
-    $.ajax({
-        type: 'GET',
-        url: `/api/cart?member=${member_Num}`
-        success: function (response){
-            for(let i=0; i<response.length; i++){
-                let bookDTO = response[i];
-                let tempHtml = addcartItem( bookDTO );
-                $('#cartbooklist').append(tempHtml);
-            }
-        }
-
-    })
-}

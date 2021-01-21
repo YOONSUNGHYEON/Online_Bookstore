@@ -11,7 +11,11 @@
 <!-- include css/js -->
 <link href="${path}/resources/main/ridiBase.css" rel="stylesheet" type="text/css">
 <!-- include fontawesome -->
+
 <script src="https://kit.fontawesome.com/81816a43c2.js" crossorigin="anonymous"></script>
+  <script src="${path}/resources/main/ridiBase.css"></script>
+  <script src="${path}/resources/cart/css/cart.css"></script>
+  <script src="${path}/resources/cart/js/cart.js"></script>
 </head>
 <body>
 <div class="header">
@@ -32,7 +36,7 @@
   <li class="nav-item">
     <a class="nav-link" href="/alarm"><i class="fas fa-bell"></i></i>알람</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item-cart">
     <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>카트</a>
   </li>
   <li class="nav-item">

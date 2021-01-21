@@ -18,8 +18,8 @@ public class OrdersController {
 
 
     @PostMapping("/api/orders")
-    public Orders createCart(@RequestBody MemberDTO memberdto, @RequestBody BookDTO bookdto){
-        Orders orders = new Orders( bookdto , memberdto);
+    public Orders createCart(@RequestBody MemberDTO memberdto, @RequestBody String book_id){
+        Orders orders = new Orders( book_id , memberdto);
         return ordersRepository.save(orders);
     }
 

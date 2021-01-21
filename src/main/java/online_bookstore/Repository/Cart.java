@@ -20,12 +20,11 @@ public class Cart {
     @JoinColumn(name= "member_num", nullable=false) //외래키
     private MemberDTO member;
 
-    @ManyToOne
-    @JoinColumn(name = "Book_Id") //외래키
-    private BookDTO book;
+    private String book_Id;
 
-    public Cart(BookDTO bookdto, MemberDTO memberdto){
+    public Cart(String bookId, MemberDTO memberdto){
         this.member = memberdto;
-        this.book = bookdto;
+        this.book_Id = bookId;
     }
+
 }
