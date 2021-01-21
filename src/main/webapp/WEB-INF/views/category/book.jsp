@@ -11,6 +11,11 @@
 <link href="${path}/resources/category/book.css" rel="stylesheet" type="text/css">
 <jsp:include page="../mainBase.jsp" />
 <body>
+<script>
+function two(){
+	alert("he");
+}
+</script>
 <div class="container" style="max-width:1000px; margin:40px auto;">
 	<div class="row">
 		<div class="col-xs-3">
@@ -21,17 +26,17 @@
 				<c:set var="pid3" value="${sub[0].pid}" />
 				<c:choose>
 			    <c:when test="${pid1 eq pid2}">
-			        <a href="${path }/category/${row.id}"><div>${row.name}</div></a>
+			        <a href="${path }/category/${row.id}&page=1"><div>${row.name}</div></a>
 			    	<c:if test="${pid2 eq pid3}">
 				    	<ul>
 							<c:forEach var="sub" items="${sub}">
-							<a href="${path }/category/${sub.id}"><li>${sub.name}</li></a>
+							<a href="${path }/category/${sub.id}&page=1"><li>${sub.name}</li></a>
 							</c:forEach>
 						</ul>
 					</c:if>
 			    </c:when>
 			    <c:otherwise>
-			    	<a href="${path }/category/${row.id}"><div>${row.name}</div></a>
+			    	<a href="${path }/category/${row.id}&page=1"><div>${row.name}</div></a>
 			    </c:otherwise>
 			</c:choose>
 			</c:forEach>
@@ -58,6 +63,15 @@
 				</a>
 				</c:forEach>
 			</div>
+			<div class="text-center">
+			<ul class="pagination justify-content-center">
+			    <c:set var="page" value="${page}" />
+			    <c:if test="${page ne 1}">
+			    	<li><a href="${path }/category/${category.id }&page=${page-1}">이전</a></li>
+			    </c:if>
+			    <li><a href="${path }/category/${category.id }&page=${page+1}">다음</a></li>
+			  </ul>
+			  </div>
 		</div>
 	</div>
 </div>

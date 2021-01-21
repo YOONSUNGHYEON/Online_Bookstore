@@ -4,7 +4,13 @@ ul{
 	list-style: none;
 	padding-left: 15px;
 }
-
+a:hover{
+	text-decoration: none!important;
+	color: none;
+}
+div, li{
+	color: #555;
+}
 .col-xs-3 .active{
 	width: 120px;
     background-color: #1F8CE6;

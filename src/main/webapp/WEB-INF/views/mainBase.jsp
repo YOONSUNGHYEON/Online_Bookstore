@@ -18,8 +18,8 @@
 <header style="max-width: 1000px; margin: 0 auto;">
 <nav class="navbar navbar-light bg-light justify-content-between">
   <a class="navbar-brand">RIDIBOOKS</a>
-    <button class="align-right login">로그인</button>
-    <button class="align-right join">회원가입</button>
+    <a href="${path }/login"><button class="align-right login">로그인</button></a>
+    <a href="${path }/join"><button class="align-right join">회원가입</button></a>
   <form class="form-inline">
     <input class="top-search form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
