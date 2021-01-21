@@ -21,7 +21,7 @@
 				</span>
 				<span class="checkallbtn">
 					<input type="button" class="cartbtn1" value="선택 위시리스트로 이동">
-					<input type="button" class="cartbtn1" value="선택 삭제">
+					<input type="button" class="cartbtn1" value="선택 삭제" onclick="deleteSeveral()">
 				</span>
 			</div>
 			<div id = "booklist-container" >
@@ -47,7 +47,7 @@
 					<span class="price-right total">7,000원</span>
 				</div>
 			</div>
-			<input type="button" class="buybutton" value="선택 구매하기">
+			<input type="button" class="buybutton" value="선택 구매하기" onclick="deleteSeveral();">
 		</div>
 	</div>
 </div>

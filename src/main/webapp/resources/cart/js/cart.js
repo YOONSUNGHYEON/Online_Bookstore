@@ -18,7 +18,7 @@ function showCart(){
         success: function (response){
             for(let i=0; i<response.length; i++){
                 let bookdto = response[i];
-                let tempHtml = addcartItem( bookdto );
+                let tempHtml = addcartItem( bookdto ,i);
                 $('#booklist-container').append(tempHtml);
             }
         }
@@ -31,16 +31,51 @@ function addHTML(){
 }
 
 function deleteFromcart(cartlistId){
+    let memberNum = 1;
 
+    $('#booklist-container').empty(cartlistId);
+    $.ajax({
+        type: "DELETE",
+        url: `/api/cart/${cartlistId}/${memberNum}`,
+        success: function (response) {
+                showCart();
+        }
+    })
+}
 
-    $('#booklist-container').deleteCell(cartlistId);
+function deleteSeveral(){
+    let memberNum =1;
+    var cnt = $("input[name='rowcheckbox']:checked").length;
+    var arr = new Array();
+    $("input[name='rowcheckbox']:checked").each(function(){
+        let cartlistId = $(this).attr('id');
+        if(cnt==0){
+            alert("선택된 상품이 없습니다.");
+            window.location.reload();
+        }
+        else{
+            $.ajax({
+                type: "DELETE",
+                url: `/api/cart/${cartlistId}/${memberNum}`,
+                success: function (response) {
+                    showCart();
+                }
+            })
+            $('#booklist-container').empty(cartlistId);
+        }
+
+    });
 
 }
 
-function addcartItem(bookDTO){
+function deleteAll (){
+    $('#booklist-container').empty();
+}
+
+function addcartItem(bookDTO,id){
 
     return `<div class="row">
-            <div class="col-xs-1"><input type="checkbox"></div>
+            <div class="col-xs-1"><input type="checkbox" name="rowcheckbox" id="${id}"></div>
             <div class="col-xs-2"><img style="width:60px; height:auto;" src=${bookDTO.book_Cover}>
             </div>
             <div class="col-xs-9">
@@ -50,8 +85,9 @@ function addcartItem(bookDTO){
                     <span class="book-price">${bookDTO.book_Price}</span>
                 </div>
                 <div class="book-button">
-                    <input type="button" class="cartbtn2" value="위시리스트로 이동">
-                        <input type="button" class="cartbtn2" value="삭제">
+                    <input type="button" id="${id}-move" class="cartbtn2" value="위시리스트로 이동">
+                    <input type="button"  id="${id}-delete" class="cartbtn2" value="삭제" onclick="deleteFromcart('${id}')">
+
                 </div>
             </div>
         </div>`;

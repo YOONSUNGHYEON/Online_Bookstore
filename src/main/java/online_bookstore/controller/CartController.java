@@ -51,10 +51,14 @@ public class CartController {
       return cartBookList;
 }
 
-     @DeleteMapping("/api/cart/{id}")
-     public Long deleteCart(@PathVariable Long id){
-        cartRepository.deleteById(id);
-        return id;
-     }
+    @DeleteMapping("/api/cart/{cartlistId}/{member_Num}")
+    public int deleteCart(@PathVariable int cartlistId ,@PathVariable  int member_Num){
+        Member member = memberRepository.getMemberbyMemberNum(member_Num);
+        List<Cart> cartList = cartRepository.findCartByMemberIsOrderByIdAsc(member);
+        Long cart_id = cartList.get(cartlistId).getId();
+        cartRepository.deleteById(cart_id);
+        return cartlistId;
+    }
+
 
 }
