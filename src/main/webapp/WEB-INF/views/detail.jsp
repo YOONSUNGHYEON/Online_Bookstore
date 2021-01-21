@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html>
@@ -14,6 +14,8 @@
 <link href="${path}/resources/detail/detail.css" rel="stylesheet"
 	type="text/css">
 <link href="${path}/resources/detail/button.css" rel="stylesheet"
+	type="text/css">
+<link href="${path}/resources/mypage/page_base.css" rel="stylesheet"
 	type="text/css">
 
 <!-- include libraries(jQuery, bootstrap) -->
@@ -237,8 +239,8 @@ function fun1(num){
 										</label> <span class="separate_bar active"></span> <label for="star2"
 											class="js_star" data-rating="2"><img id="starimg2"
 											onclick="fun1(2);"
-											src="${path}/resources/detail/gray_star.png">
-											<span class="indent_hidden">별 2개</span> </label> <span
+											src="${path}/resources/detail/gray_star.png"> <span
+											class="indent_hidden">별 2개</span> </label> <span
 											class="separate_bar active"></span> <label for="star3"
 											class="js_star" data-rating="3"> <img id="starimg3"
 											onclick="fun1(3);"
@@ -257,9 +259,9 @@ function fun1(num){
 										</label>
 									</div>
 								</div>
-								<form:form method="post" modelAttribute="reviewModel" >
+								<form:form method="post" modelAttribute="reviewModel">
 									<div class="review_textarea_wrapper">
-										<textarea class="review_input_textarea" name="review_content"
+										<textarea class="review_input_textarea" name="content"
 											title="리뷰 입력"
 											placeholder="리뷰 작성 시 광고 및 욕설, 비속어나 타인을 비방하는 문구를 사용하시면 비공개될 수 있습니다."
 											style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 112px;"></textarea>
@@ -298,12 +300,88 @@ function fun1(num){
 											낮은순</a></li>
 								</ul>
 							</div>
-							<div class="review_list_wrapper">
-								<div class="review_list_empty">
-									<p id="test">
-										아직 등록된 리뷰가 없습니다. <br>첫 번째 리뷰를 남겨주세요!
-									</p>
-								</div>
+							<div class="review_list_wrapper js_review_list_wrapper active">
+								<ul>
+									<c:forEach var="reviews" items="${ reviews }">
+										<li class="review_list">
+											<div class="list_left js_review_info_wrapper">
+												<div class="left_contents">
+													<p>
+														<span class="star_rate"><span
+															class="RSGBookMetadata_StarRate"><span
+																class="StarRate_IconBox"><span
+																	class="StarRate_IconFill" style="width: 100%"></span></span></span></span> <span
+															class="reviewer_id">${ reviews.member.member_Id }</span> <span class="buy_check">
+															<span class="svg_badge_buyer_1">구매자</span>
+														</span>
+													</p>
+													<ul class="review_date_and_report_wrapper">
+														<li class="review_date">${ reviews.time }.</li>
+														<li class="meta_list report">
+															<button class="report_button js_report_button"
+																type="button" data-rating-id="18334902"
+																data-reported-status="not_reported">신고</button>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="list_right js_review_wrapper">
+												<p class="review_content js_review_content">${ reviews.content }</p>
+												<div class="review_status">
+													<div
+														class="review_recommend_count js_review_recommend_count"
+														data-rating-id="18334902">
+														<button type="button"
+															class="rui_button_white_25 comment_toggle_button js_comment_toggle_button">
+															<span class="rui_button_contents"> <span
+																class="rui_button_icon"></span> <span
+																class="rui_button_text"> 댓글 <span
+																	class="js_comment_count"></span>
+															</span>
+															</span>
+														</button>
+														<button type="button"
+															class="rui_button_white_25 like_button js_like_button">
+															<span class="rui_button_contents"> <span
+																class="rui_button_icon"></span> <span
+																class="rui_button_text"> <span
+																	class="indent_hidden">추천</span> <span
+																	class="like_count js_like_count"></span>
+															</span>
+															</span>
+														</button>
+													</div>
+												</div>
+
+												<div class="comment_wrapper hidden js_comment_wrapper"
+													data-rating-id="18334902">
+													<ul class="comment_list_wrapper js_comment_list_wrapper">
+													</ul>
+													<div class="comment_textarea_wrapper">
+														<form class="js_review_comment_register_form">
+															<input type="hidden" name="rating_id" value="18334902">
+															<input type="hidden" name="book_id" value="1691000080">
+															<div class="textarea_left">
+																<textarea name="content"
+																	class="comment_textarea js_comment_textarea"
+																	title="이곳에 댓글을 남겨주세요." placeholder="이곳에 댓글을 남겨주세요."></textarea>
+															</div>
+															<div class="textarea_right">
+																<button type="submit"
+																	class="rui_button_blue_30 disabled comment_submit js_comment_write_btn">댓글
+																	달기</button>
+															</div>
+															<hr class="clear_both">
+														</form>
+													</div>
+												</div>
+
+											</div>
+
+										</li>
+										
+									</c:forEach>
+								</ul>
 								<div class="spinner_wrapper"></div>
 								<div class="spin"></div>
 							</div>

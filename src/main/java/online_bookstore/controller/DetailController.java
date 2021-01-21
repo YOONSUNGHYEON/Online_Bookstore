@@ -1,7 +1,10 @@
 package online_bookstore.controller;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +13,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
 import online_bookstore.DTO.MemberDTO;
@@ -22,28 +24,28 @@ import online_bookstore.Service.BookInfoService;
 public class DetailController {
 
 	@Autowired
-	ReviewRepository reviewRepository;
+	ReviewRepository reviewService;
 	@Autowired
 	BookInfoService bookInfoService;
 
 	@GetMapping("detail/{id}")
 	public String detail(Model model, @PathVariable("id") String id) {
+		List<Review> list = reviewService.findByBookId(id);
 		model.addAttribute("bookInfo", bookInfoService.booksearchById(id));
 		model.addAttribute("reviewModel", new Review());
+		model.addAttribute("reviews", list);
 		return "detail";
 	}
 
 	@PostMapping("detail/{id}" )
-	@ResponseBody
-	public String insert(@Valid Review r, @PathVariable("id") String id) {
-		System.out.println(r.getReview_content().toString());
+	public String detail(@Valid Review r, @PathVariable("id") String id, HttpSession session) {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		r.setMember((MemberDTO)session.getAttribute("member"));
 		Date time = new Date();
-
-		r.setReview_score(4);
-		r.setReview_time(time);
-		r.setBook_id(id);
-		r.setMember(new MemberDTO());
-		reviewRepository.save(r);
-		return "redirect:detail/"+id;
+		r.setScore(4);
+		r.setTime(format.format(time));
+		r.setBookId(id);
+		reviewService.save(r);
+		return "redirect:"+id;
 	}
 }
