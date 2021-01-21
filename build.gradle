@@ -19,6 +19,7 @@ repositories {
 }
 
 dependencies {
+
 	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
@@ -32,6 +33,7 @@ dependencies {
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
 	compile group: 'com.googlecode.json-simple', name: 'json-simple', version: '1.1'
 	compile group: 'org.modelmapper', name: 'modelmapper', version: '2.1.1'
+
 }
 
 test {

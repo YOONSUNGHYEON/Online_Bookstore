@@ -1,5 +1,7 @@
 package online_bookstore.DTO;
 
+import lombok.Data;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -8,25 +10,27 @@ import lombok.Data;
 import lombok.Getter;
 
 @Data
+@Entity
+
 public class BookDTO {
-	
     @Id
-    private String Book_Id;
-    private String Book_Title;
-    private String Book_Author;
-    private String Book_Description;
-    private int Book_Price;
-    private String Book_Cover;
-    private String Book_Publisher;
-    
+    private String book_Id;
+    private String book_Title;
+    private String book_Author;
+    private String book_Description;
+    private int book_Price;
+    private String book_Cover;
+    private String book_Publisher;
+
+
     public BookDTO(String book_Id, String book_Title, String book_Author, String book_Description, int book_Price, String book_Cover, String book_Publisher) {
-        Book_Id = book_Id;
-        Book_Title = book_Title;
-        Book_Author = book_Author;
-        Book_Description = book_Description;
-        Book_Price = book_Price;
-        Book_Cover = book_Cover;
-        Book_Publisher = book_Publisher;
+        this.book_Id = book_Id;
+        this.book_Title = book_Title;
+        this.book_Author = book_Author;
+        this.book_Description = book_Description;
+        this.book_Price = book_Price;
+        this.book_Cover = book_Cover;
+        this.book_Publisher = book_Publisher;
     }
 
     public BookDTO() {
