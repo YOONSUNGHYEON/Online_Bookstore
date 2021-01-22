@@ -1,7 +1,9 @@
 @charset "UTF-8";
 
 .cartrow{
+
 	margin: 0px !important;
+
 }
 .cartlist{
     border: 1px solid #ddd;
@@ -36,6 +38,12 @@
 }
 .cartbooklist .col-xs-9{
 	padding: 0px;
+}
+#cartallpirce_container{
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
 }
 .cartallpirce{
 	border: 1px solid #87b4e9;
