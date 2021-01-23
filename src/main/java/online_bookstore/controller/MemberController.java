@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
 
+
 @Controller
 public class MemberController {
 
@@ -19,7 +20,9 @@ public class MemberController {
 
 	//회원가입 화면 이동
 	@RequestMapping("/join")
-	public String join() { return "member/join"; }
+	public String join() {
+		return "member/join"; 
+	}
 
 	//로그인 화면 이동
 	@RequestMapping("/login")
