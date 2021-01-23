@@ -1,9 +1,8 @@
 package online_bookstore.RestAPI;
 
-import online_bookstore.DTO.MemberDTO;
+import online_bookstore.Entity.Member;
 import online_bookstore.DTO.Message;
-import online_bookstore.Repository.Orders;
-import online_bookstore.Repository.Payment;
+import online_bookstore.Entity.Payment;
 import online_bookstore.Service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -27,9 +25,9 @@ public class MemberAPI {
     //화원가입 중복확인
     @GetMapping("/duplicatecheck/{id}")
     public Message duplicateCheck(@PathVariable(name = "id") String id){
-        MemberDTO memberDTO=memberService.login(id);
+        Member member =memberService.login(id);
         Message message=new Message();
-        if(memberDTO!=null){
+        if(member !=null){
             message.setMessage("아이디 중복됨");
         }else{
             message.setMessage("아아디 사용가능");
@@ -39,7 +37,7 @@ public class MemberAPI {
 
     //내정보 가져오기
     @GetMapping("/myinfo/{id}")
-    public MemberDTO myInfo(@PathVariable(name = "id") String id){
+    public Member myInfo(@PathVariable(name = "id") String id){
         return memberService.login(id);
     }
 

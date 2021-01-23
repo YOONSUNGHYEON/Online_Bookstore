@@ -1,15 +1,16 @@
 package online_bookstore.controller;
 
-import javax.servlet.http.HttpSession;
-
+import online_bookstore.DTO.MemberDTO;
+import online_bookstore.Entity.Member;
+import online_bookstore.Service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import online_bookstore.DTO.MemberDTO;
-import online_bookstore.Service.MemberService;
+import javax.servlet.http.HttpSession;
+
 
 @Controller
 public class MemberController {
@@ -79,8 +80,8 @@ public class MemberController {
 	}
 	//회원정보변경 접근 처리
 	@PostMapping("/accountmodify")
-	public String accountModify(MemberDTO memberDTO){
-		System.out.println(memberDTO.getMember_Pass());
+	public String accountModify(Member member){
+		System.out.println(member.getMember_Pass());
 		return "redirect:/";
 	}
 

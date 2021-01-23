@@ -1,15 +1,9 @@
 package online_bookstore.DTO;
 
-import lombok.*;
-
-import javax.persistence.*;
+import lombok.Data;
 
 @Data
-@Entity(name="member")
-@Table(name="member")
 public class MemberDTO {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int member_Num;
     private String member_Id;
     private String member_Name;
