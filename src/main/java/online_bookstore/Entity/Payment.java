@@ -19,7 +19,7 @@ import online_bookstore.Entity.Orders;
 @Getter
 @Entity
 public class Payment{
-	
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

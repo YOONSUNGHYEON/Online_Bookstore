@@ -1,5 +1,19 @@
 @charset "UTF-8";
-
+.rui_button_contents, .rui_button_text {
+    color: inherit;
+    font-size: inherit;
+}
+.rui_button_contents {
+    display: inline-block;
+    position: relative;
+}
+.rui_button_icon {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    speak: none;
+}
 .module_pagetitle {
     font-size: 18px;
     color: #333;
