@@ -28,4 +28,6 @@ public class MainController {
 	public String detail() {
 		return "detail";
 	}
+
+
 }
