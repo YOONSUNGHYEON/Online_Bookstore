@@ -1,9 +1,7 @@
 package online_bookstore.controller;
 
 
-import online_bookstore.DTO.MemberDTO;
-import online_bookstore.Entity.Member;
-import online_bookstore.Service.MemberService;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,7 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpSession;
+import online_bookstore.DTO.MemberDTO;
+import online_bookstore.Entity.Member;
+import online_bookstore.Service.MemberService;
 
 
 
@@ -24,7 +24,7 @@ public class MemberController {
 	//회원가입 화면 이동
 	@RequestMapping("/join")
 	public String join() {
-		return "member/join"; 
+		return "member/join";
 	}
 
 	//로그인 화면 이동
@@ -69,7 +69,7 @@ public class MemberController {
 	//로그인 처리
 	@PostMapping("/login")
 	public String Loginpost(MemberDTO memberDTO, Model model, HttpSession session) {
-		MemberDTO result = memberService.login(memberDTO.getMember_Id());
+		MemberDTO result = memberService.login(memberDTO);
 		if(result!=null){
 			System.out.println(result.toString());
 			System.out.println("not null");

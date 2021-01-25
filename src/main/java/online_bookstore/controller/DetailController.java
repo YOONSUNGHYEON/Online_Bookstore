@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import lombok.RequiredArgsConstructor;
-import online_bookstore.DTO.MemberDTO;
-import online_bookstore.Repository.Review;
+import online_bookstore.Entity.Member;
+import online_bookstore.Entity.Review;
 import online_bookstore.Repository.ReviewRepository;
 import online_bookstore.Service.BookInfoService;
 @RequiredArgsConstructor
@@ -40,7 +40,7 @@ public class DetailController {
 	@PostMapping("detail/{id}" )
 	public String detail(@Valid Review r, @PathVariable("id") String id, HttpSession session) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		r.setMember((MemberDTO)session.getAttribute("member"));
+		r.setMember((Member)session.getAttribute("member"));
 		Date time = new Date();
 		r.setScore(4);
 		r.setTime(format.format(time));

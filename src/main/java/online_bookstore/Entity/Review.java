@@ -1,4 +1,4 @@
-package online_bookstore.Repository;
+package online_bookstore.Entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,7 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import lombok.Data;
-import online_bookstore.DTO.MemberDTO;
 
 
 @Data
@@ -20,8 +19,8 @@ public class Review {
 	    private Long id;
 
 	    @ManyToOne
-	    @JoinColumn(name= "member_id", nullable=false) //외래키
-	    private MemberDTO member;
+	    @JoinColumn(name= "member_num", nullable=false) //외래키
+	    private Member member;
 
 
 		@Column(name = "book_id")
