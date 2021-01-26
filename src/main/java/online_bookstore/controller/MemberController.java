@@ -1,5 +1,6 @@
 package online_bookstore.controller;
 
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import online_bookstore.DTO.MemberDTO;
+import online_bookstore.Entity.Member;
 import online_bookstore.Service.MemberService;
+
+
 
 @Controller
 public class MemberController {
@@ -20,7 +24,7 @@ public class MemberController {
 	//회원가입 화면 이동
 	@RequestMapping("/join")
 	public String join() {
-		return "member/join"; 
+		return "member/join";
 	}
 
 	//로그인 화면 이동
@@ -79,8 +83,8 @@ public class MemberController {
 	}
 	//회원정보변경 접근 처리
 	@PostMapping("/accountmodify")
-	public String accountModify(MemberDTO memberDTO){
-		System.out.println(memberDTO.getMember_Pass());
+	public String accountModify(Member member){
+		System.out.println(member.getMember_Pass());
 		return "redirect:/";
 	}
 

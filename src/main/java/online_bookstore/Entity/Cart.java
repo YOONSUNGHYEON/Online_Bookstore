@@ -1,10 +1,10 @@
-package online_bookstore.Repository;
+package online_bookstore.Entity;
 
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import online_bookstore.DTO.BookDTO;
-import online_bookstore.DTO.MemberDTO;
+import online_bookstore.Entity.Member;
 
 import javax.persistence.*;
 
@@ -13,19 +13,17 @@ import javax.persistence.*;
 @Entity
 public class Cart {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
     @JoinColumn(name= "member_num", nullable=false) //외래키
-    private MemberDTO member;
+    private Member member;
 
-    @ManyToOne
-    @JoinColumn(name = "Book_Id") //외래키
-    private BookDTO book;
+    private String book_Id;
 
-    public Cart(BookDTO bookdto, MemberDTO memberdto){
+    public Cart(String bookdto, Member memberdto){
         this.member = memberdto;
-        this.book = bookdto;
+        this.book_Id = bookdto;
     }
 }

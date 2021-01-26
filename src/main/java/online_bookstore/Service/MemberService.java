@@ -2,11 +2,10 @@ package online_bookstore.Service;
 
 
 import online_bookstore.DTO.MemberDTO;
-import online_bookstore.Repository.Orders;
-import online_bookstore.Repository.Payment;
+import online_bookstore.Entity.Member;
+import online_bookstore.Entity.Payment;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
 public interface MemberService {
 
@@ -14,7 +13,7 @@ public interface MemberService {
 
     MemberDTO login(MemberDTO memberDTO);
 
-    MemberDTO login(String id);
+    Member login(String id);
 
     ArrayList<Payment> myPayment(int num,int page);
 

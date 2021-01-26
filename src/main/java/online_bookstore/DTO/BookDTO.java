@@ -1,15 +1,10 @@
 package online_bookstore.DTO;
 
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 import lombok.Data;
-import lombok.Getter;
 
 @Data
-@Entity
-@Getter
 public class BookDTO {
 	
     @Id

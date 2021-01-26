@@ -1,14 +1,20 @@
 package online_bookstore.controller;
 
 
-import lombok.RequiredArgsConstructor;
-import online_bookstore.Repository.Orders;
-import online_bookstore.Repository.OrdersRepository;
-import online_bookstore.DTO.BookDTO;
-import online_bookstore.DTO.MemberDTO;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import lombok.RequiredArgsConstructor;
+import online_bookstore.DTO.MemberDTO;
+import online_bookstore.Entity.Member;
+import online_bookstore.Entity.Orders;
+import online_bookstore.Repository.OrdersRepository;
 
 @RequiredArgsConstructor
 @RestController
@@ -18,8 +24,9 @@ public class OrdersController {
 
 
     @PostMapping("/api/orders")
-    public Orders createCart(@RequestBody MemberDTO memberdto, @RequestBody BookDTO bookdto){
-        Orders orders = new Orders( bookdto , memberdto);
+    public Orders createCart(@RequestBody MemberDTO memberDTO, @RequestBody String book_id){
+        Member member=new Member(memberDTO);
+        Orders orders = new Orders( book_id , member);
         return ordersRepository.save(orders);
     }
 
