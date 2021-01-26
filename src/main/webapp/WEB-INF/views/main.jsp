@@ -23,19 +23,28 @@
     <a class="nav-link" href="/category/list"><i class="fas fa-bars"></i></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link active" href="/">일반</a>
+    <a class="nav-link" href="/category/1">소설/시</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">로맨스</a>
+    <a class="nav-link" href="/category/2551">만화</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">판타지</a>
+    <a class="nav-link" href="/category/1230">가정/요리/뷰티</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="#">만화</a>
+    <a class="nav-link" href="/category/55890">건강/취미/레저</a>
   </li>
-    <li class="nav-item">
-    <a class="nav-link" href="#">BL</a>
+  <li class="nav-item">
+    <a class="nav-link" href="/category/170">경제경영</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/category/789">사회</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/category/987">과학</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/category/351">컴퓨터/모바일</a>
   </li>
 </ul>
 </div>
@@ -94,11 +103,13 @@
 	<h2 class="newbook-title">집 앞 서점에 방금 나온 신간!</h2>
   <div class="responsive">
   	<c:forEach var="row" items="${newbooks}">
+  	<a href="${path }/detail/${row.book_Id}">
 	  	<div class="slide-box2">
 	  	<div class="book-image"><img src="${row.book_Cover}"></div>
 	  	<div class="book-title">${row.book_Title}</div>
 	  	<span class="book-author">${row.book_Author}</span>
 	  	</div>
+	</a>
   	</c:forEach>
   </div>
   </div>
@@ -107,6 +118,7 @@
 <div class="table-title">베스트셀러</div>
 <div class="row" style="width: 1000px; margin: 0 auto;">
 <c:forEach var="row" items="${bestbooks}" varStatus="status">
+<a href="${path }/detail/${row.book_Id}">
   <div class="big-book col-md-4">
   	<div class="row" style="height:120px;">
 	      <div class="col-md-3">
@@ -124,6 +136,7 @@
 	      </div>
 	  </div>
   </div>
+</a>
 </c:forEach>
 </div>
 </div>
@@ -131,11 +144,13 @@
 <div class="container-fluid white-slide" style="max-width: 1000px; margin: 0 auto;">
   <div class="responsive white-responsive">
   	<c:forEach var="row" items="${choicebooks}">
+  		<a href="${path }/detail/${row.book_Id}">
 	  	<div class="slide-box2">
 	  	<div class="book-image"><img src="${row.book_Cover }"></div>
 	  	<div class="book-title">${row.book_Title }</div>
 	  	<span class="book-author" style="color:#636C73;">${row.book_Author }</span>
 	  	</div>
+	  	</a>
   	</c:forEach>
   </div>
   </div>

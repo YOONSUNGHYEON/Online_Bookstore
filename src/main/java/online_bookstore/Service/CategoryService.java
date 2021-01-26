@@ -43,7 +43,13 @@ public class CategoryService {
 				.stream().map(CategoryListResponseDto::new)
 				.collect(Collectors.toList());
 	}
-	
+	//sub카테고리의 id를 넣으면 그 카테고리의 pid를 id로 갖는 par카테고리 리턴하기
+	@Transactional(readOnly = true)
+	public List<Category> findParCategoryByid(Long id){
+		Long pid = categoryRepository.findPidById(id);
+		List<Category> sub = categoryRepository.findSubCategoryByid(pid);
+		return sub;
+	}
 	@Transactional(readOnly = true)
 	public List<CategoryListResponseDto> findBigCategory(){
 		return categoryRepository.findBigCategory()

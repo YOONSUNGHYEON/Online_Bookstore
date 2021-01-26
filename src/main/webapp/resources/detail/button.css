@@ -13,7 +13,37 @@
 	min-width: 112px;
 	font-size: 15px;
 }
-
+.rui_button_white_25 {
+    font-family: ridi-roboto,Helvetica Neue,Apple SD Gothic Neo,"나눔고딕",Nanum Gothic,"돋움",arial,Dotum,Tahoma,Geneva,sans-serif;
+    letter-spacing: -.03em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    appearance: none;
+    border: 0;
+    box-shadow: none;
+    outline: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-weight: 700;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    line-height: 1em;
+    vertical-align: baseline;
+    -webkit-transition: background .2s,color .2s;
+    transition: background .2s,color .2s;
+    color: #808991;
+    background: #fff;
+    border: 1px solid #d1d5d9;
+    box-shadow: 0 1px 1px 0 rgba(209,213,217,.3);
+    font-size: 11px;
+    padding: 6px 14px;
+}
 .indent_hidden {
 	position: absolute;
 	display: inline-block;

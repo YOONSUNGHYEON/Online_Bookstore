@@ -11,20 +11,38 @@
 <link href="${path}/resources/category/book.css" rel="stylesheet" type="text/css">
 <jsp:include page="../mainBase.jsp" />
 <body>
+<script>
+function two(){
+	alert("he");
+}
+</script>
 <div class="container" style="max-width:1000px; margin:40px auto;">
 	<div class="row">
 		<div class="col-xs-3">
+		
 			<c:forEach var="row" items="${categoryList}">
-			<div>${row.name}</div>
+				<c:set var="pid1" value="${row.pid}" />
+				<c:set var="pid2" value='${category.pid}' />
+				<c:set var="pid3" value="${sub[0].pid}" />
+				<c:choose>
+			    <c:when test="${pid1 eq pid2}">
+			        <a href="${path }/category/${row.id}&page=1"><div>${row.name}</div></a>
+			    	<c:if test="${pid2 eq pid3}">
+				    	<ul>
+							<c:forEach var="sub" items="${sub}">
+							<a href="${path }/category/${sub.id}&page=1"><li>${sub.name}</li></a>
+							</c:forEach>
+						</ul>
+					</c:if>
+			    </c:when>
+			    <c:otherwise>
+			    	<a href="${path }/category/${row.id}&page=1"><div>${row.name}</div></a>
+			    </c:otherwise>
+			</c:choose>
 			</c:forEach>
-			<ul>
-			<c:forEach var="row" items="${subCategory}">
-			<li>${row.name}</li>
-			</c:forEach>
-			</ul>
 		</div>
 		<div class="col-xs-9">
-			<div class="cate-name"><i class="fas fa-book-open"></i>${category }</div>
+			<div class="cate-name"><i class="fas fa-book-open"></i>${category.name }</div>
 			<div class="cate-sort">
 				<a>인기순</a>
 				<a>최신순</a>
@@ -33,7 +51,7 @@
 			</div>
 			<div class="row books">
 				<c:forEach var="row" items="${books}">
-				<div class="col-xs-2"><div class="card">
+				<a href="${path }/detail/${row.book_Id}"><div class="col-xs-2"><div class="card">
 					<div class="card-image"><img style="width:110px; height:auto;"src="${row.book_Cover}"/></div>
 					<div class="card-body">
 					<div class="book-title">${row.book_Title}</div>
@@ -42,8 +60,18 @@
 					<div class="book-price"><span>구매 </span><span class="price"><fmt:formatNumber value="${row.book_Price}" pattern="#,###" />원</span></div>
 					</div>
 				</div></div>
+				</a>
 				</c:forEach>
 			</div>
+			<div class="text-center">
+			<ul class="pagination justify-content-center">
+			    <c:set var="page" value="${page}" />
+			    <c:if test="${page ne 1}">
+			    	<li><a href="${path }/category/${category.id }&page=${page-1}">이전</a></li>
+			    </c:if>
+			    <li><a href="${path }/category/${category.id }&page=${page+1}">다음</a></li>
+			  </ul>
+			  </div>
 		</div>
 	</div>
 </div>

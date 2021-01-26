@@ -1,5 +1,6 @@
 package online_bookstore.Service;
 
+
 import online_bookstore.DTO.MemberDTO;
 import online_bookstore.Entity.Member;
 import online_bookstore.Entity.Payment;
@@ -19,8 +20,7 @@ public class MemberServiceImp implements MemberService{
     MemberRepository memberRepository;
     @Autowired
     PaymentRepository paymentRepository;
-    @Autowired
-    ModelMapper modelMapper;
+    
     @Override
     public void join(MemberDTO memberDTO) {
         Member member=new Member(memberDTO);
