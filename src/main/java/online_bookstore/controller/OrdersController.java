@@ -19,9 +19,9 @@ public class OrdersController {
 
 
     @PostMapping("/api/orders")
-    public Orders createCart(@RequestBody MemberDTO memberDTO, @RequestBody String book_id){
+    public Orders createCart(@RequestBody MemberDTO memberDTO){
         Member member=new Member(memberDTO);
-        Orders orders = new Orders( book_id , member);
+        Orders orders = new Orders( memberDTO.getBook_Id() , member);
         return ordersRepository.save(orders);
     }
 
