@@ -41,7 +41,6 @@ function fun1(num){
  		
 	}
 }
-
 </script>
 </head>
 <jsp:include page="mainBase.jsp" />
@@ -64,20 +63,17 @@ function fun1(num){
 		<div class="detail_wrap">
 			<div class="detail_body_wrap">
 				<section class="detail_body">
-					<h2 class="indent_hidden">돈의 심리학 상세페이지</h2>
+					<h2 class="indent_hidden title"></h2>
 					<article class="detail_header trackable">
 						<div class="header_info_wrap">
 							<p class="info_category_wrap">
-								<a href="/category/200">${bookInfo.book_CategoryName}</a> <span
+								<a id="category" href="/category/200"></a> <span
 									aria-hidden="true" class="icon-arrow_2_right"></span> <a
 									href="/category/220"></a>
 							</p>
-
 							<div class="info_title_wrap">
-
-								<h3 class="info_title_wrap">${bookInfo.book_Title}</h3>
-								<h4 class="info_title_sub_wrap">${bookInfo.book_Subtitle}</h4>
-
+								<h3 class="title info_title_wrap"></h3>
+								<h4 id="subtitle" class="info_title_sub_wrap"></h4>
 							</div>
 							<div class="info_metadata_wrap">
 								<p class="metadata_rate">
@@ -89,26 +85,19 @@ function fun1(num){
 											class="StarRate_ParticipantCount_Unit">명</span></span><span
 										class="StarRate_HiddenElement">참여</span></span>
 								</p>
-
 							</div>
 							<div class="info_metadata_wrap">
 								<p class="metadata metadata_writer">
-									<span class="metadata_item author_item_wrapper"><a
+									<span class="metadata_item author_item_wrapper"><a id="author"
 										class="js_author_detail_link author_detail_link"
-										href="/author/113027">${bookInfo.book_Author}</a> 저</span>
-									<c:if test="${bookInfo.book_Translator!=null}">
-										<span><a href="">${bookInfo.book_Translator}</a>역</span>
-									</c:if>
-								</p>
+										href="/author/113027"></a> 저</span>
+										<div id="translater"></div>
 
+								</p>
 								<p class="metadata file_info publisher_info">
-									<a class="publisher_detail_link"
-										href="  /search?q=%EC%B6%9C%ED%8C%90%EC%82%AC%3A%EC%9D%B8%ED%94%8C%EB%A3%A8%EC%97%94%EC%85%9C
-">${bookInfo.book_Publisher}</a>
+									<a id="publisher" class="publisher_detail_link" href=""></a>
 									출판
 								</p>
-
-
 							</div>
 							<div id="select_info_component"></div>
 							<div id="notice_component">
@@ -117,32 +106,14 @@ function fun1(num){
 							<div class="info_price_wrap">
 								<div class="info_price_table">
 									<div>
-
 										<table class="price_table normal_price_table">
-											<tbody>
-												<tr>
-													<th class="price_title" rowspan="3">구매</th>
-													<td class="price_type">종이책 정가</td>
-													<td class="book_price"><span class="museo_sans">${bookInfo.book_Price}</span>원
-													</td>
-													<td class="discount_rate"></td>
-												</tr>
-												<tr class="selling_price_row">
-													<td class="price_type">판매가</td>
-													<td class="book_price"><span class="museo_sans">${bookInfo.book_PriceSales}</span>원
-													</td>
-												</tr>
+											<tbody id="price">
+												
 											</tbody>
 										</table>
 									</div>
-
 								</div>
-
-
-
-
 							</div>
-
 							<div class="info_buttons_wrap">
 								<ul class="info_buttons rui_button_group_6">
 									<li class="rui_button_item">
@@ -172,46 +143,30 @@ function fun1(num){
 						<div class="header_thumbnail_wrap">
 							<div
 								class="header_thumbnail book_macro_200 detail_scalable_thumbnail">
-
-
-
-
 								<div class="book_thumbnail_wrapper"
 									data-book_id_for_tracking="1691000080">
 									<div class="book_thumbnail">
-										<div class="main_book_image_wrapper">
-											<img class="main_book_image " src="${bookInfo.book_Cover}">
+										<div id="image" class="main_book_image_wrapper">
+											
 											<span class="border"></span>
 										</div>
-
-
-
-
-
-
 									</div>
 								</div>
-
 							</div>
-
 						</div>
-
 					</article>
-
 					<article class="detail_series detail_box_module">
 						<div class="rsg_title01">
 							<h3 class="title_text">책 소개</h3>
 						</div>
 						<div id="introduce_book"
 							class="introduce_section js_introduce_section">
-							<p class="introduce_paragraph folded">${bookInfo.book_Description}</p>
-
+							<p id="description" class="introduce_paragraph folded"></p>
 						</div>
 					</article>
 					<article class="detail_review detail_box_module">
 						<div class="rsg_title01">
 							<h3 class="title_text">리뷰</h3>
-
 						</div>
 						<div class="review_info_section">
 							<div class="review_input_left">
@@ -301,86 +256,8 @@ function fun1(num){
 								</ul>
 							</div>
 							<div class="review_list_wrapper js_review_list_wrapper active">
-								<ul>
-									<c:forEach var="reviews" items="${ reviews }">
-										<li class="review_list">
-											<div class="list_left js_review_info_wrapper">
-												<div class="left_contents">
-													<p>
-														<span class="star_rate"><span
-															class="RSGBookMetadata_StarRate"><span
-																class="StarRate_IconBox"><span
-																	class="StarRate_IconFill" style="width: 100%"></span></span></span></span> <span
-															class="reviewer_id">${ reviews.member.member_Id }</span> <span class="buy_check">
-															<span class="svg_badge_buyer_1">구매자</span>
-														</span>
-													</p>
-													<ul class="review_date_and_report_wrapper">
-														<li class="review_date">${ reviews.time }.</li>
-														<li class="meta_list report">
-															<button class="report_button js_report_button"
-																type="button" data-rating-id="18334902"
-																data-reported-status="not_reported">신고</button>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<div class="list_right js_review_wrapper">
-												<p class="review_content js_review_content">${ reviews.content }</p>
-												<div class="review_status">
-													<div
-														class="review_recommend_count js_review_recommend_count"
-														data-rating-id="18334902">
-														<button type="button"
-															class="rui_button_white_25 comment_toggle_button js_comment_toggle_button">
-															<span class="rui_button_contents"> <span
-																class="rui_button_icon"></span> <span
-																class="rui_button_text"> 댓글 <span
-																	class="js_comment_count"></span>
-															</span>
-															</span>
-														</button>
-														<button type="button"
-															class="rui_button_white_25 like_button js_like_button">
-															<span class="rui_button_contents"> <span
-																class="rui_button_icon"></span> <span
-																class="rui_button_text"> <span
-																	class="indent_hidden">추천</span> <span
-																	class="like_count js_like_count"></span>
-															</span>
-															</span>
-														</button>
-													</div>
-												</div>
+								<ul id="reviews">
 
-												<div class="comment_wrapper hidden js_comment_wrapper"
-													data-rating-id="18334902">
-													<ul class="comment_list_wrapper js_comment_list_wrapper">
-													</ul>
-													<div class="comment_textarea_wrapper">
-														<form class="js_review_comment_register_form">
-															<input type="hidden" name="rating_id" value="18334902">
-															<input type="hidden" name="book_id" value="1691000080">
-															<div class="textarea_left">
-																<textarea name="content"
-																	class="comment_textarea js_comment_textarea"
-																	title="이곳에 댓글을 남겨주세요." placeholder="이곳에 댓글을 남겨주세요."></textarea>
-															</div>
-															<div class="textarea_right">
-																<button type="submit"
-																	class="rui_button_blue_30 disabled comment_submit js_comment_write_btn">댓글
-																	달기</button>
-															</div>
-															<hr class="clear_both">
-														</form>
-													</div>
-												</div>
-
-											</div>
-
-										</li>
-										
-									</c:forEach>
 								</ul>
 								<div class="spinner_wrapper"></div>
 								<div class="spin"></div>
@@ -495,10 +372,111 @@ function fun1(num){
 			</div>
 		</div>
 	</div>
-
 	<jsp:include page="footer.jsp" />
 
-
 </body>
+<script type="text/javascript">
 
+var id = ${id}
+
+$.getJSON('/api/detailbook/'+id,function(rdata){
+ $.each(rdata,function(index,item){              
+var price = '<tr>'+
+			'<th class="price_title" rowspan="3">구매</th>'+
+			'<td class="price_type">종이책 정가</td>'+
+			'<td class="book_price"><span class="museo_sans">'+item.book_Price+'</span>원'+
+			'</td>'+
+			'</tr>'+
+			'<tr class="selling_price_row">'+
+			'<td class="price_type">판매가</td>'+
+			'<td class="book_price"><span class="museo_sans">'+item.book_PriceSales+'</span>원'+
+			'</td>'+
+			'</tr>'
+var cover='<img class="main_book_image" src='+item.book_Cover+'>'
+var translater = '<c:if test="'+'${'+item.book_Translator+'!=null}">'+
+				 '<span><a href="">'+item.book_Translator+'</a>역</span>'+
+				 '</c:if>'
+			
+$('.title').append(item.book_Title);
+$('#category').append(item.book_CategoryName);
+$('#description').append(item.book_Description);
+$('#subtitle').append(item.book_Subtitle);
+$('#price').append(price);
+$('#image').append(cover);
+$('#translator').append(translater);
+$('#author').append(item.book_Author);
+$('#publisher').append(item.book_Publisher);
+ })
+});
+</script>
+
+<script type="text/javascript">
+$.getJSON('/api/reviewlist/'+id+'/latest',function(rdata){
+ $.each(rdata,function(index,item){              
+var reviews = '<li class="review_list">'+
+			'<div class="list_left js_review_info_wrapper">'+
+			'<div class="left_contents">'+
+			'<p>'+
+			'<span class="star_rate">'+
+			'<span class="RSGBookMetadata_StarRate">'+
+			'<span class="StarRate_IconBox">'+
+			'<span class="StarRate_IconFill" style="width: 100%">'+
+			'</span></span></span></span>'+
+			'<span class="reviewer_id">'+item.member.member_Id+'</span>'+
+			'<span class="buy_check">'+
+			'<span class="svg_badge_buyer_1">구매자</span></span>'+
+			'</p>'+
+			'<ul class="review_date_and_report_wrapper">'+
+			'<li class="review_date">'+item.time+'</li>'+
+			'<li class="meta_list report">'+
+			'<button class="report_button js_report_button" type="button" data-rating-id="18334902">신고</button>'+
+			'</li></ul></div></div>'+
+			'<div class="list_right js_review_wrapper">'+
+			'<p class="review_content js_review_content">'+item.content+'</p>'+
+			'<div class="review_status">'+
+			'<div class="review_recommend_count js_review_recommend_count">'+
+			'<button type="button" class="rui_button_white_25 comment_toggle_button js_comment_toggle_button">'+
+			'<span class="rui_button_contents">'+
+			'<span class="rui_button_icon"></span> '+
+			'<span class="rui_button_text"> 댓글 '+
+			'<span class="js_comment_count"></span></span></span></button>'+
+			'<button type="button"'+
+			'class="rui_button_white_25 like_button js_like_button">'+
+			'<span class="rui_button_contents"> <span'+
+			'class="rui_button_icon"></span> <span'+
+			'class="rui_button_text"> <span'+
+			'class="indent_hidden">추천</span> <span'+
+			'class="like_count js_like_count"></span>'+
+			'</span>'+
+			'</span>'+
+			'</button>'+
+			'</div>'+
+			'</div>'+
+			'<div class="comment_wrapper hidden js_comment_wrapper"'+
+			'data-rating-id="18334902">'+
+			'<ul class="comment_list_wrapper js_comment_list_wrapper">'+
+			'</ul>'+
+			'<div class="comment_textarea_wrapper">'+
+			'<form class="js_review_comment_register_form">'+
+			'<input type="hidden" name="rating_id" value="18334902">'+
+			'<input type="hidden" name="book_id" value="1691000080">'+
+			'<div class="textarea_left">'+
+			'<textarea name="content"'+
+			'class="comment_textarea js_comment_textarea"'+
+			'title="이곳에 댓글을 남겨주세요." placeholder="이곳에 댓글을 남겨주세요."></textarea>'+
+			'</div>'+
+			'<div class="textarea_right">'+
+			'<button type="submit"'+
+			'class="rui_button_blue_30 disabled comment_submit js_comment_write_btn">댓글'+
+			'달기</button>'+
+			'</div>'+
+			'<hr class="clear_both">'+
+			'</form></div></div></div></li>'
+										
+$('#reviews').append(reviews);
+
+ })
+});
+
+</script>
 </html>

@@ -10,5 +10,5 @@ public interface BookInfoService {
     ArrayList<BookDTO> choicebooklist();
     ArrayList<BookDTO> categoryBookList(int id, int page);
     ArrayList<BookDTO> booksearch(String title);
-	BookDTO booksearchById(String id);
+	ArrayList<BookDTO> booksearchById(String id);
 }

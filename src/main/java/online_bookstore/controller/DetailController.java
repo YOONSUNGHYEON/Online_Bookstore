@@ -2,7 +2,6 @@ package online_bookstore.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
@@ -30,10 +29,6 @@ public class DetailController {
 
 	@GetMapping("detail/{id}")
 	public String detail(Model model, @PathVariable("id") String id) {
-		List<Review> list = reviewService.findByBookId(id);
-		model.addAttribute("bookInfo", bookInfoService.booksearchById(id));
-		model.addAttribute("reviewModel", new Review());
-		model.addAttribute("reviews", list);
 		return "detail";
 	}
 

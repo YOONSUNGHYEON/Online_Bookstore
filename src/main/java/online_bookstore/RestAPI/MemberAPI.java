@@ -1,16 +1,17 @@
 package online_bookstore.RestAPI;
 
-import online_bookstore.Entity.Member;
-import online_bookstore.DTO.Message;
-import online_bookstore.Entity.Payment;
-import online_bookstore.Service.MemberService;
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
+import online_bookstore.DTO.Message;
+import online_bookstore.Entity.Member;
+import online_bookstore.Entity.Payment;
+import online_bookstore.Service.MemberService;
 
 @RestController
 @RequestMapping("/api")
@@ -43,7 +44,6 @@ public class MemberAPI {
 
     @GetMapping("/myorders/{num}/{page}")
     public ArrayList<Payment> myOrders(@PathVariable(name = "num") int num,@PathVariable(name = "page") int page){
-
         return memberService.myPayment(num,page);
     }
 
