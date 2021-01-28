@@ -4,7 +4,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.servlet.http.HttpSession;
-import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,35 +11,57 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
-import online_bookstore.Entity.Member;
+import online_bookstore.DTO.MemberDTO;
+import online_bookstore.Entity.Liketo;
 import online_bookstore.Entity.Review;
-import online_bookstore.Repository.ReviewRepository;
+import online_bookstore.Repository.LiketoRepository;
 import online_bookstore.Service.BookInfoService;
+import online_bookstore.Service.MemberService;
+import online_bookstore.Service.ReviewService;
 @RequiredArgsConstructor
 @Controller
 public class DetailController {
 
 	@Autowired
-	ReviewRepository reviewService;
+	ReviewService reviewService;
 	@Autowired
 	BookInfoService bookInfoService;
+	@Autowired
+	MemberService memberService;
+	@Autowired
+	LiketoRepository liketoRepository;
 
 	@GetMapping("detail/{id}")
 	public String detail(Model model, @PathVariable("id") String id) {
 		return "detail";
 	}
 
-	@PostMapping("detail/{id}" )
-	public String detail(@Valid Review r, @PathVariable("id") String id, HttpSession session) {
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		r.setMember((Member)session.getAttribute("member"));
+
+	@PostMapping(value = "/review")
+	@ResponseBody
+	public String home(Review review, HttpSession session) {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date time = new Date();
-		r.setScore(4);
-		r.setTime(format.format(time));
-		r.setBookId(id);
-		reviewService.save(r);
-		return "redirect:"+id;
+		review.setScore(4);
+		review.setTime(format.format(time));
+		review.setMember(memberService.login(((MemberDTO)session.getAttribute("member")).getMember_Id()));
+		reviewService.save(review);
+		return "redirect:/";
 	}
+
+	@PostMapping(value = "/like")
+	@ResponseBody
+	public int like(Review review) {
+		Review r = new Review();
+		Liketo l=new Liketo();
+		l =
+		r=reviewService.findOne(review.getId());
+		reviewService.updateLike(r.getId(), r.getLike()+1);
+		return r.getLike()+1;
+	}
+
+
 }

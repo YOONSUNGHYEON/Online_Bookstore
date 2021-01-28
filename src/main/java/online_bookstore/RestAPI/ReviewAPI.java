@@ -24,6 +24,6 @@ public class ReviewAPI {
 
 	 @GetMapping("reviewlist/{num}/latest")
 	    public ArrayList<Review> reviewlist(@PathVariable(name = "num") String num){
-	        return reviewService.findByBookId(num);
+	        return reviewService.findByBookIdOrderByIdDesc(num);
 	    }
 }
