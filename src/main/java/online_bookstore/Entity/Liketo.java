@@ -13,6 +13,8 @@ import lombok.Data;
 @Data
 @Entity
 public class Liketo {
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
