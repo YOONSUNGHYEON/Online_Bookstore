@@ -12,9 +12,7 @@ import javax.persistence.ManyToOne;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import online_bookstore.DTO.PaymentDTO
-import online_bookstore.Entity.Member;
-import online_bookstore.Entity.Orders;
+import online_bookstore.DTO.PaymentDTO;
 
 @NoArgsConstructor
 @Getter
@@ -56,4 +54,5 @@ public class Payment{
         this.total_price = paymentDTO.getTotal_price();
         this.discount_price = paymentDTO.getDiscount_price();
     }
+    
 }
