@@ -103,7 +103,7 @@ public class BookInfoServiceImp implements BookInfoService{
     }
 
     @Override
-    public BookDTO booksearchById(String id) {
+    public BookDTO booksearchById1(String id) {
         strurl="http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=ttbinpo33350927001&itemIdType=ISBN13&ItemId="+id+"&output=js&Version=20131101&Cover=Big";
         JSONArray jsonArray=JSONParsing(strurl);
         JSONObject date=(JSONObject) jsonArray.get(0);

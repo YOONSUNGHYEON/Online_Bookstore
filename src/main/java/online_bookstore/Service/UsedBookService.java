@@ -27,7 +27,7 @@ public class UsedBookService {
 				.stream().map(UsedBookDTO::new)
 				.collect(Collectors.toList());
 		for(int i=0; i<data.size(); i++) {
-			BookDTO book = bookInfoService.booksearchById(data.get(i).getBook_Id());
+			BookDTO book = bookInfoService.booksearchById1(data.get(i).getBook_Id());
 			UsedBookInfoDTO usedbook = new UsedBookInfoDTO(data.get(i), book);
 			arrayList.add(usedbook);
 		}
