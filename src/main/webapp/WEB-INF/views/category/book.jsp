@@ -11,11 +11,6 @@
 <link href="${path}/resources/category/book.css" rel="stylesheet" type="text/css">
 <jsp:include page="../mainBase.jsp" />
 <body>
-<script>
-function two(){
-	alert("he");
-}
-</script>
 <div class="container" style="max-width:1000px; margin:40px auto;">
 	<div class="row">
 		<div class="col-xs-3">
@@ -51,7 +46,9 @@ function two(){
 			</div>
 			<div class="row books">
 				<c:forEach var="row" items="${books}">
-				<a href="${path }/detail/${row.book_Id}"><div class="col-xs-2"><div class="card">
+				<a href="${path }/detail/${row.book_Id}">
+				<div class="col-xs-2">
+				<div class="card">
 					<div class="card-image"><img style="width:110px; height:auto;"src="${row.book_Cover}"/></div>
 					<div class="card-body">
 					<div class="book-title">${row.book_Title}</div>
@@ -78,4 +75,4 @@ function two(){
 
 <jsp:include page="../footer.jsp" />
 </body>
-</htm
+</html>

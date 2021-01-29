@@ -23,28 +23,28 @@
     <a class="nav-link" href="/category/list"><i class="fas fa-bars"></i></a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/category/1">소설/시</a>
+    <a class="nav-link" href="/category/1&page=1">소설/시</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/category/2551">만화</a>
+    <a class="nav-link" href="/category/2551&page=1"">만화</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/category/1230">가정/요리/뷰티</a>
+    <a class="nav-link" href="/category/1230&page=1"">가정/요리/뷰티</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/category/55890">건강/취미/레저</a>
+    <a class="nav-link" href="/category/55890&page=1"">건강/취미/레저</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/category/170">경제경영</a>
+    <a class="nav-link" href="/category/170&page=1"">경제경영</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/category/789">사회</a>
+    <a class="nav-link" href="/category/789&page=1"">사회</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/category/987">과학</a>
+    <a class="nav-link" href="/category/987&page=1"">과학</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/category/351">컴퓨터/모바일</a>
+    <a class="nav-link" href="/category/351&page=1"">컴퓨터/모바일</a>
   </li>
 </ul>
 </div>
@@ -173,32 +173,7 @@
 			infinite: false,
 			speed: 300,
 			slidesToShow: 6,
-			slidesToScroll: 6,
-			responsive: [
-				{
-					breakpoint: 1024,
-					settings: {
-						slidesToShow: 3,
-						slidesToScroll: 3,
-						infinite: true,
-						dots: true
-					}
-				},
-				{
-					breakpoint: 600,
-					settings: {
-						slidesToShow: 2,
-						slidesToScroll: 2
-					}
-				},
-				{
-					breakpoint: 480,
-					settings: {
-						slidesToShow: 1,
-						slidesToScroll: 1
-					}
-				}
-			]
+			slidesToScroll: 6
 		});
 	});
 </script>

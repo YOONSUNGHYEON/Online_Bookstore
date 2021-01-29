@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import online_bookstore.DTO.PaymentDTO;
+import online_bookstore.DTO.PaymentDTO
 import online_bookstore.Entity.Member;
 import online_bookstore.Entity.Orders;
 
@@ -20,7 +20,6 @@ import online_bookstore.Entity.Orders;
 @Getter
 @Entity
 public class Payment{
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -57,5 +56,4 @@ public class Payment{
         this.total_price = paymentDTO.getTotal_price();
         this.discount_price = paymentDTO.getDiscount_price();
     }
-
 }
