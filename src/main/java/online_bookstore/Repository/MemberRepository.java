@@ -8,10 +8,14 @@ import org.springframework.stereotype.Repository;
 
 import online_bookstore.Entity.Member;
 
+
 @Repository
 public interface MemberRepository extends JpaRepository<Member,Integer> {
     @Query("select m from member m where m.member_Id = :#{#member.member_Id} and m.member_Pass = :#{#member.member_Pass}")
-    Member findById(@Param("member")Member member);
+    Member findById(@Param("member") Member member);
+
+    @Query("select m from member m where m.member_Id = :id")
+    Member findById(@Param("id") String id);
 
     @Query("select m from member m where m.member_Id = :id")
     Member findById(@Param("id")String id);

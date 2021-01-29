@@ -36,4 +36,8 @@ public class BookInfoController {
     public BookDTO booksearch2(@RequestParam("id") String id) {
         return bookInfoService.booksearchById(id);
     }
+    @GetMapping("/detailbook/{num}")
+    public ArrayList<BookDTO> detailbook(@PathVariable(name = "num") String num){
+        return bookInfoService.booksearchById(num);
+    }
 }

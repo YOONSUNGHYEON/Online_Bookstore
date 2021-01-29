@@ -13,6 +13,7 @@ public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int member_Num;
+    @Column(unique = true)
     private String member_Id;
     private String member_Name;
     private String member_Pass;
@@ -31,6 +32,7 @@ public class Member {
         this.member_Gender = member_Gender;
     }
     public Member(MemberDTO memberDTO){
+        this.member_Num = memberDTO.getMember_Num();
         this.member_Id = memberDTO.getMember_Id();
         this.member_Name = memberDTO.getMember_Name();
         this.member_Pass = memberDTO.getMember_Pass();

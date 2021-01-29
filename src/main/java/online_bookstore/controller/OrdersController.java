@@ -12,9 +12,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import lombok.RequiredArgsConstructor;
 import online_bookstore.DTO.MemberDTO;
-import online_bookstore.Entity.Member;
 import online_bookstore.Entity.Orders;
 import online_bookstore.Repository.OrdersRepository;
+import online_bookstore.DTO.BookDTO;
+import online_bookstore.Entity.Member;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -24,9 +28,9 @@ public class OrdersController {
 
 
     @PostMapping("/api/orders")
-    public Orders createCart(@RequestBody MemberDTO memberDTO, @RequestBody String book_id){
+    public Orders createCart(@RequestBody MemberDTO memberDTO){
         Member member=new Member(memberDTO);
-        Orders orders = new Orders( book_id , member);
+        Orders orders = new Orders( memberDTO.getBook_Id() , member);
         return ordersRepository.save(orders);
     }
 

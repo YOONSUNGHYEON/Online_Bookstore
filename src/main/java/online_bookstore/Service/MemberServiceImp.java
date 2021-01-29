@@ -23,7 +23,7 @@ public class MemberServiceImp implements MemberService{
     MemberRepository memberRepository;
     @Autowired
     PaymentRepository paymentRepository;
-    
+
     @Override
     public void join(MemberDTO memberDTO) {
         Member member=new Member(memberDTO);
