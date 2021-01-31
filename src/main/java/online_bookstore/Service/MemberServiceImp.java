@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 import javax.transaction.Transactional;
 
+import online_bookstore.DTO.PaymentDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,17 +42,7 @@ public class MemberServiceImp implements MemberService{
         return memberRepository.findById(id);
     }
 
-    @Override
-    public ArrayList<Payment> myPayment(int num, int page) {
-        page=(page-1)*5;
-        return paymentRepository.myPayment(num,page);
-    }
 
-    @Override
-    public Long paymentcount(int num) {
-
-        return paymentRepository.paymentcount(num);
-    }
     //Member 객체 -> MemberDTO 객체
     public MemberDTO toMemberDTO(Member member){
     	ModelMapper modelMapper = new ModelMapper();

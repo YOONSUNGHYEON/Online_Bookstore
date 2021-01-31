@@ -80,7 +80,7 @@ $.getJSON('/api/myorders/'+session+'/1',function(rdata){
  })
  myorders+='<tr class="detail_link js_rui_detail_link" data-href="">'+
               '<td class="default">'+item.payment_time+'</td>'+
-              '<td class="title">'+item.orders.book_Id+'</td>'+
+              '<td class="title">'+item.book_name+'</td>'+
               '<td class="main_value"><span class="museo_sans">'+item.total_price+'</span>원'+
               '</td>'+
               '<td class="default payment_type">'+item.payment_type+'</td>'+
@@ -124,7 +124,7 @@ $('#pagination-div').twbsPagination({
 
                 newhtml+='<tr class="detail_link js_rui_detail_link" data-href="">'+
                               '<td class="default">'+item.payment_time+'</td>'+
-                              '<td class="title">'+item.orders.book_Id+'</td>'+
+                              '<td class="title">'+item.book_name+'</td>'+
                               '<td class="main_value"><span class="museo_sans">'+item.total_price+'</span>원'+
                               '</td>'+
                               '<td class="default payment_type">'+item.payment_type+'</td>'+
