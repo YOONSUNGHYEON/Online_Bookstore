@@ -14,9 +14,23 @@ import online_bookstore.Repository.ReviewRepository;
 public class ReviewService {
 	@Autowired
 	ReviewRepository reviewRepository;
+	public void updateLike(long id, int like) {
+		reviewRepository.updateLike(id, like);
+	}
 
 
-	public ArrayList<Review> findByBookId(String bookId) {
-		return reviewRepository.findByBookId(bookId);
+	public ArrayList<Review> findByBookIdOrderByIdDesc(String bookId) {
+		return reviewRepository.findByBookIdOrderByIdDesc(bookId);
+	}
+
+
+	public void save(Review review) {
+
+		reviewRepository.save(review);
+	}
+
+
+	public Review findOne(Long id) {
+		return reviewRepository.findOne(id);
 	}
 }

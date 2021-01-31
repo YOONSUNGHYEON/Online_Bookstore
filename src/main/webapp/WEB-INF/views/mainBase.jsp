@@ -39,6 +39,9 @@
     <a class="nav-link active" href="/"><i class="fas fa-home"></i>홈</a>
   </li>
   <li class="nav-item">
+    <a class="nav-link" href="/used"><i class="fas fa-book"></i></i>중고책</a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link" href="/alarm"><i class="fas fa-bell"></i></i>알람</a>
   </li>
   <li class="nav-item">

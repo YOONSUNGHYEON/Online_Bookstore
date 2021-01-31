@@ -12,7 +12,9 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Review {
+public class Liketo {
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
@@ -21,19 +23,12 @@ public class Review {
 	@JoinColumn(name = "member_num", nullable = false) // 외래키
 	private Member member;
 
-	@Column(name = "book_id")
-	private String bookId;
+	@ManyToOne
+	@JoinColumn(name = "review_id", nullable = false)
+	private Review review;
 
-	@Column(name = "review_score")
-	private int score;
 
-	@Column(name = "review_content")
-	private String content;
-
-	@Column(name = "review_time")
-	private String time;
-
-	@Column(name = "review_like")
-	private int like;
+	@Column(name = "like_check")
+	private int like_check;
 
 }
