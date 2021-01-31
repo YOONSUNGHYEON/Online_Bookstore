@@ -20,7 +20,7 @@
     <div class="menu_section">
       <h4 class="section_title"><span class="icon-payment_2 myridi_left_icon"></span>구매/혜택</h4>
       <ul class="section_list">
-        <li class="section_list_element"><a class="section_link" href="/order/history">결제 내역</a></li>
+        <li class="section_list_element"><a class="section_link" href="/my/order">결제 내역</a></li>
         <li class="section_list_element"><a class="section_link" href="/order/checkout/cash">리디캐시</a></li>
         <li class="section_list_element"><a class="section_link" href="/order/history_point">리디포인트</a></li>
         <li class="section_list_element"><a class="section_link" href="/coupon/">쿠폰</a></li>

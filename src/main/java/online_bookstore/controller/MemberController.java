@@ -33,7 +33,7 @@ public class MemberController {
 		return "member/login";
 	}
 	//로그아웃
-	@RequestMapping("logout")
+	@RequestMapping("/logout")
 	public String logout(HttpSession session){
 		session.invalidate();
 		return "redirect:/";
