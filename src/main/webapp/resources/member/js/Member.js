@@ -144,7 +144,7 @@ function password(pass){
 	var digitRegex = /[0-9]/;
 	var specCharRegex = /[!@#$%^_]/;
 	var element = document.getElementById('PasswdResult');	
-	
+
 	if(pass.value!=""){
 		if(lengthRegex.exec(pass.value)){
 			security+=(upperCaseRegex.exec($('#member_Pass').val()))? 1:0;

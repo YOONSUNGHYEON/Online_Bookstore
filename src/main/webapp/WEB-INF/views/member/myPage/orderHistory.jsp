@@ -19,7 +19,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js?ver=2"></script>
 <script src="https://kit.fontawesome.com/81816a43c2.js"
 	crossorigin="anonymous"></script>
-	<script type="text/javascript" src="${path}/resources/member/js/jquery.twbsPagination.js?ver=123"></script>
+
 
 </head>
 <body>
@@ -65,24 +65,30 @@
 	</div>
 </div>
 </body>
-
+<script type="text/javascript" src="${path}/resources/member/js/jquery.twbsPagination.js?ver=123"></script>
 <script type="text/javascript">
 var session=${member.member_Num};
 var count=0;
+var myorders="";
+var book_Title="";
+
 $.getJSON('/api/myorders/'+session+'/1',function(rdata){
  $.each(rdata,function(index,item){
- var myorders='<tr class="detail_link js_rui_detail_link" data-href="">'+
+ $.getJSON('/api/booksearchById/'+item.orders.book_Id,function(bookinfo){
+ book_Title=bookinfo.book_Title;
+
+ })
+ myorders+='<tr class="detail_link js_rui_detail_link" data-href="">'+
               '<td class="default">'+item.payment_time+'</td>'+
-              '<td class="title">'+item.orders+'</td>'+
+              '<td class="title">'+item.book_name+'</td>'+
               '<td class="main_value"><span class="museo_sans">'+item.total_price+'</span>원'+
               '</td>'+
               '<td class="default payment_type">'+item.payment_type+'</td>'+
               '<td class="detail_icon"><a href=""><span class="indent_hidden">상세보기</span><span class="arrow_icon"></span></a>'+
               '</td>'+
               '</tr>';
-$('#myorders').append(myorders);
-
  })
+ $('#myorders').html(myorders);
 });
 $.getJSON('/api/paymentcount/'+session,function(rdata){
 			        if(rdata%5==0){
@@ -112,7 +118,22 @@ $('#pagination-div').twbsPagination({
 		    onPageClick: function (event, page) {
 		    	//클릭 이벤트
 		    	$.getJSON('/api/myorders/'+session+'/'+page,function(rdata){
-		    	alert(rdata)
+
+                var newhtml="";
+		    	$.each(rdata,function(index,item){
+
+                newhtml+='<tr class="detail_link js_rui_detail_link" data-href="">'+
+                              '<td class="default">'+item.payment_time+'</td>'+
+                              '<td class="title">'+item.book_name+'</td>'+
+                              '<td class="main_value"><span class="museo_sans">'+item.total_price+'</span>원'+
+                              '</td>'+
+                              '<td class="default payment_type">'+item.payment_type+'</td>'+
+                              '<td class="detail_icon"><a href=""><span class="indent_hidden">상세보기</span><span class="arrow_icon"></span></a>'+
+                              '</td>'+
+                              '</tr>';
+                 })
+                    $('#myorders').html(newhtml);
+
 		    	})
 
 		    }

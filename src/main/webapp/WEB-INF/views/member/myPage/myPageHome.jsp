@@ -37,7 +37,7 @@
 						<h3 class="info_id museo_sans">qead753951</h3>
 						<p class="info_email museo_sans">qead753951@naver.com</p>
 					</div>
-					<a href="/account/logout" class="btn_logout">로그아웃</a>
+					<a href="/logout" class="btn_logout">로그아웃</a>
 				</div>
 				<div class="asset_info_wrapper">
 					<ul class="table_wrapper">

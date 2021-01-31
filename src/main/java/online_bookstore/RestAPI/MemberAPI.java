@@ -42,15 +42,7 @@ public class MemberAPI {
         return memberService.login(id);
     }
 
-    @GetMapping("/myorders/{num}/{page}")
-    public ArrayList<Payment> myOrders(@PathVariable(name = "num") int num,@PathVariable(name = "page") int page){
-        return memberService.myPayment(num,page);
-    }
 
-    @GetMapping("/paymentcount/{num}")
-    public Long paymentcount(@PathVariable(name = "num") int num){
-        return memberService.paymentcount(num);
-    };
 
 
 }
