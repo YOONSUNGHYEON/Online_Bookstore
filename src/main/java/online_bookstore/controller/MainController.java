@@ -23,11 +23,7 @@ public class MainController {
 		model.addAttribute("choicebooks", bookInfoService.choicebooklist());
 		return "main";
 	}
-	
-	@RequestMapping("/detail")
-	public String detail() {
-		return "detail";
-	}
+
 
 
 }

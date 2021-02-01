@@ -56,11 +56,13 @@ function deleteFromcart(cartlistId){
 }
 
 function deleteSeveral(){
-    let memberNum =1;
+    let memberNum = 1;
     var cnt = $("input[name='rowcheckbox']:checked").length;
     var arr = new Array();
     $("input[name='rowcheckbox']:checked").each(function(){
         let cartlistId = $(this).attr('id');
+        console.log(cartlistId);
+
         if(cnt==0){
             alert("선택된 상품이 없습니다.");
             window.location.reload();
@@ -70,14 +72,14 @@ function deleteSeveral(){
                 type: "DELETE",
                 url: `/api/cart/${cartlistId}/${memberNum}`,
                 success: function (response) {
-                    showCart();
+
+                    $('#booklist-container').empty(cartlistId);
                 }
             })
-            $('#booklist-container').empty(cartlistId);
-        }
+      }
 
     });
-
+    showCart();
 }
 
 function showtotalprice (response){

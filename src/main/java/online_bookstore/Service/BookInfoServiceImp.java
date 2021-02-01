@@ -10,9 +10,7 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class BookInfoServiceImp implements BookInfoService{
@@ -41,7 +39,7 @@ public class BookInfoServiceImp implements BookInfoService{
         return arrayList;
     }
 
-
+    @Override
     public ArrayList<BookDTO> booksearchbyId(String book_id){
         ArrayList<BookDTO> arrayList=new ArrayList<BookDTO>();
         strurl="http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=ttbinpo33350927001&itemIdType=ISBN13&ItemId="+book_id+"&output=js&Version=20131101";
@@ -150,14 +148,15 @@ public class BookInfoServiceImp implements BookInfoService{
         }
         return arrayList;
     }
-
+    
     @Override
-    public ArrayList<BookDTO> categoryBookList(int id) {
+    public ArrayList<BookDTO> categoryBookList(int id, int page) {
         ArrayList<BookDTO> arrayList=new ArrayList<BookDTO>();
         strurl="http://www.aladin.co.kr/ttb/api/ItemList.aspx?ttbkey=ttbinpo33350927001"
-                + "&QueryType=ItemNewAll&MaxResults=30&start=1&Cover=Big"
-                + "&SearchTarget=Book&output=js&Version=20131101"
-                + "&CategoryId=" + id;
+        		+ "&QueryType=ItemNewAll&MaxResults=30&Cover=Big"
+        		+ "&SearchTarget=Book&output=js&Version=20131101"
+        		+ "&CategoryId=" + id
+        		+ "&Start=" + page;
         JSONArray jsonArray=JSONParsing(strurl);
 
         for (int i = 0; i <jsonArray.size() ; i++) {
@@ -175,9 +174,18 @@ public class BookInfoServiceImp implements BookInfoService{
         }
         return arrayList;
     }
-
-
-
+    @Override
+	public BookDTO booksearchById(String id) {
+		strurl = "http://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=ttbinpo33350927001&Query=" + id
+				+ "&QueryType=Isbn13&MaxResults=10&start=1&SearchTarget=Book&output=js&Version=20131101";
+		JSONArray jsonArray = JSONParsing(strurl);
+		JSONObject date = (JSONObject) jsonArray.get(0);
+		BookDTO bookDTO = new BookDTO(date.get("isbn13").toString(), date.get("title").toString(),
+				date.get("author").toString(), date.get("description").toString(),
+				Integer.parseInt(date.get("priceStandard").toString()),Integer.parseInt(date.get("priceSales").toString()), date.get("cover").toString().replaceAll("coversum", "cover500"),
+				date.get("publisher").toString(), date.get("categoryName").toString());
+		return bookDTO;
+	}
     public JSONArray JSONParsing(String strurl){
         JSONArray JsonArray=null;
         StringBuffer stringBuffer =new StringBuffer();
@@ -203,6 +211,4 @@ public class BookInfoServiceImp implements BookInfoService{
         }
         return JsonArray;
     }
-
-
 }

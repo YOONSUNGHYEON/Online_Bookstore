@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,25 +16,19 @@
   <script src="${path}/resources/main/ridiBase.css"></script>
   <script src="${path}/resources/cart/css/cart.css"></script>
   <script src="${path}/resources/cart/js/cart.js"></script>
+  <script src="${path}/resources/search/js/search.js"></script>
+  <script src="${path}/resources/search/css/search.css"></script>
 </head>
 <body>
 <div class="header">
 <header style="max-width: 1000px; margin: 0 auto;">
 <nav class="navbar navbar-light bg-light justify-content-between">
   <a class="navbar-brand">RIDIBOOKS</a>
-    <c:choose>
-    <c:when test="${empty sessionScope.member}">
-    <button class="align-right login">로그인</button>
-    <button class="align-right join">회원가입</button>
-    </c:when>
-    <c:otherwise>
-    <button class="align-right login">마이페이지</button>
-    <button class="align-right join">로그아웃</button>
-    </c:otherwise>
-    </c:choose>
+    <a href="${path}/login"><button class="align-right login">로그인</button></a>
+    <a href="${path}/join"><button class="align-right join">회원가입</button></a>
   <form class="form-inline">
     <input class="top-search form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" href="/search">Search</button>
+    <a href="${path}/search"><button class="btn btn-outline-success my-2 my-sm-0">Search</button></a>
   </form>
 </nav>
 <ul class="nav nav-tabs">
