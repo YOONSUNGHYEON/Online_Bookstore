@@ -15,16 +15,14 @@ public class ReviewDTO {
     private Member member;
 
     private String bookId;
-    
+
     private String book_name;
 
     private int score;
 
     private String content;
 
-
     private String time;
-
 
     private int like;
 
