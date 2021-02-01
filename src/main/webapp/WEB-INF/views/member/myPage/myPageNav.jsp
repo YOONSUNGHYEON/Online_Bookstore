@@ -31,7 +31,7 @@
       <ul class="section_list">
         <li class="section_list_element"><a class="section_link" href="https://help.ridibooks.com/hc/ko/requests/new" target="_blank">1:1 문의</a></li>
         <li class="section_list_element"><a class="section_link" href="https://account.ridibooks.com/devices">내 기기 관리</a></li>
-        <li class="section_list_element"><a class="section_link" href="/review/">내 리뷰 관리</a></li>
+        <li class="section_list_element"><a class="section_link" href="/my/review">내 리뷰 관리</a></li>
         <li class="section_list_element"><a class="section_link" href="/account/modify">정보 변경</a></li>
       </ul>
     </div>
