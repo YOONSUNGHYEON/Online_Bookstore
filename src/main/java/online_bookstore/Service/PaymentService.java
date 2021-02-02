@@ -1,17 +1,17 @@
 package online_bookstore.Service;
 
-import online_bookstore.DTO.BookDTO;
-import online_bookstore.DTO.MemberDTO;
-import online_bookstore.DTO.PaymentDTO;
-import online_bookstore.Entity.Member;
-import online_bookstore.Entity.Payment;
-import online_bookstore.Repository.PaymentRepository;
+import java.util.ArrayList;
+
+import javax.transaction.Transactional;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
-import java.util.ArrayList;
+import online_bookstore.DTO.BookDTO;
+import online_bookstore.DTO.PaymentDTO;
+import online_bookstore.Entity.Payment;
+import online_bookstore.Repository.PaymentRepository;
 
 @Service
 @Transactional
@@ -45,5 +45,11 @@ public class PaymentService {
     public PaymentDTO toPaymentDTO(Payment payment){
         return modelMapper.map(payment,PaymentDTO.class);
     }
+
+
+	public void save(Payment payment) {
+
+		paymentRepository.save(payment);
+	}
 
 }

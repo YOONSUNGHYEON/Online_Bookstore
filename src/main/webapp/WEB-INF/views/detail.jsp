@@ -135,8 +135,16 @@ function fun1(num){
 											class="main_book_image"
 											src="${path}/resources/detail/box.png"><span
 											class="indent_hidden">선물하기</span> </a></li>
-									<li class="rui_button_item"><a
-										class="rui_button_blue_50 btn_buy" href=""> 구매하기 </a></li>
+									<li class="rui_button_item"><c:choose>
+											<c:when test="${member.member_Num != null}">
+												<a class="rui_button_blue_50 btn_buy" href="/order/${id}">
+													구매하기 </a>
+											</c:when>
+											<c:when test="${member.member_Num == null}">
+												<a class="rui_button_blue_50 btn_buy" href="/login">
+													구매하기 </a>
+											</c:when>
+										</c:choose></li>
 								</ul>
 							</div>
 						</div>
@@ -246,7 +254,7 @@ function fun1(num){
 								</ul>
 								<ul class="rui_order js_review_list_order_wrapper">
 									<li class="order_list"><a href="#"
-										class="js_select_tab_option active" latest  data-order="latest">최신순</a></li>
+										class="js_select_tab_option active" latest data-order="latest">최신순</a></li>
 									<li class="order_list"><a href="#"
 										class="js_select_tab_option" data-order="like">공감순</a></li>
 									<li class="order_list"><a href="#"
@@ -283,9 +291,7 @@ function fun1(num){
         if (id == '') {
             alert("로그인 후 글쓰기가 가능합니다.");
             return false;
-        } else {
-            
-        
+        } else {       
 			var review = {
 				bookId : ${id},
 				content : $("#content").val(),

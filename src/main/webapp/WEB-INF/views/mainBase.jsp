@@ -18,7 +18,7 @@
 <div class="header">
 <header style="max-width: 1000px; margin: 0 auto;">
 <nav class="navbar navbar-light bg-light justify-content-between">
-  <a class="navbar-brand">RIDIBOOKS</a>
+  <a class="navbar-brand" href="/">RIDIBOOKS</a>
   	<c:choose>
   	<c:when test="${empty sessionScope.member}">
     <a href="${path }/login"><button class="align-right login">로그인</button></a>
