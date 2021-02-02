@@ -1,11 +1,10 @@
 package online_bookstore.DTO;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
 import online_bookstore.Entity.Member;
 import online_bookstore.Entity.Review;
-
-import javax.persistence.*;
 @Data
 public class ReviewDTO {
 

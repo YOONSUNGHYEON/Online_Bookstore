@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import online_bookstore.DTO.BookDTO;
-import online_bookstore.DTO.PaymentDTO;
+import online_bookstore.Entity.Orders;
 import online_bookstore.Service.BookInfoService;
 import online_bookstore.Service.KakaoPay;
 import online_bookstore.Service.PaymentService;
@@ -42,8 +42,10 @@ public class PayController {
 
 	@GetMapping("/kakaoPaySuccess")
 	public void kakaoPaySuccess(@RequestParam("pg_token") String pg_token, Model model) {
-		PaymentDTO payment  = new PaymentDTO();
-		payment.setBook_name(pg_token);
+		Orders orders = new Orders();
+		//orders
+		//PaymentDTO payment  = new PaymentDTO();
+		//payment.setBook_name(pg_token);
 		paymentService.save(null);
 		model.addAttribute("info", kakaopay.kakaoPayInfo(pg_token));
 

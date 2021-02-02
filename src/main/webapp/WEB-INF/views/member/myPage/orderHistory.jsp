@@ -74,6 +74,7 @@ var book_Title="";
 
 $.getJSON('/api/myorders/'+session+'/1',function(rdata){
  $.each(rdata,function(index,item){
+ console.log(item);
  $.getJSON('/api/booksearchById/'+item.orders.book_Id,function(bookinfo){
  book_Title=bookinfo.book_Title;
 

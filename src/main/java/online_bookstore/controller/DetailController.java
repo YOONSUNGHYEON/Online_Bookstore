@@ -44,7 +44,6 @@ public class DetailController {
 	public String home(Review review, HttpSession session) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date time = new Date();
-		review.setScore(4);
 		review.setTime(format.format(time));
 		review.setMember(memberService.login(((MemberDTO)session.getAttribute("member")).getMember_Id()));
 		reviewService.save(review);

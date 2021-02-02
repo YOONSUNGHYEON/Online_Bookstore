@@ -27,6 +27,7 @@ public class PaymentAPI {
     //나의 결재내역 페이징 count  num = 회원고유번호
     @GetMapping("/paymentcount/{num}")
     public Long paymentcount(@PathVariable(name = "num") int num){
+
         return paymentService.paymentcount(num);
     };
 

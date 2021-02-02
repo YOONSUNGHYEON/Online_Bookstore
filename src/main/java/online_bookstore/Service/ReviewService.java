@@ -1,15 +1,13 @@
 package online_bookstore.Service;
 
 import java.util.ArrayList;
-import java.util.List;
 
-import online_bookstore.DTO.ReviewDTO;
-import online_bookstore.Entity.Member;
-import online_bookstore.Repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import online_bookstore.DTO.ReviewDTO;
 import online_bookstore.Entity.Review;
+import online_bookstore.Repository.MemberRepository;
 import online_bookstore.Repository.ReviewRepository;
 
 
@@ -57,4 +55,33 @@ public class ReviewService {
 	public Long reviewlistcount(int num) {
 		return reviewRepository.countByMember(memberRepository.getOne(num));
 	}
+	public Long reviewlistcountbybook(String id) {
+		return reviewRepository.countByBookId(id);
+	}
+
+
+	public ArrayList<Review> findByBookIdOrderByLikeDesc(String bookId) {
+		// TODO Auto-generated method stub
+		return reviewRepository.findByBookIdOrderByLikeDesc(bookId);
+	}
+
+
+	public ArrayList<Review> findByBookIdOrderByScoreDesc(String bookId) {
+		// TODO Auto-generated method stub
+		return reviewRepository.findByBookIdOrderByScoreDesc(bookId);
+	}
+
+
+	public ArrayList<Review> findByBookIdOrderByScoreAsc(String bookId) {
+		// TODO Auto-generated method stub
+		return reviewRepository.findByBookIdOrderByScoreAsc(bookId);
+	}
+
+
+	public float avgReviewScoreByBookId(long id) {
+		// TODO Auto-generated method stub
+		return reviewRepository.avgReviewScoreByBookId(id);
+	}
+
+
 }

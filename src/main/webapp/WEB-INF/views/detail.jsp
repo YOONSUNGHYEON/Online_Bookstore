@@ -27,22 +27,7 @@
 <script src="https://kit.fontawesome.com/81816a43c2.js"
 	crossorigin="anonymous"></script>
 
-<script type="text/javascript">
 
-function show(num) { // <img>에 이미지 달기
-
-	
-	}
-function hide(num) { // <img>에 이미지 제거
-		
-	}
-function fun1(num){
-	for( var x=0; x <=num; x++ ) {
- 			document.getElementById("starimg"+x).src="${path}/resources/detail/yellow_star.png";
- 		
-	}
-}
-</script>
 </head>
 <jsp:include page="mainBase.jsp" />
 <body>
@@ -148,6 +133,9 @@ function fun1(num){
 								</ul>
 							</div>
 						</div>
+
+
+
 						<div class="header_thumbnail_wrap">
 							<div
 								class="header_thumbnail book_macro_200 detail_scalable_thumbnail">
@@ -180,11 +168,9 @@ function fun1(num){
 							<div class="review_input_left">
 								<h4 class="buyer_score_title">구매자 별점</h4>
 								<p class="buyer_score">
-									<span class="score">4.5</span> <span class="indent_hidden">점</span>
+									<span class="score"></span> <span class="indent_hidden">점</span>
 								</p>
-								<p class="score_people_num">
-									<strong>2</strong>명이 평가함
-								</p>
+								<p class="score_people_num"></p>
 							</div>
 							<div class="review_input_right">
 								<h4 class="indent_hidden">리뷰 작성 영역</h4>
@@ -194,37 +180,26 @@ function fun1(num){
 
 									</div>
 									<div class="star_rate_touch_area">
-										<span class="separate_bar active"></span> <label for="star1"
-											class="js_star" data-rating="1"> <img id="starimg1"
-											src="${path}/resources/detail/gray_star.png"
-											onclick="fun1(1);"><span class="indent_hidden">별
-												1개</span>
-										</label> <span class="separate_bar active"></span> <label for="star2"
-											class="js_star" data-rating="2"><img id="starimg2"
-											onclick="fun1(2);"
-											src="${path}/resources/detail/gray_star.png"> <span
-											class="indent_hidden">별 2개</span> </label> <span
-											class="separate_bar active"></span> <label for="star3"
-											class="js_star" data-rating="3"> <img id="starimg3"
-											onclick="fun1(3);"
-											src="${path}/resources/detail/gray_star.png"><span
-											class="indent_hidden">별 3개</span>
-										</label> <span class="separate_bar active"></span> <label for="star4"
-											src="${path}/resources/detail/gray_star.png"><img
-											id="starimg4" onclick="fun1(4);"
-											src="${path}/resources/detail/gray_star.png"><span
-											class="indent_hidden">별 4개</span> </label> <span
-											class="separate_bar active"></span> <label for="star5"
-											class="js_star" data-rating="5"> <img id="starimg5"
-											onclick="fun1(5);"
-											src="${path}/resources/detail/gray_star.png"><span
-											class="indent_hidden">별 5개</span>
-										</label>
+										<div class="review_rating">
+											<div class="rating">
+												<!-- 해당 별점을 클릭하면 해당 별과 그 왼쪽의 모든 별의 체크박스에 checked 적용 -->
+												<input type="checkbox" name="rating" id="rating1" value="1"
+													class="rate_radio" title="1점"> <label for="rating1"></label>
+												<input type="checkbox" name="rating" id="rating2" value="2"
+													class="rate_radio" title="2점"> <label for="rating2"></label>
+												<input type="checkbox" name="rating" id="rating3" value="3"
+													class="rate_radio" title="3점"> <label for="rating3"></label>
+												<input type="checkbox" name="rating" id="rating4" value="4"
+													class="rate_radio" title="4점"> <label for="rating4"></label>
+												<input type="checkbox" name="rating" id="rating5" value="5"
+													class="rate_radio" title="5점"> <label for="rating5"></label>
+											</div>
+										</div>
 									</div>
 								</div>
 								<form method="post">
 									<div class="review_textarea_wrapper">
-										<textarea class="review_input_textarea" id="content"
+										<textarea class=".review_textarea review_input_textarea" id="content"
 											title="리뷰 입력"
 											placeholder="리뷰 작성 시 광고 및 욕설, 비속어나 타인을 비방하는 문구를 사용하시면 비공개될 수 있습니다."
 											style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 112px;"></textarea>
@@ -234,7 +209,7 @@ function fun1(num){
 
 											<div class="write_button_wrapper">
 
-												<button type="button" id="btnSubmit"
+												<button type="button" id="btnSubmit" name="save" value="등록"
 													class="rui_button_blue_30">리뷰 남기기</button>
 
 											</div>
@@ -243,6 +218,10 @@ function fun1(num){
 								</form>
 							</div>
 						</div>
+
+
+
+
 						<div id="review_list_section">
 							<div class="rui_tab_and_order">
 								<ul class="rui_tab_2 js_review_list_filter_wrapper">
@@ -253,19 +232,20 @@ function fun1(num){
 										class="js_select_tab_option" data-filter="all"> 전체 </a></li>
 								</ul>
 								<ul class="rui_order js_review_list_order_wrapper">
-									<li class="order_list"><a href="#"
-										class="js_select_tab_option active" latest data-order="latest">최신순</a></li>
-									<li class="order_list"><a href="#"
-										class="js_select_tab_option" data-order="like">공감순</a></li>
-									<li class="order_list"><a href="#"
-										class="js_select_tab_option" data-order="high_rating">별점
-											높은순</a></li>
-									<li class="order_list"><a href="#"
-										class="js_select_tab_option" data-order="low_rating">별점
-											낮은순</a></li>
+									<li class="order_list"><a href="#a"
+										class="js_select_tab_option active"  data-order="latest">최신순</a></li>
+									<li class="order_list"><a href="#a"
+										class="js_select_tab_option"  data-order="like">공감순</a></li>
+									<li class="order_list"><a href="#a"
+										class="js_select_tab_option" 
+										data-order="highscore">별점 높은순</a></li>
+									<li class="order_list"><a href="#a"
+										class="js_select_tab_option" 
+										data-order="lowscore">별점 낮은순</a></li>
 								</ul>
 							</div>
-							<div class="review_list_wrapper js_review_list_wrapper active">
+							<div id="review_list"
+								class="review_list_wrapper js_review_list_wrapper active">
 								<ul id="reviews">
 
 								</ul>
@@ -286,40 +266,19 @@ function fun1(num){
 
 
 <script type="text/javascript">
-		$("#btnSubmit").click(function() {
-		var id = '${member.member_Num}'; // 방법1
-        if (id == '') {
-            alert("로그인 후 글쓰기가 가능합니다.");
-            return false;
-        } else {       
-			var review = {
-				bookId : ${id},
-				content : $("#content").val(),
-
-			};
-			console.log(review);
-			$.ajax({
-				url : "/review",
-				data : review,
-				type : "post",
-				dataType : "json",
-				async : true,
-				success : function(resp) {
-					alert("success");
-				},
-				error : function() {
-					alert("error")
-				}
-				
-			});
-			}
-			location.reload();
-		});
-	</script>
+$.getJSON('/api/reviewlistcountbybook/'+${id},function(rdata){          
+$('.score_people_num').html('<strong>'+rdata+'</strong>명이 평가함');
+});
+</script>
 
 <script type="text/javascript">
-
 var id = ${id}
+$.getJSON('/api/avgscore/'+id,function(rdata){          
+$('.score').append(rdata);
+});
+</script>
+
+<script type="text/javascript">
 
 $.getJSON('/api/detailbook/'+id,function(rdata){
  $.each(rdata,function(index,item){              
@@ -356,8 +315,8 @@ $('#publisher').append(item.book_Publisher);
 
 
 <script type="text/javascript">
-$.getJSON('/api/reviewlist/'+id+'/latest',function(rdata){
- $.each(rdata,function(index,item){              
+$.getJSON('/api/reviewlist/'+id+'/latest',function(rdata){   
+$.each(rdata,function(index,item){
 var reviews = '<li class="review_list">'+
 			'<div class="list_left js_review_info_wrapper">'+
 			'<div class="left_contents">'+
@@ -366,7 +325,7 @@ var reviews = '<li class="review_list">'+
 			'<span class="RSGBookMetadata_StarRate">'+
 			'<span class="StarRate_IconBox">'+
 			'<span class="StarRate_IconFill" style="width: 100%">'+
-			'</span></span></span></span>'+
+			'</span></span></span>'+item.score+'</span>'+
 			'<span class="reviewer_id">'+item.member.member_Id+'</span>'+
 			'<span class="buy_check">'+
 			'<span class="svg_badge_buyer_1">구매자</span></span>'+
@@ -423,7 +382,80 @@ $('#reviews').append(reviews);
 });
 
 </script>
+<script type="text/javascript">
+//별점 마킹 모듈 프로토타입으로 생성
+function Rating(){};
+Rating.prototype.rate = 0;
+Rating.prototype.setRate = function(newrate){
+    //별점 마킹 - 클릭한 별 이하 모든 별 체크 처리
+    this.rate = newrate;
+    let items = document.querySelectorAll('.rate_radio');
+    items.forEach(function(item, idx){
+        if(idx < newrate){
+            item.checked = true;
+        }else{
+            item.checked = false;
+        }
+    });
+}
+let rating = new Rating();//별점 인스턴스 생성
 
+document.addEventListener('DOMContentLoaded', function(){
+    //별점선택 이벤트 리스너
+    document.querySelector('.rating').addEventListener('click',function(e){
+        let elem = e.target;
+        if(elem.classList.contains('rate_radio')){
+            rating.setRate(parseInt(elem.value));
+        }
+    })
+});
+
+ document.querySelector('#btnSubmit').addEventListener('click', function(e){
+        //별점 선택 안했으면 메시지 표시
+        if(rating.rate == 0){
+            alert("별점을 입력해주세요");
+            return false;
+        }
+        //리뷰 5자 미만이면 메시지 표시
+        if($('#content').val().length < 5){
+            alert("5자 이상 글자를 입력해주세요");
+            return false;
+        }
+        submit_review();
+    });
+    
+  
+function submit_review() {
+var id = '${member.member_Num}'; // 방법1
+        if (id == '') {
+            alert("로그인 후 글쓰기가 가능합니다.");
+            return false;
+        } else {       
+			var review = {
+				bookId : ${id},
+				content : $("#content").val(),
+				score: rating.rate
+
+			};
+			$.ajax({
+				url : "/review",
+				data : review,
+				type : "post",
+				dataType : "json",
+				async : true,
+				success : function(resp) {
+					location.reload();
+				},
+				error : function() {
+					location.reload();
+				}
+				
+			});
+			}
+	
+  }
+
+</script>
 <script src="${path}/resources/detail/detail.js"></script>
 
 </html>
