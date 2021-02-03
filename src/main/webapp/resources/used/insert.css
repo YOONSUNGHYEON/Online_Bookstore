@@ -10,6 +10,15 @@
     font-weight: bolder;
     letter-spacing: -1px;
 }
+textarea{
+	width:430px; 
+	height:150px; 
+    resize:none;/* 크기고정 */ 
+	margin: 20px 0px !important;
+}
+span{
+	letter-spacing: -1px;
+}
 .col-sm-8{
 	border: 1px solid #aaa;
     padding: 50px !important;
@@ -56,7 +65,7 @@ span.book-label {
     border: none;
     color: white;
     font-weight: 900;
-    margin-bottom: 50px;
+   	margin-top: 50px;
 }
 #price{
 	line-height: 17px;

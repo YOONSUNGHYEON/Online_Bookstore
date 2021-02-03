@@ -29,7 +29,7 @@
   	<c:forEach var="row" items="${books}">
   	<fmt:formatNumber var="sale" value="${row.salePrice*100/row.price }" pattern="#"/>
   	<fmt:formatNumber var="status" value="${(row.inStatus+row.outStatus)/2 }" pattern="#"/>
-  	<a href="${path }/detail/${row.book_Id}">
+  	<a href="${path }/used/${row.id}">
 	  	<div class="slide-box2">
 	  	<div class="book-image"><img src="${row.cover}"><div class="sale-percentage">${sale } %</div></div>
 	  	<div class="book-title">${row.title}</div>

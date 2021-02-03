@@ -12,6 +12,7 @@ import online_bookstore.DTO.BookDTO;
 import online_bookstore.DTO.usedBook.UsedBookDTO;
 import online_bookstore.DTO.usedBook.UsedBookInfoDTO;
 import online_bookstore.DTO.usedBook.UsedBookSaveDTO;
+import online_bookstore.Entity.UsedBook;
 import online_bookstore.Repository.UsedBookRepository;
 
 @RequiredArgsConstructor
@@ -32,6 +33,16 @@ public class UsedBookService {
 			arrayList.add(usedbook);
 		}
 		return arrayList;
+	}
+	
+	@Transactional
+	public UsedBookInfoDTO findById(Long id) {
+		UsedBook usedBook = usedBookRepository.findById(id).orElseThrow(
+				() -> new IllegalArgumentException("해당 게시물이 없습니다. id = "+id));
+		UsedBookDTO dto = new UsedBookDTO(usedBook);
+		BookDTO book = bookInfoService.booksearchById1(usedBook.getBook_Id());
+		UsedBookInfoDTO usedBookInfo = new UsedBookInfoDTO(dto, book);		
+		return usedBookInfo;
 	}
 	
 	@Transactional
