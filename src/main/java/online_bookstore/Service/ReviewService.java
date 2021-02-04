@@ -76,7 +76,10 @@ public class ReviewService {
 		// TODO Auto-generated method stub
 		return reviewRepository.findByBookIdOrderByScoreAsc(bookId);
 	}
-
+	public int countByMemberNumAndBookId(int num, String bookId) {
+		// TODO Auto-generated method stub
+		return reviewRepository.countByMemberNumAndBookId(num, bookId);
+	}
 
 	public float avgReviewScoreByBookId(long id) {
 		// TODO Auto-generated method stub

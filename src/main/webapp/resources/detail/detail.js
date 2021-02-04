@@ -11,14 +11,6 @@ $(document).ready(function() {
 		})
 	})
 
-	$("[data-confirm-delete]").click(function() {
-		return confirm("삭제하시겠습니까?");
-	})
-
-	$(".autosubmit").change(function() {
-		$(this).parents("form").submit();
-	})
-
 
 
 })
@@ -107,5 +99,8 @@ function like_click(reviewId) {
 
 
 }
+
+
+
 
 

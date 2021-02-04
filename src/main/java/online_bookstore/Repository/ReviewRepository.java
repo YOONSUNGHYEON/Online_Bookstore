@@ -12,31 +12,36 @@ import org.springframework.data.repository.query.Param;
 import online_bookstore.Entity.Member;
 import online_bookstore.Entity.Review;
 
-public interface ReviewRepository extends JpaRepository<Review,Long> {
+public interface ReviewRepository extends JpaRepository<Review, Long> {
 
 	ArrayList<Review> findByBookIdOrderByIdDesc(String bookId);
+
 	ArrayList<Review> findByBookIdOrderByLikeDesc(String bookId);
+
 	@Transactional
 	@Modifying
 	@Query("UPDATE Review SET review_like=:like WHERE id=:id")
 	void updateLike(@Param("id") long id, @Param("like") int like);
 
+	@Query(value = "select count(*) from review where member_num=:num and book_id=:bookId", nativeQuery = true)
+	int countByMemberNumAndBookId(@Param("num") int num, @Param("bookId") String bookId);
 
-	@Query(value ="SELECT AVG(review_score) FROM review WHERE book_id=:id GROUP BY book_id" , nativeQuery=true)
+	@Query(value = "SELECT AVG(review_score) FROM review WHERE book_id=:id GROUP BY book_id", nativeQuery = true)
 	float avgReviewScoreByBookId(@Param("id") long id);
 
-    @Query(value = "select * from review where id=:id" , nativeQuery=true)
-    Review findOne(@Param("id") Long id);
+	@Query(value = "select * from review where id=:id", nativeQuery = true)
+	Review findOne(@Param("id") Long id);
 
-    Long countByBookId(int id);
+	Long countByBookId(int id);
 
 	ArrayList<Review> findByMember(Member member);
 
 	Long countByMember(Member one);
 
 	Long countByBookId(String id);
-	ArrayList<Review> findByBookIdOrderByScoreDesc(String bookId);
-	ArrayList<Review> findByBookIdOrderByScoreAsc(String bookId);
 
+	ArrayList<Review> findByBookIdOrderByScoreDesc(String bookId);
+
+	ArrayList<Review> findByBookIdOrderByScoreAsc(String bookId);
 
 }

@@ -27,11 +27,19 @@ public class ReviewAPI {
 		this.reviewService = reviewService;
 	}
 
+	//id에 해당하는 책 리뷰 리스트에 해당 mem_num 있는지 없지여부
+	@GetMapping("reviewlist/{id}/memNum/{num}")
+	public int existNumFromReviewlist(@PathVariable(name = "id") String id, @PathVariable(name = "num") int num){
+		return reviewService.countByMemberNumAndBookId(num, id);
+	}
 
+
+
+	//id에 해당하는 책의 평균
 	@GetMapping("avgscore/{id}")
-	public float avgscore(@PathVariable(name = "id") String id){
+	public String avgscore(@PathVariable(name = "id") String id){
 		float avg = reviewService.avgReviewScoreByBookId(Long.parseLong(id));
-		return avg;
+		return String.format("%.1f", avg);
 	}
 
 	// num=book_id num에 해당하는 책 리뷰 목록 작성순으로 조회
