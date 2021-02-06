@@ -20,9 +20,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import lombok.RequiredArgsConstructor;
 import online_bookstore.DTO.MemberDTO;
-import online_bookstore.DTO.usedBook.UsedBookDTO;
 import online_bookstore.DTO.usedBook.UsedBookInfoDTO;
 import online_bookstore.DTO.usedBook.UsedBookSaveDTO;
+import online_bookstore.Repository.HeartedRepository;
 import online_bookstore.Service.MemberService;
 import online_bookstore.Service.UsedBookService;
 
@@ -33,6 +33,7 @@ public class UsedBookController {
 
 	private final UsedBookService usedBookService;
 	private final MemberService memberService;
+	private final HeartedRepository heartedRepository;
 
 	@GetMapping("")
 	public String used(Model model) {
@@ -46,9 +47,32 @@ public class UsedBookController {
 	}
 	
 	@GetMapping("/{id}")
-	public String detail(@PathVariable Long id, Model model) {
+	public String detail(@PathVariable Long id, Model model, HttpServletRequest request, HttpSession session) {
+		if(session.getAttribute("member")!=null) {
+			int member_id = memberService.login(((MemberDTO) session.getAttribute("member")).getMember_Id()).getMember_Num();
+			int hearted = usedBookService.isHearted(id, member_id);
+			model.addAttribute("hearted", hearted);
+		}
+		model.addAttribute("heartCount", usedBookService.heartedCount(id));
 		model.addAttribute("book", usedBookService.findById(id));
+		String path = request.getSession().getServletContext().getRealPath("/") + "static\\image\\";
+		model.addAttribute("imgPath", path);
+		
 		return "used/detail";
+	}
+	
+	@GetMapping("/{id}/hearted")
+	public String hearted(@PathVariable Long id, HttpSession session) {
+		int member_id = memberService.login(((MemberDTO) session.getAttribute("member")).getMember_Id()).getMember_Num();
+		usedBookService.hearted(id, member_id);
+		return "redirect:/used/" + id;
+	}
+	
+	@GetMapping("/{id}/hearted/delete")
+	public String heartedDelete(@PathVariable Long id, HttpSession session) {
+		int member_id = memberService.login(((MemberDTO) session.getAttribute("member")).getMember_Id()).getMember_Num();
+		usedBookService.heartedDelete(id, member_id);
+		return "redirect:/used/" + id;
 	}
 	
 	@GetMapping("api/all")
@@ -71,7 +95,7 @@ public class UsedBookController {
 	}
 
 	@RequestMapping(value = "requestupload2")
-	public String requestupload2(MultipartHttpServletRequest mtfRequest, HttpServletRequest request) {
+	public String requestupload2(MultipartHttpServletRequest mtfRequest, HttpServletRequest request, HttpSession session) {
 		List<MultipartFile> fileList = mtfRequest.getFiles("file");
 		String src = mtfRequest.getParameter("src");
 		System.out.println("src value : " + src);
@@ -83,8 +107,7 @@ public class UsedBookController {
 
 			System.out.println("originFileName : " + originFileName);
 			System.out.println("fileSize : " + fileSize);
-
-			String safeFile = path + System.currentTimeMillis() + originFileName;
+			String safeFile = path + originFileName;
 			try {
 				mf.transferTo(new File(safeFile));
 			} catch (IllegalStateException e) {
