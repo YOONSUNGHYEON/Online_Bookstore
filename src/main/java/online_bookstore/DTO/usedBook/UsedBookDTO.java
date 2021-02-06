@@ -3,6 +3,7 @@ package online_bookstore.DTO.usedBook;
 import java.util.List;
 
 import lombok.Getter;
+import online_bookstore.Entity.Member;
 import online_bookstore.Entity.UsedBook;
 
 @Getter
@@ -24,4 +25,5 @@ public class UsedBookDTO {
 		this.imageUrl=entity.getImageUrl();
 		this.description=entity.getDescription();
 	}
+
 }

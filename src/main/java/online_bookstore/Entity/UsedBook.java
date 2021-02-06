@@ -34,13 +34,15 @@ public class UsedBook {
 	@ManyToOne
 	@JoinColumn(name = "member_num", nullable = false)
 	private Member member;
-	
+
 	@ElementCollection
-    @CollectionTable(name = "imageUrls", joinColumns = @JoinColumn(name = "usedBook_id"))
-    private List<String> imageUrl;
+	@CollectionTable(name = "imageUrls", joinColumns = @JoinColumn(name = "usedBook_id"))
+	private List<String> imageUrl;
 	private String description;
+	
 	@Builder
-	public UsedBook(String book_Id, int price, int inStatus, int outStatus, Member member, List<String> imageUrl, String description) {
+	public UsedBook(String book_Id, int price, int inStatus, int outStatus, Member member, List<String> imageUrl,
+			String description) {
 		this.book_Id = book_Id;
 		this.price = price;
 		this.inStatus = inStatus;
@@ -49,4 +51,5 @@ public class UsedBook {
 		this.imageUrl = imageUrl;
 		this.description = description;
 	}
+
 }

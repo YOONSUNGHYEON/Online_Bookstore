@@ -20,7 +20,14 @@
 <body>
 
 <div class="text-center write-btn">
+<c:choose>
+<c:when test="${empty sessionScope.member}">
+	<a onclick="alert('로그인이 필요한 서비스입니다!')" style="cursor:pointer;"><i class="fas fa-pencil-alt"></i>중고책 판매하기</a>
+</c:when>
+<c:otherwise>
 <a href="/used/insert"><i class="fas fa-pencil-alt"></i>중고책 판매하기</a>
+</c:otherwise>
+</c:choose>
 </div>
 <div class="newbook">
 <div class="container-fluid" style="max-width: 1000px; margin: 0 auto;">

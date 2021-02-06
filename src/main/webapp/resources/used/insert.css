@@ -10,6 +10,19 @@
     font-weight: bolder;
     letter-spacing: -1px;
 }
+.newpage{
+	width: 250px;
+    color: #1F8CE6 !important;
+    font-weight: 900 !important;
+    padding: 10px;
+}
+.sale-blo{
+	color: white;
+    font-weight: 900;
+    background-color: orange;
+    padding: 6px;
+    margin-left: 30px;
+}
 textarea{
 	width:430px; 
 	height:150px; 
@@ -67,6 +80,39 @@ span.book-label {
     font-weight: 900;
    	margin-top: 50px;
 }
+#btn-save2{
+    width: 100px;
+    height: 40px;
+    background-color: #1F8CE6;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-weight: 900;
+   	margin: 20px;
+   	margin-bottom: 50px;
+}
+#btn-save3{
+    width: 100px;
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    color: #1F8CE6;
+    font-weight: 900;
+    border: solid 1px;
+    margin: 20px;
+    margin-bottom: 50px;
+}
+#btn-save4{
+    width: 150px;
+    height: 40px;
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    color: #1F8CE6;
+    font-weight: 900;
+    border: solid 1px;
+}
 #price{
 	line-height: 17px;
 }
@@ -92,7 +138,14 @@ button.searchbtn {
     color: #1F8CE6;
     font-weight: 900;
 }
-
+.oneline{
+   	overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    width: 440px;
+    display: -webkit-inline-box;
+}
 .book-title{
 	font-size: 13px;
     font-weight: bolder;
