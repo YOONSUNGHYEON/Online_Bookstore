@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 </head>
 <link href="${path}/resources/used/insert.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
 <jsp:include page="../mainBase.jsp" />
 <body>
 <div class="search-up container" style="display:none;">
@@ -26,6 +27,7 @@
   	</div>
 </div>
 <div class="container">
+
 	<div class="row" style="width:1000px; margin:30px auto;">
 		<div class="col-sm-4">
 			<div id="img-box">
@@ -61,12 +63,21 @@
 			  <option value="5">위에 모두 해당</option>
 			</select> 
 			</div>
+			<div class="book-info-bottom"><span class="book-label" style="vertical-align: top;">내용</span><textarea id="description"></textarea></div>
+			
+			<form name="fileForm" action="requestupload2" method="post" enctype="multipart/form-data">
+				<div class="book-info-bottom">
+				<span class="book-label">사진 첨부</span>
+				<input style="display: inline;" multiple="multiple" type="file" name="file" id="imageUrl" />
+				
+				</div>
+				<div class="text-center">
+	    			<input type="submit" id="btn-save" value="전송" />
+	    		</div>
+	    	</form>
 			</div>
 			<input type="hidden" id="book_Id" placeholder="book_Id">
 		</div>
-	</div>
-	<div class="text-center">
-	<button type="button" id="btn-save">등록</button>
 	</div>
 </div>
 <jsp:include page="../footer.jsp" />
@@ -125,11 +136,18 @@ var main = {
 	        });
 	    },
 	    save : function () {
+	    	var size = $('#imageUrl').get(0).files.length;
+	    	var array = [];
+	    	for(i=0; i<size; i++){
+	    		array.push($('#imageUrl').get(0).files[i].name);
+			}
 	        var data = {
         		book_Id: $('#book_Id').val(),
         		price: $('#price').val(),
         		inStatus: $('#inStatus').val(),
-        		outStatus: $('#outStatus').val()
+        		outStatus: $('#outStatus').val(),
+        		description: $('#description').val(),
+        		imageUrl: array
 	        };
 	        $.ajax({
 	            type: 'POST',
