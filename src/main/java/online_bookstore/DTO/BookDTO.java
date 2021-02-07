@@ -22,6 +22,7 @@ public class BookDTO {
     private String Book_Cover;
     private String Book_Publisher;
     private String Book_CategoryName;
+    private String Book_CategoryId;
 
     public BookDTO(String book_Id, String book_Title, String book_Author, String book_Description, int book_Price, String book_Cover, String book_Publisher) {
         Book_Id = book_Id;
@@ -44,6 +45,19 @@ public class BookDTO {
         TitleAndSubtitle(book_Title);
         AuthorAndTranslator(book_Author);
     }
+    public BookDTO(String book_Id, String book_Title, String book_Author, String book_Description, int book_Price,int book_PriceSales, String book_Cover, String book_Publisher, String book_CategoryName,String book_CategoryId) {
+        Book_Id = book_Id;
+        Book_PriceSales = book_PriceSales;
+        Book_Description = book_Description;
+        Book_Price = book_Price;
+        Book_Cover = book_Cover;
+        Book_Publisher = book_Publisher;
+        Book_CategoryName = book_CategoryName;
+        Book_CategoryId = book_CategoryId;
+        TitleAndSubtitle(book_Title);
+        AuthorAndTranslator(book_Author);
+    }
+
 
 
     public BookDTO() {

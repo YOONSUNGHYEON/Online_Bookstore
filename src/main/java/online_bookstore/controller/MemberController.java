@@ -92,5 +92,8 @@ public class MemberController {
 	public String Cart() { return "member/cart";
 	}
 
+	@RequestMapping("/search")
+	public String Search() { return "search/searchPage";
+	}
 
 }
