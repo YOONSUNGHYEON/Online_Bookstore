@@ -34,6 +34,6 @@ public class PaymentAPI {
     @PostMapping("/payment")
     public void payment(Payment patment)
     {
-    	paymentService.save(patment);
+    	//paymentService.save(patment);
     }
 }

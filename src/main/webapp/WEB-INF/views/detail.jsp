@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<head>
+
 <meta charset="UTF-8">
 <title>detail page</title>
 <link href="${path}/resources/main/main.css" rel="stylesheet"
