@@ -34,8 +34,8 @@
 			<article class="myridi_header">
 				<div class="account_info_wrapper">
 					<div class="info_id_email">
-						<h3 class="info_id museo_sans">qead753951</h3>
-						<p class="info_email museo_sans">qead753951@naver.com</p>
+						<h3 class="info_id museo_sans">${member.member_Id}</h3>
+						<p class="info_email museo_sans">${member.member_Name}</p>
 					</div>
 					<a href="/logout" class="btn_logout">로그아웃</a>
 				</div>

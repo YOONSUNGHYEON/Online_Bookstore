@@ -211,9 +211,12 @@
 </body>
 
 <script type="text/javascript">
+if (self.name != 'reload') {
+         self.name = 'reload';
+         self.location.reload(true);
+     }
+     else self.name = '';
 
-
-    
 </script>
 
 

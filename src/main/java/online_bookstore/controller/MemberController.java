@@ -1,6 +1,7 @@
 package online_bookstore.controller;
 
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,13 +69,14 @@ public class MemberController {
 
 	//로그인 처리
 	@PostMapping("/login")
-	public String Loginpost(MemberDTO memberDTO, Model model, HttpSession session) {
+	public String Loginpost(MemberDTO memberDTO, Model model, HttpSession session, HttpServletRequest request) {
 		MemberDTO result = memberService.login(memberDTO);
+		String referer=request.getHeader("Referer");
 		if(result!=null){
 			System.out.println(result.toString());
 			System.out.println("not null");
 			session.setAttribute("member",result);
-			return "redirect:";
+			return "redirect:"+referer;
 		}else{
 			model.addAttribute("msg","입력하신 내용틀립니다");
 			System.out.println("null");
