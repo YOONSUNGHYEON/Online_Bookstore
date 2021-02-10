@@ -20,6 +20,7 @@ import online_bookstore.DTO.PaymentDTO;
 @Getter
 @Entity
 public class Payment{
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

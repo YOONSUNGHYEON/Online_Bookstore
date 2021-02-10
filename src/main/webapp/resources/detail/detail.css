@@ -5401,6 +5401,7 @@ ul {
 	font-weight: 700
 }
 
+
 #review_info_section .review_input_right .review_input_wrapper .comment_wrapper .comment_list_wrapper .comment .comment_meta .admin_badge
 	{
 	display: inline-block;
@@ -6112,6 +6113,7 @@ ul {
 	vertical-align: 0
 }
 
+
 #review_list_section .review_list_wrapper .more_review_button_wrapper .more_review_button .more_num
 	{
 	color: #1f8ce6
@@ -6161,6 +6163,7 @@ ul {
 .what_is_buyers_review_section.active .title_and_button_wrapper {
 	display: inline-block;
 	position: relative
+
 }
 
 .what_is_buyers_review_section.active .title_and_button_wrapper:active .section_title,

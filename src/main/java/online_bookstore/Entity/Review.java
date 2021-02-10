@@ -36,4 +36,5 @@ public class Review {
 	@Column(name = "review_like")
 	private int like;
 
+
 }

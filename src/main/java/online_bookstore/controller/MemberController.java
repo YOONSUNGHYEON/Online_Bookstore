@@ -89,9 +89,11 @@ public class MemberController {
 	}
 
 	@RequestMapping("/cart")
-	public String Cart() {
-		return "member/cart";
+	public String Cart() { return "member/cart";
 	}
 
+	@RequestMapping("/search")
+	public String Search() { return "search/searchPage";
+	}
 
 }
