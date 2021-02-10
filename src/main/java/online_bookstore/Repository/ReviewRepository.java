@@ -23,14 +23,14 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
 	@Query("UPDATE Review SET review_like=:like WHERE id=:id")
 	void updateLike(@Param("id") long id, @Param("like") int like);
 
-	@Query(value = "select count(*) from review where member_num=:num and book_id=:bookId", nativeQuery = true)
-	int countByMemberNumAndBookId(@Param("num") int num, @Param("bookId") String bookId);
+	@Query(value = "select * from review where member_num=:num and book_id=:bookId", nativeQuery = true)
+	ArrayList<Review> findByMemberNumAndBookId(@Param("num") int num, @Param("bookId") String bookId);
 
 	@Query(value = "SELECT AVG(review_score) FROM review WHERE book_id=:id GROUP BY book_id", nativeQuery = true)
-	float avgReviewScoreByBookId(@Param("id") long id);
+	float avgReviewScoreByBookId(@Param("id") String id);
 
 	@Query(value = "select * from review where id=:id", nativeQuery = true)
-	Review findOne(@Param("id") Long id);
+	Review findOne(@Param("id") String id);
 
 	Long countByBookId(int id);
 
@@ -43,5 +43,7 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
 	ArrayList<Review> findByBookIdOrderByScoreDesc(String bookId);
 
 	ArrayList<Review> findByBookIdOrderByScoreAsc(String bookId);
+
+	Review findByMemberAndBookId(Member m, String bookId);
 
 }

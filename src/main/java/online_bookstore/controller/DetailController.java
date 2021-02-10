@@ -50,16 +50,7 @@ public class DetailController {
 		return "redirect:/";
 	}
 
-	@PostMapping(value = "/like")
-	@ResponseBody
-	public int like(Review review) {
-		Review r = new Review();
-		//Liketo l=new Liketo(review.getId(), review.getMember().getMember_Id());
-		//l = liketoRepository.save(null);
-		r=reviewService.findOne(review.getId());
-		reviewService.updateLike(r.getId(), r.getLike()+1);
-		return r.getLike()+1;
-	}
+
 
 
 }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import online_bookstore.DTO.ReviewDTO;
+import online_bookstore.Entity.Member;
 import online_bookstore.Entity.Review;
 import online_bookstore.Repository.MemberRepository;
 import online_bookstore.Repository.ReviewRepository;
@@ -25,18 +26,12 @@ public class ReviewService {
 	}
 
 
-	public ArrayList<Review> findByBookIdOrderByIdDesc(String bookId) {
-		return reviewRepository.findByBookIdOrderByIdDesc(bookId);
-	}
-
-
 	public void save(Review review) {
-
 		reviewRepository.save(review);
 	}
 
 
-	public Review findOne(Long id) {
+	public Review findOne(String id) {
 		return reviewRepository.findOne(id);
 	}
 
@@ -59,32 +54,35 @@ public class ReviewService {
 		return reviewRepository.countByBookId(id);
 	}
 
+	public Review findByMemberNumAndBookId(int num, String bookId) {
+		ArrayList<Review> rList = reviewRepository.findByMemberNumAndBookId(num, bookId);
+		Review r =null;
+		if(!rList.isEmpty())
+			r = rList.get(0);
+		return r;
+	}
 
-	public ArrayList<Review> findByBookIdOrderByLikeDesc(String bookId) {
-		// TODO Auto-generated method stub
-		return reviewRepository.findByBookIdOrderByLikeDesc(bookId);
+	public String avgReviewScoreByBookId(String id) {
+		float avg = 0;
+		if(reviewRepository.countByBookId(id)!=0)
+			avg= reviewRepository.avgReviewScoreByBookId(id);
+		return String.format("%.1f", avg);
+	}
+
+	public void deleteById(String bookId, Member m) {
+		Long reviewId = reviewRepository.findByMemberAndBookId(m, bookId).getId();
+		reviewRepository.deleteById(reviewId);
+
 	}
 
 
-	public ArrayList<Review> findByBookIdOrderByScoreDesc(String bookId) {
-		// TODO Auto-generated method stub
-		return reviewRepository.findByBookIdOrderByScoreDesc(bookId);
-	}
-
-
-	public ArrayList<Review> findByBookIdOrderByScoreAsc(String bookId) {
-		// TODO Auto-generated method stub
-		return reviewRepository.findByBookIdOrderByScoreAsc(bookId);
-	}
-	public int countByMemberNumAndBookId(int num, String bookId) {
-		// TODO Auto-generated method stub
-		return reviewRepository.countByMemberNumAndBookId(num, bookId);
-	}
-
-	public float avgReviewScoreByBookId(long id) {
-		// TODO Auto-generated method stub
-		return reviewRepository.avgReviewScoreByBookId(id);
-	}
-
-
-}
+	public ArrayList<Review> findByBookIdOrderBySort(String bookId, String sort) {
+		if(sort.equals("latest"))
+			return reviewRepository.findByBookIdOrderByIdDesc(bookId);
+		else if(sort.equals("like"))
+			return reviewRepository.findByBookIdOrderByLikeDesc(bookId);
+		else if(sort.equals("highscore"))
+			return reviewRepository.findByBookIdOrderByScoreDesc(bookId);
+		else
+			return reviewRepository.findByBookIdOrderByScoreAsc(bookId);
+	}}
