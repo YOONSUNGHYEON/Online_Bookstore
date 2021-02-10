@@ -77,6 +77,7 @@
 	    	</form>
 			</div>
 			<input type="hidden" id="book_Id" placeholder="book_Id">
+			<input type="hidden" id="book_Title" placeholder="book_Title">
 		</div>
 	</div>
 </div>
@@ -108,6 +109,7 @@ function select(n){
 		$("#img-box").append($("<img width='250px'src='"+result.book_Cover+"'>"));
 		$(".search-up").hide();
 		$("#book_Id").val(result.book_Id);
+		$("#book_Title").val(result.book_Title);
     }).fail(function (error) {
         alert(JSON.stringify(error));
     });
@@ -143,6 +145,7 @@ var main = {
 			}
 	        var data = {
         		book_Id: $('#book_Id').val(),
+        		book_Title: $('#book_Title').val(),
         		price: $('#price').val(),
         		inStatus: $('#inStatus').val(),
         		outStatus: $('#outStatus').val(),
