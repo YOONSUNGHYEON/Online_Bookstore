@@ -16,6 +16,7 @@ import online_bookstore.Entity.UsedBook;
 @NoArgsConstructor
 public class UsedBookSaveDTO {
 	private String book_Id;
+	private String book_Title;
 	private int price;
 	private int inStatus;
 	private int outStatus;
@@ -25,8 +26,9 @@ public class UsedBookSaveDTO {
 	private String description;
 	
 	@Builder
-	public UsedBookSaveDTO(String book_Id, int price, int inStatus, int outStatus, Member member, List<String> imageUrl, String description) {
+	public UsedBookSaveDTO(String book_Id, String book_Title, int price, int inStatus, int outStatus, Member member, List<String> imageUrl, String description) {
 		this.book_Id = book_Id;
+		this.book_Title = book_Title;
 		this.price = price;
 		this.inStatus = inStatus;
 		this.outStatus = outStatus;
@@ -38,6 +40,7 @@ public class UsedBookSaveDTO {
 	public UsedBook toEntity() {
 		return UsedBook.builder()
 				.book_Id(book_Id)
+				.book_Title(book_Title)
 				.price(price)
 				.inStatus(inStatus)
 				.outStatus(outStatus)
