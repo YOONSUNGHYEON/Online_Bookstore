@@ -11,6 +11,7 @@ public class UsedBookDTO {
 	private Long id;
 	private String book_Id;
 	private String book_Title;
+	private Member member;
 	private int price;
 	private int inStatus;
 	private int outStatus;
@@ -21,6 +22,7 @@ public class UsedBookDTO {
 		this.id=entity.getId();
 		this.book_Id=entity.getBook_Id();
 		this.book_Title=entity.getBook_Title();
+		this.member=entity.getMember();
 		this.price=entity.getPrice();
 		this.inStatus=entity.getInStatus();
 		this.outStatus=entity.getOutStatus();

@@ -4,12 +4,14 @@ import java.util.List;
 
 import lombok.Getter;
 import online_bookstore.DTO.BookDTO;
+import online_bookstore.Entity.Member;
 
 @Getter
 public class UsedBookInfoDTO {
 	private Long id;
 	private String book_Id;
 	private String book_Title;
+	private Member member;
 	private int salePrice;
 	private int inStatus;
 	private int outStatus;
@@ -25,6 +27,7 @@ public class UsedBookInfoDTO {
 		this.id=usedbook.getId();
 		this.book_Id=usedbook.getBook_Id();
 		this.book_Title=usedbook.getBook_Title();
+		this.member=usedbook.getMember();
 		this.salePrice=usedbook.getPrice();
 		this.description=usedbook.getDescription();
 		this.inStatus=usedbook.getInStatus();

@@ -15,5 +15,5 @@ public interface MemberService {
     MemberDTO login(MemberDTO memberDTO);
 
     Member login(String id);
-
+    
 }

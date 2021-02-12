@@ -74,6 +74,7 @@ public class MemberController {
 			System.out.println(result.toString());
 			System.out.println("not null");
 			session.setAttribute("member",result);
+			session.setAttribute("userId", result.getMember_Id());
 			return "redirect:";
 		}else{
 			model.addAttribute("msg","입력하신 내용틀립니다");
