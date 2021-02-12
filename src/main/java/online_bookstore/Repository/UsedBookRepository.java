@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import online_bookstore.Entity.UsedBook;
 
+import java.util.List;
+
 public interface UsedBookRepository extends JpaRepository<UsedBook, Long>  {
 	
 	@Query(value="select exists (select * from hearted h where h.book_id=:book_id and h.member_id=:member_id)", nativeQuery=true)
@@ -20,4 +22,7 @@ public interface UsedBookRepository extends JpaRepository<UsedBook, Long>  {
 	
 	@Query(value="select count(*) from hearted where book_id=:book_id", nativeQuery=true)
 	int heartedCount(@Param("book_id") Long book_id);
+
+	@Query(value = "select * from used_book where book_title Like %:title%",nativeQuery = true)
+	List<UsedBook> findByBook_titleLike(@Param("title") String title);
 }

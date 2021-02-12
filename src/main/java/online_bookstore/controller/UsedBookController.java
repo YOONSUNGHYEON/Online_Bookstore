@@ -7,6 +7,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import online_bookstore.Entity.UsedBook;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -119,6 +120,11 @@ public class UsedBookController {
 			}
 		}
 		return "redirect:/used";
+	}
+	@GetMapping("/search")
+	public String searchUsedBook(String title,Model model){
+		model.addAttribute("books",usedBookService.searchUsedBook(title));
+		return "used/main";
 	}
 
 }
