@@ -15,6 +15,7 @@ public class UsedBookInfoDTO {
 	private int salePrice;
 	private int inStatus;
 	private int outStatus;
+	private int saleStatus;
 	private String cover;
 	private String title;
 	private String author;
@@ -32,6 +33,7 @@ public class UsedBookInfoDTO {
 		this.description=usedbook.getDescription();
 		this.inStatus=usedbook.getInStatus();
 		this.outStatus=usedbook.getOutStatus();
+		this.saleStatus=usedbook.getSaleStatus();
 		this.imageUrl=usedbook.getImageUrl();
 		this.cover=book.getBook_Cover();
 		this.title=book.getBook_Title();

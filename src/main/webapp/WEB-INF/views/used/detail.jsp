@@ -22,6 +22,12 @@
 		<div class="col-sm-4">
 			<div id="img-box">
 				<img width="250px" src="${book.cover }">
+				<c:set var="saleStatus" value="${book.saleStatus }" />
+					<c:choose>
+						<c:when test="${saleStatus eq '0'}"> <div class="sale_status sale">판매중</div> </c:when>
+						<c:when test="${saleStatus eq '1'}"> <div class="sale_status reserve">예약중</div> </c:when>
+						<c:when test="${saleStatus eq '2'}"> <div class="sale_status done">판매 완료</div> </c:when>
+					</c:choose>
 				<div style="width:250px;"class="text-center newpage"> <a href="${path }/detail/${book.book_Id}">책 상세페이지 바로가기</a></div>
 				<c:set var="hearted" value="${hearted }" />
 				<div class="text-center" style="width:250px;">
@@ -70,9 +76,22 @@
 			</div>
 		</div>
 	</div>
+	<c:set var="seller" value="${book.member.member_Num }" />
+	<c:set var="user" value="${sessionScope.member.member_Num }" />
 	<c:choose>
 	  	<c:when test="${empty sessionScope.member}">
 	  		<div class="text-center"><button id="btn-save2" onclick="alert('로그인이 필요한 서비스입니다!')">구매하기</button><button id="btn-save3" onclick="alert('로그인이 필요한 서비스입니다!')">문의하기</button></div> 
+	    </c:when>
+	    <c:when test="${seller eq user}">
+	    	<div class="text-center">
+				<select id="saleStatus">
+				  <option value="0">판매중</option>
+				  <option value="1">예약중</option>
+				  <option value="2">거래완료</option>
+				</select>	
+				<input type="hidden" value="${book.id }"id="id">
+				<button id="btn-save2" onclick="statusChange()">상태변경</button><button id="btn-save3" onclick="alert('로그인이 필요한 서비스입니다!')">문의하기</button>
+			</div>
 	    </c:when>
 	    <c:otherwise>
         	<div class="text-center"><button id="btn-save2" onclick="buy()">구매하기</button> <button id="btn-save3" onclick="question()">문의하기</button> </div>
@@ -81,9 +100,11 @@
 </div>
 <input type="hidden" value="${book.title }" id="booktitle">
 <input type="hidden" value="${book.price }" id="price">
+<input type="hidden" value="${book.saleStatus }" id="status">
 <jsp:include page="../footer.jsp" />
 </body>
 <script type="text/javascript">
+$(document).ready(function(){$("#saleStatus").val($("#status").val()).prop("selected", true);});
 var fromId = '<%= userId %>';
 var toId = $('#toId').val();
 function buy(){
@@ -140,6 +161,18 @@ function question(){
 			}
 		});
 		location.href="/chat?toId="+$('#toId').val();
+	}
+}
+function statusChange(){
+	var id = $('#id').val();
+	var status = $('#saleStatus').val();
+	var con_test = confirm("판매 상태를 변경하시겠습니까?");
+	if(con_test == true){
+		$.ajax({
+			type: "GET",
+			url: id+"/status/"+status
+		});
+		location.reload();
 	}
 }
 </script>

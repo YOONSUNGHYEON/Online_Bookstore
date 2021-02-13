@@ -70,6 +70,13 @@ public class UsedBookController {
 		return "redirect:/used/" + id;
 	}
 	
+	@GetMapping("/{id}/status/{saleStatus}")
+	public void status(@PathVariable Long id, @PathVariable int saleStatus, HttpSession session) {
+		if(usedBookService.findById(id).getMember() == memberService.login(((MemberDTO) session.getAttribute("member")).getMember_Id())) {
+			usedBookService.saleStatusChange(id, saleStatus);
+		}
+	}
+	
 	@GetMapping("/{id}/hearted/delete")
 	public String heartedDelete(@PathVariable Long id, HttpSession session) {
 		int member_id = memberService.login(((MemberDTO) session.getAttribute("member")).getMember_Id()).getMember_Num();

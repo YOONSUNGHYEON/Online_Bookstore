@@ -15,6 +15,7 @@ public class UsedBookDTO {
 	private int price;
 	private int inStatus;
 	private int outStatus;
+	private int saleStatus;
 	private List<String> imageUrl;
 	private String description;
 	
@@ -26,6 +27,7 @@ public class UsedBookDTO {
 		this.price=entity.getPrice();
 		this.inStatus=entity.getInStatus();
 		this.outStatus=entity.getOutStatus();
+		this.saleStatus=entity.getSaleStatus();
 		this.imageUrl=entity.getImageUrl();
 		this.description=entity.getDescription();
 	}
