@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -31,6 +33,9 @@ public class UsedBook {
 	private int price;
 	private int inStatus;
 	private int outStatus;
+	
+	@ColumnDefault("0")
+	private int saleStatus;
 
 	@ManyToOne
 	@JoinColumn(name = "member_num", nullable = false)
@@ -42,13 +47,14 @@ public class UsedBook {
 	private String description;
 
 	@Builder
-	public UsedBook(String book_Id, String book_Title, int price, int inStatus, int outStatus, Member member,
+	public UsedBook(String book_Id, String book_Title, int price, int inStatus, int outStatus, int saleStatus, Member member,
 			List<String> imageUrl, String description) {
 		this.book_Id = book_Id;
 		this.book_Title = book_Title;
 		this.price = price;
 		this.inStatus = inStatus;
 		this.outStatus = outStatus;
+		this.saleStatus = saleStatus;
 		this.member = member;
 		this.imageUrl = imageUrl;
 		this.description = description;

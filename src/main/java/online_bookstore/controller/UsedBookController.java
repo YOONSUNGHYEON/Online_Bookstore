@@ -22,6 +22,7 @@ import lombok.RequiredArgsConstructor;
 import online_bookstore.DTO.MemberDTO;
 import online_bookstore.DTO.usedBook.UsedBookInfoDTO;
 import online_bookstore.DTO.usedBook.UsedBookSaveDTO;
+import online_bookstore.Entity.Member;
 import online_bookstore.Repository.HeartedRepository;
 import online_bookstore.Service.MemberService;
 import online_bookstore.Service.UsedBookService;
@@ -49,9 +50,10 @@ public class UsedBookController {
 	@GetMapping("/{id}")
 	public String detail(@PathVariable Long id, Model model, HttpServletRequest request, HttpSession session) {
 		if(session.getAttribute("member")!=null) {
-			int member_id = memberService.login(((MemberDTO) session.getAttribute("member")).getMember_Id()).getMember_Num();
-			int hearted = usedBookService.isHearted(id, member_id);
+			Member member = memberService.login(((MemberDTO) session.getAttribute("member")).getMember_Id());
+			int hearted = usedBookService.isHearted(id, member.getMember_Num());
 			model.addAttribute("hearted", hearted);
+			model.addAttribute("fromId", member.getMember_Id());
 		}
 		model.addAttribute("heartCount", usedBookService.heartedCount(id));
 		model.addAttribute("book", usedBookService.findById(id));
@@ -66,6 +68,13 @@ public class UsedBookController {
 		int member_id = memberService.login(((MemberDTO) session.getAttribute("member")).getMember_Id()).getMember_Num();
 		usedBookService.hearted(id, member_id);
 		return "redirect:/used/" + id;
+	}
+	
+	@GetMapping("/{id}/status/{saleStatus}")
+	public void status(@PathVariable Long id, @PathVariable int saleStatus, HttpSession session) {
+		if(usedBookService.findById(id).getMember() == memberService.login(((MemberDTO) session.getAttribute("member")).getMember_Id())) {
+			usedBookService.saleStatusChange(id, saleStatus);
+		}
 	}
 	
 	@GetMapping("/{id}/hearted/delete")
