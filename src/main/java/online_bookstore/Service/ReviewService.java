@@ -20,23 +20,13 @@ public class ReviewService {
 	MemberRepository memberRepository;
 	@Autowired
 	BookInfoService bookInfoService;
-	public void updateLike(long id, int like) {
-		reviewRepository.updateLike(id, like);
-	}
-
-
-	public ArrayList<Review> findByBookIdOrderByIdDesc(String bookId) {
-		return reviewRepository.findByBookIdOrderByIdDesc(bookId);
-	}
-
 
 	public void save(Review review) {
-
 		reviewRepository.save(review);
 	}
 
 
-	public Review findOne(Long id) {
+	public Review findOne(String id) {
 		return reviewRepository.findOne(id);
 	}
 
@@ -59,32 +49,37 @@ public class ReviewService {
 		return reviewRepository.countByBookId(id);
 	}
 
-
-	public ArrayList<Review> findByBookIdOrderByLikeDesc(String bookId) {
-		// TODO Auto-generated method stub
-		return reviewRepository.findByBookIdOrderByLikeDesc(bookId);
+	public Review findByMemberNumAndBookId(int num, String bookId) {
+		ArrayList<Review> rList = reviewRepository.findByMemberNumAndBookId(num, bookId);
+		Review r =null;
+		if(!rList.isEmpty())
+			r = rList.get(0);
+		return r;
 	}
 
-
-	public ArrayList<Review> findByBookIdOrderByScoreDesc(String bookId) {
-		// TODO Auto-generated method stub
-		return reviewRepository.findByBookIdOrderByScoreDesc(bookId);
+	public String avgReviewScoreByBookId(String id) {
+		float avg = 0;
+		if(reviewRepository.countByBookId(id)!=0)
+			avg= reviewRepository.avgReviewScoreByBookId(id);
+		return String.format("%.1f", avg);
 	}
 
+	public void deleteById(long reviewId) {
+		//Long reviewId = reviewRepository.findByMemberAndBookId(m, bookId).getId();
+		reviewRepository.deleteById(reviewId);
 
-	public ArrayList<Review> findByBookIdOrderByScoreAsc(String bookId) {
-		// TODO Auto-generated method stub
-		return reviewRepository.findByBookIdOrderByScoreAsc(bookId);
-	}
-	public int countByMemberNumAndBookId(int num, String bookId) {
-		// TODO Auto-generated method stub
-		return reviewRepository.countByMemberNumAndBookId(num, bookId);
 	}
 
-	public float avgReviewScoreByBookId(long id) {
-		// TODO Auto-generated method stub
-		return reviewRepository.avgReviewScoreByBookId(id);
+	public void update(long id, int score,String content) {
+		reviewRepository.update(id, score, content);
 	}
-
-
-}
+	public ArrayList<Review> findByBookIdOrderBySort(String bookId, String sort) {
+		if(sort.equals("latest"))
+			return reviewRepository.findByBookIdOrderByIdDesc(bookId);
+		else if(sort.equals("like"))
+			return reviewRepository.findByBookIdOrderByLikeDesc(bookId);
+		else if(sort.equals("highscore"))
+			return reviewRepository.findByBookIdOrderByScoreDesc(bookId);
+		else
+			return reviewRepository.findByBookIdOrderByScoreAsc(bookId);
+	}}
