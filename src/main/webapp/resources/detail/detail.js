@@ -3,6 +3,8 @@
 $(document).ready(function() {
 	reviewTextarea();
 	get_review_list();
+	
+	//최신순, 공감순, 평점높은순, 평점 낮은순
 	$(".js_select_tab_option").click(function() {
 		$('#reviews').html('');
 		var url = $(this).attr("data-order");
@@ -12,11 +14,13 @@ $(document).ready(function() {
 			});
 		})
 	})
+	//내 리뷰 삭제하기
 	$(".js_review_delete_btn").click(function() {
 		var con_test = confirm("정말로 삭제하시겠습니까?");
+		var review_id = $(this).attr("data-rating-id");
 		if (con_test == true) {
 			$.ajax({
-				url: '/api/review/' + id,
+				url: '/api/review/' + review_id,
 				method: "DELETE",
 				success: function(result) {
 					location.reload();
@@ -24,18 +28,24 @@ $(document).ready(function() {
 			});
 		}
 	})
+	//내 리뷰 수정하기 누르면 수정하기 html로 변경하기
 	$(".js_review_modfiy_btn").click(function() {
 		document.getElementById("star_rate_touch_area").style.display = "block";//<% --별점 체크 숨기기-- %>
-		$('.review_textarea_wrapper').show();//<% --리뷰 적는 input 숨기기-- %>
+		$('.review_textarea_wrapper').show();//<% --리뷰 적는 input show-- %>
 		$('.modify_review_bottom').show();
-		$('.js_review_wrapper').hide();
+		$('.js_my_review').hide();
 	})
+	//리뷰 수정하기 취소할때
 	$(".js_review_modify_cancel_btn").click(function() {
 		reviewTextarea();
 	})
+	
 
+	
+	//리뷰 수정후 수정 저당하기 버튼
 	$(".js_review_modify_complete_btn").click(function() {
-		reviewTextarea();
+		var review_id = $(this).attr("data-rating-id");
+		update_review(review_id);
 	})
 })
 
@@ -48,9 +58,9 @@ function get_review_list() {
 	});
 }
 
-
+//리뷰 리스트 html
 function review_list(item) {
-	
+
 	var reviews = '<li class="review_list">' +
 		'<div class="list_left js_review_info_wrapper">' +
 		'<div class="left_contents">' +
@@ -87,44 +97,57 @@ function review_list(item) {
 
 	$('#reviews').append(reviews);
 	get_liketo_count(item.id);
+	check_liketo(item.id);
 
 }
 
-function like_click(reviewId) {
-	var rID = {
-		reviewId: reviewId,
-	};
 
-	$.ajax({
-		url: "/api/like",
-		type: "post",
-		dataType: "json",
-		data: JSON.stringify(rID),
-		contentType: "application/json",
-		async: true,
-		success: function(response) {
-			get_liketo_count(reviewId);
-			$("#" + reviewId).addClass("active");
+//좋아요
+function like_click(reviewId) {
+	//로그인 여부 가져오기
+	$.getJSON('/api/logincheck', function(rdata) {
+		if (rdata == true) {
+			var rID = {
+				reviewId: reviewId,
+			};
+
+			$.ajax({
+				url: "/api/like",
+				type: "post",
+				dataType: "json",
+				data: JSON.stringify(rID),
+				contentType: "application/json",
+				async: true,
+				success: function(response) {
+					get_liketo_count(reviewId);
+					check_liketo(reviewId);
+				}
+
+			});
+		}
+		else {
+			alert("로그인 후 글쓰기가 가능합니다.");	
 		}
 
 	});
 }
 
 
-//리뷰 id 당 like count 데이터 가져오기
-function get_liketo_count(reviewId) {
-	$.getJSON('/api/liketo/' + reviewId, function(rdata) {
-		$("." + reviewId).replaceWith('<span class="' + reviewId + ' like_count js_like_count">' + rdata + '</span>');
-	});
-}
-//리뷰 id에 좋아요를 눌렀는지 안눌렀는지
-function check_liketo(reviewId) {
-	$.getJSON('/api/liketo/' + reviewId, function(rdata) {
-		$("." + reviewId).replaceWith('<span class="' + reviewId + ' like_count js_like_count">' + rdata + '</span>');
-	});
-}
-
-
+	//리뷰 id 당 like count 데이터 가져오기
+	function get_liketo_count(reviewId) {
+		$.getJSON('/api/liketo/' + reviewId + '/count', function(rdata) {
+			$("." + reviewId).replaceWith('<span class="' + reviewId + ' like_count js_like_count">' + rdata + '</span>');
+		});
+	}
+	//리뷰 id에 좋아요를 눌렀는지 안눌렀는지
+	function check_liketo(reviewId) {
+		$.getJSON('/api/liketo/' + reviewId + "/mem", function(rdata) {
+			if (rdata == true)
+				$("#" + reviewId).addClass("active");
+			else
+				$("#" + reviewId).removeClass("active");
+		});
+	}
 
 
 

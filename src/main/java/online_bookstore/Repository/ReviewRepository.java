@@ -20,8 +20,8 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
 
 	@Transactional
 	@Modifying
-	@Query("UPDATE Review SET review_like=:like WHERE id=:id")
-	void updateLike(@Param("id") long id, @Param("like") int like);
+	@Query("UPDATE Review SET review_content=:content, review_score=:score WHERE id=:id")
+	void update(@Param("id") long id, @Param("score") int score, @Param("content") String content);
 
 	@Query(value = "select * from review where member_num=:num and book_id=:bookId", nativeQuery = true)
 	ArrayList<Review> findByMemberNumAndBookId(@Param("num") int num, @Param("bookId") String bookId);

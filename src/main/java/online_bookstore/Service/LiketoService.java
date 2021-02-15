@@ -16,7 +16,7 @@ public class LiketoService {
     @Autowired
     LiketoRepository liketoRepository;
 
-	public LiketoDTO save(LiketoDTO liketoDTO){
+	public void save(LiketoDTO liketoDTO){
 		Liketo liketo = new Liketo(liketoDTO);
 		Liketo tempLiketo = findByMemberNumandReviewID(liketo.getMember().getMember_Num(),liketo.getReview().getId());
 		if(tempLiketo == null)
@@ -25,9 +25,6 @@ public class LiketoService {
 			liketoRepository.updateLikeCheck(tempLiketo.getId(), 0);
 		else
 			liketoRepository.updateLikeCheck(tempLiketo.getId(), 1);
-
-		LiketoDTO tempLiketoDTO = new LiketoDTO(tempLiketo);
-		return tempLiketoDTO;
 	}
 
 	//해당 리뷰에 좋아요를 눌렀는지 안눌렀는지
@@ -41,4 +38,8 @@ public class LiketoService {
 		return liketoRepository.countByReviewIdandLikeCheck(id);
 	}
 
+	public void deleteAllByReviewIdInQuery(Long id)
+	{
+		liketoRepository.deleteAllByReviewIdInQuery(id);
+	}
 }

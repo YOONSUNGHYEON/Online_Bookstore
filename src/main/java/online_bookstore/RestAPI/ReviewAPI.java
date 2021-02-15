@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import online_bookstore.DTO.LiketoDTO;
 import online_bookstore.DTO.MemberDTO;
 import online_bookstore.DTO.ReviewDTO;
-import online_bookstore.Entity.Member;
+import online_bookstore.Entity.Liketo;
 import online_bookstore.Entity.Review;
 import online_bookstore.Service.LiketoService;
 import online_bookstore.Service.MemberService;
@@ -42,8 +42,8 @@ public class ReviewAPI {
 		LiketoDTO liketoDTO=new LiketoDTO(memberService.login(((MemberDTO) session.getAttribute("member")).getMember_Id()),
 							reviewService.findOne(param.get("reviewId").toString())
 							,1);
-		liketoDTO= liketoService.save(liketoDTO);
-		return liketoService.countByReviewIdandLikeCheck(liketoDTO.getReview().getId());
+		liketoService.save(liketoDTO);
+		return 1;
 	}
 
 	public ReviewAPI(ReviewService reviewService) {
@@ -51,10 +51,16 @@ public class ReviewAPI {
 	}
 
 	//리뷰 아이디당 좋아요 눌렀는지 안눌렀는지
-	@GetMapping("liketo/{id}")
-	public int checkliketoby(@PathVariable(name = "id") long id, HttpSession session){
+	@GetMapping("liketo/{id}/mem")
+	public boolean checkliketoby(@PathVariable(name = "id") long id, HttpSession session){
 		int memberNum = ((MemberDTO)session.getAttribute("member")).getMember_Num();
-		return liketoService.findByMemberNumAndReviewID(memberNum, id);
+		Liketo liketo = liketoService.findByMemberNumandReviewID(memberNum, id);
+		if(liketo==null)
+			return false;
+		else if(liketo.getLike_check() == 0)
+			return false;
+		else
+			return true;
 	}
 
 	//리뷰 아이디당 좋아요 카운트 가져오기
@@ -64,9 +70,9 @@ public class ReviewAPI {
 	}
 	//내 리뷰 삭제하기
 	@DeleteMapping("review/{id}")
-	public boolean deleteReview(@PathVariable(name = "id") String bookId, HttpSession session){
-		Member m = memberService.login(((MemberDTO) session.getAttribute("member")).getMember_Id());
-		reviewService.deleteById(bookId, m);
+	public boolean deleteReview(@PathVariable(name = "id") long id){
+		liketoService.deleteAllByReviewIdInQuery(id);
+		reviewService.deleteById(id);
 		return true;
 	}
 

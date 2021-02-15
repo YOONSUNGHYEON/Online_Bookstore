@@ -8,6 +8,8 @@
 <head>
 <meta charset="UTF-8">
 <title>detail page</title>
+<% String userid = (String)session.getAttribute("memeber");%>
+
 <link href="${path}/resources/main/main.css" rel="stylesheet"
 	type="text/css">
 <link href="${path}/resources/detail/detail.css" rel="stylesheet"
@@ -246,7 +248,7 @@
 													<button type="button"
 														class="review_modify_button js_review_modfiy_btn"
 														data-review-text=""
-														data-rating-id="18488234" data-review-spoiler="false">
+														data-rating-id data-review-spoiler="false">
 														수정</button>
 													<span>|</span>
 													<button type="button" data-rating-id=""
@@ -346,14 +348,14 @@
 			</div>
 			<div class="detail_aside_wrap"></div>
 		</div>
+	
 	</div>
 	<jsp:include page="footer.jsp" />
 </body>
 
 <script type="text/javascript">
 
-
-    
+  
 </script>
 
 
@@ -374,10 +376,41 @@ $('.score').append(rdata);
 </script>
 <%-- 리뷰 작성한 적이 있다면 리뷰 가져오기 --%>
 
+
+<script type="text/javascript">
+	
+<%-- 리뷰 수정후 post로 보내기 --%> 
+function update_review(review_id) {
+
+console.log($("#content").val());
+			var review = {
+				id:review_id,
+				content : $("#content").val(),
+				score: rating.rate
+
+			};
+			$.ajax({
+				url : "/review/"+review_id,
+				data : review,
+				type : "put",
+				dataType : "json",
+				async : true,
+				success : function(resp) {
+					location.reload();
+				},
+				error : function() {
+					location.reload();
+				}
+				
+			});
+			
+	
+  }
+
+</script>
+
 <%-- 리뷰 작성 부분 --%>
 <script type="text/javascript">
-
-
 function reviewTextarea(){
 var num=${member.member_Num}-0;
 $.getJSON('/api/reviewlist/'+id+'/memNum/'+num,function(rdata){
@@ -393,16 +426,14 @@ $('.review_date').html(rdata.time);
 get_liketo_count(rdata.id);
 $('.js_rate_num').html(rdata.score);
 $('.review_input_textarea').html(rdata.content);
+const el = document.querySelector('.js_review_modify_complete_btn');
+el.dataset.ratingId=rdata.id;
+document.querySelector('.review_delete_button').dataset.ratingId=rdata.id;
+
 });
 
 
 }
-
-
-
-
-
-
 
 function Rating(){};
 Rating.prototype.rate = 0;
@@ -444,9 +475,6 @@ document.addEventListener('DOMContentLoaded', function(){
         submit_review();
     });
 </script>
-
-
-
 <%-- id에 해당하는 책 상세 정보 데이터 뿌리기 --%>
 <script type="text/javascript">
 $.getJSON('/api/detailbook/'+id,function(rdata){

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import online_bookstore.DTO.ReviewDTO;
-import online_bookstore.Entity.Member;
 import online_bookstore.Entity.Review;
 import online_bookstore.Repository.MemberRepository;
 import online_bookstore.Repository.ReviewRepository;
@@ -21,10 +20,6 @@ public class ReviewService {
 	MemberRepository memberRepository;
 	@Autowired
 	BookInfoService bookInfoService;
-	public void updateLike(long id, int like) {
-		reviewRepository.updateLike(id, like);
-	}
-
 
 	public void save(Review review) {
 		reviewRepository.save(review);
@@ -69,13 +64,15 @@ public class ReviewService {
 		return String.format("%.1f", avg);
 	}
 
-	public void deleteById(String bookId, Member m) {
-		Long reviewId = reviewRepository.findByMemberAndBookId(m, bookId).getId();
+	public void deleteById(long reviewId) {
+		//Long reviewId = reviewRepository.findByMemberAndBookId(m, bookId).getId();
 		reviewRepository.deleteById(reviewId);
 
 	}
 
-
+	public void update(long id, int score,String content) {
+		reviewRepository.update(id, score, content);
+	}
 	public ArrayList<Review> findByBookIdOrderBySort(String bookId, String sort) {
 		if(sort.equals("latest"))
 			return reviewRepository.findByBookIdOrderByIdDesc(bookId);

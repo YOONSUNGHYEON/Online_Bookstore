@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
@@ -41,7 +42,7 @@ public class DetailController {
 
 	@PostMapping(value = "/review")
 	@ResponseBody
-	public String home(Review review, HttpSession session) {
+	public String create(Review review, HttpSession session) {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		Date time = new Date();
 		review.setTime(format.format(time));
@@ -50,7 +51,13 @@ public class DetailController {
 		return "redirect:/";
 	}
 
-
+	@PutMapping(value = "/review/{id}")
+	@ResponseBody
+	public String modify(@PathVariable(name = "id") long id, Review review, HttpSession session) {
+		System.out.println(review.getId()+","+review.getScore());
+		reviewService.update(review.getId(), review.getScore(), review.getContent());
+		return "redirect:/";
+	}
 
 
 }

@@ -25,5 +25,13 @@ public interface LiketoRepository extends JpaRepository<Liketo,Long>{
     @Query(value = "select count(*) from liketo where like_check=1 and review_id = :review_id", nativeQuery = true)
     int countByReviewIdandLikeCheck(@Param("review_id") long review_id);
 
+	//void deleteAllByReviewId(Long id);
+
+	@Transactional
+    @Modifying
+    @Query("delete from Liketo where review_id=:ids")
+    void deleteAllByReviewIdInQuery(@Param("ids") Long ids);
+
+
 
 }
