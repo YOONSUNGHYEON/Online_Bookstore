@@ -9,10 +9,23 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import lombok.Data;
+import online_bookstore.DTO.LiketoDTO;
 
 @Data
 @Entity
 public class Liketo {
+
+	public Liketo() {
+		// TODO Auto-generated constructor stub
+
+	}
+	public Liketo(LiketoDTO liketoDTO) {
+		// TODO Auto-generated constructor stub
+
+		this.member = liketoDTO.getMember();
+		this.review = liketoDTO.getReview();
+		this.like_check = liketoDTO.getLike_check();
+	}
 
 
 	@Id

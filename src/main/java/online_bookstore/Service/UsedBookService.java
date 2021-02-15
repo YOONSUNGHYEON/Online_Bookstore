@@ -76,6 +76,11 @@ public class UsedBookService {
 		int heartedCount = usedBookRepository.heartedCount(id);
 		return heartedCount;
 	}
+	
+	@Transactional
+	public void saleStatusChange(Long id, int saleStatus) {
+		usedBookRepository.saleStatusChange(id, saleStatus);
+	}
 
 	public List<UsedBookInfoDTO> searchUsedBook(String title) {
 		ArrayList<UsedBookInfoDTO> arrayList=new ArrayList<UsedBookInfoDTO>();

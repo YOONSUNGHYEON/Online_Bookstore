@@ -36,12 +36,11 @@ public class MemberServiceImp implements MemberService{
         Member member=new Member(memberDTO);
         return  toMemberDTO(memberRepository.findById(member));
     }
-
+   
     @Override
     public Member login(String id) {
         return memberRepository.findById(id);
     }
-
 
     //Member 객체 -> MemberDTO 객체
     public MemberDTO toMemberDTO(Member member){

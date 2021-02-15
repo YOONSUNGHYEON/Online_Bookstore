@@ -23,6 +23,15 @@ public interface UsedBookRepository extends JpaRepository<UsedBook, Long>  {
 	@Query(value="select count(*) from hearted where book_id=:book_id", nativeQuery=true)
 	int heartedCount(@Param("book_id") Long book_id);
 
+
 	@Query(value = "select * from used_book where book_title Like %:title%",nativeQuery = true)
 	List<UsedBook> findByBook_titleLike(@Param("title") String title);
+
+	
+	@Modifying
+	@Transactional
+	@Query(value="update used_book set sale_status=:saleStatus where id = :id", nativeQuery=true)
+	void saleStatusChange(@Param("id") Long id, @Param("saleStatus") int saleStatus);
+
+
 }
