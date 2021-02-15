@@ -1,9 +1,12 @@
 package online_bookstore.controller;
 
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import online_bookstore.DTO.BookDTO;
+import online_bookstore.Service.BookInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +17,7 @@ import online_bookstore.DTO.MemberDTO;
 import online_bookstore.Entity.Member;
 import online_bookstore.Service.MemberService;
 
+import java.util.ArrayList;
 
 
 @Controller
@@ -21,7 +25,8 @@ public class MemberController {
 
 	@Autowired
 	MemberService memberService;
-
+	@Autowired
+	BookInfoService  bookInfoService;
 	//회원가입 화면 이동
 	@RequestMapping("/join")
 	public String join() {
@@ -41,7 +46,20 @@ public class MemberController {
 	}
 	//마이페이지(메인)
 	@RequestMapping("/my")
-	public String my() {
+	public String my(HttpServletRequest request,Model model) {
+		Cookie[] cookies=request.getCookies();
+		ArrayList<BookDTO> arrayList=new ArrayList<BookDTO>();
+		if(cookies.length>1) {
+			for (int i = 2; i < cookies.length; i++) {
+				BookDTO bookDTO=new BookDTO();
+				bookDTO=bookInfoService.booksearchById1(cookies[i].getValue());
+				arrayList.add(bookDTO);
+			}
+			if (arrayList!=null) {
+				model.addAttribute("RecentlyViewedProducts",arrayList);
+			}
+			System.out.println(arrayList.toString());
+		}
 		return "member/myPage/myPageHome";
 	}
 	//마이페이지(주문조회)
