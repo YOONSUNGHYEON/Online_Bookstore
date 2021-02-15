@@ -20,8 +20,4 @@ public interface MemberRepository extends JpaRepository<Member,Integer> {
     @Query("select m from member m where m.member_Num = :member_Num")
     Member getMemberbyMemberNum(@Param("member_Num")int member_Num);
 
-
-
-
-
 }

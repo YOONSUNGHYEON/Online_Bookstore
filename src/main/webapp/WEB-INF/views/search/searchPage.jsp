@@ -12,10 +12,11 @@
 
 
 </head>
-<jsp:include page="../mainBase.jsp"/>
+
 <body>
+<jsp:include page="../mainBase.jsp"/>
 <main class="css-10ux3qq-Contents eqnynw70">
-    <section class="css-SearchResultSection"><h2 class="css-i1sryg-SearchTitle e1d8ahie1">‘천마성의 막내아들’
+    <section class="css-SearchResultSection"><h2 class="css-i1sryg-SearchTitle e1d8ahie1">'hi'
         저자 검색 결과<span class="css-4256oc-TotalAuthor e1d8ahie3">총 5명</span></h2>
         <ul class="css-AuthorList">
             <div id="css-AuthorList-defaultHoverStyle">
@@ -30,7 +31,7 @@
         </ul>
 
 
-        <div class="css-nn7pxq-SearchTitleWrapper e1d8ahie2"><h2 class="css-i1sryg-SearchTitle e1d8ahie1">‘천마성의 막내아들’ 도서
+        <div class="css-nn7pxq-SearchTitleWrapper e1d8ahie2"><h2 class="css-i1sryg-SearchTitle e1d8ahie1">‘hi’ 도서
             검색 결과</h2><label class="css-85gfqx-AdultExcludeButton ewdg9eo0">
             <div class="css-xiz74j-ScaledSmall ewdg9eo1">
                 <div class="css-1by8lqc-Container e1ot9nnq0"><input type="checkbox" class="css-1eq49lg-Input e1ot9nnq1">

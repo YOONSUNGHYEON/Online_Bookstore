@@ -26,10 +26,16 @@
   <a class="navbar-brand">RIDIBOOKS</a>
     <a href="${path}/login"><button class="align-right login">로그인</button></a>
     <a href="${path}/join"><button class="align-right join">회원가입</button></a>
-  <form class="form-inline">
-    <input class="top-search form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <a href="${path}/search"><button class="btn btn-outline-success my-2 my-sm-0">Search</button></a>
-  </form>
+ <form class = "css-WrapperForm">
+
+
+  <label class="css-SearchBoxShape">
+    <input value class="css-SearchBox" id="searchQuery" type="text" placeholder="제목 저자 검색" aria-label="Search">
+  </label>
+
+ </form>
+  <a href="${path}/search"><button class="btn btn-outline-success my-2 my-sm-0">Search</button></a>
+
 </nav>
 <ul class="nav nav-tabs">
   <li class="nav-item">

@@ -2,23 +2,49 @@ $(document).ready(function() {
 
 //showCategoryList("a");
 
-    showAuthorResult("a");
-    showSearchResult("a", "SalesPoint");
+    //let query = $('#searchQuery').val();
+
+    let query="hi"
+    console.log("query:"+query);
+    showAuthorResult(query);
+    showSearchResult(query, "SalesPoint");
 
     $('#sortSelectBox').on('change', function () {
         let state = $(this).val();
         if (state === 'score') {
-            showSearchResult("a", "SalesPoint");
+            showSearchResult(query, "SalesPoint");
         } else if (state === 'recent') {
-            showSearchResult("a", "PublishTime");
+            showSearchResult(query, "PublishTime");
         } else if (state === 'review_cnt') {
-            showSearchResult("a", "MyReviewCount");
+            showSearchResult(query, "MyReviewCount");
         } else if (state === 'similarity') {
-            showSearchResult("a", "Accuracy");
+            showSearchResult(query, "Accuracy");
         }
     });
 
 });
+
+
+function execSearch() {
+    /**
+     * 검색어 input id: query
+     * 검색결과 목록: #search-result-box
+     * 검색결과 HTML 만드는 함수: addHTML
+     */
+        // 1. 검색창의 입력값을 가져온다.
+    let query = $('#searchQuery').val();
+
+    // 2. 검색창 입력값을 검사하고, 입력하지 않았을 경우 focus.
+    if (query == '') {
+        $('#searchQuery').focus();
+        return;
+    }
+    console.log("this is query");
+    // 3. GET /api/search?query=${query} 요청
+    showAuthorResult(query);
+    showSearchResult(query, "SalesPoint");
+
+}
 
 
 
