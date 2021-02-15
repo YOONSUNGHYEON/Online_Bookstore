@@ -45,7 +45,7 @@ public class CartController {
         ArrayList<BookDTO> cartBookList = new ArrayList<>();
         for(int i=0; i<cartList.size();i++ ){
             String book_Id = cartList.get(i).getBook_Id();
-            ArrayList<BookDTO> bookDTOList = bookInfoServiceImp.booksearchbyId(book_Id);
+            ArrayList<BookDTO> bookDTOList = bookInfoServiceImp.bookSearchbyId(book_Id);
             cartBookList.add(bookDTOList.get(0));
         }
       return cartBookList;

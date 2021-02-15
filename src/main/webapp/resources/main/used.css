@@ -1,0 +1,24 @@
+@charset "UTF-8";
+.write-btn{
+	margin: 15px auto;
+    font-size: 16px;
+    color: #1F8CE6;
+    font-weight: 900;
+}
+.write-btn :hover, .write-btn :active, .write-btn :focus{
+	text-decoration:none;
+}
+.sale-percentage {
+    position: absolute;
+    top: 0px;
+    width: 50px;
+    height: 25px;
+    color: white;
+    background-color: orange;
+    font-weight: 900;
+    text-align: center;
+    padding-top: 2px;
+}
+.book-status{
+	color: orange;
+}

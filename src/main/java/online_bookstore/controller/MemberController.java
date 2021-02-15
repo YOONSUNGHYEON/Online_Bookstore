@@ -33,7 +33,7 @@ public class MemberController {
 		return "member/login";
 	}
 	//로그아웃
-	@RequestMapping("logout")
+	@RequestMapping("/logout")
 	public String logout(HttpSession session){
 		session.invalidate();
 		return "redirect:/";
@@ -74,7 +74,8 @@ public class MemberController {
 			System.out.println(result.toString());
 			System.out.println("not null");
 			session.setAttribute("member",result);
-			return "redirect:/";
+			session.setAttribute("userId", result.getMember_Id());
+			return "redirect:";
 		}else{
 			model.addAttribute("msg","입력하신 내용틀립니다");
 			System.out.println("null");

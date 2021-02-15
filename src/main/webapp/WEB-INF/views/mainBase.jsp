@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,10 +37,28 @@
  </form>
   <a href="${path}/search"><button class="btn btn-outline-success my-2 my-sm-0">Search</button></a>
 
+  <a class="navbar-brand" href="/">RIDIBOOKS</a>
+  	<c:choose>
+  	<c:when test="${empty sessionScope.member}">
+    <a href="${path }/login"><button class="align-right login">로그인</button></a>
+    <a href="${path }/join"><button class="align-right join">회원가입</button></a>
+    </c:when>
+    <c:otherwise>
+    <a href="${path }/my"><button class="align-right login">마이페이지</button></a>
+    <a href="${path }/logout"><button class="align-right join">로그아웃</button></a>
+    </c:otherwise>
+    </c:choose>
+  <form class="form-inline">
+    <input class="top-search form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
 </nav>
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link active" href="/"><i class="fas fa-home"></i>홈</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="/used"><i class="fas fa-book"></i></i>중고책</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="/alarm"><i class="fas fa-bell"></i></i>알람</a>

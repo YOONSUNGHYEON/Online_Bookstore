@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,22 +26,6 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/81816a43c2.js"
 	crossorigin="anonymous"></script>
-<script type="text/javascript">
-function show(num) { // <img>에 이미지 달기
-
-	
-	}
-function hide(num) { // <img>에 이미지 제거
-		
-	}
-function fun1(num){
-	for( var x=0; x <=num; x++ ) {
- 			document.getElementById("starimg"+x).src="${path}/resources/detail/yellow_star.png";
- 		
-	}
-}
-
-</script>
 </head>
 <jsp:include page="mainBase.jsp" />
 <body>
@@ -64,20 +47,17 @@ function fun1(num){
 		<div class="detail_wrap">
 			<div class="detail_body_wrap">
 				<section class="detail_body">
-					<h2 class="indent_hidden">돈의 심리학 상세페이지</h2>
+					<h2 class="indent_hidden title"></h2>
 					<article class="detail_header trackable">
 						<div class="header_info_wrap">
 							<p class="info_category_wrap">
-								<a href="/category/200">${bookInfo.book_CategoryName}</a> <span
+								<a id="category" href="/category/200"></a> <span
 									aria-hidden="true" class="icon-arrow_2_right"></span> <a
 									href="/category/220"></a>
 							</p>
-
 							<div class="info_title_wrap">
-
-								<h3 class="info_title_wrap">${bookInfo.book_Title}</h3>
-								<h4 class="info_title_sub_wrap">${bookInfo.book_Subtitle}</h4>
-
+								<h3 class="title info_title_wrap"></h3>
+								<h4 id="subtitle" class="info_title_sub_wrap"></h4>
 							</div>
 							<div class="info_metadata_wrap">
 								<p class="metadata_rate">
@@ -89,26 +69,18 @@ function fun1(num){
 											class="StarRate_ParticipantCount_Unit">명</span></span><span
 										class="StarRate_HiddenElement">참여</span></span>
 								</p>
-
 							</div>
 							<div class="info_metadata_wrap">
 								<p class="metadata metadata_writer">
 									<span class="metadata_item author_item_wrapper"><a
-										class="js_author_detail_link author_detail_link"
-										href="/author/113027">${bookInfo.book_Author}</a> 저</span>
-									<c:if test="${bookInfo.book_Translator!=null}">
-										<span><a href="">${bookInfo.book_Translator}</a>역</span>
-									</c:if>
-								</p>
+										id="author" class="js_author_detail_link author_detail_link"
+										href="/author/113027"></a> 저</span>
+								<div id="translater"></div>
 
+								</p>
 								<p class="metadata file_info publisher_info">
-									<a class="publisher_detail_link"
-										href="  /search?q=%EC%B6%9C%ED%8C%90%EC%82%AC%3A%EC%9D%B8%ED%94%8C%EB%A3%A8%EC%97%94%EC%85%9C
-">${bookInfo.book_Publisher}</a>
-									출판
+									<a id="publisher" class="publisher_detail_link" href=""></a> 출판
 								</p>
-
-
 							</div>
 							<div id="select_info_component"></div>
 							<div id="notice_component">
@@ -117,32 +89,14 @@ function fun1(num){
 							<div class="info_price_wrap">
 								<div class="info_price_table">
 									<div>
-
 										<table class="price_table normal_price_table">
-											<tbody>
-												<tr>
-													<th class="price_title" rowspan="3">구매</th>
-													<td class="price_type">종이책 정가</td>
-													<td class="book_price"><span class="museo_sans">${bookInfo.book_Price}</span>원
-													</td>
-													<td class="discount_rate"></td>
-												</tr>
-												<tr class="selling_price_row">
-													<td class="price_type">판매가</td>
-													<td class="book_price"><span class="museo_sans">${bookInfo.book_PriceSales}</span>원
-													</td>
-												</tr>
+											<tbody id="price">
+
 											</tbody>
 										</table>
 									</div>
-
 								</div>
-
-
-
-
 							</div>
-
 							<div class="info_buttons_wrap">
 								<ul class="info_buttons rui_button_group_6">
 									<li class="rui_button_item">
@@ -164,118 +118,56 @@ function fun1(num){
 											class="main_book_image"
 											src="${path}/resources/detail/box.png"><span
 											class="indent_hidden">선물하기</span> </a></li>
-									<li class="rui_button_item"><a
-										class="rui_button_blue_50 btn_buy" href=""> 구매하기 </a></li>
+									<li class="rui_button_item"><c:choose>
+											<c:when test="${member.member_Num != null}">
+												<a class="rui_button_blue_50 btn_buy" href="/order/${id}">
+													구매하기 </a>
+											</c:when>
+											<c:when test="${member.member_Num == null}">
+												<a class="rui_button_blue_50 btn_buy" href="/login">
+													구매하기 </a>
+											</c:when>
+										</c:choose></li>
 								</ul>
 							</div>
 						</div>
 						<div class="header_thumbnail_wrap">
 							<div
 								class="header_thumbnail book_macro_200 detail_scalable_thumbnail">
-
-
-
-
 								<div class="book_thumbnail_wrapper"
 									data-book_id_for_tracking="1691000080">
 									<div class="book_thumbnail">
-										<div class="main_book_image_wrapper">
-											<img class="main_book_image " src="${bookInfo.book_Cover}">
+										<div id="image" class="main_book_image_wrapper">
+
 											<span class="border"></span>
 										</div>
-
-
-
-
-
-
 									</div>
 								</div>
-
 							</div>
-
 						</div>
-
 					</article>
-
 					<article class="detail_series detail_box_module">
 						<div class="rsg_title01">
 							<h3 class="title_text">책 소개</h3>
 						</div>
 						<div id="introduce_book"
 							class="introduce_section js_introduce_section">
-							<p class="introduce_paragraph folded">${bookInfo.book_Description}</p>
-
+							<p id="description" class="introduce_paragraph folded"></p>
 						</div>
 					</article>
 					<article class="detail_review detail_box_module">
 						<div class="rsg_title01">
 							<h3 class="title_text">리뷰</h3>
-
 						</div>
 						<div class="review_info_section">
 							<div class="review_input_left">
 								<h4 class="buyer_score_title">구매자 별점</h4>
 								<p class="buyer_score">
-									<span class="score">4.5</span> <span class="indent_hidden">점</span>
+									<span class="score"></span> <span class="indent_hidden">점</span>
 								</p>
-								<p class="score_people_num">
-									<strong>2</strong>명이 평가함
-								</p>
+								<p class="score_people_num"></p>
 							</div>
 							<div class="review_input_right">
-								<h4 class="indent_hidden">리뷰 작성 영역</h4>
-								<div class="star_rate_wrapper">
-									<div class="star_tip_wrapper">
-										<p class="tip_title">이 책을 평가해주세요!</p>
-
-									</div>
-									<div class="star_rate_touch_area">
-										<span class="separate_bar active"></span> <label for="star1"
-											class="js_star" data-rating="1"> <img id="starimg1"
-											src="${path}/resources/detail/gray_star.png"
-											onclick="fun1(1);"><span class="indent_hidden">별
-												1개</span>
-										</label> <span class="separate_bar active"></span> <label for="star2"
-											class="js_star" data-rating="2"><img id="starimg2"
-											onclick="fun1(2);"
-											src="${path}/resources/detail/gray_star.png"> <span
-											class="indent_hidden">별 2개</span> </label> <span
-											class="separate_bar active"></span> <label for="star3"
-											class="js_star" data-rating="3"> <img id="starimg3"
-											onclick="fun1(3);"
-											src="${path}/resources/detail/gray_star.png"><span
-											class="indent_hidden">별 3개</span>
-										</label> <span class="separate_bar active"></span> <label for="star4"
-											src="${path}/resources/detail/gray_star.png"><img
-											id="starimg4" onclick="fun1(4);"
-											src="${path}/resources/detail/gray_star.png"><span
-											class="indent_hidden">별 4개</span> </label> <span
-											class="separate_bar active"></span> <label for="star5"
-											class="js_star" data-rating="5"> <img id="starimg5"
-											onclick="fun1(5);"
-											src="${path}/resources/detail/gray_star.png"><span
-											class="indent_hidden">별 5개</span>
-										</label>
-									</div>
-								</div>
-								<form:form method="post" modelAttribute="reviewModel">
-									<div class="review_textarea_wrapper">
-										<textarea class="review_input_textarea" name="content"
-											title="리뷰 입력"
-											placeholder="리뷰 작성 시 광고 및 욕설, 비속어나 타인을 비방하는 문구를 사용하시면 비공개될 수 있습니다."
-											style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 112px;"></textarea>
-									</div>
-									<div class="buttons_wrapper">
-										<div class="write_review_bottom">
-
-											<div class="write_button_wrapper">
-												<button type="submit" class="rui_button_blue_30">리뷰
-													남기기</button>
-											</div>
-										</div>
-									</div>
-								</form:form>
 							</div>
 						</div>
 						<div id="review_list_section">
@@ -288,99 +180,22 @@ function fun1(num){
 										class="js_select_tab_option" data-filter="all"> 전체 </a></li>
 								</ul>
 								<ul class="rui_order js_review_list_order_wrapper">
-									<li class="order_list"><a href="#"
-										class="js_select_tab_option active" data-order="latest">최신순</a></li>
-									<li class="order_list"><a href="#"
-										class="js_select_tab_option" data-order="like">공감순</a></li>
-									<li class="order_list"><a href="#"
-										class="js_select_tab_option" data-order="high_rating">별점
-											높은순</a></li>
-									<li class="order_list"><a href="#"
-										class="js_select_tab_option" data-order="low_rating">별점
-											낮은순</a></li>
+									<li class="order_list"><a href="#a"
+										class="js_select_tab_option active"  data-order="latest">최신순</a></li>
+									<li class="order_list"><a href="#a"
+										class="js_select_tab_option"  data-order="like">공감순</a></li>
+									<li class="order_list"><a href="#a"
+										class="js_select_tab_option" 
+										data-order="highscore">별점 높은순</a></li>
+									<li class="order_list"><a href="#a"
+										class="js_select_tab_option" 
+										data-order="lowscore">별점 낮은순</a></li>
 								</ul>
 							</div>
-							<div class="review_list_wrapper js_review_list_wrapper active">
-								<ul>
-									<c:forEach var="reviews" items="${ reviews }">
-										<li class="review_list">
-											<div class="list_left js_review_info_wrapper">
-												<div class="left_contents">
-													<p>
-														<span class="star_rate"><span
-															class="RSGBookMetadata_StarRate"><span
-																class="StarRate_IconBox"><span
-																	class="StarRate_IconFill" style="width: 100%"></span></span></span></span> <span
-															class="reviewer_id">${ reviews.member.member_Id }</span> <span class="buy_check">
-															<span class="svg_badge_buyer_1">구매자</span>
-														</span>
-													</p>
-													<ul class="review_date_and_report_wrapper">
-														<li class="review_date">${ reviews.time }.</li>
-														<li class="meta_list report">
-															<button class="report_button js_report_button"
-																type="button" data-rating-id="18334902"
-																data-reported-status="not_reported">신고</button>
-														</li>
-													</ul>
-												</div>
-											</div>
-											<div class="list_right js_review_wrapper">
-												<p class="review_content js_review_content">${ reviews.content }</p>
-												<div class="review_status">
-													<div
-														class="review_recommend_count js_review_recommend_count"
-														data-rating-id="18334902">
-														<button type="button"
-															class="rui_button_white_25 comment_toggle_button js_comment_toggle_button">
-															<span class="rui_button_contents"> <span
-																class="rui_button_icon"></span> <span
-																class="rui_button_text"> 댓글 <span
-																	class="js_comment_count"></span>
-															</span>
-															</span>
-														</button>
-														<button type="button"
-															class="rui_button_white_25 like_button js_like_button">
-															<span class="rui_button_contents"> <span
-																class="rui_button_icon"></span> <span
-																class="rui_button_text"> <span
-																	class="indent_hidden">추천</span> <span
-																	class="like_count js_like_count"></span>
-															</span>
-															</span>
-														</button>
-													</div>
-												</div>
+							<div id="review_list"
+								class="review_list_wrapper js_review_list_wrapper active">
+								<ul id="reviews">
 
-												<div class="comment_wrapper hidden js_comment_wrapper"
-													data-rating-id="18334902">
-													<ul class="comment_list_wrapper js_comment_list_wrapper">
-													</ul>
-													<div class="comment_textarea_wrapper">
-														<form class="js_review_comment_register_form">
-															<input type="hidden" name="rating_id" value="18334902">
-															<input type="hidden" name="book_id" value="1691000080">
-															<div class="textarea_left">
-																<textarea name="content"
-																	class="comment_textarea js_comment_textarea"
-																	title="이곳에 댓글을 남겨주세요." placeholder="이곳에 댓글을 남겨주세요."></textarea>
-															</div>
-															<div class="textarea_right">
-																<button type="submit"
-																	class="rui_button_blue_30 disabled comment_submit js_comment_write_btn">댓글
-																	달기</button>
-															</div>
-															<hr class="clear_both">
-														</form>
-													</div>
-												</div>
-
-											</div>
-
-										</li>
-										
-									</c:forEach>
 								</ul>
 								<div class="spinner_wrapper"></div>
 								<div class="spin"></div>
@@ -389,116 +204,314 @@ function fun1(num){
 					</article>
 				</section>
 			</div>
-			<div class="detail_aside_wrap">
-				<div class="aside_banner">
-					<a href=""> <img src="${path}/resources/detail/aside_img.jpg"
-						alt="리디셀렉트 12월 업데이트">
-					</a>
-				</div>
-				<div class="aside_contents aside_best">
-					<h2 class="aside_contents_title">경제일반 베스트셀러</h2>
-					<ul>
-						<li><a
-							href="/books/754029826?_s=category_best&amp;_s_id=2127000085"
-							class="trackable"
-							data-track-params="{&quot;section&quot;:&quot;bestseller&quot;,&quot;idx&quot;:0,&quot;u_id&quot;:&quot;qead753951&quot;,&quot;type&quot;:&quot;impression&quot;,&quot;tags&quot;:{&quot;name&quot;:&quot;\ud2b8\ub80c\ub4dc \ucf54\ub9ac\uc544 2021&quot;,&quot;brand&quot;:&quot;\ubbf8\ub798\uc758 \ucc3d&quot;,&quot;genre&quot;:&quot;general&quot;,&quot;genre_kor&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c&quot;,&quot;category&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c\/\uacbd\uc81c\uc77c\ubc18&quot;,&quot;price&quot;:&quot;12600&quot;,&quot;quantity&quot;:1,&quot;rep_id&quot;:&quot;&quot;,&quot;rep_title&quot;:&quot;&quot;,&quot;rcmd_id&quot;:&quot;&quot;,&quot;is_checkpoint&quot;:false,&quot;is_last_item&quot;:false},&quot;obj_id&quot;:&quot;754029826&quot;}"
-							data-track-type="beacon,ga"> <span class="best_rank">1위
-							</span> <span class="best_title"> <span class="title"> 트렌드
-										코리아 2021 </span> <span class="title_fadeout"></span>
-							</span>
-						</a></li>
-						<li><a
-							href="/books/4139000007?_s=category_best&amp;_s_id=2127000085"
-							class="trackable"
-							data-track-params="{&quot;section&quot;:&quot;bestseller&quot;,&quot;idx&quot;:1,&quot;u_id&quot;:&quot;qead753951&quot;,&quot;type&quot;:&quot;impression&quot;,&quot;tags&quot;:{&quot;name&quot;:&quot;\ubbf8\uc2a4\ud130 \ub9c8\ucf13 2021&quot;,&quot;brand&quot;:&quot;\ud398\uc774\uc9c02\ubd81\uc2a4&quot;,&quot;genre&quot;:&quot;general&quot;,&quot;genre_kor&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c&quot;,&quot;category&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c\/\uacbd\uc81c\uc77c\ubc18&quot;,&quot;price&quot;:&quot;10800&quot;,&quot;quantity&quot;:1,&quot;rep_id&quot;:&quot;&quot;,&quot;rep_title&quot;:&quot;&quot;,&quot;rcmd_id&quot;:&quot;&quot;,&quot;is_checkpoint&quot;:false,&quot;is_last_item&quot;:false},&quot;obj_id&quot;:&quot;4139000007&quot;}"
-							data-track-type="beacon,ga"> <span class="best_rank">2위
-							</span> <span class="best_title"> <span class="title"> 미스터
-										마켓 2021 </span> <span class="title_fadeout"></span>
-							</span>
-						</a></li>
-						<li><a
-							href="/books/1691000076?_s=category_best&amp;_s_id=2127000085"
-							class="trackable"
-							data-track-params="{&quot;section&quot;:&quot;bestseller&quot;,&quot;idx&quot;:2,&quot;u_id&quot;:&quot;qead753951&quot;,&quot;type&quot;:&quot;impression&quot;,&quot;tags&quot;:{&quot;name&quot;:&quot;\ubc15\uacf0\ud76c \ud22c\uc790\ubc95&quot;,&quot;brand&quot;:&quot;\uc778\ud50c\ub8e8\uc5d4\uc15c&quot;,&quot;genre&quot;:&quot;general&quot;,&quot;genre_kor&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c&quot;,&quot;category&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c\/\uacbd\uc81c\uc77c\ubc18&quot;,&quot;price&quot;:&quot;11700&quot;,&quot;quantity&quot;:1,&quot;rep_id&quot;:&quot;&quot;,&quot;rep_title&quot;:&quot;&quot;,&quot;rcmd_id&quot;:&quot;&quot;,&quot;is_checkpoint&quot;:false,&quot;is_last_item&quot;:false},&quot;obj_id&quot;:&quot;1691000076&quot;}"
-							data-track-type="beacon,ga"> <span class="best_rank">3위
-							</span> <span class="best_title"> <span class="title"> 박곰희
-										투자법 </span> <span class="title_fadeout"></span>
-							</span>
-						</a></li>
-						<li><a
-							href="/books/4139000005?_s=category_best&amp;_s_id=2127000085"
-							class="trackable"
-							data-track-params="{&quot;section&quot;:&quot;bestseller&quot;,&quot;idx&quot;:3,&quot;u_id&quot;:&quot;qead753951&quot;,&quot;type&quot;:&quot;impression&quot;,&quot;tags&quot;:{&quot;name&quot;:&quot;\ubd80\uc758 \ub300\uc774\ub3d9&quot;,&quot;brand&quot;:&quot;\ud398\uc774\uc9c02\ubd81\uc2a4&quot;,&quot;genre&quot;:&quot;general&quot;,&quot;genre_kor&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c&quot;,&quot;category&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c\/\uacbd\uc601\uc77c\ubc18&quot;,&quot;price&quot;:&quot;10800&quot;,&quot;quantity&quot;:1,&quot;rep_id&quot;:&quot;&quot;,&quot;rep_title&quot;:&quot;&quot;,&quot;rcmd_id&quot;:&quot;&quot;,&quot;is_checkpoint&quot;:false,&quot;is_last_item&quot;:false},&quot;obj_id&quot;:&quot;4139000005&quot;}"
-							data-track-type="beacon,ga"> <span class="best_rank">4위
-							</span> <span class="best_title"> <span class="title"> 부의
-										대이동 </span> <span class="title_fadeout"></span>
-							</span>
-						</a></li>
-						<li><a
-							href="/books/1314000079?_s=category_best&amp;_s_id=2127000085"
-							class="trackable"
-							data-track-params="{&quot;section&quot;:&quot;bestseller&quot;,&quot;idx&quot;:4,&quot;u_id&quot;:&quot;qead753951&quot;,&quot;type&quot;:&quot;impression&quot;,&quot;tags&quot;:{&quot;name&quot;:&quot;\uc874\ub9ac\uc758 \uae08\uc735\ubb38\ub9f9 \ud0c8\ucd9c&quot;,&quot;brand&quot;:&quot;\ubca0\uac00\ubd81\uc2a4&quot;,&quot;genre&quot;:&quot;general&quot;,&quot;genre_kor&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c&quot;,&quot;category&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c\/\uacbd\uc81c\uc77c\ubc18&quot;,&quot;price&quot;:&quot;11200&quot;,&quot;quantity&quot;:1,&quot;rep_id&quot;:&quot;&quot;,&quot;rep_title&quot;:&quot;&quot;,&quot;rcmd_id&quot;:&quot;&quot;,&quot;is_checkpoint&quot;:false,&quot;is_last_item&quot;:false},&quot;obj_id&quot;:&quot;1314000079&quot;}"
-							data-track-type="beacon,ga"> <span class="best_rank">5위
-							</span> <span class="best_title"> <span class="title"> 존리의
-										금융문맹 탈출 </span> <span class="title_fadeout"></span>
-							</span>
-						</a></li>
-						<li><a
-							href="/books/1811175533?_s=category_best&amp;_s_id=2127000085"
-							class="trackable"
-							data-track-params="{&quot;section&quot;:&quot;bestseller&quot;,&quot;idx&quot;:5,&quot;u_id&quot;:&quot;qead753951&quot;,&quot;type&quot;:&quot;impression&quot;,&quot;tags&quot;:{&quot;name&quot;:&quot;7\ub300 \uc774\uc288\ub85c \ubcf4\ub294 \ub3c8\uc758 \uc5ed\uc0ac 2&quot;,&quot;brand&quot;:&quot;\ub85c\ud06c\ubbf8\ub514\uc5b4&quot;,&quot;genre&quot;:&quot;general&quot;,&quot;genre_kor&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c&quot;,&quot;category&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c\/\uacbd\uc81c\uc77c\ubc18&quot;,&quot;price&quot;:&quot;9900&quot;,&quot;quantity&quot;:1,&quot;rep_id&quot;:&quot;&quot;,&quot;rep_title&quot;:&quot;&quot;,&quot;rcmd_id&quot;:&quot;&quot;,&quot;is_checkpoint&quot;:false,&quot;is_last_item&quot;:false},&quot;obj_id&quot;:&quot;1811175533&quot;}"
-							data-track-type="beacon,ga"> <span class="best_rank">6위
-							</span> <span class="best_title"> <span class="title"> 7대
-										이슈로 보는 돈의 역사 2 </span> <span class="title_fadeout"></span>
-							</span>
-						</a></li>
-						<li><a
-							href="/books/1691000072?_s=category_best&amp;_s_id=2127000085"
-							class="trackable"
-							data-track-params="{&quot;section&quot;:&quot;bestseller&quot;,&quot;idx&quot;:6,&quot;u_id&quot;:&quot;qead753951&quot;,&quot;type&quot;:&quot;impression&quot;,&quot;tags&quot;:{&quot;name&quot;:&quot;\ubd80\uc758 \uace8\ub4e0\ud0c0\uc784&quot;,&quot;brand&quot;:&quot;\uc778\ud50c\ub8e8\uc5d4\uc15c&quot;,&quot;genre&quot;:&quot;general&quot;,&quot;genre_kor&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c&quot;,&quot;category&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c\/\uacbd\uc81c\uc77c\ubc18&quot;,&quot;price&quot;:&quot;12800&quot;,&quot;quantity&quot;:1,&quot;rep_id&quot;:&quot;&quot;,&quot;rep_title&quot;:&quot;&quot;,&quot;rcmd_id&quot;:&quot;&quot;,&quot;is_checkpoint&quot;:false,&quot;is_last_item&quot;:false},&quot;obj_id&quot;:&quot;1691000072&quot;}"
-							data-track-type="beacon,ga"> <span class="best_rank">7위
-							</span> <span class="best_title"> <span class="title"> 부의
-										골든타임 </span> <span class="title_fadeout"></span>
-							</span>
-						</a></li>
-						<li><a
-							href="/books/2127000085?_s=category_best&amp;_s_id=2127000085"
-							class="trackable"
-							data-track-params="{&quot;section&quot;:&quot;bestseller&quot;,&quot;idx&quot;:7,&quot;u_id&quot;:&quot;qead753951&quot;,&quot;type&quot;:&quot;impression&quot;,&quot;tags&quot;:{&quot;name&quot;:&quot;\uad00\uc885\uc758 \uc870\uac74&quot;,&quot;brand&quot;:&quot;\uc6e8\uc77c\ubd81&quot;,&quot;genre&quot;:&quot;general&quot;,&quot;genre_kor&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c&quot;,&quot;category&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c\/\uacbd\uc81c\uc77c\ubc18&quot;,&quot;price&quot;:&quot;11340&quot;,&quot;quantity&quot;:1,&quot;rep_id&quot;:&quot;&quot;,&quot;rep_title&quot;:&quot;&quot;,&quot;rcmd_id&quot;:&quot;&quot;,&quot;is_checkpoint&quot;:false,&quot;is_last_item&quot;:false},&quot;obj_id&quot;:&quot;2127000085&quot;}"
-							data-track-type="beacon,ga"> <span class="best_rank">8위
-							</span> <span class="best_title"> <span class="title"> 관종의
-										조건 </span> <span class="title_fadeout"></span>
-							</span>
-						</a></li>
-						<li><a
-							href="/books/1890000206?_s=category_best&amp;_s_id=2127000085"
-							class="trackable"
-							data-track-params="{&quot;section&quot;:&quot;bestseller&quot;,&quot;idx&quot;:8,&quot;u_id&quot;:&quot;qead753951&quot;,&quot;type&quot;:&quot;impression&quot;,&quot;tags&quot;:{&quot;name&quot;:&quot;\ucd9c\uadfc\uae38 \ubd80\uc790 \uc218\uc5c5: \ud2b8\ub80c\ub4dc \ud3b8&quot;,&quot;brand&quot;:&quot;\ud55c\ube5b\ube44\uc988&quot;,&quot;genre&quot;:&quot;general&quot;,&quot;genre_kor&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c&quot;,&quot;category&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c\/\uacbd\uc81c\uc77c\ubc18&quot;,&quot;price&quot;:&quot;11850&quot;,&quot;quantity&quot;:1,&quot;rep_id&quot;:&quot;&quot;,&quot;rep_title&quot;:&quot;&quot;,&quot;rcmd_id&quot;:&quot;&quot;,&quot;is_checkpoint&quot;:false,&quot;is_last_item&quot;:false},&quot;obj_id&quot;:&quot;1890000206&quot;}"
-							data-track-type="beacon,ga"> <span class="best_rank">9위
-							</span> <span class="best_title"> <span class="title"> 출근길
-										부자 수업: 트렌드 편 </span> <span class="title_fadeout"></span>
-							</span>
-						</a></li>
-						<li><a
-							href="/books/372006655?_s=category_best&amp;_s_id=2127000085"
-							class="trackable"
-							data-track-params="{&quot;section&quot;:&quot;bestseller&quot;,&quot;idx&quot;:9,&quot;u_id&quot;:&quot;qead753951&quot;,&quot;type&quot;:&quot;impression&quot;,&quot;tags&quot;:{&quot;name&quot;:&quot;\uc8fc\uc2dd\ud558\ub294 \ub9c8\uc74c&quot;,&quot;brand&quot;:&quot;\uc720\uc601&quot;,&quot;genre&quot;:&quot;general&quot;,&quot;genre_kor&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c&quot;,&quot;category&quot;:&quot;\uc77c\ubc18\ub3c4\uc11c\/\uc7ac\ud14c\ud06c_\uae08\uc735_\ubd80\ub3d9\uc0b0&quot;,&quot;price&quot;:&quot;12600&quot;,&quot;quantity&quot;:1,&quot;rep_id&quot;:&quot;&quot;,&quot;rep_title&quot;:&quot;&quot;,&quot;rcmd_id&quot;:&quot;&quot;,&quot;is_checkpoint&quot;:false,&quot;is_last_item&quot;:true},&quot;obj_id&quot;:&quot;372006655&quot;}"
-							data-track-type="beacon,ga"> <span class="best_rank">10위
-							</span> <span class="best_title"> <span class="title">
-										주식하는 마음 </span> <span class="title_fadeout"></span>
-							</span>
-						</a></li>
-					</ul>
-					<a class="best_more_btn" href="/category/bestsellers/220">더보기<span
-						class="icon-arrow_1_right"></span></a>
-				</div>
-			</div>
+			<div class="detail_aside_wrap"></div>
 		</div>
 	</div>
-
 	<jsp:include page="footer.jsp" />
-
-
 </body>
+
+<script type="text/javascript">
+
+
+    
+</script>
+
+
+	
+<%-- 리뷰리스트 개수 가져오기 --%>
+<script type="text/javascript">
+$.getJSON('/api/reviewlistcountbybook/'+${id},function(rdata){          
+$('.score_people_num').html('<strong>'+rdata+'</strong>명이 평가함');
+});
+</script>
+	
+<%-- 리뷰 평균점수 가져오기 --%>
+<script type="text/javascript">
+var id = ${id}
+$.getJSON('/api/avgscore/'+id,function(rdata){          
+$('.score').append(rdata);
+});
+</script>
+
+	
+<%-- 리뷰 작성 부분 --%>
+<script type="text/javascript">
+var num=-1;
+if(${member.member_Num!=null})
+{
+	num=${member.member_Num}-0;
+}
+var review_input='';
+$.getJSON('/api/reviewlist/'+id+'/memNum/'+num,function(rdata){
+console.log(rdata);
+if(rdata==0)
+{
+review_input='<h4 class="indent_hidden">리뷰 작성 영역</h4>'+
+			'<div class="star_rate_wrapper">'+
+			'<div class="star_tip_wrapper">'+
+			'<p class="tip_title">이 책을 평가해주세요!</p>'+
+			'</div>'+
+			'<div class="star_rate_touch_area">'+
+			'<div class="review_rating">'+
+			'<div class="rating">'+
+			'<!-- 해당 별점을 클릭하면 해당 별과 그 왼쪽의 모든 별의 체크박스에 checked 적용 -->'+
+			'<input type="checkbox" name="rating" id="rating1" value="1" '+
+			'class="rate_radio" title="1점"> <label for="rating1"></label>'+
+			'<input type="checkbox" name="rating" id="rating2" value="2" '+
+			'class="rate_radio" title="2점"> <label for="rating2"></label>'+
+			'<input type="checkbox" name="rating" id="rating3" value="3" '+
+			'class="rate_radio" title="3점"> <label for="rating3"></label>'+
+			'<input type="checkbox" name="rating" id="rating4" value="4" '+
+			'class="rate_radio" title="4점"> <label for="rating4"></label>'+
+			'<input type="checkbox" name="rating" id="rating5" value="5" '+
+			'class="rate_radio" title="5점"> <label for="rating5"></label>'+
+			'</div></div></div></div>'+
+			'<form method="post">'+
+			'<div class="review_textarea_wrapper">'+
+			'<textarea class=".review_textarea review_input_textarea" id="content" title="리뷰 입력" '+
+			'placeholder="리뷰 작성 시 광고 및 욕설, 비속어나 타인을 비방하는 문구를 사용하시면 비공개될 수 있습니다." '+
+			'style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 112px;"></textarea> '+
+			'</div>'+
+			'<div class="buttons_wrapper">'+
+			'<div class="write_review_bottom">'+
+			'<div class="write_button_wrapper">'+
+			'<button type="button" id="btnSubmit" name="save" value="등록" '+
+			'class="rui_button_blue_30">리뷰 남기기</button>'+
+			'</div></div></div></form>'
+
+}
+else
+{
+review_input= '<h4 class="indent_hidden">리뷰 작성 영역</h4>'+
+'<div class="review_input_wrapper js_review_input_wrapper written">'+
+'<div class="star_rate_wrapper js_star_rate_wrapper">'+
+'<input type="hidden" value="4" id="input_rating" class="js_input_rating">'+
+'<div class="star_tip_wrapper">'+
+'<div class="my_star_rate js_my_star_rate active">'+
+'<p class="rate_title">내가 남긴 별점 <span class="rate_num js_rate_num">4.0</span></p>'+
+'</div></div>'+
+'</div>'+
+'<p class="review_content js_review_content"><span class="visible">줄거리보고 제가 읽었던 소설 같아서 안읽을려고 했는뎁<br>재미있게 봤던 기억이 나서 구매해서 읽었어요!<br>근데 권수도 길고 제가 기억하던 것보다 내용이 길구 <br>마법사가 등장했던거 같은데 없어서 뭔가 했더니 <br>제가 읽은건 딴 소설이였더라구요ㅋㅋㅋㅋㅋㅋ<br>전 언제 그 소설을 읽었을까여ㅋㅋㅋㅋ<br>이런 소재는 항... <button type="button" class="review_read_more js_review_read_more">계속 읽기</button></span><span class="hidden">줄거리보고 제가 읽었던 소설 같아서 안읽을려고 했는뎁<br>재미있게 봤던 기억이 나서 구매해서 읽었어요!<br>근데 권수도 길고 제가 기억하던 것보다 내용이 길구 <br>마법사가 등장했던거 같은데 없어서 뭔가 했더니 <br>제가 읽은건 딴 소설이였더라구요ㅋㅋㅋㅋㅋㅋ<br>전 언제 그 소설을 읽었을까여ㅋㅋㅋㅋ<br>이런 소재는 항상 재미있네요</span></p>'+
+'</div>'+
+'<div class="review_status">'+
+'<div class="review_recommend_count js_review_recommend_count" data-rating-id="18369999">'+
+'<button type="button" class="rui_button_white_25 comment_toggle_button js_comment_toggle_button">'+
+'<span class="rui_button_contents">'+
+'<span class="rui_button_icon"></span>'+
+'<span class="rui_button_text">댓글'+
+'<span class="js_comment_count"></span>'+
+'</span></span></button>'+
+'<button type="button" class="rui_button_white_25 like_button js_like_button">'+
+'<span class="rui_button_contents">'+
+'<span class="rui_button_icon"></span>'+
+'<span class="rui_button_text">'+
+'<span class="indent_hidden">추천</span>'+
+'<span class="like_count js_like_count">1</span>'+
+'</span></span></button></div></div>'+
+'<div class="comment_wrapper hidden js_comment_wrapper" data-rating-id="18369999">'+
+'<ul class="comment_list_wrapper js_comment_list_wrapper">'+
+'</ul>'+
+'<div class="comment_textarea_wrapper">'+
+'<form class="js_review_comment_register_form">'+
+'<input type="hidden" name="rating_id" value="18369999">'+
+'<input type="hidden" name="book_id" value="2183000004">'+
+'<div class="textarea_left">'+
+'<textarea name="content" class="comment_textarea js_comment_textarea" title="이곳에 댓글을 남겨주세요." placeholder="이곳에 댓글을 남겨주세요."></textarea>'+
+'</div>'+
+'<div class="textarea_right">'+
+'<button type="submit" class="rui_button_blue_30 disabled comment_submit js_comment_write_btn">댓글 달기</button>'+
+'</div></form></div></div></div></div></div>'
+}
+$('.review_input_right').append(review_input);
+review_input
+});
+
+
+
+
+function Rating(){};
+Rating.prototype.rate = 0;
+Rating.prototype.setRate = function(newrate){
+    //별점 마킹 - 클릭한 별 이하 모든 별 체크 처리
+    this.rate = newrate;
+    let items = document.querySelectorAll('.rate_radio');
+    items.forEach(function(item, idx){
+        if(idx < newrate){
+            item.checked = true;
+        }else{
+            item.checked = false;
+        }
+    });
+}
+let rating = new Rating();//별점 인스턴스 생성
+
+document.addEventListener('DOMContentLoaded', function(){
+    //별점선택 이벤트 리스너
+    document.querySelector('.rating').addEventListener('click',function(e){
+        let elem = e.target;
+        if(elem.classList.contains('rate_radio')){
+            rating.setRate(parseInt(elem.value));
+        }
+    })
+});
+
+ document.querySelector('#btnSubmit').addEventListener('click', function(e){
+        //별점 선택 안했으면 메시지 표시
+        if(rating.rate == 0){
+            alert("별점을 입력해주세요");
+            return false;
+        }
+        //리뷰 5자 미만이면 메시지 표시
+        if($('#content').val().length < 5){
+            alert("5자 이상 글자를 입력해주세요");
+            return false;
+        }
+        submit_review();
+    });
+</script>
+
+
+	
+<%-- id에 해당하는 책 상세 정보 데이터 뿌리기 --%>
+<script type="text/javascript">
+$.getJSON('/api/detailbook/'+id,function(rdata){
+ $.each(rdata,function(index,item){              
+var price = '<tr>'+
+			'<th class="price_title" rowspan="3">구매</th>'+
+			'<td class="price_type">종이책 정가</td>'+
+			'<td class="book_price"><span class="museo_sans">'+item.book_Price+'</span>원'+
+			'</td>'+
+			'</tr>'+
+			'<tr class="selling_price_row">'+
+			'<td class="price_type">판매가</td>'+
+			'<td class="book_price"><span class="museo_sans">'+item.book_PriceSales+'</span>원'+
+			'</td>'+
+			'</tr>'
+var cover='<img class="main_book_image" src='+item.book_Cover+'>'
+var translater = '<c:if test="'+'${'+item.book_Translator+'!=null}">'+
+				 '<span><a href="">'+item.book_Translator+'</a>역</span>'+
+				 '</c:if>'
+			
+$('.title').append(item.book_Title);
+$('#category').append(item.book_CategoryName);
+$('#description').append(item.book_Description);
+$('#subtitle').append(item.book_Subtitle);
+$('#price').append(price);
+$('#image').append(cover);
+$('#translator').append(translater);
+$('#author').append(item.book_Author);
+$('#publisher').append(item.book_Publisher);
+ })
+});
+
+
+</script>
+
+	
+<%-- 페이지 처음 로딩 될때 리뷰 리스트 작성순으로 데이터 뿌리기--%>
+<script type="text/javascript">
+$.getJSON('/api/reviewlist/'+id+'/latest',function(rdata){   
+$.each(rdata,function(index,item){
+var reviews = '<li class="review_list">'+
+			'<div class="list_left js_review_info_wrapper">'+
+			'<div class="left_contents">'+
+			'<p>'+
+			'<span class="star_rate">'+
+			'<span class="RSGBookMetadata_StarRate">'+
+			'<span class="StarRate_IconBox">'+
+			'<span class="StarRate_IconFill" style="width: 100%">'+
+			'</span></span></span>'+item.score+'</span>'+
+			'<span class="reviewer_id">'+item.member.member_Id+'</span>'+
+			'<span class="buy_check">'+
+			'<span class="svg_badge_buyer_1">구매자</span></span>'+
+			'</p>'+
+			'<ul class="review_date_and_report_wrapper">'+
+			'<li class="review_date">'+item.time+'</li>'+
+			'<li class="meta_list report">'+
+			'<button class="report_button js_report_button" type="button" data-rating-id="18334902">신고</button>'+
+			'</li></ul></div></div>'+
+			'<div class="list_right js_review_wrapper">'+
+			'<p class="review_content js_review_content">'+item.content+'</p>'+
+			'<div class="review_status">'+
+			'<div class="review_recommend_count js_review_recommend_count">'+
+			'<button type="button" class="rui_button_white_25 comment_toggle_button js_comment_toggle_button">'+
+			'<span class="rui_button_contents">'+
+			'<span class="rui_button_icon"></span> '+
+			'<span class="rui_button_text"> 댓글 '+
+			'<span class="js_comment_count"></span></span></span></button>'+
+			'<button data-url="like/'+item.id+'/'+item.like+'" onclick="like_click('+item.id+');" type="button" class="rui_button_white_25 like_button js_like_button">'+
+			'<span class="rui_button_contents"> <span '+
+			'class="rui_button_icon"></span> <span '+
+			'class="rui_button_text"> <span '+
+			'class="indent_hidden">추천</span> <span id="'+item.id+'" '+
+			'class="like_count js_like_count">'+item.like+'</span>'+
+			'</span>'+
+			'</span>'+
+			'</button>'+
+			'</div>'+
+			'</div>'+
+			'<div class="comment_wrapper hidden js_comment_wrapper"'+
+			'data-rating-id="18334902">'+
+			'<ul class="comment_list_wrapper js_comment_list_wrapper">'+
+			'</ul>'+
+			'<div class="comment_textarea_wrapper">'+
+			'<form class="js_review_comment_register_form">'+
+			'<input type="hidden" name="rating_id" value="18334902">'+
+			'<input type="hidden" name="book_id" value="1691000080">'+
+			'<div class="textarea_left">'+
+			'<textarea name="content"'+
+			'class="comment_textarea js_comment_textarea"'+
+			'title="이곳에 댓글을 남겨주세요." placeholder="이곳에 댓글을 남겨주세요."></textarea>'+
+			'</div>'+
+			'<div class="textarea_right">'+
+			'<button type="submit"'+
+			'class="rui_button_blue_30 disabled comment_submit js_comment_write_btn">댓글'+
+			'달기</button>'+
+			'</div>'+
+			'<hr class="clear_both">'+
+			'</form></div></div></div></li>'
+										
+$('#reviews').append(reviews);
+
+ })
+});
+
+</script>
+
+<script type="text/javascript">
+	
+<%-- 리뷰 작성후 post로 보내기 --%> 
+function submit_review() {
+var id = '${member.member_Num}'; // 방법1
+        if (id == '') {
+            alert("로그인 후 글쓰기가 가능합니다.");
+            return false;
+        } else {       
+			var review = {
+				bookId : ${id},
+				content : $("#content").val(),
+				score: rating.rate
+
+			};
+			$.ajax({
+				url : "/review",
+				data : review,
+				type : "post",
+				dataType : "json",
+				async : true,
+				success : function(resp) {
+					location.reload();
+				},
+				error : function() {
+					location.reload();
+				}
+				
+			});
+			}
+	
+  }
+
+</script>
+<script src="${path}/resources/detail/detail.js"></script>
 
 </html>
