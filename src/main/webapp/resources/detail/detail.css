@@ -4404,15 +4404,16 @@
 	/*display: none;*/
 	font-size: 18px;
 	color: #999;
-	font-weight: 700;
+	font-weight: 1000;
 	padding-top: 10px;
 	letter-spacing: -.03em;
 }
 
 .my_star_rate .rate_title {
 	display: inline-block;
-	font-size: 14px;
-	font-weight: 700;
+	font-size: 16px;
+	font-weight: 1000;
+	padding-top: 10px;
 	color: #636c73;
 }
 
@@ -5119,8 +5120,7 @@ ul {
 	list-style-type: none
 }
 
-#review_info_section .review_input_right .review_input_wrapper .modify_review_bottom
-	{
+.review_input_right .review_input_wrapper .modify_review_bottom {
 	margin-top: 9px;
 	text-align: right
 }
@@ -5130,19 +5130,18 @@ ul {
 	display: inline-block
 }
 
-#review_info_section .review_input_right .review_input_wrapper .modify_review_bottom .modify_button_wrapper
+.review_input_right .review_input_wrapper .modify_review_bottom .modify_button_wrapper
 	{
 	display: inline-block
 }
 
-#review_info_section .review_input_right .review_input_wrapper .modify_review_bottom .modify_button_wrapper .cancel_button_wrapper,
-	#review_info_section .review_input_right .review_input_wrapper .modify_review_bottom .modify_button_wrapper .complete_button_wrapper
+.review_input_right .review_input_wrapper .modify_review_bottom .modify_button_wrapper .cancel_button_wrapper,
+	.review_input_right .review_input_wrapper .modify_review_bottom .modify_button_wrapper .complete_button_wrapper
 	{
 	display: inline-block
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_content_wrapper
-	{
+.review_input_wrapper .review_content_wrapper {
 	background: #f2f4f5;
 	border-radius: 3px;
 	padding: 18px;
@@ -5157,7 +5156,7 @@ ul {
 	margin-bottom: 14px
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_content_wrapper .review_content
+.review_input_right .review_input_wrapper .review_content_wrapper .review_content
 	{
 	margin-top: 14px;
 	font-size: 13px;
@@ -5205,8 +5204,7 @@ ul {
 	color: #40474d
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_content_wrapper .review_buttons_wrapper button span
-	{
+.review_content_wrapper .review_buttons_wrapper button span {
 	color: #808991;
 	font-size: 14px;
 	vertical-align: -14%
@@ -5217,21 +5215,19 @@ ul {
 	border-left: none
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_status
-	{
+.review_input_right .review_input_wrapper .review_status {
 	display: block;
 	margin: 10px 0;
 	cursor: default
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_status .review_recommend_count
-	{
+.review_status .review_recommend_count {
 	text-align: right;
 	white-space: nowrap
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_status .review_recommend_count .comment_toggle_button,
-	#review_info_section .review_input_right .review_input_wrapper .review_status .review_recommend_count .like_button
+.review_input_right .review_input_wrapper .review_status .review_recommend_count .comment_toggle_button,
+	.review_input_right .review_input_wrapper .review_status .review_recommend_count .like_button
 	{
 	position: relative;
 	padding: 6px 10px
@@ -5242,7 +5238,7 @@ ul {
 	margin-right: 3px
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_status .review_recommend_count .comment_toggle_button .rui_button_icon
+.review_input_wrapper .review_status .review_recommend_count .comment_toggle_button .rui_button_icon
 	{
 	display: inline-block;
 	text-indent: -444px;
@@ -5257,17 +5253,17 @@ ul {
 	top: -1px
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_status .review_recommend_count .comment_toggle_button .rui_button_text
+.review_input_right .review_input_wrapper .review_status .review_recommend_count .comment_toggle_button .rui_button_text
 	{
 	padding-left: 17px
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_status .review_recommend_count .comment_toggle_button.active
+.review_input_right .review_input_wrapper .review_status .review_recommend_count .comment_toggle_button.active
 	{
 	color: #40474d
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_status .review_recommend_count .comment_toggle_button.active .rui_button_icon
+.review_input_right .review_input_wrapper .review_status .review_recommend_count .comment_toggle_button.active .rui_button_icon
 	{
 	display: inline-block;
 	text-indent: -444px;
@@ -5279,17 +5275,17 @@ ul {
 	background-size: 100% 100%
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_status .review_recommend_count .comment_toggle_button.active .count
+.review_input_right .review_input_wrapper .review_status .review_recommend_count .comment_toggle_button.active .count
 	{
 	color: #40474d
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_status .review_recommend_count .like_button
+.review_input_right .review_input_wrapper .review_status .review_recommend_count .like_button
 	{
 	min-width: 51px
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_status .review_recommend_count .like_button .rui_button_icon
+.review_input_right .review_input_wrapper .review_status .review_recommend_count .like_button .rui_button_icon
 	{
 	display: inline-block;
 	text-indent: -444px;
@@ -5304,7 +5300,7 @@ ul {
 	top: -2px
 }
 
-#review_info_section .review_input_right .review_input_wrapper .review_status .review_recommend_count .like_button .rui_button_text
+.review_input_right .review_input_wrapper .review_status .review_recommend_count .like_button .rui_button_text
 	{
 	padding-left: 17px
 }
@@ -5848,8 +5844,7 @@ ul {
 	top: -1px
 }
 
-.comment_toggle_button .rui_button_text
-	{
+.comment_toggle_button .rui_button_text {
 	padding-left: 17px
 }
 
@@ -5905,19 +5900,18 @@ ul {
 	display: inline-block
 }
 
-#review_list_section .review_list_wrapper .review_list .list_right .review_status .review_recommend_count .like_button.active .rui_button_icon
-	{
-	display: inline-block;
-	text-indent: -444px;
-	font-size: 0;
-	overflow: hidden;
-	background:
-		url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2044%2049%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22%231f8ce6%22%3E%3Cg%3E%3Cpath%20d%3D%22M41.7%2032.7s2.3-1.3%202.1-4.3c-.1-1.9-2.4-3.7-2.4-3.7s1-1.8%201-2.6%200-2.9-2.1-4-12.1.4-12.1.4%201-5.8%201.1-6.6c.1-.8%201-1.7%201.1-4.4.2-3.5-1.2-7.6-4.2-7.5C23.1.1%2024%205%2024%205.8c0%20.8-2.2%205.8-4.2%209-1.9%203.2-4.2%204.6-4.9%207.8-.6%202.7-3.6%203.8-3.6%203.8-.9.2-.9%201-.8%201.7%201.9%2011.7%203.8%2018%203.8%2018s5%201.1%206.8%201.2c1.8.1%201.5.2%203.3.6%201.8.3%205.5%200%208.5%200s4.2-.7%207.1-2.8c2.9-2.1.8-5%20.8-5s2.4-.6%202.4-3.8c0-2.8-1.5-3.6-1.5-3.6zM7.7%2028.1c-.2-.9-1.1-1.6-2-1.6H2c-.9%200-1.7.7-1.8%201.6v18c0%20.9.8%201.6%201.7%201.6h8.2c.9%200%201.3-1.2%201.1-2.2L7.7%2028.1z%22/%3E%3C/g%3E%3C/svg%3E)
-		center center no-repeat;
-	background-size: 100% 100%
+#review_list_section .review_list_wrapper .review_list .list_right .review_status .review_recommend_count .like_button.active .rui_button_icon {
+    display: inline-block;
+    text-indent: -444px;
+    font-size: 0;
+    overflow: hidden;
+    background: url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2044%2049%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22%231f8ce6%22%3E%3Cg%3E%3Cpath%20d%3D%22M41.7%2032.7s2.3-1.3%202.1-4.3c-.1-1.9-2.4-3.7-2.4-3.7s1-1.8%201-2.6%200-2.9-2.1-4-12.1.4-12.1.4%201-5.8%201.1-6.6c.1-.8%201-1.7%201.1-4.4.2-3.5-1.2-7.6-4.2-7.5C23.1.1%2024%205%2024%205.8c0%20.8-2.2%205.8-4.2%209-1.9%203.2-4.2%204.6-4.9%207.8-.6%202.7-3.6%203.8-3.6%203.8-.9.2-.9%201-.8%201.7%201.9%2011.7%203.8%2018%203.8%2018s5%201.1%206.8%201.2c1.8.1%201.5.2%203.3.6%201.8.3%205.5%200%208.5%200s4.2-.7%207.1-2.8c2.9-2.1.8-5%20.8-5s2.4-.6%202.4-3.8c0-2.8-1.5-3.6-1.5-3.6zM7.7%2028.1c-.2-.9-1.1-1.6-2-1.6H2c-.9%200-1.7.7-1.8%201.6v18c0%20.9.8%201.6%201.7%201.6h8.2c.9%200%201.3-1.2%201.1-2.2L7.7%2028.1z%22/%3E%3C/g%3E%3C/svg%3E) center center no-repeat;
+    background-size: 100% 100%;
 }
 
-#review_list_section .review_list_wrapper .review_list .list_right .review_status .review_recommend_count .like_button.active .like_count
+
+
+.review_list_wrapper .review_list .list_right .review_status .review_recommend_count .like_button.active .like_count
 	{
 	color: #1f8ce6
 }
@@ -6325,42 +6319,44 @@ ul {
 }
 
 .rating .rate_radio {
-    position: relative;
-    display: inline-block;
-    z-index: 20;
-    opacity: 0.001;
-    width: 60px;
-    height: 60px;
-    background-color: #fff;
-    cursor: pointer;
-    vertical-align: top;
-    display: none;
+	position: relative;
+	display: inline-block;
+	z-index: 20;
+	opacity: 0.001;
+	width: 60px;
+	height: 60px;
+	background-color: #fff;
+	cursor: pointer;
+	vertical-align: top;
+	display: none;
 }
-.rating .rate_radio + label {
-    position: relative;
-    display: inline-block;
-    margin-left: -4px;
-    z-index: 10;
-    width: 60px;
-    height: 60px;
-    background-image: url('/resources/detail/gray_star.png');
-    background-repeat: no-repeat;
-    background-size: 60px 60px;
-    cursor: pointer;
-    
+
+.rating .rate_radio+label {
+	position: relative;
+	display: inline-block;
+	margin-left: -4px;
+	z-index: 10;
+	width: 60px;
+	height: 60px;
+	background-image: url('/resources/detail/gray_star.png');
+	background-repeat: no-repeat;
+	background-size: 60px 60px;
+	cursor: pointer;
 }
-.rating .rate_radio:checked + label {
-    background-image: url('/resources/detail/yellow_star.png');
+
+.rating .rate_radio:checked+label {
+	background-image: url('/resources/detail/yellow_star.png');
 }
+
 .warning_msg {
-    display: none;
-    position: relative;
-    text-align: center;
-    background: #ffffff;
-    line-height: 26px;
-    width: 100%;
-    color: red;
-    padding: 10px;
-    box-sizing: border-box;
-    border: 1px solid #e0e0e0;
+	display: none;
+	position: relative;
+	text-align: center;
+	background: #ffffff;
+	line-height: 26px;
+	width: 100%;
+	color: red;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid #e0e0e0;
 }

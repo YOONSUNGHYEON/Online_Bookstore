@@ -37,6 +37,8 @@ dependencies {
 	// https://mvnrepository.com/artifact/javax.validation/validation-api
 	compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
 
+	compile("org.springframework.boot:spring-boot-devtools")
+
 }
 
 test {
