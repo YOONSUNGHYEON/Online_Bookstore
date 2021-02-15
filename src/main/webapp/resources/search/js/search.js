@@ -2,9 +2,8 @@ $(document).ready(function() {
 
 //showCategoryList("a");
 
-    //let query = $('#searchQuery').val();
+    let query = SearchTerm;
 
-    let query="hi"
     console.log("query:"+query);
     showAuthorResult(query);
     showSearchResult(query, "SalesPoint");
@@ -137,7 +136,7 @@ function numberWithCommas(x) {
 
 function addAuthorHtml(book){
    return `<li class="css-1qa0tzd-AuthorItem"><a
-        href=""
+        href="/author"
         class="css-11d7ekm-AuthorAnchor">
         <div class="css-94i5om-AuthorInfoWrapper"><span
             class="css-14fq5v-AuthorIconWrapper"><img
@@ -164,7 +163,7 @@ function addBookHtml(book){
     return `<ul class="css-SearchBookList">
             <li class="css-rwymtw-SearchBookItem">
             <div class="css-1updms1-Wrapper"><a
-                    href=""
+                    href="detail/${book.book_Id}"
                     class="css-11biyqe-ThumbnailAnchor">
                 <div class="css-xygcns-ThumbnailWrapper"><img
                         class="ed08jkz1 css-1a2n1u1-Thumbnail-StyledThumbnailWithBadge"
@@ -174,12 +173,12 @@ function addBookHtml(book){
             </a>
                 <div class="css-1t17lwo-SearchBookMetaWrapper"><h3
                         class="css-590vrh-SearchBookTitle"><a
-                        href="">[e북]
+                        href="detail/${book.book_Id}">[e북]
                     <strong>${book.book_Title}</strong></a></h3>
                     <ul class="css-1kx6mys-SearchBookMetaList">
                         <li class="css-198vzo2-SearchBookMetaItem"><span type="author"
                                                                                       class="css-77s8uc-SearchBookMetaField-authorStyle"><a
-                                href="/author/1584">${book.book_Publisher}</a></span></li>
+                                href="/author">${book.book_Publisher}</a></span></li>
                         <div class="css-213nyw-SearchBookMetaItemGroup">
                             <li class="css-198vzo2-SearchBookMetaItem"><span type="normal"
                                                                                           class="css-di4z5l-SearchBookMetaField-normalFieldStyle"><a
@@ -190,7 +189,7 @@ function addBookHtml(book){
                             </li>
                         </div>
                     </ul>
-                    <a href="/books/2057141058?_s=search&amp;_q=%EC%B2%9C%EB%A7%88%EC%84%B1%EC%9D%98+%EB%A7%89%EB%82%B4%EC%95%84%EB%93%A4">
+                    <a href="detail/${book.book_Id}">
                         <p class="css-z8prvo-BookDesc">${book.book_Description}</p></a>
                     <dl class="css-13w561e-PriceItem">
                         <dt class="css-6v44d-PriceTitle-priceBase">가격</dt>

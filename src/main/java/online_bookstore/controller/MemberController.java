@@ -7,15 +7,19 @@ import javax.servlet.http.HttpSession;
 
 import online_bookstore.DTO.BookDTO;
 import online_bookstore.Service.BookInfoService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import online_bookstore.DTO.MemberDTO;
 import online_bookstore.Entity.Member;
 import online_bookstore.Service.MemberService;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 
@@ -115,8 +119,16 @@ public class MemberController {
 	public String Cart() { return "member/cart";
 	}
 
-	@RequestMapping("/search")
-	public String Search() { return "search/searchPage";
+	@RequestMapping(value ="/search", method = RequestMethod.GET)
+	public String Search(@RequestParam("searchTerm") String searchTerm, Model model) {
+
+		model.addAttribute("searchTerm",searchTerm);
+		return "search/searchPage";
+	}
+
+	@RequestMapping("/author")
+	public String Author(){
+		return "search/authorDetail";
 	}
 
 }

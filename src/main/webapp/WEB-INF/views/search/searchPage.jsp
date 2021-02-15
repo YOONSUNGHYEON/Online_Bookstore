@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html>
+<script>
+    const SearchTerm = "${searchTerm}"
+</script>
 <head>
     <meta charset="UTF-8">
     <title>category list</title>
@@ -15,8 +19,9 @@
 
 <body>
 <jsp:include page="../mainBase.jsp"/>
+
 <main class="css-10ux3qq-Contents eqnynw70">
-    <section class="css-SearchResultSection"><h2 class="css-i1sryg-SearchTitle e1d8ahie1">'hi'
+    <section class="css-SearchResultSection"><h2 class="css-i1sryg-SearchTitle e1d8ahie1">'${searchTerm}'
         저자 검색 결과<span class="css-4256oc-TotalAuthor e1d8ahie3">총 5명</span></h2>
         <ul class="css-AuthorList">
             <div id="css-AuthorList-defaultHoverStyle">
@@ -31,7 +36,7 @@
         </ul>
 
 
-        <div class="css-nn7pxq-SearchTitleWrapper e1d8ahie2"><h2 class="css-i1sryg-SearchTitle e1d8ahie1">‘hi’ 도서
+        <div class="css-nn7pxq-SearchTitleWrapper e1d8ahie2"><h2 class="css-i1sryg-SearchTitle e1d8ahie1" id="bookResult">'${searchTerm}' 도서
             검색 결과</h2><label class="css-85gfqx-AdultExcludeButton ewdg9eo0">
             <div class="css-xiz74j-ScaledSmall ewdg9eo1">
                 <div class="css-1by8lqc-Container e1ot9nnq0"><input type="checkbox" class="css-1eq49lg-Input e1ot9nnq1">

@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,20 +26,16 @@
 <div class="header">
 <header style="max-width: 1000px; margin: 0 auto;">
 <nav class="navbar navbar-light bg-light justify-content-between">
-  <a class="navbar-brand">RIDIBOOKS</a>
-    <a href="${path}/login"><button class="align-right login">로그인</button></a>
-    <a href="${path}/join"><button class="align-right join">회원가입</button></a>
- <form class = "css-WrapperForm">
-
-
-  <label class="css-SearchBoxShape">
-    <input value class="css-SearchBox" id="searchQuery" type="text" placeholder="제목 저자 검색" aria-label="Search">
-  </label>
-
- </form>
-  <a href="${path}/search"><button class="btn btn-outline-success my-2 my-sm-0">Search</button></a>
 
   <a class="navbar-brand" href="/">RIDIBOOKS</a>
+    <form action = "./search" method="GET" class = "css-WrapperForm">
+        <label class="css-SearchBoxShape">
+            <input value class="css-SearchBox" name="searchTerm" id="searchQuery" type="text" placeholder="제목 저자 검색" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="searchButton" type="submit">Search</button>
+        </label>
+
+    </form>
+
   	<c:choose>
   	<c:when test="${empty sessionScope.member}">
     <a href="${path }/login"><button class="align-right login">로그인</button></a>
@@ -48,10 +46,7 @@
     <a href="${path }/logout"><button class="align-right join">로그아웃</button></a>
     </c:otherwise>
     </c:choose>
-  <form class="form-inline">
-    <input class="top-search form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
+
 </nav>
 <ul class="nav nav-tabs">
   <li class="nav-item">
@@ -74,3 +69,4 @@
 </div>
 </body>
 </html>
+
