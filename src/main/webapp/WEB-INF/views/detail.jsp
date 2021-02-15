@@ -355,6 +355,12 @@
 
 <%-- cart 저장하기 --%>
 <script type="text/javascript">
+if (self.name != 'reload') {
+         self.name = 'reload';
+         self.location.reload(true);
+     }
+     else self.name = '';
+
 
 function save_cart(){
 var cart = {

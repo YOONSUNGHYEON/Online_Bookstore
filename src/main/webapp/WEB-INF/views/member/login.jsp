@@ -19,6 +19,9 @@
 	src='<c:url value="/resources/member/js/jquery.bxslider.min.js"/>'></script>
 <script src='<c:url value="/resources/member/js/Member.js"/>'></script>
 </head>
+<c:choose>
+  	<c:when test="${empty sessionScope.member}">
+
 <body id="body-id">
 <header class="page-header">
 		<h1 class="page-title">
@@ -67,4 +70,12 @@
 		</section>
 	</section>
 </body>
+ </c:when>
+    <c:otherwise>
+    <script type="text/javascript">
+    history.go(-3);
+    location.reload();
+    </script>
+    </c:otherwise>
+    </c:choose>
 </html>
