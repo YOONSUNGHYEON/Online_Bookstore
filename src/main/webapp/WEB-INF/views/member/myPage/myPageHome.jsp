@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +25,6 @@
 <script src="https://kit.fontawesome.com/81816a43c2.js"
 	crossorigin="anonymous"></script>
 </head>
-
 <jsp:include page="../../mainBase.jsp" />
 <div id="books_contents">
 	<div id="contents_wrap">
@@ -34,8 +34,8 @@
 			<article class="myridi_header">
 				<div class="account_info_wrapper">
 					<div class="info_id_email">
-						<h3 class="info_id museo_sans">qead753951</h3>
-						<p class="info_email museo_sans">qead753951@naver.com</p>
+						<h3 class="info_id museo_sans">${member.member_Id}</h3>
+						<p class="info_email museo_sans">${member.member_Name}</p>
 					</div>
 					<a href="/logout" class="btn_logout">로그아웃</a>
 				</div>
@@ -105,19 +105,19 @@
 					</div>
 				</div>
 				
-
+                <c:forEach var="rvp" items="${RecentlyViewedProducts}">
 				<div class="book_macro_110 book_macro_portrait book_macro_column_5">
 					<div class="book_thumbnail_wrapper"
 						data-book_id_for_tracking="505001532">
 						<div class="book_thumbnail">
 							<div class="thumbnail_image">
 								<img class="thumbnail lazyloaded"
-									src="${path}/resources/detail/xxlarge.jpg" alt="진격의 거인 1권"
+									src="${rvp.book_Cover}" alt="진격의 거인 1권"
 									data-src="//img.ridicdn.net/cover/505022801/large"
 									data-original-cover="//img.ridicdn.net/cover/505022801/large">
 								<span class="border"></span>
 							</div>
-							<a class="thumbnail_btn " href="/books/505001532"
+							<a class="thumbnail_btn " href="${path }/detail/${rvp.book_Id}"
 								data-track-params="" data-track-type=""> <span
 								class="indent_hidden">상세페이지 바로가기</span>
 							</a>
@@ -129,104 +129,23 @@
 					<div class="book_metadata_wrapper">
 
 						<h3 class="book_metadata meta_title ">
-							<a class="title_link " href="/books/505001532"
+							<a class="title_link " href="${path }/detail/${rvp.book_Id}"
 								data-track-params="" data-track-type=""> <span
-								class="title_text js_highlight_helper"> 진격의 거인 </span>
+								class="title_text js_highlight_helper"> ${rvp.book_Title} </span>
 							</a>
 						</h3>
 
 						<p class="book_metadata author ">
 							<a class="js_author_detail_link author_detail_link"
-								href="/author/10248">이사야마 하지메</a>
+								href="${path }/detail/${rvp.book_Id}">${rvp.book_Author}</a>
 						</p>
 
 					</div>
 
 				</div>
+				</c:forEach>
 				
-				<div class="book_macro_110 book_macro_portrait book_macro_column_5">
 
-
-
-
-					<div class="book_thumbnail_wrapper"
-						data-book_id_for_tracking="1019018215">
-						<div class="book_thumbnail">
-							<div class="thumbnail_image">
-								<img class="thumbnail lazyloaded"
-									src="${path}/resources/detail/xxlarge.jpg" alt="체인소 맨 1권"
-									data-src="//img.ridicdn.net/cover/1019026665/large"
-									data-original-cover="//img.ridicdn.net/cover/1019026665/large">
-								<span class="border"></span>
-							</div>
-
-							<a class="thumbnail_btn " href="/books/1019018215"
-								data-track-params="" data-track-type=""> <span
-								class="indent_hidden">상세페이지 바로가기</span>
-							</a>
-
-
-						</div>
-					</div>
-
-					<div class="book_metadata_wrapper">
-
-						<h3 class="book_metadata meta_title ">
-							<a class="title_link " href="/books/1019018215"
-								data-track-params="" data-track-type=""> <span
-								class="title_text js_highlight_helper"> 체인소 맨 </span>
-							</a>
-						</h3>
-
-
-
-
-						<p class="book_metadata author ">
-							<a class="js_author_detail_link author_detail_link"
-								href="/author/90000">후지모토 타츠키</a>
-						</p>
-		</div>
-
-				</div>
-				
-				<div class="book_macro_110 book_macro_portrait book_macro_column_5">
-
-
-
-
-					<div class="book_thumbnail_wrapper"
-						data-book_id_for_tracking="2127000085">
-						<div class="book_thumbnail">
-							<div class="thumbnail_image">
-								<img class="thumbnail lazyloaded"
-									src="${path}/resources/detail/xxlarge.jpg" alt="관종의 조건"
-									data-src="//img.ridicdn.net/cover/2127000085/large"
-									data-original-cover="//img.ridicdn.net/cover/2127000085/large">
-								<span class="border"></span>
-							</div>
-							<a class="thumbnail_btn " href="/books/2127000085"
-								data-track-params="" data-track-type=""> <span
-								class="indent_hidden">상세페이지 바로가기</span>
-							</a>
-
-
-						</div>
-					</div>
-					<div class="book_metadata_wrapper">
-
-						<h3 class="book_metadata meta_title ">
-							<a class="title_link " href="/books/2127000085"
-								data-track-params="" data-track-type=""> <span
-								class="title_text js_highlight_helper"> 관종의 조건 </span>
-							</a>
-						</h3>
-						<p class="book_metadata author ">
-							<a class="js_author_detail_link author_detail_link"
-								href="/author/7189">임홍택</a>
-						</p>
-					</div>
-
-				</div>
 				<hr class="clear_both">
 			</article>
 		</section>

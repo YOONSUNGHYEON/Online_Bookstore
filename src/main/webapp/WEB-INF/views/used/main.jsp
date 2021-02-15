@@ -32,6 +32,10 @@
 <div class="newbook">
 <div class="container-fluid" style="max-width: 1000px; margin: 0 auto;">
 	<h2 class="newbook-title">가장 최근 올라온 책!</h2>
+	 <form class="form-inline" action="/used/search">
+        <input class="top-search form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="title">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
   <div class="responsive">
   	<c:forEach var="row" items="${books}">
   	<fmt:formatNumber var="sale" value="${row.salePrice*100/row.price }" pattern="#"/>

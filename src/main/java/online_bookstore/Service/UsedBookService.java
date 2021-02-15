@@ -82,4 +82,16 @@ public class UsedBookService {
 		usedBookRepository.saleStatusChange(id, saleStatus);
 	}
 
+	public List<UsedBookInfoDTO> searchUsedBook(String title) {
+		ArrayList<UsedBookInfoDTO> arrayList=new ArrayList<UsedBookInfoDTO>();
+		List<UsedBookDTO> data = usedBookRepository.findByBook_titleLike(title)
+				.stream().map(UsedBookDTO::new)
+				.collect(Collectors.toList());
+		for(int i=0; i<data.size(); i++) {
+			BookDTO book = bookInfoService.booksearchById1(data.get(i).getBook_Id());
+			UsedBookInfoDTO usedbook = new UsedBookInfoDTO(data.get(i), book);
+			arrayList.add(usedbook);
+		}
+		return arrayList;
+	}
 }
