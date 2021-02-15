@@ -353,13 +353,31 @@
 	<jsp:include page="footer.jsp" />
 </body>
 
+<%-- cart 저장하기 --%>
 <script type="text/javascript">
 
+function save_cart(){
+var cart = {
+				member_id: '${member.member_Id}',
+				book_id : id
+			};
+			$.ajax({
+				url: "/api/cart",
+				type: "post",
+				dataType: "json",
+				data: JSON.stringify(cart),
+				//data: JSON.stringify(cart),
+				contentType: "application/json",
+				async: true,
+				success: function(response) {
+				alert("카트에 담았습니다.");
+				}
+
+			});
   
+}
+
 </script>
-
-
-
 <%-- 리뷰리스트 개수 가져오기 --%>
 <script type="text/javascript">
 $.getJSON('/api/reviewlistcountbybook/'+${id},function(rdata){          
@@ -382,7 +400,6 @@ $('.score').append(rdata);
 <%-- 리뷰 수정후 post로 보내기 --%> 
 function update_review(review_id) {
 
-console.log($("#content").val());
 			var review = {
 				id:review_id,
 				content : $("#content").val(),
