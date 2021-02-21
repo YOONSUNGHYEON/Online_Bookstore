@@ -2,6 +2,7 @@ package online_bookstore.Service;
 
 import java.util.ArrayList;
 
+import online_bookstore.DTO.MyReviewDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,7 +31,7 @@ public class ReviewService {
 		return reviewRepository.findOne(id);
 	}
 
-    public ArrayList<ReviewDTO> myreviewlist(int num) {
+    public MyReviewDTO myreviewlist(int num) {
 		ArrayList<ReviewDTO> arrayList=new ArrayList<ReviewDTO>();
 		ArrayList<Review> reviews=reviewRepository.findByMember(memberRepository.getOne(num));
 		for (int i = 0; i < reviews.size(); i++) {
@@ -38,7 +39,8 @@ public class ReviewService {
 			reviewDTO.setBook_name(bookInfoService.booksearchById1(reviewDTO.getBookId()).getBook_Title());
 			arrayList.add(reviewDTO);
 		}
-		return arrayList;
+		MyReviewDTO myReviewDTO=new MyReviewDTO(reviewlistcount(num),arrayList);
+		return myReviewDTO;
 
     }
 
