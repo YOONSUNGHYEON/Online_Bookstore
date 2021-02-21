@@ -35,7 +35,9 @@ public class MemberController {
 
 	//로그인 화면 이동
 	@RequestMapping("/login")
-	public String login() {
+	public String login(HttpServletRequest request,Model model) {
+		String referer=request.getHeader("Referer");
+		model.addAttribute("referer",referer);
 		return "member/login";
 	}
 	//로그아웃
@@ -87,16 +89,19 @@ public class MemberController {
 
 	//로그인 처리
 	@PostMapping("/login")
-	public String Loginpost(MemberDTO memberDTO, Model model, HttpSession session, HttpServletRequest request) {
+	public String Loginpost(MemberDTO memberDTO, Model model, HttpSession session) {
 		MemberDTO result = memberService.login(memberDTO);
-		String referer=request.getHeader("Referer");
+		String referer=memberDTO.getReferer();
+		if(referer.contains("join")){
+			referer="/";
+		}
 		if(result!=null){
 			System.out.println(result.toString());
 			System.out.println("not null");
 			session.setAttribute("member",result);
 
 			session.setAttribute("userId", result.getMember_Id());
-			return "redirect:";
+			return "redirect:"+referer;
 
 		}else{
 			model.addAttribute("msg","입력하신 내용틀립니다");

@@ -35,6 +35,7 @@
 		<section id="login" class="account-container account-login">
 			<form action='<c:url value="login"/>' method="post"
 				class="account-form">
+				<input type="hidden" name="referer" value="${referer}">
 				<div id="wrapper" class="account-login">
 					<div class=wrapper_in>
 						<div class="login_box">
