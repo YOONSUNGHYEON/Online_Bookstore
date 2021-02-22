@@ -135,65 +135,57 @@ function numberWithCommas(x) {
 }
 
 function addAuthorHtml(book){
-   return `<li class="css-1qa0tzd-AuthorItem"><a
+   return `<li class="css-AuthorItem"><a
         href="/author"
-        class="css-11d7ekm-AuthorAnchor">
-        <div class="css-94i5om-AuthorInfoWrapper"><span
-            class="css-14fq5v-AuthorIconWrapper"><img
+        class="css-AuthorAnchor">
+        <div class="css-AuthorInfoWrapper"><span
+            class="css-AuthorIconWrapper"><img
             src="https://books.ridicdn.net/_next/static/images/Author-8a6165105065ad9ec6212f3a5c33ad95.svg"
-            alt="작가" class="css-cx4ugu-AuthorIcon"></span><span
-            class="css-vy923q-AuthorName"><strong> ${book.book_Author}</strong> </span><span
-            class="css-grfvvm-AuthorBooksInfo">&lt;${book.book_Title}&gt;</span></div>
+            alt="작가" class="css-AuthorIcon"></span><span
+            class="css-AuthorName"><strong> ${book.book_Author}</strong> </span><span
+            class="css-AuthorBooksInfo">&lt;${book.book_Title}&gt;</span></div>
     </a></li>`;
 }
 
 
-function addCategoryHtml(categoryName){
 
-    let count =2;
-   return `<li class="css-6erk0j-CategoryItem"><a
-                 href=""
-                 class="css-mkzffn-CategoryAnchor-defaultHoverStyle"><span
-                 class="css-z11tzf-CategoryName">전체</span> <span
-                 class="css-1xyth6g-CategoryName-CategoryCount">(2)</span></a></li>`;
-}
 
 function addBookHtml(book){
 
     return `<ul class="css-SearchBookList">
-            <li class="css-rwymtw-SearchBookItem">
-            <div class="css-1updms1-Wrapper"><a
+            <li class="css-SearchBookItem">
+            <div class="css-Wrapper"><a
                     href="detail/${book.book_Id}"
-                    class="css-11biyqe-ThumbnailAnchor">
-                <div class="css-xygcns-ThumbnailWrapper"><img
-                        class="ed08jkz1 css-1a2n1u1-Thumbnail-StyledThumbnailWithBadge"
+                    class="css-ThumbnailAnchor">
+                <div class="css-ThumbnailWrapper"><img
+                        class="ed08jkz1 css-Thumbnail-StyledThumbnailWithBadge"
                         src="${book.book_Cover}"
                         srcSet="${book.book_Cover} 50w,${book.book_Cover} 90w"
                         sizes="(min-width: 999px) 100px, 80px" alt="천마성의 막내아들"></div>
             </a>
-                <div class="css-1t17lwo-SearchBookMetaWrapper"><h3
-                        class="css-590vrh-SearchBookTitle"><a
+                <div class="css-SearchBookMetaWrapper"><h3
+                        class="css-SearchBookTitle"><a
                         href="detail/${book.book_Id}">[e북]
                     <strong>${book.book_Title}</strong></a></h3>
-                    <ul class="css-1kx6mys-SearchBookMetaList">
-                        <li class="css-198vzo2-SearchBookMetaItem"><span type="author"
-                                                                                      class="css-77s8uc-SearchBookMetaField-authorStyle"><a
+                    <ul class="css-SearchBookMetaList">
+                        <li class="css-SearchBookMetaItem"><span type="author"
+                                                                                      class="css-SearchBookMetaField-authorStyle"><a
                                 href="/author">${book.book_Publisher}</a></span></li>
-                        <div class="css-213nyw-SearchBookMetaItemGroup">
-                            <li class="css-198vzo2-SearchBookMetaItem"><span type="normal"
-                                                                                          class="css-di4z5l-SearchBookMetaField-normalFieldStyle"><a
+                        <div class="css-SearchBookMetaItemGroup">
+                            <li class="css-SearchBookMetaItem"><span type="normal"
+                                                                                          class="css-SearchBookMetaField-normalFieldStyle"><a
                                     href="detail/${book.book_Id}">책</a></span>
                             </li>
-                            <li class="css-198vzo2-SearchBookMetaItem ed08jkz4"><span type="normal"
-                                                                                          class="css-di4z5l-SearchBookMetaField-normalFieldStyle">${book.book_CategoryName}</span>
+                            <li class="css-SearchBookMetaItem ed08jkz4"><span type="normal"
+                                                                                          class="css-SearchBookMetaField-normalFieldStyle">${book.book_CategoryName}</span>
                             </li>
                         </div>
                     </ul>
                     <a href="detail/${book.book_Id}">
-                        <p class="css-z8prvo-BookDesc">${book.book_Description}</p></a>
-                    <dl class="css-13w561e-PriceItem">
-                        <dt class="css-6v44d-PriceTitle-priceBase">가격</dt>
-                        <dd><span class="css-ujn5uh-Price-priceBase">${numberWithCommas(book.book_Price)}원</span></dd>
+                        <p class="css-BookDesc">${book.book_Description}</p></a>
+                    <dl class="css-PriceItem">
+                        <dt class="css-PriceTitle-priceBase">가격</dt>
+                        <dd><span class="css-Price-priceBase">${numberWithCommas(book.book_Price)}원</span></dd>
                     </dl>
                 </div>
             </div>
