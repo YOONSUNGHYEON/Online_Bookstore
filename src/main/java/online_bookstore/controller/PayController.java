@@ -35,7 +35,7 @@ public class PayController {
 	@PostMapping("/kakaoPay/{id}")
 	public String kakaoPay(@PathVariable("id") String id) {
 		System.out.println(id);
-		BookDTO book = bookInfoService.booksearchById(id).get(0);
+		BookDTO book = bookInfoService.booksearchById(id);
 		return "redirect:" + kakaopay.kakaoPayReady(book);
 
 	}

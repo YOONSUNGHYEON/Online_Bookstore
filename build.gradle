@@ -34,6 +34,9 @@ dependencies {
 	compile group: 'org.modelmapper', name: 'modelmapper', version: '2.1.1'
 	compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.4'
 	compile group: 'commons-io', name: 'commons-io', version: '2.8.0'
+	// https://mvnrepository.com/artifact/javax.validation/validation-api
+	compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+
 	compile("org.springframework.boot:spring-boot-devtools")
 
 }

@@ -12,6 +12,7 @@ public class OnlineBookstoreApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(OnlineBookstoreApplication.class, args);
 	}
+
 	@Bean
 	public ModelMapper modelMapper(){
 		return new ModelMapper();
