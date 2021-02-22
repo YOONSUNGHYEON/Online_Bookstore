@@ -182,7 +182,7 @@ function addBookHtml(book){
                         <div class="css-213nyw-SearchBookMetaItemGroup">
                             <li class="css-198vzo2-SearchBookMetaItem"><span type="normal"
                                                                                           class="css-di4z5l-SearchBookMetaField-normalFieldStyle"><a
-                                    href="/search?q=%EC%B6%9C%ED%8C%90%EC%82%AC%3AKW%EB%B6%81%EC%8A%A4">책</a></span>
+                                    href="detail/${book.book_Id}">책</a></span>
                             </li>
                             <li class="css-198vzo2-SearchBookMetaItem ed08jkz4"><span type="normal"
                                                                                           class="css-di4z5l-SearchBookMetaField-normalFieldStyle">${book.book_CategoryName}</span>
