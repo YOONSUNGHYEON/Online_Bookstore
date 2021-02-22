@@ -37,12 +37,10 @@
 <script type="text/javascript">
 var session=${member.member_Num};
 var myreview="";
-$.getJSON('/api/reviewlistcount/'+session,function(rdata){
- $('.review_num_noti').html('총 <strong class="review_num">'+rdata+'</strong>개의 리뷰를 등록하셨습니다.');
-})
 
 $.getJSON('/api/reviewlist/'+session,function(rdata){
- $.each(rdata,function(index,item){
+$('.review_num_noti').html('총 <strong class="review_num">'+rdata.count+'</strong>개의 리뷰를 등록하셨습니다.');
+ $.each(rdata.reviewDTO,function(index,item){
  myreview+= '<li class="review_list">'+
             '<div class="review view" data-book-id="" data-prev-rating="">'+
             '<h3 class="title">'+

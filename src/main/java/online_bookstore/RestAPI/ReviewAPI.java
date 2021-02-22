@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpSession;
 
+import online_bookstore.DTO.MyReviewDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -102,7 +103,7 @@ public class ReviewAPI {
 
 	// 회원 리뷰 조회 num= 회원고유 번호
 	@GetMapping("/reviewlist/{num}")
-	public ArrayList<ReviewDTO> myreviewlist(@PathVariable(name = "num") int num) {
+	public MyReviewDTO myreviewlist(@PathVariable(name = "num") int num) {
 		return reviewService.myreviewlist(num);
 	}
 

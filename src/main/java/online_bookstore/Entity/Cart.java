@@ -1,13 +1,16 @@
-package online_bookstore.Repository;
+package online_bookstore.Entity;
 
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import online_bookstore.DTO.BookDTO;
 import online_bookstore.DTO.MemberDTO;
-import online_bookstore.Entity.Member;
-
-import javax.persistence.*;
 
 @NoArgsConstructor
 @Getter
