@@ -12,6 +12,7 @@ public interface MemberService {
 
     void join(MemberDTO memberDTO);
 
+
     MemberDTO login(MemberDTO memberDTO);
 
     Member login(String id);

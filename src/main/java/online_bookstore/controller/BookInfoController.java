@@ -21,7 +21,7 @@ public class BookInfoController {
 
 
     @GetMapping("/booklist")
-    public ArrayList<BookDTO> booklist(){ return bookInfoService.newbooklist(); }
+    public ArrayList<BookDTO> booklist(){ return bookInfoService.booklist(); }
 
     @GetMapping("/title/{title}")
     public ArrayList<BookDTO> booksearch(@PathVariable(name = "title") String title) {
@@ -38,6 +38,6 @@ public class BookInfoController {
     }
     @GetMapping("/detailbook/{num}")
     public ArrayList<BookDTO> detailbook(@PathVariable(name = "num") String num){
-        return bookInfoService.booksearchById(num);
+        return bookInfoService.bookSearchbyId(num);
     }
 }

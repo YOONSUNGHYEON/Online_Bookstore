@@ -7,15 +7,19 @@ import javax.servlet.http.HttpSession;
 
 import online_bookstore.DTO.BookDTO;
 import online_bookstore.Service.BookInfoService;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import online_bookstore.DTO.MemberDTO;
 import online_bookstore.Entity.Member;
 import online_bookstore.Service.MemberService;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 
@@ -35,7 +39,9 @@ public class MemberController {
 
 	//로그인 화면 이동
 	@RequestMapping("/login")
-	public String login() {
+	public String login(HttpServletRequest request,Model model) {
+		String referer=request.getHeader("Referer");
+		model.addAttribute("referer",referer);
 		return "member/login";
 	}
 	//로그아웃
@@ -87,16 +93,19 @@ public class MemberController {
 
 	//로그인 처리
 	@PostMapping("/login")
-	public String Loginpost(MemberDTO memberDTO, Model model, HttpSession session, HttpServletRequest request) {
+	public String Loginpost(MemberDTO memberDTO, Model model, HttpSession session) {
 		MemberDTO result = memberService.login(memberDTO);
-		String referer=request.getHeader("Referer");
+		String referer=memberDTO.getReferer();
+		if(referer.contains("join")){
+			referer="/";
+		}
 		if(result!=null){
 			System.out.println(result.toString());
 			System.out.println("not null");
 			session.setAttribute("member",result);
 
 			session.setAttribute("userId", result.getMember_Id());
-			return "redirect:";
+			return "redirect:"+referer;
 
 		}else{
 			model.addAttribute("msg","입력하신 내용틀립니다");
@@ -112,9 +121,19 @@ public class MemberController {
 	}
 
 	@RequestMapping("/cart")
-	public String Cart() {
-		return "member/cart";
+	public String Cart() { return "member/cart";
 	}
 
+	@RequestMapping(value ="/search", method = RequestMethod.GET)
+	public String Search(@RequestParam("searchTerm") String searchTerm, Model model) {
+
+		model.addAttribute("searchTerm",searchTerm);
+		return "search/searchPage";
+	}
+
+	@RequestMapping("/author")
+	public String Author(){
+		return "search/authorDetail";
+	}
 
 }

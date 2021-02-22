@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+ <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,13 +14,28 @@
 <!-- include css/js -->
 <link href="${path}/resources/main/ridiBase.css" rel="stylesheet" type="text/css">
 <!-- include fontawesome -->
+
 <script src="https://kit.fontawesome.com/81816a43c2.js" crossorigin="anonymous"></script>
+  <script src="${path}/resources/main/ridiBase.css"></script>
+  <script src="${path}/resources/cart/css/cart.css"></script>
+  <script src="${path}/resources/cart/js/cart.js"></script>
+  <script src="${path}/resources/search/js/search.js"></script>
+  <script src="${path}/resources/search/css/search.css"></script>
 </head>
 <body>
 <div class="header">
 <header style="max-width: 1000px; margin: 0 auto;">
 <nav class="navbar navbar-light bg-light justify-content-between">
+
   <a class="navbar-brand" href="/">RIDIBOOKS</a>
+    <form action = "./search" method="GET" class = "css-WrapperForm">
+        <label class="css-SearchBoxShape">
+            <input value class="css-SearchBox" name="searchTerm" id="searchQuery" type="text" placeholder="제목 저자 검색" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" id="searchButton" type="submit">Search</button>
+        </label>
+
+    </form>
+
   	<c:choose>
   	<c:when test="${empty sessionScope.member}">
     <a href="${path }/login"><button class="align-right login">로그인</button></a>
@@ -29,10 +46,7 @@
     <a href="${path }/logout"><button class="align-right join">로그아웃</button></a>
     </c:otherwise>
     </c:choose>
-  <form class="form-inline">
-    <input class="top-search form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
+
 </nav>
 <ul class="nav nav-tabs">
   <li class="nav-item">
@@ -44,7 +58,7 @@
   <li class="nav-item">
     <a class="nav-link" href="/alarm"><i class="fas fa-bell"></i></i>알람</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item-cart">
     <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>카트</a>
   </li>
   <li class="nav-item">
@@ -55,3 +69,4 @@
 </div>
 </body>
 </html>
+
