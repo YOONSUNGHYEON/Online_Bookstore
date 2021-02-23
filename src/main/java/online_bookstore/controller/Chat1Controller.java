@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
+import online_bookstore.DTO.ChatBoxDTO;
 import online_bookstore.DTO.ChatDTO;
 import online_bookstore.DTO.MemberDTO;
 import online_bookstore.Entity.Member;
@@ -41,9 +42,11 @@ public class Chat1Controller {
 			return null;
 		}
 		else if (listType.equals("ten")) {
-			return chatService.getChatListByRecent(fromId, toId, 10);
+			chatService.readChat(fromId, toId);
+			return chatService.getChatListByRecent(fromId, toId, 100);
 		}
 		else {
+			chatService.readChat(fromId, toId);
 			return chatService.getChatListById(fromId, toId, listType);
 		}
 	}
@@ -65,4 +68,22 @@ public class Chat1Controller {
 		else model.addAttribute("userCorrect", "yes");
 		return "used/chat";
 	}
+	
+	@PostMapping("/chatUnread")
+	@ResponseBody
+	public int getAllUnreadChat(@RequestParam String userId) {
+		return chatService.getAllUnreadChat(userId);
+	}
+	
+	@GetMapping("/message")
+	public String chatBox () {
+		return "used/chatBox";
+	}
+	
+	@GetMapping("/chatBox")
+	@ResponseBody
+	public List<ChatBoxDTO> getBox (@RequestParam String userId) {
+		return chatService.getBox(userId);
+	}
+	
 }

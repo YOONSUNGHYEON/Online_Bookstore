@@ -1,6 +1,5 @@
 package online_bookstore.DTO;
 
-
 import java.time.LocalDateTime;
 
 import lombok.Getter;
@@ -11,21 +10,20 @@ import online_bookstore.Entity.Chat;
 @Getter
 @Setter
 @NoArgsConstructor
-public class ChatDTO {
-
+public class ChatBoxDTO {
 	Long id;
 	String fromId;
 	String toId;
 	String chatContent;
-	String listType;
 	LocalDateTime chatTime;
-	int chatRead;
-	
-	public ChatDTO(Chat entity) {
-		this.id=entity.getId();
-		this.fromId=entity.getFromId();
-		this.toId=entity.getToId();
-		this.chatContent=entity.getChatContent();
-		this.chatTime=entity.getChatTime();
+	int unread;
+
+	public ChatBoxDTO(Chat entity) {
+		this.id = entity.getId();
+		this.fromId = entity.getFromId();
+		this.toId = entity.getToId();
+		this.chatContent = entity.getChatContent();
+		this.chatTime = entity.getChatTime();
 	}
+
 }
