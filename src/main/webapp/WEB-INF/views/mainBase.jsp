@@ -21,6 +21,39 @@
   <script src="${path}/resources/cart/js/cart.js"></script>
   <script src="${path}/resources/search/js/search.js"></script>
   <script src="${path}/resources/search/css/search.css"></script>
+<%
+	String userId = null;
+	if(session.getAttribute("userId") != null){
+		userId = (String) session.getAttribute("userId");
+	}
+%>
+<script type="text/javascript">
+	function getUnread(){
+		var userId = '<%= userId %>';
+		$.ajax({
+			type:"POST",
+			url: "/chatUnread",
+			data:{
+				userId:userId
+			},
+			success: function(result){
+				if(result>0)
+					showUnread(result);
+				else
+					$('#unread').empty();
+			}
+		});
+	}
+	function getInfiniteUnread(){
+		getUnread();
+		setInterval(function(){
+			getUnread();
+		}, 4000);
+	}
+	function showUnread(result){
+		$('#unread').html(result);
+	}
+ </script>
 </head>
 <body>
 <div class="header">
@@ -56,7 +89,7 @@
     <a class="nav-link" href="/used"><i class="fas fa-book"></i></i>중고책</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="/alarm"><i class="fas fa-bell"></i></i>알람</a>
+    <a class="nav-link" href="/message"><i class="fas fa-bell"></i></i>메세지<span id="unread"></span></a>
   </li>
   <li class="nav-item-cart">
     <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>카트</a>
@@ -67,6 +100,17 @@
 </ul>
 </header>
 </div>
+<%
+	if(userId!=null){
+%>
+<script type="text/javascript">
+	$(document).ready(function(){
+		getInfiniteUnread();
+	});
+</script>
+<%
+	}
+%>
 </body>
 </html>
 
