@@ -57,7 +57,7 @@ ___
 ___
 
 ## 장바구니 기능
-[ezgif com-gif-to-mp4](https://user-images.githubusercontent.com/68542404/109152219-88ea3f80-77ae-11eb-84da-57da28731aee.gif)
+![ezgif com-gif-to-mp4](https://user-images.githubusercontent.com/68542404/109152219-88ea3f80-77ae-11eb-84da-57da28731aee.gif)
 
 ___
 ## 결제 서비스
