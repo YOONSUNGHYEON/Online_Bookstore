@@ -12,3 +12,14 @@
 |HTML5/CSS3|JPA||MySQL WorkBench|
 |JavaScript|Jquery v.3.2.1||Github|
 ||Bootstrap|||
+
+
+## 프로젝트 목표
+
+## 핵심기능
+
+## 역할분배
+
+## DB 구조
+
+## 기능구현
