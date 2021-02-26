@@ -1,4 +1,5 @@
 # Online_Bookstore
+<img width="700" alt="_2021-01-20__10 37 03" src="https://user-images.githubusercontent.com/68542404/109126586-c5a73e00-7790-11eb-8a84-8a8ae836efc6.png">
 
 ## Description
 > 알라딘 오픈 API를 이용한 도서 구매사이트
