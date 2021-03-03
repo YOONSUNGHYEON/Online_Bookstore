@@ -31,7 +31,12 @@ public class Member {
         this.member_Bir_D = member_Bir_D;
         this.member_Gender = member_Gender;
     }
-    public Member(MemberDTO memberDTO){
+
+
+
+
+    public Member(MemberDTO memberDTO) {
+
         this.member_Num = memberDTO.getMember_Num();
         this.member_Id = memberDTO.getMember_Id();
         this.member_Name = memberDTO.getMember_Name();

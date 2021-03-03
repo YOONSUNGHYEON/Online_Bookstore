@@ -14,11 +14,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import online_bookstore.DTO.BookDTO;
+
 import online_bookstore.Entity.Orders;
 import online_bookstore.Repository.CartRepository;
 import online_bookstore.Repository.MemberRepository;
+
+import online_bookstore.DTO.KakaoPayApprovalVO;
+import online_bookstore.DTO.MemberDTO;
+import online_bookstore.DTO.OrdersDTO;
+import online_bookstore.DTO.PaymentDTO;
+import online_bookstore.Entity.Member;
+
 import online_bookstore.Service.BookInfoService;
 import online_bookstore.Service.KakaoPay;
+import online_bookstore.Service.MemberService;
 import online_bookstore.Service.PaymentService;
 
 @RequiredArgsConstructor
@@ -32,6 +41,10 @@ public class PayController {
 
 	@Setter(onMethod_ = @Autowired)
 	private KakaoPay kakaopay;
+
+	@Autowired
+	MemberService memberService;
+
 
 	@GetMapping("/order/{id}")
 	public String order(Model model, @PathVariable("id") String id) {
@@ -57,18 +70,20 @@ public class PayController {
 
 	@PostMapping("/kakaoPay/{id}")
 	public String kakaoPay(@PathVariable("id") String id) {
+
 		BookDTO book = bookInfoService.booksearchById(id);
+
+
 		return "redirect:" + kakaopay.kakaoPayReady(book);
 	}
 
 	@GetMapping("/kakaoPaySuccess")
-	public void kakaoPaySuccess(@RequestParam("pg_token") String pg_token, Model model) {
-		Orders orders = new Orders();
-		// orders
-		// PaymentDTO payment = new PaymentDTO();
-		// payment.setBook_name(pg_token);
-		paymentService.save(null);
-		model.addAttribute("info", kakaopay.kakaoPayInfo(pg_token));
-
+	public String kakaoPaySuccess(@RequestParam("pg_token") String pg_token, HttpSession session) {
+		Member member = new Member((MemberDTO)session.getAttribute("member"));
+		KakaoPayApprovalVO kakao = kakaopay.kakaoPayInfo(pg_token);
+		OrdersDTO ordersDTO = new OrdersDTO(kakao.getItem_code(),member);
+		PaymentDTO paymentDTO  = new PaymentDTO(member,"결제완료",kakao.getApproved_at(),"카카오페이",kakao.getAmount().getTotal(),kakao.getItem_name());
+		paymentService.save(paymentDTO, ordersDTO);
+		return "kakaoPaySuccess";
 	}
 }

@@ -1,12 +1,13 @@
 package online_bookstore.DTO;
 
+
+
+import java.util.Date;
+
 import lombok.Data;
 import online_bookstore.Entity.Member;
 import online_bookstore.Entity.Orders;
 import online_bookstore.Entity.Payment;
-
-import javax.persistence.*;
-import java.sql.Date;
 @Data
 public class PaymentDTO {
 
@@ -39,7 +40,16 @@ public class PaymentDTO {
         this.discount_price = payment.getDiscount_price();
     }
 
-    public PaymentDTO() {
 
-    }
+
+	public PaymentDTO(Member member, String status, Date approved_at, String type,
+			Integer amount, String item_name) {
+		// TODO Auto-generated constructor stub
+        this.member = member;
+        this.payment_status = status;
+        this.payment_time = approved_at;
+        this.payment_type =type;
+        this.total_price = amount;
+        book_name = item_name;
+	}
 }

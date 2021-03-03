@@ -46,10 +46,12 @@
 			</div>
 			<div class="row books">
 				<c:forEach var="row" items="${books}">
+
 				<a href="${path }/detail/${row.book_Id}">
 				<div class="col-xs-2">
 				<div class="card">
 					<div class="card-image"><img style="width:110px; height:auto;"src="${row.book_Cover}"/></div>
+
 					<div class="card-body">
 					<div class="book-title">${row.book_Title}</div>
 					<div class="book-author">${row.book_Author}</div>

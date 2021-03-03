@@ -43,7 +43,7 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
 	ArrayList<Review> findByBookIdOrderByScoreDesc(String bookId);
 
 	ArrayList<Review> findByBookIdOrderByScoreAsc(String bookId);
-
 	Review findByMemberAndBookId(Member m, String bookId);
+
 
 }
