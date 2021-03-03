@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,6 +29,7 @@
 	rel="stylesheet" type="text/css">
 <link href="${path}/resources/member/css/order.css" rel="stylesheet"
 	type="text/css">
+	<script src="/resources/member/js/order.js"></script>
 </head>
 <jsp:include page="../mainBase.jsp" />
 <body id="ridi_books">
@@ -39,66 +41,18 @@
 
 					<article class="order_list">
 						<h3 class="order_list_title">
-							주문 목록 <span class="list_count">1</span>
+							주문 목록 <span class="list_count"></span>
 						</h3>
-						<ul class="book_order_list_wrapper">
-							<li class="book_order_list js_order_list" data-id="754030246">
-								<div
-									class="book_macro_60 book_macro_landscape book_macro_metadata_portrait">
-									<div class="book_thumbnail_wrapper"
-										data-book_id_for_tracking="754030246">
-										<div class="book_thumbnail">
-											<div class="thumbnail_image" id="image"></div>
-											<a class="thumbnail_btn " href="/books/754030246"
-												data-track-params="" data-track-type=""> <span
-												class="indent_hidden">상세페이지 바로가기</span>
-											</a>
-										</div>
-									</div>
-									<div class="table_cell_wrapper">
-										<div class="table_wrapper">
-											<div class="book_metadata_wrapper">
-												<h3 class="book_metadata meta_title ">
-													<a class="title_link " href="/books/754030246"
-														data-track-params="" data-track-type=""> <span
-														id="title" class="title title_text js_highlight_helper"></span>
-													</a>
-												</h3>
-												<p class="book_metadata author ">
-													<a class="js_author_detail_link author_detail_link"
-														id="author" href="  /search?q=%EA%B9%80%EC%86%8C%EC%98%81"></a>
-												</p>
-											</div>
+						<ul id="orders" class="book_order_list_wrapper">
 
-											<div class="js_book_price_wrapper book_price_wrapper"
-												data-book-id="754030246">
-												<ul class="js_book_price">
-													<li class="ebook_price"><span
-														class="discount_percent js_discount_rate"> <span
-															class="discount_none">-</span>
-													</span> <strong><span id="" class="price pricemuseo_sans"></span>원</strong></li>
-
-													<li class="coupon_price"><span
-														class="js_coupon_discount_percent_value discount_percent coupon_discount_percent_value">-</span>
-														<strong><span
-															class="js_discount_amount_value discount_amount_value museo_sans">0</span>원</strong>
-													</li>
-												</ul>
-											</div>
-
-										</div>
-										<div class="alert_wrapper"></div>
-									</div>
-								</div>
-								<hr>
-							</li>
 						</ul>
 					</article>
 
 
 				</div>
+				<div></div>
 				<div class="order_receipt_wrapper">
-					<form id="order_form"  action="/kakaoPay/${id}"  method="post">
+					<form id="order_form" action="/kakaoPay/${id}" method="post">
 						<div class="hidden_input_wrapper">
 							<input type="hidden" name="_token"
 								value="an_jBCo3pbStxoAyNV1aBufs_b5I2PmtIaJdXymE4rvK2TO1rQLYWRdoQAMVzHJX">
@@ -122,7 +76,7 @@
 											</div>
 											<div class="total_order_price_wrapper">
 												<p class="total_regular_price">
-													<span class="price museo_sans"></span>원
+													<span class="total_price price museo_sans"></span>원
 												</p>
 											</div>
 										</li>
@@ -175,7 +129,7 @@
 										<li>
 											<p class="current_price_wrapper">
 												<strong class="current_price"> 총 결제 금액 <span
-													class="price museo_sans price_num js_total_payment_price"></span>원
+													class="total_price price museo_sans price_num js_total_payment_price"></span>원
 												</strong>
 
 											</p>
@@ -312,7 +266,7 @@
 									</div>
 
 									<div class="checkout_button_wrapper">
-										<button   id="btnSubmit"
+										<button id="btnSubmit"
 											class="rui_button_blue_50 rui_button_eink_black_50 checkout_button js_checkout_button"
 											style="visibility: visible;">결제하기</button>
 									</div>
@@ -390,6 +344,7 @@
 			</section>
 		</div>
 	</div>
+
 </body>
 
 
@@ -424,25 +379,5 @@
 		});
 	</script>
 
-
-<script type="text/javascript">
-
-var id = ${id}
-
-$.getJSON('/api/detailbook/'+id,function(rdata){
- $.each(rdata,function(index,item){              
-
-var cover='<img class="thumbnails lazyloaded" src='+item.book_Cover+'>'
-
-			
-$('#title').append(item.book_Title);
-$('.price').append(item.book_PriceSales);
-$('#image').append(cover);
-$('#author').append(item.book_Author);
- })
-});
-
-
-</script>
 
 </html>

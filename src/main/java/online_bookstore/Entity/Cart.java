@@ -31,5 +31,8 @@ public class Cart {
         this.member = new Member(memberdto);
         this.book_Id = bookId;
     }
-
+    public Cart(String bookId, Member member){
+        this.member =member;
+        this.book_Id = bookId;
+    }
 }

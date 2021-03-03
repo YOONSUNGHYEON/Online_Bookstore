@@ -55,8 +55,7 @@
 					<article class="detail_header trackable">
 						<div class="header_info_wrap">
 							<p class="info_category_wrap">
-								<a id="category" href="/category/200"></a> <span
-									aria-hidden="true" class="icon-arrow_2_right"></span> <a
+								<a id="category" href="/category/200"></a> <a
 									href="/category/220"></a>
 							</p>
 							<div class="info_title_wrap">
@@ -517,7 +516,7 @@ var cover='<img class="main_book_image" src='+item.book_Cover+'>'
 var translater = '<c:if test="'+'${'+item.book_Translator+'!=null}">'+
 				 '<span><a href="">'+item.book_Translator+'</a>역</span>'+
 				 '</c:if>'
-			
+console.log(item.book_PriceSales);
 $('.title').append(item.book_Title);
 $('#category').append(item.book_CategoryName);
 $('#description').append(item.book_Description);
