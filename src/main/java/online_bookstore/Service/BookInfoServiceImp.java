@@ -155,7 +155,7 @@ public class BookInfoServiceImp implements BookInfoService{
         }
         return arrayList;
     }
-    
+
     @Override
     public BookDTO booksearchById1(String id) {
         strurl="http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=ttbinpo33350927001&itemIdType=ISBN13&ItemId="+id+"&output=js&Version=20131101&Cover=Big";
@@ -231,6 +231,7 @@ public class BookInfoServiceImp implements BookInfoService{
 				date.get("author").toString(), date.get("description").toString(),
 				Integer.parseInt(date.get("priceStandard").toString()),Integer.parseInt(date.get("priceSales").toString()), date.get("cover").toString().replaceAll("coversum", "cover500"),
 				date.get("publisher").toString(), date.get("categoryName").toString());
+
 		return bookDTO;
 	}
 
@@ -247,6 +248,7 @@ public class BookInfoServiceImp implements BookInfoService{
 				date.get("publisher").toString(), date.get("categoryName").toString());
 		arrayList.add(bookDTO);
 		return arrayList;
+
 	}
 
     public JSONArray JSONParsing(String strurl){

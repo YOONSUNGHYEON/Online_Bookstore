@@ -1,14 +1,20 @@
 package online_bookstore.Service;
 
+
 import java.util.ArrayList;
+
 
 import online_bookstore.DTO.MyReviewDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import online_bookstore.DTO.ReviewDTO;
 import online_bookstore.Entity.Review;
 import online_bookstore.Repository.MemberRepository;
+
+import online_bookstore.Entity.Review;
+
 import online_bookstore.Repository.ReviewRepository;
 
 
@@ -72,6 +78,7 @@ public class ReviewService {
 
 	}
 
+
 	public void update(long id, int score,String content) {
 		reviewRepository.update(id, score, content);
 	}
@@ -84,4 +91,9 @@ public class ReviewService {
 			return reviewRepository.findByBookIdOrderByScoreDesc(bookId);
 		else
 			return reviewRepository.findByBookIdOrderByScoreAsc(bookId);
-	}}
+	}
+
+
+
+}
+

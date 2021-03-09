@@ -2,10 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<head>
+
 <meta charset="UTF-8">
 <title>detail page</title>
 <% String userid = (String)session.getAttribute("memeber");%>
@@ -30,6 +31,7 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/81816a43c2.js"
 	crossorigin="anonymous"></script>
+
 </head>
 <jsp:include page="mainBase.jsp" />
 <body>
@@ -55,8 +57,7 @@
 					<article class="detail_header trackable">
 						<div class="header_info_wrap">
 							<p class="info_category_wrap">
-								<a id="category" href="/category/200"></a> <span
-									aria-hidden="true" class="icon-arrow_2_right"></span> <a
+								<a id="category" href="/category/200"></a> <a
 									href="/category/220"></a>
 							</p>
 							<div class="info_title_wrap">
@@ -143,10 +144,12 @@
 									<div class="book_thumbnail">
 										<div id="image" class="main_book_image_wrapper">
 
+
 											<span class="border"></span>
 										</div>
 									</div>
 								</div>
+
 							</div>
 						</div>
 					</article>
@@ -163,6 +166,7 @@
 						<div class="rsg_title01">
 							<h3 class="title_text">리뷰</h3>
 						</div>
+
 						<div class="review_info_section">
 							<div class="review_input_left">
 								<h4 class="buyer_score_title">구매자 별점</h4>
@@ -172,6 +176,7 @@
 								<p class="score_people_num"></p>
 							</div>
 							<div class="review_input_right">
+
 								<h4 class="indent_hidden">리뷰 작성 영역</h4>
 								<div
 									class="review_input_wrapper js_review_input_wrapper written">
@@ -312,6 +317,7 @@
 									</div>
 								</div>
 
+
 							</div>
 						</div>
 						<div id="review_list_section">
@@ -324,6 +330,7 @@
 										class="js_select_tab_option" data-filter="all"> 전체 </a></li>
 								</ul>
 								<ul class="rui_order js_review_list_order_wrapper">
+
 									<li class="order_list"><a href="#a"
 										class="js_select_tab_option active" data-order="latest">최신순</a></li>
 									<li class="order_list"><a href="#a"
@@ -338,6 +345,7 @@
 								class="review_list_wrapper js_review_list_wrapper active">
 								<ul id="reviews">
 
+
 								</ul>
 								<div class="spinner_wrapper"></div>
 								<div class="spin"></div>
@@ -350,6 +358,7 @@
 		</div>
 	
 	</div>
+
 	<jsp:include page="footer.jsp" />
 </body>
 
@@ -386,14 +395,14 @@ var cart = {
 </script>
 <%-- 리뷰리스트 개수 가져오기 --%>
 <script type="text/javascript">
-$.getJSON('/api/reviewlistcountbybook/'+${id},function(rdata){          
+//$.getJSON('/api/reviewlistcountbybook/'+${id},function(rdata){          
 $('.score_people_num').html('<strong>'+rdata+'</strong>명이 평가함');
-});
+//});
 </script>
 
 <%-- 리뷰 평균점수 가져오기 --%>
 <script type="text/javascript">
-var id = ${id}
+//var id = ${id}
 $.getJSON('/api/avgscore/'+id,function(rdata){          
 $('.score').append(rdata);
 });
@@ -403,7 +412,7 @@ $('.score').append(rdata);
 
 <script type="text/javascript">
 	
-<%-- 리뷰 수정후 post로 보내기 --%> 
+
 function update_review(review_id) {
 
 			var review = {
@@ -435,12 +444,12 @@ function update_review(review_id) {
 <%-- 리뷰 작성 부분 --%>
 <script type="text/javascript">
 function reviewTextarea(){
-var num=${member.member_Num}-0;
+//var num=${member.member_Num}-0;
 $.getJSON('/api/reviewlist/'+id+'/memNum/'+num,function(rdata){
-$('.tip_title').hide(); <%-- 평가해주세요 숭기기 --%>
-$('.star_rate_touch_area').hide(); <%--별점 체크 숨기기 --%>
-$('.review_textarea_wrapper').hide();<%-- 리뷰 적는 input 숨기기 --%>
-$('.buttons_wrapper').hide();<%-- 리뷰남기기 버튼 숨기기 --%>
+$('.tip_title').hide();
+$('.star_rate_touch_area').hide(); 
+$('.review_textarea_wrapper').hide(); 
+$('.buttons_wrapper').hide();
 $('.js_my_star_rate').show();
 $('.modify_review_bottom').hide();
 $('.js_review_wrapper').show();
@@ -517,7 +526,7 @@ var cover='<img class="main_book_image" src='+item.book_Cover+'>'
 var translater = '<c:if test="'+'${'+item.book_Translator+'!=null}">'+
 				 '<span><a href="">'+item.book_Translator+'</a>역</span>'+
 				 '</c:if>'
-			
+console.log(item.book_PriceSales);
 $('.title').append(item.book_Title);
 $('#category').append(item.book_CategoryName);
 $('#description').append(item.book_Description);
@@ -537,7 +546,7 @@ $('#publisher').append(item.book_Publisher);
 
 <script type="text/javascript">
 	
-<%-- 리뷰 작성후 post로 보내기 --%> 
+
 function submit_review() {
 var id = '${member.member_Num}'; // 방법1
         if (id == '') {
@@ -545,8 +554,8 @@ var id = '${member.member_Num}'; // 방법1
             return false;
         } else {       
 			var review = {
-				bookId : ${id},
-				content : $("#content").val(),
+				//bookId : ${id},
+				//content : $("#content").val(),
 				score: rating.rate
 
 			};

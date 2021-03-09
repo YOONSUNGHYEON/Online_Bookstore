@@ -3,6 +3,7 @@
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,6 +80,8 @@
     <a href="${path }/logout"><button class="align-right join">로그아웃</button></a>
     </c:otherwise>
     </c:choose>
+
+
 
 </nav>
 <ul class="nav nav-tabs">

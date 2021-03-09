@@ -1,0 +1,584 @@
+@charset "UTF-8";
+
+#page_finished_book {
+	width: 952px;
+	margin: 0 auto;
+	background: #fff;
+	margin-bottom: 75px;
+	margin-top: 27px
+}
+
+#page_finished_book .finished_book_table {
+	display: table;
+	width: 100%
+}
+
+#page_finished_book .finished_book_table .finished_book_cell {
+	display: table-cell
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper
+	{
+	width: 330px;
+	background: #97aab7;
+	border: 1px solid #899daa
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_icon
+	{
+	text-align: center;
+	padding: 77px 0 24px 0
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_icon .icon-check_2
+	{
+	color: #fff;
+	font-size: 76px;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, .2)
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_text
+	{
+	font-size: 28px;
+	font-weight: 700;
+	color: #fff;
+	letter-spacing: -.07em;
+	text-align: center;
+	padding-bottom: 28px;
+	text-shadow: 0 1px 3px rgba(0, 0, 0, .2)
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .setbook_coupon_info
+	{
+	width: 264px;
+	margin: 0 auto;
+	border-radius: 4px;
+	background: #f5f1ce;
+	text-align: center;
+	padding: 8px 0;
+	line-height: 1.3em;
+	font-size: 13px;
+	color: #768b9a;
+	font-weight: 700;
+	box-shadow: inset 0 1px 3px 0 rgba(132, 155, 171, .2)
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper
+	{
+	width: 264px;
+	margin: 17px auto 0 auto;
+	border: 2px solid #b6c4cd;
+	background: #849bab;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 3px 0 rgba(0, 0, 0, .2)
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table
+	{
+	width: 100%
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table td
+	{
+	padding: 10px 15px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table td.book_info
+	{
+	padding-right: 7px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table td.book_info.book_count
+	{
+	color: #c8d1d8;
+	font-weight: 700
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table td.book_info .info_title a
+	{
+	display: inline-block;
+	font-size: 13px;
+	font-weight: 700;
+	color: #fff;
+	line-height: 1.3em;
+	margin-bottom: 4px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table td.book_info .info_author a
+	{
+	display: inline-block;
+	color: #c8d1d8;
+	line-height: 1.3em
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table td.book_price
+	{
+	padding-left: 7px;
+	text-align: right;
+	color: #c8d1d8;
+	font-size: 12px;
+	white-space: nowrap
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table td.book_price.total_price
+	{
+	color: #fff;
+	font-weight: 700
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table tbody tr td
+	{
+	border-bottom: 2px solid #91a5b4
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table tbody tr.limit_list td
+	{
+	border-bottom: none
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table tbody tr .more_list
+	{
+	border-bottom: none;
+	padding: 0
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table tbody tr .more_list .more_list_button
+	{
+	display: block;
+	height: 12px;
+	background: #768b9a;
+	text-align: center;
+	color: #849bab;
+	position: relative
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table tbody tr .more_list .more_list_button .icon-dotdotdot
+	{
+	font-size: 18px;
+	display: block;
+	position: absolute;
+	top: -3px;
+	left: 50%;
+	margin-left: -.5em
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .finished_table_wrapper .finished_table tbody tr .more_list .more_list_button:hover
+	{
+	background: #475660
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .library_link_wrapper
+	{
+	padding: 30px 0;
+	text-align: center
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .library_link_wrapper .library_link
+	{
+	display: inline-block;
+	width: 90px;
+	padding: 10px 0;
+	text-align: center;
+	font-size: 13px;
+	font-weight: 700;
+	background: #d6e3f0;
+	color: #59667a;
+	border: none;
+	box-shadow: 0 0 4px 0 rgba(151, 170, 183, .3);
+	border-radius: 3px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .library_link_wrapper .library_link:hover
+	{
+	background: #f0f5fa
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_list_wrapper .library_link_wrapper .icon-arrow_5_right
+	{
+	margin-left: 5px;
+	color: #59667a
+}
+
+#page_finished_book .finished_book_table .finished_book_cell .server_busy_description_wrapper
+	{
+	text-align: center
+}
+
+#page_finished_book .finished_book_table .finished_book_cell .server_busy_description_wrapper .alert_title
+	{
+	font-size: 15px;
+	color: #636c73;
+	font-weight: 700;
+	line-height: 1.4em
+}
+
+#page_finished_book .finished_book_table .finished_book_cell .server_busy_description_wrapper .alert_title .alert_icon
+	{
+	display: inline-block;
+	text-indent: -444px;
+	font-size: 0;
+	overflow: hidden;
+	background:
+		url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2054%2048%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22%23e64938%22%3E%3Cpath%20d%3D%22M52.5%2042.6L30.2%201.8C29.6.7%2028.4%200%2027.2%200c-1.3%200-2.5.7-3.1%201.8l-22.9%2041c-.6%201.1-.6%202.4%200%203.4.7%201%201.7%201.7%203%201.7l45.5.1c1.9%200%203.5-1.5%203.5-3.4%200-.8-.3-1.5-.7-2zM27%2031.1c-1%200-2-1-2.1-2-.9-4.5-1.3-9.3-1.7-13.3-.1-.9.7-1.9%201.7-2.1%201.8-.3%202.8-.3%204.6%200%201%20.2%201.7%201.2%201.6%202.1-.5%204-.9%208.8-1.8%2013.3-.2%201.1-1.2%202-2.2%202H27zm0%2012.2c-2.2%200-3.9-1.7-3.9-3.9%200-2.1%201.8-3.8%203.9-3.8%202.2%200%203.9%201.7%203.9%203.9%200%202.1-1.7%203.8-3.9%203.8z%22/%3E%3C/svg%3E)
+		center center no-repeat;
+	background-size: 100% 100%;
+	width: 15px;
+	height: 15px;
+	vertical-align: -10%;
+	margin-right: 2px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell .server_busy_description_wrapper .alert_description
+	{
+	margin-top: 10px;
+	font-size: 13px;
+	color: #738096;
+	line-height: 19px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell .server_busy_description_wrapper .links_wrapper
+	{
+	margin-top: 30px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell .server_busy_description_wrapper .links_wrapper .link
+	{
+	margin-top: 12px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell .server_busy_description_wrapper .links_wrapper .link:first-child
+	{
+	margin-top: 0
+}
+
+#page_finished_book .finished_book_table .finished_book_cell .server_busy_description_wrapper .links_wrapper .link .link_home,
+	#page_finished_book .finished_book_table .finished_book_cell .server_busy_description_wrapper .links_wrapper .link .link_library
+	{
+	width: 222px;
+	padding: 20px 0
+}
+
+#page_finished_book .finished_book_table .finished_book_cell .server_busy_description_wrapper .links_wrapper .link .link_home .arrow_icon
+	{
+	display: inline-block;
+	text-indent: -444px;
+	font-size: 0;
+	overflow: hidden;
+	background:
+		url(data:image/svg+xml,%3Csvg%20viewBox%3D%220%200%2022%2037%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20fill%3D%22white%22%3E%3Cpath%20d%3D%22M3.5.5c.3%200%20.6.1.9.3l16.8%2016.8c.3.3.3.4.3.9%200%20.3-.2.6-.3.9L4.4%2036.2c-.3.3-.5.3-.9.3s-.6-.2-.9-.3L.8%2034.4c-.1-.3-.3-.6-.3-.9%200-.3.1-.6.3-.9L15%2018.3.8%204.4c-.2-.3-.3-.6-.3-.9%200-.3.1-.6.3-.9L2.6.8c.3-.2.6-.3.9-.3z%22/%3E%3C/svg%3E)
+		center center no-repeat;
+	background-size: 100% 100%;
+	width: 6px;
+	height: 12px;
+	margin-left: 2px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell .server_busy_description_wrapper .links_wrapper .link .link_library
+	{
+	border-width: 2px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.related_event_wrapper
+	{
+	border: 1px solid #bbb;
+	border-left: none;
+	vertical-align: middle;
+	background: #fff;
+	text-align: center;
+	padding: 48px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.related_event_wrapper.with_async_shelf_wait
+	{
+	vertical-align: top;
+	padding: 10px 10px 40px 10px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.related_event_wrapper.with_async_shelf_wait .server_busy_description_wrapper
+	{
+	margin-bottom: 84px;
+	padding: 25px 20px 20px 20px;
+	background: #f2f4f5;
+	border-radius: 4px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.related_event_wrapper .related_event_wrapper_header_image
+	{
+	width: 118px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.related_event_wrapper .related_event_lists_wrapper
+	{
+	margin-top: 20px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.related_event_wrapper .related_event_lists_wrapper .related_event_list
+	{
+	margin-bottom: 40px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.related_event_wrapper .related_event_lists_wrapper .related_event_list .event_title
+	{
+	font-size: 15px;
+	color: #1f8ce6;
+	font-weight: 700
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.related_event_wrapper .related_event_lists_wrapper .related_event_list .event_description
+	{
+	margin-top: 10px;
+	font-size: 20px;
+	color: #2e3847;
+	font-weight: 700
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.related_event_wrapper .related_event_lists_wrapper .related_event_list .event_link
+	{
+	margin-top: 20px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.related_event_wrapper .viewer_link_wrapper
+	{
+	font-size: 15px;
+	color: #738096
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.related_event_wrapper .viewer_link_wrapper .viewer_link
+	{
+	font-size: inherit;
+	color: inherit;
+	font-weight: 700
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.related_event_wrapper .viewer_link_wrapper .viewer_link .arrow_icon
+	{
+	font-size: 20px;
+	vertical-align: -16%
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper
+	{
+	border: 1px solid #bbb;
+	border-left: none;
+	vertical-align: top;
+	background: #f4f6f8
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .server_busy_description_wrapper
+	{
+	padding: 76px 0
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper
+	{
+	background: #fff
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .viewer_description_wrapper
+	{
+	text-align: center;
+	padding: 110px 0 80px 0
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .viewer_description_wrapper .description,
+	#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .viewer_description_wrapper .title
+	{
+	margin-bottom: 7px;
+	display: block;
+	font-size: 13px;
+	line-height: 18px;
+	color: #738096
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .viewer_description_wrapper .title
+	{
+	font-size: 16px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .viewer_description_wrapper .rui_button_blue_50,
+	#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .viewer_description_wrapper .rui_button_white_50
+	{
+	width: 160px;
+	margin-top: 8px;
+	white-space: nowrap
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .viewer_description_wrapper .rui_button_blue_50 .icon-book_1,
+	#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .viewer_description_wrapper .rui_button_white_50 .icon-book_1
+	{
+	font-size: 18px;
+	vertical-align: -6%;
+	padding-right: 5px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .download_description_wrapper
+	{
+	text-align: center;
+	padding: 138px 0 100px 0
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .download_description_wrapper .reading_start
+	{
+	padding: 1em 30px;
+	margin-bottom: 22px;
+	font-size: 24px;
+	letter-spacing: -.08em
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .download_description_wrapper .reading_start .icon-arrow_8_right
+	{
+	font-size: 20px;
+	vertical-align: -6%;
+	padding-left: 5px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .download_description_wrapper .description
+	{
+	font-size: 13px;
+	color: #738096;
+	line-height: 1.5em
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .download_description_wrapper .description .download_link
+	{
+	display: inline-block;
+	margin-top: 7px;
+	font-size: 15px;
+	font-weight: 700;
+	color: inherit;
+	-webkit-transition: color .2s;
+	transition: color .2s
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_top_wrapper .download_description_wrapper .description .download_link:hover
+	{
+	color: #59667a
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper
+	{
+	padding: 30px 36px 30px 45px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .viewer_info
+	{
+	border-bottom: 1px solid #e3e6ea;
+	position: relative;
+	margin-bottom: 32px;
+	padding: 8px 0 38px 0
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .viewer_info .info_title
+	{
+	font-size: 14px;
+	font-weight: 700;
+	color: #4b4b4b;
+	margin-bottom: 7px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .viewer_info .info_description
+	{
+	font-size: 12px;
+	color: #4b4b4b;
+	line-height: 1.5em
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .viewer_info .viewer_download_button
+	{
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 1em 1.5em
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .viewer_info .viewer_download_button .icon-osx,
+	#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .viewer_info .viewer_download_button .icon-windows
+	{
+	font-size: 22px;
+	vertical-align: -17%;
+	padding-right: 5px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .other_viewer_info
+	{
+	position: relative
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .other_viewer_info .info_title
+	{
+	font-size: 14px;
+	font-weight: 700;
+	color: #4b4b4b;
+	margin-bottom: 7px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .other_viewer_info .info_description
+	{
+	font-size: 12px;
+	color: #4b4b4b;
+	line-height: 1.5em;
+	margin-bottom: 22px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .other_viewer_info .viewer_download_info
+	{
+	position: absolute;
+	top: 0;
+	right: 0
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .other_viewer_info .os_list_wrapper
+	{
+	cursor: default
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .other_viewer_info .os_list_wrapper li
+	{
+	display: inline-block;
+	padding: 0 12px 0 32px;
+	border-left: 2px solid #d8dfe4;
+	color: #97aab7;
+	position: relative
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .other_viewer_info .os_list_wrapper li .os_icon
+	{
+	position: absolute;
+	top: 50%;
+	margin-top: -.5em;
+	left: 10px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .other_viewer_info .os_list_wrapper li .os_icon.icon-ios
+	{
+	font-size: 17px;
+	margin-top: -.55em
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .other_viewer_info .os_list_wrapper li .os_icon.icon-android
+	{
+	font-size: 20px;
+	margin-top: -.55em
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .other_viewer_info .os_list_wrapper li .os_icon.icon-windows
+	{
+	font-size: 17px;
+	margin-top: -.55em
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .other_viewer_info .os_list_wrapper li .os_icon.icon-osx
+	{
+	font-size: 18px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .other_viewer_info .os_list_wrapper li:first-child
+	{
+	border-left: none;
+	padding-left: 20px
+}
+
+#page_finished_book .finished_book_table .finished_book_cell.book_download_wrapper .download_body_wrapper .other_viewer_info .os_list_wrapper li:first-child .os_icon
+	{
+	left: 0
+}
