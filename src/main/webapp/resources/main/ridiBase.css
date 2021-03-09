@@ -93,15 +93,17 @@ header>.nav-tabs>li>.active {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    top: 7px;
+    position: relative;
+    left: 15px;
+    padding-left: 5px;
 }
 
 .css-SearchBox {
     -webkit-flex: 1;
     -ms-flex: 1;
     flex: 1;
-    height: 36px;
-    font-size: 16px;
-    line-height: 16px;
+    border: none;
 }
 
 .css-WrapperForm {
