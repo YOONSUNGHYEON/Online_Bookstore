@@ -25,12 +25,12 @@ public class BookInfoController {
 
     @GetMapping("/title/{title}")
     public ArrayList<BookDTO> booksearch(@PathVariable(name = "title") String title) {
-
+        return bookInfoService.booksearch(title);
         return bookInfoService.booksearch(title, 1);
     }
     @GetMapping("/search")
     public ArrayList<BookDTO> booksearch1(@RequestParam("title") String title, @RequestParam("page") int page) {
-        return bookInfoService.booksearch(title, page);
+        return bookInfoService.booksearch1(title, page);
     }
     @GetMapping("/search/id")
     public BookDTO booksearch2(@RequestParam("id") String id) {

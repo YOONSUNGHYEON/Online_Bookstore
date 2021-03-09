@@ -30,12 +30,17 @@
 </c:choose>
 </div>
 <div class="container" style="width:980px; margin:30px auto;">
-<div class="row">
+<span style="font-weight: 900; font-size: 15px; margin-right: 10px;"> 제목 검색</span>
+<form class="form-inline" style="display: contents;" action="/used/search">	
+        <input class="top-search form-control mr-sm-2" type="search" aria-label="Search" name="title">	
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i style="margin: 0px;"class="fas fa-search"></i></button>	
+</form>
+<div class="row" style="margin-top: 20px;">
 <c:forEach var="row" items="${books}">
   	<fmt:formatNumber var="sale" value="${row.salePrice*100/row.price }" pattern="#"/>
   	<fmt:formatNumber var="status" value="${(row.inStatus+row.outStatus)/2 }" pattern="#"/>
   	<a href="${path }/used/${row.id}">
-	  	<div class="col-sm-3">
+	  	<div class="col-sm-3" style="margin-bottom: 15px;">
 	  	<div class="book-image"><img src="${row.cover}"><div class="sale-percentage">${sale } %</div></div>
 	  	<div class="book-title">${row.title}</div>
 	  	<div class="book-price"><fmt:formatNumber value="${row.salePrice }" pattern="#,###" /> 원</div>

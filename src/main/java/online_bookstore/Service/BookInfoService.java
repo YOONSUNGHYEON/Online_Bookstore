@@ -21,8 +21,8 @@ public interface BookInfoService {
 
     ArrayList<BookDTO> bookSearchbyId(String book_id);
 	BookDTO booksearchById(String id);
-
-  
-
+    ArrayList<BookDTO> categoryBookList(int id, int page);
+    ArrayList<BookDTO> booksearch1(String title, int page);
+    BookDTO booksearchById1(String id);
 
 }
