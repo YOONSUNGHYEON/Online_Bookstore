@@ -28,8 +28,7 @@
 					</span>
 				</div>
 				<div id="booklist-container">
-					<div class="cartbooklist">
-					</div>
+					<div class="cartbooklist"></div>
 				</div>
 			</div>
 			<div class="col-xs-3">
@@ -40,6 +39,9 @@
 					onclick="save()">
 			</div>
 		</div>
+		<form method="post">
+			<input type="hidden" name="checkbook">
+		</form>
 
 	</div>
 

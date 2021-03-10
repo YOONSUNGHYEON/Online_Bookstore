@@ -381,7 +381,6 @@ var cart = {
 				type: "post",
 				dataType: "json",
 				data: JSON.stringify(cart),
-				//data: JSON.stringify(cart),
 				contentType: "application/json",
 				async: true,
 				success: function(response) {
@@ -395,14 +394,14 @@ var cart = {
 </script>
 <%-- 리뷰리스트 개수 가져오기 --%>
 <script type="text/javascript">
-//$.getJSON('/api/reviewlistcountbybook/'+${id},function(rdata){          
+$.getJSON('/api/reviewlistcountbybook/'+${id},function(rdata){          
 $('.score_people_num').html('<strong>'+rdata+'</strong>명이 평가함');
-//});
+});
 </script>
 
 <%-- 리뷰 평균점수 가져오기 --%>
 <script type="text/javascript">
-//var id = ${id}
+var id = ${id}
 $.getJSON('/api/avgscore/'+id,function(rdata){          
 $('.score').append(rdata);
 });
@@ -444,7 +443,7 @@ function update_review(review_id) {
 <%-- 리뷰 작성 부분 --%>
 <script type="text/javascript">
 function reviewTextarea(){
-//var num=${member.member_Num}-0;
+var num=${member.member_Num}-0;
 $.getJSON('/api/reviewlist/'+id+'/memNum/'+num,function(rdata){
 $('.tip_title').hide();
 $('.star_rate_touch_area').hide(); 
@@ -510,33 +509,33 @@ document.addEventListener('DOMContentLoaded', function(){
 <%-- id에 해당하는 책 상세 정보 데이터 뿌리기 --%>
 <script type="text/javascript">
 $.getJSON('/api/detailbook/'+id,function(rdata){
- $.each(rdata,function(index,item){              
+          
 var price = '<tr>'+
 			'<th class="price_title" rowspan="3">구매</th>'+
 			'<td class="price_type">종이책 정가</td>'+
-			'<td class="book_price"><span class="museo_sans">'+item.book_Price+'</span>원'+
+			'<td class="book_price"><span class="museo_sans">'+rdata.book_Price+'</span>원'+
 			'</td>'+
 			'</tr>'+
 			'<tr class="selling_price_row">'+
 			'<td class="price_type">판매가</td>'+
-			'<td class="book_price"><span class="museo_sans">'+item.book_PriceSales+'</span>원'+
+			'<td class="book_price"><span class="museo_sans">'+rdata.book_PriceSales+'</span>원'+
 			'</td>'+
 			'</tr>'
-var cover='<img class="main_book_image" src='+item.book_Cover+'>'
-var translater = '<c:if test="'+'${'+item.book_Translator+'!=null}">'+
-				 '<span><a href="">'+item.book_Translator+'</a>역</span>'+
+var cover='<img class="main_book_image" src='+rdata.book_Cover+'>'
+var translater = '<c:if test="'+'${'+rdata.book_Translator+'!=null}">'+
+				 '<span><a href="">'+rdata.book_Translator+'</a>역</span>'+
 				 '</c:if>'
-console.log(item.book_PriceSales);
-$('.title').append(item.book_Title);
-$('#category').append(item.book_CategoryName);
-$('#description').append(item.book_Description);
-$('#subtitle').append(item.book_Subtitle);
+console.log(rdata.book_PriceSales);
+$('.title').append(rdata.book_Title);
+$('#category').append(rdata.book_CategoryName);
+$('#description').append(rdata.book_Description);
+$('#subtitle').append(rdata.book_Subtitle);
 $('#price').append(price);
 $('#image').append(cover);
 $('#translator').append(translater);
-$('#author').append(item.book_Author);
-$('#publisher').append(item.book_Publisher);
- })
+$('#author').append(rdata.book_Author);
+$('#publisher').append(rdata.book_Publisher);
+
 });
 
 

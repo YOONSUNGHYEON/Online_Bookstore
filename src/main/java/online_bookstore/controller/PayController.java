@@ -8,23 +8,18 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import online_bookstore.DTO.BookDTO;
-
-import online_bookstore.Entity.Orders;
-import online_bookstore.Repository.CartRepository;
-import online_bookstore.Repository.MemberRepository;
-
 import online_bookstore.DTO.KakaoPayApprovalVO;
 import online_bookstore.DTO.MemberDTO;
 import online_bookstore.DTO.OrdersDTO;
 import online_bookstore.DTO.PaymentDTO;
 import online_bookstore.Entity.Member;
-
+import online_bookstore.Repository.CartRepository;
+import online_bookstore.Repository.MemberRepository;
 import online_bookstore.Service.BookInfoService;
 import online_bookstore.Service.KakaoPay;
 import online_bookstore.Service.MemberService;
@@ -45,14 +40,10 @@ public class PayController {
 	@Autowired
 	MemberService memberService;
 
-
-	@GetMapping("/order/{id}")
-	public String order(Model model, @PathVariable("id") String id) {
-		return "member/order";
-	}
-
-	@RequestMapping("/herepage")
-	public String herepage() {
+	@GetMapping("/order")
+	public String order(Model model, String checkbook) {
+		checkbook =(String)model.asMap().get("checkbook");
+		model.addAttribute(checkbook, checkbook);
 		return "member/order";
 	}
 
@@ -70,10 +61,7 @@ public class PayController {
 
 	@PostMapping("/kakaoPay/{id}")
 	public String kakaoPay(@PathVariable("id") String id) {
-
 		BookDTO book = bookInfoService.booksearchById(id);
-
-
 		return "redirect:" + kakaopay.kakaoPayReady(book);
 	}
 

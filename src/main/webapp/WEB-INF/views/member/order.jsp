@@ -346,8 +346,19 @@
 	</div>
 
 </body>
-
-
+<script type="text/javascript">
+var num = 0;
+var totalprice=0;
+	$.getJSON('/api/detailbook/order/' +`${checkbook}`, function(rdata) {
+		$.each(rdata, function(index, item) {
+			order_list(item);
+			totalprice+=item.book_Price;
+			num++;
+		})
+		$('.list_count').append(num);
+		$('.total_price').append(totalprice);
+	})
+</script>
 <script type="text/javascript">
 		function pay(){  
 			var orders = {

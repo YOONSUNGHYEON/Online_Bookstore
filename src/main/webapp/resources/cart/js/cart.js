@@ -21,7 +21,7 @@ function showCart() {
 
 
 		success: function(response) {
-			for (let i = 0;  i < response.length; i++) {
+			for (let i = 0; i < response.length; i++) {
 				let bookdto = response[i];
 				let tempHtml = addcartItem(bookdto, i);
 				$('#booklist-container').append(tempHtml);
@@ -58,20 +58,21 @@ function deleteFromcart(cartlistId) {
 
 function save() {
 	var total_cnt = 0;
-	var url='/order/';
+	var url = '';
 	$("input[name='rowcheckbox']:checked").each(function() {
 		let cartlistId = $(this).attr('data-id');
-		url+=cartlistId+"&";
+		url +=cartlistId + "&";
 	});
-location.href = url;
-	
+	$('input[name=checkbook]').val(url);
+	$('form').submit();
+
 }
 function postPayment111() {
 	var cnt = $("input[name='rowcheckbox']:checked").length;
 	var result;
 	var arr;
 
-	$("input[name='rowcheckbox']:checked").each(function()  {
+	$("input[name='rowcheckbox']:checked").each(function() {
 		let cartlistId = $(this).attr('id');
 		console.log(cartlistId);
 		if (cnt == 0) {
@@ -82,17 +83,17 @@ function postPayment111() {
 			arr = [{ "book_Id": 1, "cartlistId": cartlistId }, { "book_Id": 2, "cartlistId": cartlistId }];
 		}
 
-		
+
 	});
 	$.ajax({
-				url: '/pay',
-				type: 'post'
-				, dataType: 'json'   // 데이터 타입을 Json으로 변경
-				, contentType: 'application/json'   // Content-Type을 Json으로 변경
-				, data: JSON.stringify(arr)    // JSON String으로 전환하여 보낸다.
-				, success: function(response) {
-				}
-			});
+		url: '/pay',
+		type: 'post'
+		, dataType: 'json'   // 데이터 타입을 Json으로 변경
+		, contentType: 'application/json'   // Content-Type을 Json으로 변경
+		, data: JSON.stringify(arr)    // JSON String으로 전환하여 보낸다.
+		, success: function(response) {
+		}
+	});
 
 }
 

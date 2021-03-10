@@ -1,11 +1,5 @@
 package online_bookstore.Service;
 
-import online_bookstore.DTO.BookDTO;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.springframework.stereotype.Service;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -55,7 +49,6 @@ public class BookInfoServiceImp implements BookInfoService{
         for (int i = 0; i <jsonArray.size() ; i++) {
             JSONObject date=(JSONObject) jsonArray.get(i);
             BookDTO bookDTO=new BookDTO(
-
                     date.get("isbn13").toString(),
                     date.get("title").toString(),
                     date.get("author").toString(),
@@ -231,7 +224,7 @@ public class BookInfoServiceImp implements BookInfoService{
 				date.get("author").toString(), date.get("description").toString(),
 				Integer.parseInt(date.get("priceStandard").toString()),Integer.parseInt(date.get("priceSales").toString()), date.get("cover").toString().replaceAll("coversum", "cover500"),
 				date.get("publisher").toString(), date.get("categoryName").toString());
-
+		System.out.println(bookDTO);
 		return bookDTO;
 	}
 
@@ -276,4 +269,10 @@ public class BookInfoServiceImp implements BookInfoService{
         }
         return JsonArray;
     }
+
+	@Override
+	public ArrayList<BookDTO> booksearch(String title, int page) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
