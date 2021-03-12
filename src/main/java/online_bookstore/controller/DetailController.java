@@ -3,10 +3,7 @@ package online_bookstore.controller;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
@@ -24,17 +20,11 @@ import online_bookstore.Repository.LiketoRepository;
 import online_bookstore.Service.BookInfoService;
 import online_bookstore.Service.MemberService;
 import online_bookstore.Service.ReviewService;
-import lombok.RequiredArgsConstructor;
-import online_bookstore.Entity.Member;
-import online_bookstore.Repository.ReviewRepository;
-import online_bookstore.Service.BookInfoService;
-
 @RequiredArgsConstructor
 @Controller
 public class DetailController {
 
 	@Autowired
-
 	ReviewService reviewService;
 	@Autowired
 	BookInfoService bookInfoService;
@@ -68,7 +58,6 @@ public class DetailController {
 		reviewService.updateLike(r.getId(), r.getLike()+1);
 		return r.getLike()+1;
 	}
-
 
 
 }

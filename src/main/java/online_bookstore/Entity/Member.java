@@ -22,8 +22,7 @@ public class Member {
     private String member_Bir_D;
     private String member_Gender;
 
-    public Member(int member_Num, String member_Id, String member_Name, String member_Pass, String member_Bir_Y, String member_Bir_M, String member_Bir_D, String member_Gender) {
-        this.member_Num = member_Num;
+    public Member(String member_Id, String member_Name, String member_Pass, String member_Bir_Y, String member_Bir_M, String member_Bir_D, String member_Gender) {
         this.member_Id = member_Id;
         this.member_Name = member_Name;
         this.member_Pass = member_Pass;
@@ -32,10 +31,7 @@ public class Member {
         this.member_Bir_D = member_Bir_D;
         this.member_Gender = member_Gender;
     }
-
-
-    public Member(MemberDTO memberDTO) {
-
+    public Member(MemberDTO memberDTO){
         this.member_Num = memberDTO.getMember_Num();
         this.member_Id = memberDTO.getMember_Id();
         this.member_Name = memberDTO.getMember_Name();
@@ -47,6 +43,5 @@ public class Member {
 
     }
 
-    public Member() {
-    }
+    public Member() { }
 }

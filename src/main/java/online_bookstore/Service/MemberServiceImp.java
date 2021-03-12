@@ -1,16 +1,11 @@
 package online_bookstore.Service;
 
 
-
 import java.util.ArrayList;
 
 import javax.transaction.Transactional;
-import online_bookstore.DTO.PaymentDTO;
 
-import online_bookstore.DTO.MemberDTO;
-import online_bookstore.Entity.Member;
-import online_bookstore.Entity.Payment;
-import online_bookstore.Repository.*;
+import online_bookstore.DTO.PaymentDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

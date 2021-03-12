@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,7 +26,6 @@
 	src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="https://kit.fontawesome.com/81816a43c2.js"
 	crossorigin="anonymous"></script>
-
 </head>
 <jsp:include page="mainBase.jsp" />
 <body>
@@ -141,7 +139,10 @@
 									<div class="book_thumbnail">
 										<div id="image" class="main_book_image_wrapper">
 
-
+											<span class="border"></span>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</article>
@@ -158,7 +159,6 @@
 						<div class="rsg_title01">
 							<h3 class="title_text">리뷰</h3>
 						</div>
-
 						<div class="review_info_section">
 							<div class="review_input_left">
 								<h4 class="buyer_score_title">구매자 별점</h4>
@@ -168,7 +168,6 @@
 								<p class="score_people_num"></p>
 							</div>
 							<div class="review_input_right">
-
 							</div>
 						</div>
 						<div id="review_list_section">
@@ -181,7 +180,6 @@
 										class="js_select_tab_option" data-filter="all"> 전체 </a></li>
 								</ul>
 								<ul class="rui_order js_review_list_order_wrapper">
-
 									<li class="order_list"><a href="#a"
 										class="js_select_tab_option active"  data-order="latest">최신순</a></li>
 									<li class="order_list"><a href="#a"
@@ -198,7 +196,6 @@
 								class="review_list_wrapper js_review_list_wrapper active">
 								<ul id="reviews">
 
-
 								</ul>
 								<div class="spinner_wrapper"></div>
 								<div class="spin"></div>
@@ -210,7 +207,6 @@
 			<div class="detail_aside_wrap"></div>
 		</div>
 	</div>
-
 	<jsp:include page="footer.jsp" />
 </body>
 

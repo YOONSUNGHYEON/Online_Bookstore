@@ -12,13 +12,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import online_bookstore.DTO.OrdersDTO;
 
-import online_bookstore.DTO.BookDTO;
-import online_bookstore.DTO.MemberDTO;
-import online_bookstore.Entity.Member;
-
-import javax.persistence.*;
-
-
 @NoArgsConstructor
 @Getter
 @Entity
@@ -34,15 +27,14 @@ public class Orders {
 
     private String book_Id;
 
-
     public Orders(OrdersDTO ordersdto) {
 		// TODO Auto-generated constructor stub
 	    	this.member = ordersdto.getMember();
 	        this.book_Id = ordersdto.getBook_Id();
 	}
 
-    public Orders(String book_Id, MemberDTO memberdto){
-        this.member = new Member(memberdto);
+    public Orders(String book_Id, Member member){
+        this.member = member;
         this.book_Id = book_Id;
     }
 

@@ -45,7 +45,6 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" href="/category/351&page=1"">컴퓨터/모바일</a>
-
   </li>
 </ul>
 </div>

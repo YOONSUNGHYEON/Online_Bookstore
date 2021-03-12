@@ -14,8 +14,7 @@ public class MemberDTO {
     private String member_Gender;
     private String book_Id;
 
-    public MemberDTO(int member_Num, String member_Id, String member_Name, String member_Pass, String member_Bir_Y, String member_Bir_M, String member_Bir_D, String member_Gender) {
-        this.member_Num = member_Num;
+    public MemberDTO(String member_Id, String member_Name, String member_Pass, String member_Bir_Y, String member_Bir_M, String member_Bir_D, String member_Gender) {
         this.member_Id = member_Id;
         this.member_Name = member_Name;
         this.member_Pass = member_Pass;

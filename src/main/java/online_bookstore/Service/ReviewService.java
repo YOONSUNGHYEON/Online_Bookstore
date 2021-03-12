@@ -1,19 +1,13 @@
 package online_bookstore.Service;
 
-
 import java.util.ArrayList;
-
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import online_bookstore.DTO.ReviewDTO;
 import online_bookstore.Entity.Review;
 import online_bookstore.Repository.MemberRepository;
-
-import online_bookstore.Entity.Review;
-
 import online_bookstore.Repository.ReviewRepository;
 
 
@@ -22,7 +16,6 @@ import online_bookstore.Repository.ReviewRepository;
 public class ReviewService {
 	@Autowired
 	ReviewRepository reviewRepository;
-
 	@Autowired
 	MemberRepository memberRepository;
 	@Autowired
@@ -92,7 +85,6 @@ public class ReviewService {
 		// TODO Auto-generated method stub
 		return reviewRepository.avgReviewScoreByBookId(id);
 	}
-
 
 
 }

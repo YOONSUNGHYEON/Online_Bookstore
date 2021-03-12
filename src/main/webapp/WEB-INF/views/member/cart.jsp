@@ -5,9 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>category list</title>
-<link href="/resources/cart/css/cart.css" rel="stylesheet" type="text/css">
-	<script src="/resources/cart/js/cart.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<link href="${path}/resources/member/css/cart.css" rel="stylesheet" type="text/css">
 </head>
 <jsp:include page="../mainBase.jsp" />
 <body>
@@ -17,28 +15,65 @@
 		<div class="col-xs-8 cartlist">
 			<div class="row carttop">
 				<span class="checkall">
-					<input type="checkbox" id="all_select" class="check-box"> 전체선택
+					<input type="checkbox" class="check-box"> 전체선택
 				</span>
 				<span class="checkallbtn">
 					<input type="button" class="cartbtn1" value="선택 위시리스트로 이동">
-					<input type="button" class="cartbtn1" value="선택 삭제" onclick="deleteSeveral()">
+					<input type="button" class="cartbtn1" value="선택 삭제">
 				</span>
 			</div>
-			<div id = "booklist-container" >
 			<div class="cartbooklist">
-
-
-			</div>
-		</div>
-		</div>
-		<div class="col-xs-3">
-			<div id = cartallpirce_container>
-				<div class="cartallpirce">
-
-
+				<div class="row">
+					<div class="col-xs-1"><input type="checkbox"></div>
+					<div class="col-xs-2"><img style="width:60px; height:auto;" src="${path}/resources/main/book.jpg"/></div>
+					<div class="col-xs-9">
+						<div class="book-title">바이러스X</div>
+						<div class="book-info">
+							<span class="book-author">작가이름</span>
+							<span class="book-price">7,000원</span>
+						</div>
+						<div class="book-button">
+							<input type="button" class="cartbtn2" value="위시리스트로 이동">
+							<input type="button" class="cartbtn2" value="삭제">
+						</div>
+					</div>
 				</div>
 			</div>
-			<input type="button" class="buybutton" value="선택 구매하기" onclick="deleteSeveral();">
+			<div class="cartbooklist">
+				<div class="row">
+					<div class="col-xs-1"><input type="checkbox"></div>
+					<div class="col-xs-2"><img style="width:60px; height:auto;" src="${path}/resources/main/book.jpg"/></div>
+					<div class="col-xs-9">
+						<div class="book-title">바이러스X</div>
+						<div class="book-info">
+							<span class="book-author">작가이름</span>
+							<span class="book-price">7,000원</span>
+						</div>
+						<div class="book-button">
+							<input type="button" class="cartbtn2" value="위시리스트로 이동">
+							<input type="button" class="cartbtn2" value="삭제">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-3">
+			<div class="cartallpirce">
+				<div>1권을 선택하셨습니다.</div>
+				<div>
+					<span>총 상품금액</span>
+					<span class="price-right">7,000원</span>
+				</div>
+				<div>
+					<span>할인금액</span>
+					<span class="price-right">0원</span>
+				</div>
+				<div class="total-price">
+					<span>합계</span>
+					<span class="price-right total">7,000원</span>
+				</div>
+			</div>
+			<input type="button" class="buybutton" value="선택 구매하기">
 		</div>
 	</div>
 </div>
