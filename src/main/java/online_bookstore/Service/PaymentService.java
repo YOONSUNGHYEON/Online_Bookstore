@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import online_bookstore.DTO.BookDTO;
-import online_bookstore.DTO.OrdersDTO;
 import online_bookstore.DTO.PaymentDTO;
-import online_bookstore.Entity.Orders;
 import online_bookstore.Entity.Payment;
 import online_bookstore.Repository.OrdersRepository;
 import online_bookstore.Repository.PaymentRepository;
@@ -52,10 +50,9 @@ public class PaymentService {
     }
 
 
-	public void save(PaymentDTO paymentDTO, OrdersDTO ordersDTO){
-		Orders orders = new Orders(ordersDTO);
-		Payment payment = new Payment(paymentDTO,orders);
-		paymentRepository.save(payment);
+	public PaymentDTO save(PaymentDTO paymentDTO){
+		Payment payment = new Payment(paymentDTO);
+		return new PaymentDTO(paymentRepository.save(payment));
 	}
 
 }

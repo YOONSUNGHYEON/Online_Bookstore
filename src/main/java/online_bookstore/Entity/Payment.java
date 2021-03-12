@@ -3,7 +3,6 @@ package online_bookstore.Entity;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -29,9 +28,6 @@ public class Payment{
     @JoinColumn(name= "member_num", nullable=false) //외래키
     private Member member;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name= "order_id", nullable=false) //외래키
-    private Orders orders;
 
     @Column
     private String payment_status;
@@ -43,30 +39,24 @@ public class Payment{
     private String payment_type;
 
     @Column
-    private long total_price;
+    private int total_price;
 
     @Column
-    private long discount_price;
+    private int discount_price;
+
+    @Column
+    private String payment_name;
 
     public Payment(PaymentDTO paymentDTO) {
+    	this.id = paymentDTO.getId();
         this.member = paymentDTO.getMember();
-        this.orders = paymentDTO.getOrders();
         this.payment_status = paymentDTO.getPayment_status();
         this.payment_time = paymentDTO.getPayment_time();
         this.payment_type = paymentDTO.getPayment_type();
         this.total_price = paymentDTO.getTotal_price();
         this.discount_price = paymentDTO.getDiscount_price();
+        this.payment_name = paymentDTO.getPayment_name();
     }
 
-	public Payment(PaymentDTO paymentDTO, Orders orders) {
-		// TODO Auto-generated constructor stub
-		this.member = paymentDTO.getMember();
-        this.orders = orders;
-        this.payment_status = paymentDTO.getPayment_status();
-        this.payment_time = paymentDTO.getPayment_time();
-        this.payment_type = paymentDTO.getPayment_type();
-        this.total_price = paymentDTO.getTotal_price();
-        this.discount_price = paymentDTO.getDiscount_price();
-	}
 
 }

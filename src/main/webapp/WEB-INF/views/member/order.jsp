@@ -360,23 +360,33 @@ var totalprice=0;
 	})
 </script>
 <script type="text/javascript">
+			var orders = {
+				books : `${checkbook}`,
+				total_price : "1000"
+			};
+			console.log(orders);
 		function pay(){  
 			var orders = {
-				book_Id : ${id}
+				books : `${checkbook}`,
+				total_price : "1000"
 			};
 			console.log(orders);
 			$.ajax({
-				url : "/kakaoPay",
-				data : orders,
-				type : "post",
-				dataType : "json",
-				async : true
+				url: "/kakaoPay",
+				type: "post",
+				dataType: "json",
+				data: JSON.stringify(orders),
+				contentType: "application/json",
+				async: true,
+				success: function(response) {
+					
+				}
 				
 			});
 		}
 
 
-		$("#btnSubmit111").click(function() {    			
+		$("#btnSubmit").click(function() {    			
           var radioVal = $('input[name="pay_type"]:checked').val();
           if(radioVal==404)
           {

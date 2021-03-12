@@ -1,5 +1,8 @@
 package online_bookstore.controller;
 
+import java.util.Date;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import lombok.RequiredArgsConstructor;
@@ -23,6 +27,7 @@ import online_bookstore.Repository.MemberRepository;
 import online_bookstore.Service.BookInfoService;
 import online_bookstore.Service.KakaoPay;
 import online_bookstore.Service.MemberService;
+import online_bookstore.Service.OrdersService;
 import online_bookstore.Service.PaymentService;
 
 @RequiredArgsConstructor
@@ -31,8 +36,14 @@ public class PayController {
 	private final PaymentService paymentService;
 	private final MemberRepository memberRepository;
 	private final CartRepository cartRepository;
+
+
 	@Autowired
 	BookInfoService bookInfoService;
+
+	@Autowired
+	OrdersService ordersService;
+
 
 	@Setter(onMethod_ = @Autowired)
 	private KakaoPay kakaopay;
@@ -42,36 +53,38 @@ public class PayController {
 
 	@GetMapping("/order")
 	public String order(Model model, String checkbook) {
-		checkbook =(String)model.asMap().get("checkbook");
+		checkbook = (String) model.asMap().get("checkbook");
 		model.addAttribute(checkbook, checkbook);
 		return "member/order";
 	}
 
-	@GetMapping("/pay/checkout/{id}")
-	public String checkout(Model model, @PathVariable("id") String id, HttpSession session) {
-		System.out.println(id);
-		String[] array = id.split("&");
-		//Member member = memberRepository
-				//.getMemberbyMemberNum(((MemberDTO) session.getAttribute("member")).getMember_Num());
-		//List<Cart> cartList = cartRepository.findCartByMemberIsOrderByIdAsc(member);
-		//Long cart_id = cartList.get(cartlistId).getId();
-		//model.addAttribute("board", boardRepository.findById(pagination.getBd()).get());
+	@GetMapping("/order/{id}")
+	public String order(@PathVariable("id") String id) {
 		return "member/order";
 	}
 
-	@PostMapping("/kakaoPay/{id}")
-	public String kakaoPay(@PathVariable("id") String id) {
-		BookDTO book = bookInfoService.booksearchById(id);
-		return "redirect:" + kakaopay.kakaoPayReady(book);
+	@PostMapping("/kakaoPay")
+	public String kakaoPay(@RequestBody Map<String, String> param) {
+		System.out.println("gkgkgkgkgk"+param.get("books").toString());
+		String[] array = param.get("books").toString().split("&");
+		BookDTO firstbook = bookInfoService.booksearchById1(array[0]);
+		PaymentDTO paymentDTO  = new PaymentDTO(new Member(), "결제중",new Date(),"카카오페이",Integer.parseInt(param.get("total_price")),firstbook.getBook_Title().concat(" 외 "+(array.length-1)+"권"));
+		String url = kakaopay.kakaoPayReady(paymentDTO, param.get("books"));
+		System.out.println("33333"
+				+ "" + url);
+		return url;
 	}
 
 	@GetMapping("/kakaoPaySuccess")
-	public String kakaoPaySuccess(@RequestParam("pg_token") String pg_token, HttpSession session) {
-		Member member = new Member((MemberDTO)session.getAttribute("member"));
+	public String kakaoPaySuccess(@RequestParam("pg_token") String pg_token, HttpSession session, Model model) {
 		KakaoPayApprovalVO kakao = kakaopay.kakaoPayInfo(pg_token);
-		OrdersDTO ordersDTO = new OrdersDTO(kakao.getItem_code(),member);
-		PaymentDTO paymentDTO  = new PaymentDTO(member,"결제완료",kakao.getApproved_at(),"카카오페이",kakao.getAmount().getTotal(),kakao.getItem_name());
-		paymentService.save(paymentDTO, ordersDTO);
+		Member member = new Member((MemberDTO)session.getAttribute("member"));
+		PaymentDTO paymentDTO  = new PaymentDTO(member, "결제완료",new Date(),"카카오페이",kakao.getAmount().getTotal(),kakao.getItem_name());
+		String[] array = kakao.getItem_code().toString().split("&");
+		PaymentDTO tempPaymentDTO = paymentService.save(paymentDTO);
+    	for(int i=0;i<array.length;i++) {
+    		ordersService.save(new OrdersDTO(array[i],tempPaymentDTO));
+    	}
 		return "kakaoPaySuccess";
 	}
 }

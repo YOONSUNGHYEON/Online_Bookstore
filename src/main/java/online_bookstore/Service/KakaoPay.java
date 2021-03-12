@@ -12,9 +12,9 @@ import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
 import lombok.extern.java.Log;
-import online_bookstore.DTO.BookDTO;
 import online_bookstore.DTO.KakaoPayApprovalVO;
 import online_bookstore.DTO.KakaoPayReadyVO;
+import online_bookstore.DTO.PaymentDTO;
 
 @Service
 @Log
@@ -25,7 +25,7 @@ public class KakaoPay {
     private KakaoPayApprovalVO kakaoPayApprovalVO;
     private KakaoPayReadyVO kakaoPayReadyVO;
 
-    public String kakaoPayReady(BookDTO book) {
+    public String kakaoPayReady(PaymentDTO paymentDTO, String id) {
 
         RestTemplate restTemplate = new RestTemplate();
 
@@ -40,10 +40,10 @@ public class KakaoPay {
         params.add("cid", "TC0ONETIME");
         params.add("partner_order_id", "123");
         params.add("partner_user_id", "123");
-        params.add("item_name", book.getBook_Title());
-        params.add("item_code", book.getBook_Id());
+        params.add("item_name", paymentDTO.getPayment_name());
+        params.add("item_code", id);
         params.add("quantity", "1");
-        params.add("total_amount",  Integer.toString(book.getBook_PriceSales()));
+        params.add("total_amount",  Integer.toString(paymentDTO.getTotal_price()));
         params.add("tax_free_amount", "100");
         params.add("approval_url", "http://localhost:8080/kakaoPaySuccess");
         params.add("cancel_url", "http://localhost:8080/kakaoPayCancel");
@@ -54,18 +54,20 @@ public class KakaoPay {
         try {
             kakaoPayReadyVO = restTemplate.postForObject(new URI(HOST + "/v1/payment/ready"), body, KakaoPayReadyVO.class);
 
-            System.out.println("" + kakaoPayReadyVO);
+            System.out.println("" + kakaoPayReadyVO.getNext_redirect_pc_url());
             return kakaoPayReadyVO.getNext_redirect_pc_url();
 
         } catch (RestClientException e) {
             // TODO Auto-generated catch block
-            e.printStackTrace();
+        	 System.out.println("" + "11111111111111");
+        	e.printStackTrace();
         } catch (URISyntaxException e) {
             // TODO Auto-generated catch block
+        	System.out.println("" + "2222222222222");
             e.printStackTrace();
         }
 
-        return "/pay";
+        return "/order";
 
     }
 

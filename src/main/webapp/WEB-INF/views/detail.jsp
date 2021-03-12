@@ -104,25 +104,15 @@
 							</div>
 							<div class="info_buttons_wrap">
 								<ul class="info_buttons rui_button_group_6">
+									
 									<li class="rui_button_item">
-										<button type="button" class="rui_button_white_50 btn_wish">
-											<img class="main_book_image"
-												src="${path}/resources/detail/heart.png"> <span
-												class="indent_hidden">위키리스트에 추가</span>
-										</button>
-									</li>
-									<li class="rui_button_item">
-										<button type="button" class="rui_button_white_50 btn_wish">
+										<button type="button" class="rui_button_white_50 btn_cart">
 											<img class="main_book_image"
 												src="${path}/resources/detail/cart.png"> <span
 												class="indent_hidden">카트에 담기</span>
 										</button>
 									</li>
-									<li class="rui_button_item"><a
-										class="rui_button_white_50 btn_wish" href=""><img
-											class="main_book_image"
-											src="${path}/resources/detail/box.png"><span
-											class="indent_hidden">선물하기</span> </a></li>
+									
 									<li class="rui_button_item"><c:choose>
 											<c:when test="${member.member_Num != null}">
 												<a class="rui_button_blue_50 btn_buy" href="/order/${id}">
@@ -525,7 +515,6 @@ var cover='<img class="main_book_image" src='+rdata.book_Cover+'>'
 var translater = '<c:if test="'+'${'+rdata.book_Translator+'!=null}">'+
 				 '<span><a href="">'+rdata.book_Translator+'</a>역</span>'+
 				 '</c:if>'
-console.log(rdata.book_PriceSales);
 $('.title').append(rdata.book_Title);
 $('#category').append(rdata.book_CategoryName);
 $('#description').append(rdata.book_Description);
@@ -553,8 +542,8 @@ var id = '${member.member_Num}'; // 방법1
             return false;
         } else {       
 			var review = {
-				//bookId : ${id},
-				//content : $("#content").val(),
+				bookId : ${id},
+				content : $("#content").val(),
 				score: rating.rate
 
 			};

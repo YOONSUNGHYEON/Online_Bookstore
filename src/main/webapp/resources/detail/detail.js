@@ -41,7 +41,7 @@ $(document).ready(function() {
 	})
 	
 
-	$(".btn_wish").click(function() {
+	$(".btn_cart").click(function() {
 		save_cart();
 	})
 	//리뷰 수정후 수정 저당하기 버튼
@@ -50,6 +50,8 @@ $(document).ready(function() {
 		update_review(review_id);
 	})
 })
+
+
 
 function get_review_list() {
 	$.getJSON('/api/reviewlist/' + id + '/sort/latest', function(rdata) {

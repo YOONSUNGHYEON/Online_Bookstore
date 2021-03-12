@@ -12,12 +12,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import online_bookstore.DTO.OrdersDTO;
 
-import online_bookstore.DTO.BookDTO;
-import online_bookstore.DTO.MemberDTO;
-import online_bookstore.Entity.Member;
-
-import javax.persistence.*;
-
 
 @NoArgsConstructor
 @Getter
@@ -29,21 +23,21 @@ public class Orders {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name= "member_num", nullable=false) //외래키
-    private Member member;
+    @JoinColumn(name= "payment_id", nullable=false) //외래키
+    private Payment payment;
 
     private String book_Id;
 
 
     public Orders(OrdersDTO ordersdto) {
 		// TODO Auto-generated constructor stub
-	    	this.member = ordersdto.getMember();
 	        this.book_Id = ordersdto.getBook_Id();
+	        this.payment = new Payment(ordersdto.getPaymentdto());
 	}
 
-    public Orders(String book_Id, MemberDTO memberdto){
-        this.member = new Member(memberdto);
+    public Orders(String book_Id, Payment payment){
         this.book_Id = book_Id;
+        this.payment = payment;
     }
 
 
