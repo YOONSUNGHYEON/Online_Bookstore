@@ -61,6 +61,8 @@ ___
 #### 리뷰 수정 & 삭제하기
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/41726251/111114652-dafcd480-85a6-11eb-88d5-87fdddefe6f7.gif)
 
+#### 리뷰 리스트 최신순 & 공감순 & 별점높은순 & 별점낮은순으로 정렬
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/41726251/111118441-26fe4800-85ac-11eb-9946-dc7e98ebc0e6.gif)
 
 
 ## 장바구니 기능
