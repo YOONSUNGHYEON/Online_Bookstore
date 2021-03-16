@@ -720,7 +720,7 @@
 .discount_popup .discount_price_wrapper .discounted_price .discount_price,
 	.point_popup .discount_price_wrapper .discounted_price .discount_price
 	{
-	color: #1f8ce6;
+	color: #7579e7;
 	padding-left: 4px
 }
 
@@ -1041,7 +1041,7 @@
 }
 
 .RidiPay_Registration .Registration_EventTitle .PointColor {
-	color: #1f8ce6
+	color: #7579e7
 }
 
 .RidiPay_Registration .Registration_EventBody {
@@ -1671,7 +1671,7 @@
 .order_info_article .order_info_wrapper .current_price_wrapper .current_price .price_num
 	{
 	font-size: 20px;
-	color: #1f8ce6
+	color: #7579e7
 }
 
 .order_info_article .order_info_wrapper .asset_wrapper .asset_input_wrapper .asset_input_out_liner

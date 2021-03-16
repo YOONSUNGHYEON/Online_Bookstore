@@ -30,7 +30,6 @@ function showCart() {
 		}
 
 	})
-	console.log("cart.js done");
 }
 
 function addHTML() {
@@ -43,8 +42,6 @@ function numberWithCommas(x) {
 
 function deleteFromcart(cartlistId) {
 	let memberNum = 1;
-
-
 	$.ajax({
 		type: "DELETE",
 		url: `/api/cart/${cartlistId}/${memberNum}`,
@@ -67,35 +64,7 @@ function save() {
 	$('form').submit();
 
 }
-function postPayment111() {
-	var cnt = $("input[name='rowcheckbox']:checked").length;
-	var result;
-	var arr;
 
-	$("input[name='rowcheckbox']:checked").each(function() {
-		let cartlistId = $(this).attr('id');
-		console.log(cartlistId);
-		if (cnt == 0) {
-			alert("선택된 상품이 없습니다.");
-			window.location.reload();
-		}
-		else {
-			arr = [{ "book_Id": 1, "cartlistId": cartlistId }, { "book_Id": 2, "cartlistId": cartlistId }];
-		}
-
-
-	});
-	$.ajax({
-		url: '/pay',
-		type: 'post'
-		, dataType: 'json'   // 데이터 타입을 Json으로 변경
-		, contentType: 'application/json'   // Content-Type을 Json으로 변경
-		, data: JSON.stringify(arr)    // JSON String으로 전환하여 보낸다.
-		, success: function(response) {
-		}
-	});
-
-}
 
 function deleteSeveral() {
 	let memberNum = 1;
@@ -103,8 +72,6 @@ function deleteSeveral() {
 	var arr = new Array();
 	$("input[name='rowcheckbox']:checked").each(function() {
 		let cartlistId = $(this).attr('id');
-		console.log(cartlistId);
-
 		if (cnt == 0) {
 			alert("선택된 상품이 없습니다.");
 			window.location.reload();

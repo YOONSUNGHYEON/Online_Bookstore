@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .page-header {
-    border-bottom: 1px solid #d6deeb;
+    border-bottom: 0.5px solid #ffffff;
 }
 .page-header .page-title {
     text-align: center;
@@ -15,7 +15,7 @@
     fill: #1f8ce6;
 }
 #body-id {
-    background: #ebf6ff;
+    background: #9ab3f5c2;
 }
 .account-container {
     width: 360px;

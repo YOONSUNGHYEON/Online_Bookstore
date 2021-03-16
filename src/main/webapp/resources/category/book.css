@@ -13,7 +13,7 @@ div, li{
 }
 .col-xs-3 .active{
 	width: 120px;
-    background-color: #1F8CE6;
+    background-color: #7579e7;
     color: white;
     padding: 3px 7px;
     border-radius: 3px;
@@ -41,7 +41,7 @@ div, li{
     margin-bottom: 10px;
 }
 .cate-name i{
-	color: #1F8CE6;
+	color: #7579e7;
 }
 .cate-sort a, .cate-sort a:hover {
 	color: #777;
@@ -93,7 +93,7 @@ div, li{
 }
 .book-price .price{
 	font-weight: 900;
-    color: #1F8CE6;
+    color: #7579e7;
 }
 .book-star .price{
 	font-size: 11px;

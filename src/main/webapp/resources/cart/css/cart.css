@@ -74,14 +74,14 @@
 }
 .total{
 	font-size: 20px;
-	color: #1f8ce6;
+	color: #7579e7;
 }
 .book-author{
 	font-size: 12px;
 }
 .book-price{
 	font-weight: 800;
-    color: #1F8CE6;
+    color: #7579e7;
     padding-right: 40px;
 }
 .book-title, .book-info, .book-button{
@@ -120,7 +120,7 @@
 	font-size: 16px;
     font-weight: 800;
     color: white;
-    background-color: #1F8CE6;
+    background-color: #7579e7;
     width: 100%;
     padding: 1em;
     margin-top: 10px;

@@ -170,7 +170,7 @@
 	{
 	font-size: 13px;
 	font-weight: 700;
-	color: #1f8ce6;
+	color: #7579e7;
 	margin-top: 6px
 }
 
@@ -518,7 +518,7 @@
 
 .module_compact_book_list .book_list_wrapper .full_button_series:hover .book_link_arrow_icon
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 .module_compact_book_list .book_list_wrapper.status_download .table_wrapper .table_cell.book_buttons .button_pause
@@ -826,14 +826,14 @@
 	font-size: 16px;
 	font-weight: 700;
 	line-height: 1.3em;
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #serial_popup .popup_wrapper .popup_body .checkout_description .left_books_count
 	{
 	margin-top: 7px;
 	font-size: 13px;
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #serial_popup .popup_wrapper .popup_body .checkout_description .sub_description
@@ -880,7 +880,7 @@
 }
 
 #serial_popup .popup_wrapper .popup_body .checkout_coupon:hover {
-	border-color: #1f8ce6
+	border-color: #7579e7
 }
 
 #serial_popup .popup_wrapper .popup_body .checkout_coupon .coupon_select_label
@@ -976,7 +976,7 @@
 
 #serial_popup .popup_wrapper .popup_body .checkout_buttons .text_button:hover
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #serial_popup .popup_wrapper .popup_body .checkout_buttons .icon {
@@ -1303,7 +1303,7 @@
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_category_wrap a:hover,
 	#page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_category_wrap button:hover
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_category_wrap .icon-arrow_2_right
@@ -1494,7 +1494,7 @@
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_metadata_wrap .metadata .scroll_to_author_section_button:hover,
 	#page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_metadata_wrap .metadata a:hover
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_metadata_wrap .metadata .metadata_item
@@ -1866,7 +1866,7 @@
 	#page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_price_wrap .info_price_table .price_table .selling_price_row .book_price,
 	#page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_price_wrap .info_price_table .price_table .single_rent_row .book_price
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_price_wrap .info_price_table .price_table .all_rent_row .discount_rate,
@@ -1893,7 +1893,7 @@
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_price_wrap .info_price_table .price_table .selling_price_row .price_type
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_price_wrap .info_price_table .price_free
@@ -2234,7 +2234,7 @@
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .Header_Metadata_Item a:hover
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .Header_Metadata_Item.isbn_info span
@@ -2410,7 +2410,7 @@
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .noti_buttons_area .table_wrapper .noti_description a:hover
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_series .detail_box_module.scroll_fix
@@ -2489,7 +2489,7 @@
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_series .series_buy_tab .rsg_tab01 li .link_wrap a:hover
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_series .series_buy_tab .rsg_tab01 li:first-child .link_wrap a
@@ -2585,7 +2585,7 @@
 	#page_detail .detail_wrap .detail_body_wrap .detail_body .detail_series .detail_box_module .option_wrap .option_right.option_right ul .option_item .option_info .info_price
 	{
 	vertical-align: -14%;
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_series .detail_box_module .option_wrap .option_left.option_right ul .option_item .rui_button_blue_30,
@@ -2677,7 +2677,7 @@
 	position: absolute;
 	right: 5px;
 	bottom: 10px;
-	color: #1f8ce6;
+	color: #7579e7;
 	font-weight: 700;
 	font-size: 13px
 }
@@ -3413,7 +3413,7 @@
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_introduce_author .author_wrapper .author_area_wrapper .author_profile .profile_right .author_name_wrapper .author_name:hover .lang_kor,
 	#page_detail .detail_wrap .detail_body_wrap .detail_body .detail_introduce_author .author_wrapper .author_area_wrapper .author_profile .profile_right .author_name_wrapper .author_name:hover .lang_other
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_introduce_author .author_wrapper .author_area_wrapper .author_profile .profile_right .author_name_wrapper .noti_toggle_button
@@ -3701,14 +3701,14 @@
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_series_normal .view_more .icon-arrow_1_down
 	{
-	color: #1f8ce6;
+	color: #7579e7;
 	font-size: 10px;
 	vertical-align: 0
 }
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_series_normal .view_more .more_num
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #page_detail .detail_wrap .detail_body_wrap .detail_body .detail_series_normal .view_more:hover
@@ -3932,7 +3932,7 @@
 
 #page_detail .detail_wrap .detail_aside_wrap .detail_aside .aside_contents.aside_best ul li a:hover .best_title .title
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #page_detail .detail_wrap .detail_aside_wrap .detail_aside .aside_contents.aside_best .best_more_btn
@@ -4013,7 +4013,7 @@
 }
 
 #cart_confirm_popup .popup_contents .popup_body .remain_free_coupon {
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #cart_confirm_popup .popup_contents .popup_body .popup_body_paragraph {
@@ -4148,7 +4148,7 @@
 
 .info_price_wrap .info_price_table .price_table .selling_price_row .price_type
 	{
-	color: #1f8ce6;
+	color: #7579e7;
 }
 
 .info_price_wrap .info_price_table .price_table .book_price {
@@ -4160,7 +4160,7 @@
 	.info_price_wrap .info_price_table .price_table .selling_price_row .book_price,
 	#page_detail .detail_wrap .detail_body_wrap .detail_body .detail_header .header_info_wrap .info_price_wrap .info_price_table .price_table .single_rent_row .book_price
 	{
-	color: #1f8ce6;
+	color: #7579e7;
 }
 
 .info_price_wrap {
@@ -4842,7 +4842,7 @@ ul {
 
 #review_info_section .review_input_right .review_input_wrapper .star_rate_wrapper .star_tip_wrapper .my_star_rate .rate_cancel_button:hover
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #review_info_section .review_input_right .review_input_wrapper .star_rate_wrapper .star_tip_wrapper .star_tip
@@ -4853,7 +4853,7 @@ ul {
 	min-width: 80px;
 	text-align: center;
 	border-radius: 4px;
-	background: #1f8ce6;
+	background: #7579e7;
 	font-size: 14px;
 	color: #fff;
 	font-weight: 700;
@@ -4867,7 +4867,7 @@ ul {
 	left: 50%;
 	margin-left: -.5em;
 	font-size: 20px;
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #review_info_section .review_input_right .review_input_wrapper .star_rate_wrapper .star_tip_wrapper .star_tip.active
@@ -5186,7 +5186,7 @@ ul {
 
 #review_info_section .review_input_right .review_input_wrapper .review_content_wrapper .review_content button.review_read_more:hover
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #review_info_section .review_input_right .review_input_wrapper .review_content_wrapper .review_buttons_wrapper button
@@ -5324,7 +5324,7 @@ ul {
 
 #review_info_section .review_input_right .review_input_wrapper .review_status .review_recommend_count .like_button.active .like_count
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #review_info_section .review_input_right .review_input_wrapper .comment_wrapper
@@ -5350,7 +5350,7 @@ ul {
 
 #review_info_section .review_input_right .review_input_wrapper .comment_wrapper .more_comment_button .icon-arrow_1_up
 	{
-	color: #1f8ce6;
+	color: #7579e7;
 	vertical-align: -3%;
 	font-size: 11px
 }
@@ -5802,7 +5802,7 @@ ul {
 
 #review_list_section .review_list_wrapper .review_list .list_right .review_content button.review_read_more:hover
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #review_list_section .review_list_wrapper .review_list .list_right .review_status
@@ -5914,7 +5914,7 @@ ul {
 
 .review_list_wrapper .review_list .list_right .review_status .review_recommend_count .like_button.active .like_count
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 #review_list_section .review_list_wrapper .review_list .list_right .comment_wrapper
@@ -5940,7 +5940,7 @@ ul {
 
 #review_list_section .review_list_wrapper .review_list .list_right .comment_wrapper .more_comment_button .icon-arrow_1_up
 	{
-	color: #1f8ce6;
+	color: #7579e7;
 	vertical-align: -3%;
 	font-size: 11px
 }
@@ -6102,14 +6102,14 @@ ul {
 
 #review_list_section .review_list_wrapper .more_review_button_wrapper .more_review_button .icon-arrow_1_down
 	{
-	color: #1f8ce6;
+	color: #7579e7;
 	font-size: 10px;
 	vertical-align: 0
 }
 
 #review_list_section .review_list_wrapper .more_review_button_wrapper .more_review_button .more_num
 	{
-	color: #1f8ce6
+	color: #7579e7
 }
 
 

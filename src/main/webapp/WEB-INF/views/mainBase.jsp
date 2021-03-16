@@ -98,7 +98,7 @@
     <a class="nav-link" href="/cart"><i class="fas fa-shopping-cart"></i>카트</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link disabled" href="/myridi"><i class="fas fa-user"></i>마이리디</a>
+    <a class="nav-link disabled" href="${path }/my"><i class="fas fa-user"></i>마이페이지</a>
   </li>
 </ul>
 </header>

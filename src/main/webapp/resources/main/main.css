@@ -86,7 +86,7 @@ a:hover{
 .newbook{
 	height:400px;
 	padding: 36px 0px;
-	background-color:#334;
+	background-color:#9ab3f569;
 	margin-bottom: 20px;
 }
 .white-slide{
@@ -106,8 +106,8 @@ a:hover{
     margin: 0 auto;
     margin-bottom: 25px;
     font-size: 19px;
-    font-weight: normal;
-    color:white;
+    font-weight: 700;
+    color:black;
 }
 .book-title, .book-price{
     line-height: 1.33em;
