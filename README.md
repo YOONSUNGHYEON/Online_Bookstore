@@ -54,9 +54,22 @@
 - [1:1 채팅 기능 구현](#1:1-채팅-기능-구현)
 ___
 
+## 리뷰 기능
+#### 리뷰 남기기
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/41726251/111114076-16e36a00-85a6-11eb-8ff6-9e7ca8e5beb7.gif)
+
+#### 리뷰 수정 & 삭제하기
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/41726251/111114652-dafcd480-85a6-11eb-88d5-87fdddefe6f7.gif)
+
+#### 리뷰 리스트 최신순 & 공감순 & 별점높은순 & 별점낮은순으로 정렬
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/41726251/111118441-26fe4800-85ac-11eb-9946-dc7e98ebc0e6.gif)
+
+
 ## 장바구니 기능
 ex) 예시
 ![ezgif com-gif-to-mp4](https://user-images.githubusercontent.com/68542404/109152219-88ea3f80-77ae-11eb-84da-57da28731aee.gif)
+
+
 
 ___
 ## 결제 서비스
