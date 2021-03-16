@@ -59,11 +59,9 @@ public class KakaoPay {
 
         } catch (RestClientException e) {
             // TODO Auto-generated catch block
-        	 System.out.println("" + "11111111111111");
         	e.printStackTrace();
         } catch (URISyntaxException e) {
             // TODO Auto-generated catch block
-        	System.out.println("" + "2222222222222");
             e.printStackTrace();
         }
 

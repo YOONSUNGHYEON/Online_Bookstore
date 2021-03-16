@@ -52,7 +52,10 @@ public class PaymentService {
 
 	public PaymentDTO save(PaymentDTO paymentDTO){
 		Payment payment = new Payment(paymentDTO);
-		return new PaymentDTO(paymentRepository.save(payment));
+		System.out.println(payment+payment.getPayment_name());
+		PaymentDTO pay =new PaymentDTO(paymentRepository.save(payment));
+
+		return pay;
 	}
 
 }

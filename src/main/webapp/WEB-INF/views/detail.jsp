@@ -107,7 +107,7 @@
 									
 									<li class="rui_button_item">
 										<button type="button" class="rui_button_white_50 btn_cart">
-											<img class="main_book_image"
+											<img id="cart_img"
 												src="${path}/resources/detail/cart.png"> <span
 												class="indent_hidden">카트에 담기</span>
 										</button>
@@ -352,36 +352,33 @@
 	<jsp:include page="footer.jsp" />
 </body>
 
-<%-- cart 저장하기 --%>
+<script type="text/javascript">
+	$.getJSON('/api/cart/bookid/' + ${id}, function(rdata) {
+		if (rdata == true)
+			document.getElementById('cart_img').src = "/resources/detail/shopping-cart.png";
+		else if (rdata == false)
+			document.getElementById('cart_img').src = "/resources/detail/cart.png"
+
+	});
+</script>
+
+<script type="text/javascript">
+var id = ${id}
+var member_id='${member.member_Id}';
+$(".btn_cart").click(function() {		
+		 click_cart(id, member_id);
+	})
+</script>
+
 <script type="text/javascript">
 if (self.name != 'reload') {
          self.name = 'reload';
          self.location.reload(true);
      }
      else self.name = '';
-
-
-function save_cart(){
-var cart = {
-				member_id: '${member.member_Id}',
-				book_id : id
-			};
-			$.ajax({
-				url: "/api/cart",
-				type: "post",
-				dataType: "json",
-				data: JSON.stringify(cart),
-				contentType: "application/json",
-				async: true,
-				success: function(response) {
-				alert("카트에 담았습니다.");
-				}
-
-			});
-  
-}
-
 </script>
+
+
 <%-- 리뷰리스트 개수 가져오기 --%>
 <script type="text/javascript">
 $.getJSON('/api/reviewlistcountbybook/'+${id},function(rdata){          
@@ -417,10 +414,12 @@ function update_review(review_id) {
 				dataType : "json",
 				async : true,
 				success : function(resp) {
-					location.reload();
+					get_review_list();
+					reviewTextarea();
 				},
 				error : function() {
-					location.reload();
+					get_review_list();
+					reviewTextarea();
 				}
 				
 			});
@@ -554,10 +553,12 @@ var id = '${member.member_Num}'; // 방법1
 				dataType : "json",
 				async : true,
 				success : function(resp) {
-					location.reload();
+					get_review_list();
+					reviewTextarea();
 				},
 				error : function() {
-					location.reload();
+					get_review_list();
+					reviewTextarea();
 				}
 				
 			});

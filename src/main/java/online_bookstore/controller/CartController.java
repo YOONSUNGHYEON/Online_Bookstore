@@ -65,15 +65,29 @@ public class CartController {
 }
 
 
-    @DeleteMapping("/api/cart/{cartlistId}/{member_Num}")
-    public int deleteCart(@PathVariable int cartlistId ,@PathVariable  int member_Num, HttpSession session){
+    //유저가 해당 책을 카트에 담았는지 여부
+    @GetMapping("/api/cart/bookid/{book_id}")
+    public boolean getCartByBookIDAndMember(@PathVariable String book_id, HttpSession session){
+        Cart cart = cartRepository.findByMemberNumAndBookId(((MemberDTO)session.getAttribute("member")).getMember_Num(), book_id);
+        if(cart==null)
+        	return false;
+        else
+        	return true;
+}
+
+    @DeleteMapping("/api/cart/{cartlistId}")
+    public int deleteCart(@PathVariable int cartlistId , HttpSession session){
         Member member = memberRepository.getMemberbyMemberNum(((MemberDTO)session.getAttribute("member")).getMember_Num());
         List<Cart> cartList = cartRepository.findCartByMemberIsOrderByIdAsc(member);
         Long cart_id = cartList.get(cartlistId).getId();
         cartRepository.deleteById(cart_id);
         return cartlistId;
     }
-
+    @DeleteMapping("/api/cart/bookid/{book_id}")
+    public void deleteCartByBookIDAndMember(@PathVariable String book_id, HttpSession session){
+        Cart cart = cartRepository.findByMemberNumAndBookId(((MemberDTO)session.getAttribute("member")).getMember_Num(), book_id);
+        cartRepository.deleteById(cart.getId());
+    }
 
 
 

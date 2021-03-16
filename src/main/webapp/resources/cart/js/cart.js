@@ -112,7 +112,7 @@ function deleteSeveral() {
 		else {
 			$.ajax({
 				type: "DELETE",
-				url: `/api/cart/${cartlistId}/${memberNum}`,
+				url: `/api/cart/${cartlistId}`,
 				success: function(response) {
 
 					$('#booklist-container').empty(cartlistId);

@@ -32,6 +32,8 @@
 	<script src="/resources/member/js/order.js"></script>
 </head>
 <jsp:include page="../mainBase.jsp" />
+
+
 <body id="ridi_books">
 	<div id="books_contents">
 		<div>
@@ -52,7 +54,7 @@
 				</div>
 				<div></div>
 				<div class="order_receipt_wrapper">
-					<form id="order_form" action="/kakaoPay/${id}" method="post">
+					<form name="order_form" id="order_form"  action="/kakaoPay/${checkbook}/totalprice/3000" method="post">
 						<div class="hidden_input_wrapper">
 							<input type="hidden" name="_token"
 								value="an_jBCo3pbStxoAyNV1aBufs_b5I2PmtIaJdXymE4rvK2TO1rQLYWRdoQAMVzHJX">
@@ -266,7 +268,7 @@
 									</div>
 
 									<div class="checkout_button_wrapper">
-										<button id="btnSubmit"
+										<button
 											class="rui_button_blue_50 rui_button_eink_black_50 checkout_button js_checkout_button"
 											style="visibility: visible;">결제하기</button>
 									</div>
@@ -347,24 +349,26 @@
 
 </body>
 <script type="text/javascript">
+
+</script>
+<script type="text/javascript">
 var num = 0;
 var totalprice=0;
-	$.getJSON('/api/detailbook/order/' +`${checkbook}`, function(rdata) {
+form = document.order_form;
+$.getJSON('/api/detailbook/order/' +`${checkbook}`, function(rdata) {
 		$.each(rdata, function(index, item) {
 			order_list(item);
 			totalprice+=item.book_Price;
 			num++;
 		})
+		form.action = '/kakaoPay/${checkbook}/totalprice/'+totalprice;
 		$('.list_count').append(num);
 		$('.total_price').append(totalprice);
 	})
+
+
 </script>
 <script type="text/javascript">
-			var orders = {
-				books : `${checkbook}`,
-				total_price : "1000"
-			};
-			console.log(orders);
 		function pay(){  
 			var orders = {
 				books : `${checkbook}`,
@@ -386,18 +390,7 @@ var totalprice=0;
 		}
 
 
-		$("#btnSubmit").click(function() {    			
-          var radioVal = $('input[name="pay_type"]:checked').val();
-          if(radioVal==404)
-          {
-          	pay();
-          }
-          else
-          {
-          	alert("카카오페이 결제 시스템을 이용해주세요.");
-          }
-          
-		});
+
 	</script>
 
 
