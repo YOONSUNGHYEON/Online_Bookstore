@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.springframework.data.domain.Example;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -28,7 +28,8 @@ public class UsedBookService {
 	@Transactional(readOnly = true)
 	public List<UsedBookInfoDTO> findAll(){
 		ArrayList<UsedBookInfoDTO> arrayList=new ArrayList<UsedBookInfoDTO>();
-		List<UsedBookDTO> data = usedBookRepository.findAll()
+		PageRequest limit = PageRequest.of(0,16);
+		List<UsedBookDTO> data = usedBookRepository.findAll(limit)
 				.stream().map(UsedBookDTO::new)
 				.collect(Collectors.toList());
 		for(int i=0; i<data.size(); i++) {

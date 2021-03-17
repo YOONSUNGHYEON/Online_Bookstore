@@ -1,5 +1,4 @@
-@charset "UTF-8";
-
+@charset "utf-8"; 
 
 blockquote, body, button, code, dd, div, dl, dt, fieldset, form, h1, h2,
 	h3, h4, h5, h6, html, iframe, input, legend, li, ol, p, pre, strong, td,
@@ -5712,6 +5711,14 @@ body.RSGToast-open.vex-open {
 	padding: 6px 0
 }
 
+.book_macro_60 .book_metadata_wrapper .meta_title .title_link .title_tag,  .title_text
+{
+	font-size: 13px;
+    color: #000;
+    font-weight: 1000;
+}
+
+
 .rui_title_2 .title_text [class*=" icon-"], .rui_title_2 .title_text [class^=icon-]
 	{
 	color: #c5c5c5;
@@ -7159,7 +7166,7 @@ body.RSGToast-open.vex-open {
 	background: #d9d9d9
 }
 
-.book_thumbnail_wrapper .book_thumbnail .thumbnail_image .thumbnails {
+.book_thumbnail_wrapper .book_thumbnail .thumbnail_image .thumbnail {
 	width: 100%
 }
 
@@ -8560,7 +8567,7 @@ body.RSGToast-open.vex-open {
 	vertical-align: top
 }
 
-.book_macro_50 .book_thumbnail_wrapper .book_thumbnail .thumbnail_image .thumbnails
+.book_macro_50 .book_thumbnail_wrapper .book_thumbnail .thumbnail_image .thumbnail
 	{
 	width: 50px;
 	max-height: 70px

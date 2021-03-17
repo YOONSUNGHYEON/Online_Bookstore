@@ -1,11 +1,5 @@
 package online_bookstore.Service;
 
-import online_bookstore.DTO.BookDTO;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.springframework.stereotype.Service;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -55,7 +49,6 @@ public class BookInfoServiceImp implements BookInfoService{
         for (int i = 0; i <jsonArray.size() ; i++) {
             JSONObject date=(JSONObject) jsonArray.get(i);
             BookDTO bookDTO=new BookDTO(
-
                     date.get("isbn13").toString(),
                     date.get("title").toString(),
                     date.get("author").toString(),
@@ -155,7 +148,7 @@ public class BookInfoServiceImp implements BookInfoService{
         }
         return arrayList;
     }
-    
+
     @Override
     public BookDTO booksearchById1(String id) {
         strurl="http://www.aladin.co.kr/ttb/api/ItemLookUp.aspx?ttbkey=ttbinpo33350927001&itemIdType=ISBN13&ItemId="+id+"&output=js&Version=20131101&Cover=Big";
@@ -199,8 +192,25 @@ public class BookInfoServiceImp implements BookInfoService{
     }
 
     @Override
-    public ArrayList<BookDTO> booksearch(String title, int page) {
-        return null;
+    public ArrayList<BookDTO> booksearch1(String title, int page) {
+    	ArrayList<BookDTO> arrayList=new ArrayList<BookDTO>();
+        strurl="http://www.aladin.co.kr/ttb/api/ItemSearch.aspx?ttbkey=ttbinpo33350927001&Query="+title+"&Start="+page+"&MaxResults=12&QueryType=Title&start=1&SearchTarget=Book&output=js&Version=20131101";
+        JSONArray jsonArray=JSONParsing(strurl);
+
+        for (int i = 0; i <jsonArray.size() ; i++) {
+            JSONObject date=(JSONObject) jsonArray.get(i);
+            BookDTO bookDTO=new BookDTO(
+                    date.get("isbn13").toString(),
+                    date.get("title").toString(),
+                    date.get("author").toString(),
+                    date.get("description").toString(),
+                    Integer.parseInt(date.get("priceSales").toString()),
+                    date.get("cover").toString(),
+                    date.get("publisher").toString()
+            );
+            arrayList.add(bookDTO);
+        }
+        return arrayList;
     }
 
 
@@ -214,6 +224,7 @@ public class BookInfoServiceImp implements BookInfoService{
 				date.get("author").toString(), date.get("description").toString(),
 				Integer.parseInt(date.get("priceStandard").toString()),Integer.parseInt(date.get("priceSales").toString()), date.get("cover").toString().replaceAll("coversum", "cover500"),
 				date.get("publisher").toString(), date.get("categoryName").toString());
+		System.out.println(bookDTO);
 		return bookDTO;
 	}
 
@@ -230,6 +241,7 @@ public class BookInfoServiceImp implements BookInfoService{
 				date.get("publisher").toString(), date.get("categoryName").toString());
 		arrayList.add(bookDTO);
 		return arrayList;
+
 	}
 
     public JSONArray JSONParsing(String strurl){
@@ -257,4 +269,10 @@ public class BookInfoServiceImp implements BookInfoService{
         }
         return JsonArray;
     }
+
+	@Override
+	public ArrayList<BookDTO> booksearch(String title, int page) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

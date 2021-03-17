@@ -3,6 +3,7 @@
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,11 +61,11 @@
 <header style="max-width: 1000px; margin: 0 auto;">
 <nav class="navbar navbar-light bg-light justify-content-between">
 
-  <a class="navbar-brand" href="/">RIDIBOOKS</a>
+  <a class="navbar-brand" href="/"><img width=140px src="${path}/resources/main/logo.png"></a>
     <form action = "./search" method="GET" class = "css-WrapperForm">
         <label class="css-SearchBoxShape">
             <input value class="css-SearchBox" name="searchTerm" id="searchQuery" type="text" placeholder="제목 저자 검색" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" id="searchButton" type="submit">Search</button>
+          <button class="btn btn-outline-success my-2 my-sm-0" style="background-color:white;"id="searchButton" type="submit"><i style="margin: 0px;"class="fas fa-search"></i></button>
         </label>
 
     </form>
@@ -79,6 +80,8 @@
     <a href="${path }/logout"><button class="align-right join">로그아웃</button></a>
     </c:otherwise>
     </c:choose>
+
+
 
 </nav>
 <ul class="nav nav-tabs">

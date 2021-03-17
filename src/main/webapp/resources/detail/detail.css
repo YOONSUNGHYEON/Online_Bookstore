@@ -4084,7 +4084,7 @@
 }
 
 .main_book_image {
-	width: 200px;
+	width: 100%;
 	height: 300px;
 }
 
@@ -5397,6 +5397,7 @@ ul {
 	font-weight: 700
 }
 
+
 #review_info_section .review_input_right .review_input_wrapper .comment_wrapper .comment_list_wrapper .comment .comment_meta .admin_badge
 	{
 	display: inline-block;
@@ -6111,6 +6112,7 @@ ul {
 	color: #1f8ce6
 }
 
+
 #review_list_section .review_list_wrapper .more_review_button_wrapper .more_review_button:hover
 	{
 	background-color: #f2f4f5
@@ -6298,6 +6300,7 @@ ul {
 	padding: 24px
 }
 
+
 #report_review_popup .popup_contents {
 	top: 160px
 }
@@ -6360,3 +6363,4 @@ ul {
 	box-sizing: border-box;
 	border: 1px solid #e0e0e0;
 }
+

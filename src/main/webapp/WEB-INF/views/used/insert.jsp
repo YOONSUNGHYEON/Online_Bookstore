@@ -171,7 +171,7 @@ var main = {
 	            type: 'GET',
 	            url: '/api/search',	            
 	            dataType: 'json',
-	            contentType:'application/json; charset=utf-8',
+	            contentType:'application/json; charset=utf-8;',
 	            data: param={"title":title, "page":page},
 	        }).done(function(result) {
 	        	$("#result").empty();
@@ -183,6 +183,7 @@ var main = {
 	        });
 	    },
 	    search2 : function () {
+		    console.log(title + page);
 	        $.ajax({
 	            type: 'GET',
 	            url: '/api/search',	            

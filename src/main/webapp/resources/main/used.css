@@ -1,9 +1,11 @@
 @charset "UTF-8";
-.write-btn{
-	margin: 15px auto;
+.write-btn, .write-btn > a, .write-btn>a:hover {
+    margin: 0 auto;
     font-size: 16px;
-    color: #1F8CE6;
-    font-weight: 900;
+    background-color: #666;
+    padding: 15px 0px;
+    color: #fff;
+    font-weight: 600;
 }
 .write-btn :hover, .write-btn :active, .write-btn :focus{
 	text-decoration:none;
@@ -21,4 +23,5 @@
 }
 .book-status{
 	color: orange;
+	font-weight: 900;
 }

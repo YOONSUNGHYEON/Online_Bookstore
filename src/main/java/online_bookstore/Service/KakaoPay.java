@@ -41,6 +41,7 @@ public class KakaoPay {
         params.add("partner_order_id", "123");
         params.add("partner_user_id", "123");
         params.add("item_name", book.getBook_Title());
+        params.add("item_code", book.getBook_Id());
         params.add("quantity", "1");
         params.add("total_amount",  Integer.toString(book.getBook_PriceSales()));
         params.add("tax_free_amount", "100");
@@ -88,7 +89,7 @@ public class KakaoPay {
         params.add("partner_order_id", "123");
         params.add("partner_user_id", "123");
         params.add("pg_token", pg_token);
-        params.add("total_amount", "2100");
+
 
         HttpEntity<MultiValueMap<String, String>> body = new HttpEntity<MultiValueMap<String, String>>(params, headers);
 

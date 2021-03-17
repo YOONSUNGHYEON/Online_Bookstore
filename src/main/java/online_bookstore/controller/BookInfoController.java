@@ -25,19 +25,27 @@ public class BookInfoController {
 
     @GetMapping("/title/{title}")
     public ArrayList<BookDTO> booksearch(@PathVariable(name = "title") String title) {
-        System.out.println(title);
         return bookInfoService.booksearch(title, 1);
     }
     @GetMapping("/search")
     public ArrayList<BookDTO> booksearch1(@RequestParam("title") String title, @RequestParam("page") int page) {
-        return bookInfoService.booksearch(title, page);
+        return bookInfoService.booksearch1(title, page);
     }
     @GetMapping("/search/id")
     public BookDTO booksearch2(@RequestParam("id") String id) {
         return bookInfoService.booksearchById1(id);
     }
     @GetMapping("/detailbook/{num}")
-    public ArrayList<BookDTO> detailbook(@PathVariable(name = "num") String num){
-        return bookInfoService.bookSearchbyId(num);
+    public BookDTO detailbook(@PathVariable(name = "num") String num){
+        return bookInfoService.booksearchById(num);
+    }
+    @GetMapping("/detailbook/order/{num}")
+    public ArrayList<BookDTO> order(@PathVariable(name = "num") String num){
+    	String[] array = num.split("&");
+    	ArrayList<BookDTO> booklist = new ArrayList<BookDTO>();
+    	for(int i=0;i<array.length;i++) {
+    		booklist.add(bookInfoService.booksearchById1(array[i]));
+    	}
+        return booklist;
     }
 }
