@@ -59,7 +59,7 @@
 							<div>
 								<a
 									class="full-button login-button signup-button sub rui_button_white_50"
-									href='<c:url value="/Member/join"/>'> 회원가입 </a>
+									href='<c:url value="join"/>'> 회원가입 </a>
 							</div>
 						</div>
 					</div>
