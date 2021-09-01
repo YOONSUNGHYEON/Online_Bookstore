@@ -42,6 +42,7 @@ public class BookInfoController {
     @GetMapping("/detailbook/order/{num}")
     public ArrayList<BookDTO> order(@PathVariable(name = "num") String num){
     	String[] array = num.split("&");
+    	System.out.println(num);
     	ArrayList<BookDTO> booklist = new ArrayList<BookDTO>();
     	for(int i=0;i<array.length;i++) {
     		booklist.add(bookInfoService.booksearchById1(array[i]));

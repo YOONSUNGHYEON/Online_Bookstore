@@ -17,7 +17,6 @@ public class OrdersService {
 	public void save(OrdersDTO ordersDTO)
 	{
 		Orders orders = new Orders(ordersDTO);
-		System.out.println(orders.getBook_Id()+","+orders.getPayment().getId());
 		OrdersRepository.save(orders);
 	}
 

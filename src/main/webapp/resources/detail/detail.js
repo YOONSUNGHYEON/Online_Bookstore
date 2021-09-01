@@ -107,7 +107,9 @@ function review_list(item) {
 ////////////cart 부분/////////////
 /* cart 눌렀을떄 */
 function click_cart(book_id, member_id) {
+	
 	$.getJSON('/api/cart/bookid/' + book_id, function(rdata) {
+		
 		if (rdata == true) {
 			deleteCart(book_id);
 			document.getElementById('cart_img').src = "/resources/detail/cart.png";

@@ -57,7 +57,7 @@ public class PayController {
 	}
 
 	@GetMapping("/order/{id}")
-	public String order(@PathVariable("id") String id) {
+	public String orderByTd(@PathVariable("id") String id) {
 		return "member/order";
 	}
 

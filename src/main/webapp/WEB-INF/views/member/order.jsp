@@ -355,6 +355,21 @@
 var num = 0;
 var totalprice=0;
 form = document.order_form;
+var id = `${id}`;
+if(id!='')
+{
+$.getJSON('/api/detailbook/order/' +id, function(rdata) {
+		$.each(rdata, function(index, item) {
+			order_list(item);
+			totalprice+=item.book_Price;
+			num++;
+		})
+		form.action = '/kakaoPay/'+id+'/totalprice/'+totalprice;
+		$('.list_count').append(num);
+		$('.total_price').append(totalprice);
+	})
+}
+else{
 $.getJSON('/api/detailbook/order/' +`${checkbook}`, function(rdata) {
 		$.each(rdata, function(index, item) {
 			order_list(item);
@@ -366,7 +381,7 @@ $.getJSON('/api/detailbook/order/' +`${checkbook}`, function(rdata) {
 		$('.total_price').append(totalprice);
 	})
 
-
+}
 </script>
 <script type="text/javascript">
 		function pay(){  

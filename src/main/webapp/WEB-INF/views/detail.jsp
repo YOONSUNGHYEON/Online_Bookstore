@@ -366,7 +366,7 @@
 var id = ${id}
 var member_id='${member.member_Id}';
 $(".btn_cart").click(function() {
-	if (id == '') {
+	if (member_id == '') {
 		alert("로그인 후 글쓰기가 가능합니다.");
 	} else {
 		click_cart(id, member_id);
@@ -424,8 +424,7 @@ function update_review(review_id) {
 					reviewTextarea();
 				},
 				error : function() {
-					get_review_list();
-					reviewTextarea();
+					location.reload();
 				}
 				
 			});

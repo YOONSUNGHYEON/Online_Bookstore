@@ -44,10 +44,7 @@
 							<div class="finished_table_wrapper">
 								
 							</div>
-							<div class="library_link_wrapper">
-								<a href="//library.ridibooks.com" class="library_link">내 서재<span
-									class="icon-arrow_5_right"></span></a>
-							</div>
+							
 						</article>						
 					</div>
 				</section>
