@@ -1,11 +1,8 @@
 
 
 $(document).ready(function() {
-
 	reviewTextarea();
 	get_review_list();
-
-
 
 	//최신순, 공감순, 평점높은순, 평점 낮은순
 	$(".js_select_tab_option").click(function() {

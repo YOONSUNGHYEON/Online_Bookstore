@@ -365,9 +365,15 @@
 <script type="text/javascript">
 var id = ${id}
 var member_id='${member.member_Id}';
-$(".btn_cart").click(function() {		
-		 click_cart(id, member_id);
-	})
+$(".btn_cart").click(function() {
+	if (id == '') {
+		alert("로그인 후 글쓰기가 가능합니다.");
+	} else {
+		click_cart(id, member_id);
+	}
+
+})
+
 </script>
 
 <script type="text/javascript">

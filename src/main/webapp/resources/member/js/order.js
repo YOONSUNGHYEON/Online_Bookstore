@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	
+
 
 })
 
@@ -50,6 +50,6 @@ function order_list(item) {
 	</div>
 						<hr>
 					</li>`;
-	$('#orders').append(order); 
+	$('#orders').append(order);
 
 }

@@ -13807,23 +13807,7 @@ body.RSGToast-open.vex-open {
 	border-color: #7579e7
 }
 
-@font-face {
-	font-family: ridi-roboto;
-	font-style: normal;
-	font-weight: 400;
-	src: url(../fonts/ridi-roboto-regular-webfont.woff2) format('woff2'),
-		url(../fonts/ridi-roboto-regular-webfont.woff) format('woff'),
-		url(../fonts/ridi-roboto-regular.ttf) format('truetype')
-}
 
-@font-face {
-	font-family: ridi-roboto;
-	font-style: normal;
-	font-weight: 700;
-	src: url(../fonts/ridi-roboto-bold-webfont.woff2) format('woff2'),
-		url(../fonts/ridi-roboto-bold-webfont.woff) format('woff'),
-		url(../fonts/ridi-roboto-bold.ttf) format('truetype')
-}
 
 #access_check {
 	display: none
