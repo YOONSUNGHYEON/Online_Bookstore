@@ -40,8 +40,6 @@ $(document).ready(function() {
 		reviewTextarea();
 	})
 
-
-
 	//리뷰 수정후 수정 저당하기 버튼
 	$(".js_review_modify_complete_btn").click(function() {
 		var review_id = $(this).attr("data-rating-id");

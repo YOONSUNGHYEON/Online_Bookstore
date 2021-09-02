@@ -403,10 +403,7 @@ $('.score').append(rdata);
 
 
 <script type="text/javascript">
-	
-
 function update_review(review_id) {
-
 			var review = {
 				id:review_id,
 				content : $("#content").val(),
@@ -427,11 +424,8 @@ function update_review(review_id) {
 					location.reload();
 				}
 				
-			});
-			
-	
+			});	
   }
-
 </script>
 
 <%-- 리뷰 작성 부분 --%>
